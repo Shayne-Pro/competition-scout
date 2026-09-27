@@ -1,0 +1,1736 @@
+[
+  {
+    "id": "chip-phenotype",
+    "title": "CHIP 2026 · 特定患者表型概念识别",
+    "platform": "天池",
+    "tags": [
+      "大模型",
+      "医学",
+      "检索 / RAG"
+    ],
+    "task": "从生物医学全文抽取并标准化患者表型；支持传统 NLP、LLM 与 RAG。",
+    "entry": {
+      "text": "9 月 27 日；官网未写具体时刻 / 时区",
+      "day": "2026-09-27",
+      "instant": null
+    },
+    "submit": {
+      "text": "B 榜 10 月 1 日；论文暂定 10 月 15 日",
+      "day": "2026-10-01",
+      "instant": null
+    },
+    "requirements": "1–5 人；企业人员可参加，但个人须依托单位报名并实名认证。模型 ≤10B；禁用外部人工标注表型数据。",
+    "award": "证书、评测论文",
+    "url": "https://tianchi.aliyun.com/competition/entrance/532512",
+    "status": "open",
+    "warning": "9/27 报名截止。获奖须自费注册并参加 CHIP、报告及撰文，否则取消成绩。",
+    "note": "",
+    "priority": 3,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [],
+    "venue": "CHIP 2026"
+  },
+  {
+    "id": "xf-berry",
+    "title": "果粒着色阶段智能分级",
+    "platform": "讯飞",
+    "tags": [
+      "CV"
+    ],
+    "task": "葡萄果粒三分类，按 macro-F1 评估。",
+    "entry": {
+      "text": "9 月 28 日（报名页）",
+      "day": "2026-09-28",
+      "instant": null
+    },
+    "submit": {
+      "text": "9 月 28 日 17:00 · B 榜",
+      "day": "2026-09-28",
+      "instant": null
+    },
+    "requirements": "资格待确认：赛题详情没有明确说明非学生能否参加；不能仅依据平台“全球开发者”介绍判断。前三名需复现及答辩。",
+    "award": "每题 ¥10,000",
+    "url": "https://challenge.xfyun.cn/topic/info?type=BerryColorGrade",
+    "status": "unclear",
+    "warning": "报名窗口开放，但身份资格尚未确认，已从“可新参加”移出。官网未注明时区。",
+    "note": "已核对报名中及 B 榜窗口：9/24 00:00–9/28 17:00；非学生资格需赛题方确认。",
+    "priority": 4,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [],
+    "venue": ""
+  },
+  {
+    "id": "xf-grape",
+    "title": "阳光玫瑰葡萄花穗完整性判断与分割",
+    "platform": "讯飞",
+    "tags": [
+      "CV"
+    ],
+    "task": "判断花穗是否完整，并输出实例分割掩码。",
+    "entry": {
+      "text": "9 月 28 日（报名页）",
+      "day": "2026-09-28",
+      "instant": null
+    },
+    "submit": {
+      "text": "9 月 28 日 17:00 · B 榜",
+      "day": "2026-09-28",
+      "instant": null
+    },
+    "requirements": "资格待确认：赛题详情没有明确说明非学生能否参加；不能仅依据平台“全球开发者”介绍判断。前三名需复现及答辩。",
+    "award": "每题 ¥10,000",
+    "url": "https://challenge.xfyun.cn/topic/info?type=GrapeFlowerSeg",
+    "status": "unclear",
+    "warning": "报名窗口开放，但身份资格尚未确认，已从“可新参加”移出。官网未注明时区。",
+    "note": "已核对报名中及 B 榜窗口：9/24 00:00–9/28 17:00；非学生资格需赛题方确认。",
+    "priority": 4,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [],
+    "venue": ""
+  },
+  {
+    "id": "xf-weed",
+    "title": "玉米出苗期杂草目标检测",
+    "platform": "讯飞",
+    "tags": [
+      "CV"
+    ],
+    "task": "农业图像中的杂草目标检测。",
+    "entry": {
+      "text": "9 月 28 日（报名页）",
+      "day": "2026-09-28",
+      "instant": null
+    },
+    "submit": {
+      "text": "9 月 28 日 17:00 · B 榜",
+      "day": "2026-09-28",
+      "instant": null
+    },
+    "requirements": "资格待确认：赛题详情没有明确说明非学生能否参加；不能仅依据平台“全球开发者”介绍判断。前三名需复现及答辩。",
+    "award": "每题 ¥10,000",
+    "url": "https://challenge.xfyun.cn/topic/info?type=CornWeedDet",
+    "status": "unclear",
+    "warning": "报名窗口开放，但身份资格尚未确认，已从“可新参加”移出。官网未注明时区。",
+    "note": "已核对报名中及 B 榜窗口：9/24 00:00–9/28 17:00；非学生资格需赛题方确认。",
+    "priority": 4,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [],
+    "venue": ""
+  },
+  {
+    "id": "xf-fpv",
+    "title": "第一视角阳光玫瑰劳作动作识别",
+    "platform": "讯飞",
+    "tags": [
+      "CV"
+    ],
+    "task": "智能眼镜短视频中的劳作动作分类。",
+    "entry": {
+      "text": "9 月 28 日（报名页）",
+      "day": "2026-09-28",
+      "instant": null
+    },
+    "submit": {
+      "text": "9 月 28 日 17:00 · B 榜",
+      "day": "2026-09-28",
+      "instant": null
+    },
+    "requirements": "资格待确认：赛题详情没有明确说明非学生能否参加；不能仅依据平台“全球开发者”介绍判断。前三名需复现及答辩。",
+    "award": "每题 ¥10,000",
+    "url": "https://challenge.xfyun.cn/topic/info?type=FPVSMAC",
+    "status": "unclear",
+    "warning": "报名窗口开放，但身份资格尚未确认，已从“可新参加”移出。官网未注明时区。",
+    "note": "已核对报名中及 B 榜窗口：9/24 00:00–9/28 17:00；非学生资格需赛题方确认。",
+    "priority": 4,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [],
+    "venue": ""
+  },
+  {
+    "id": "xf-corn",
+    "title": "基于无人机的玉米苗检测",
+    "platform": "讯飞",
+    "tags": [
+      "CV"
+    ],
+    "task": "无人机 RGB 图像中的玉米苗小目标检测。",
+    "entry": {
+      "text": "9 月 28 日（报名页）",
+      "day": "2026-09-28",
+      "instant": null
+    },
+    "submit": {
+      "text": "9 月 28 日 17:00 · B 榜",
+      "day": "2026-09-28",
+      "instant": null
+    },
+    "requirements": "资格待确认：赛题详情没有明确说明非学生能否参加；不能仅依据平台“全球开发者”介绍判断。前三名需复现及答辩。",
+    "award": "每题 ¥10,000",
+    "url": "https://challenge.xfyun.cn/topic/info?type=UAVCornDet",
+    "status": "unclear",
+    "warning": "报名窗口开放，但身份资格尚未确认，已从“可新参加”移出。官网未注明时区。",
+    "note": "已核对报名中及 B 榜窗口：9/24 00:00–9/28 17:00；非学生资格需赛题方确认。",
+    "priority": 4,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [],
+    "venue": ""
+  },
+  {
+    "id": "smp-graph",
+    "title": "SMP 2026 · 大模型图网络决策挑战赛",
+    "platform": "天池",
+    "tags": [
+      "大模型",
+      "Agent"
+    ],
+    "task": "用 Agent 预测图网络演化并设计干预策略。",
+    "entry": {
+      "text": "9 月 30 日 10:00 · 报名 / 组队 / 实名",
+      "day": "2026-09-30",
+      "instant": null
+    },
+    "submit": {
+      "text": "初赛 9 月 30 日 18:00",
+      "day": "2026-09-30",
+      "instant": null
+    },
+    "requirements": "个人或 ≤3 人；高校、科研机构、企业及社会开发者可参加。初赛前十进入决赛。",
+    "award": "¥55,000",
+    "url": "https://tianchi.aliyun.com/competition/entrance/532511",
+    "status": "open",
+    "warning": "官网未注明时区。10 月 23 日是晋级队伍决赛截止，不是新参赛入口。",
+    "note": "决赛 10/23 18:00；技术报告 11/3；部分获奖队伍须派代表参会。",
+    "priority": 3,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [],
+    "venue": "SMP 2026"
+  },
+  {
+    "id": "chip-code",
+    "title": "CHIP 2026 · 医学 NLP 代码自动生成",
+    "platform": "天池",
+    "tags": [
+      "大模型",
+      "Agent",
+      "医学"
+    ],
+    "task": "生成 Python 代码，识别符合临床试验入组 / 出组标准的患者。",
+    "entry": {
+      "text": "10 月 7 日",
+      "day": "2026-10-07",
+      "instant": null
+    },
+    "submit": {
+      "text": "B 榜 10 月 12 日；论文 10 月 20 日",
+      "day": "2026-10-12",
+      "instant": null
+    },
+    "requirements": "1–5 人；企业人员可参加；个人须依托单位并实名认证。处理 FHIR 格式患者数据。",
+    "award": "学术评测、获奖交流",
+    "url": "https://tianchi.aliyun.com/competition/entrance/532480",
+    "status": "open",
+    "warning": "官网未注明截止时刻 / 时区；获奖须注册参会、口头汇报及论文，相关费用自理。",
+    "note": "",
+    "priority": 2,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [],
+    "venue": "CHIP 2026"
+  },
+  {
+    "id": "lidar",
+    "title": "第十届全国激光雷达大会 · 数据处理大赛",
+    "platform": "会议官网",
+    "tags": [
+      "CV",
+      "3D"
+    ],
+    "task": "点云配准、SLAM、建筑 / 树木建模与语义 / 实例分割等 7 个赛道。",
+    "entry": {
+      "text": "10 月 9 日 23:59 · 北京时间",
+      "day": "2026-10-09",
+      "instant": "2026-10-09T23:59:00+08:00"
+    },
+    "submit": {
+      "text": "10 月 9 日 23:59 · 北京时间",
+      "day": "2026-10-09",
+      "instant": "2026-10-09T23:59:00+08:00"
+    },
+    "requirements": "个人或团队；按官网报名表提交并由组委会确认。入围后须参加现场答辩。",
+    "award": "奖金、证书（依赛道规则）",
+    "url": "https://www.lidar2026shenzhen.com/onepage.php?id=9",
+    "status": "open",
+    "warning": "入围现场答辩须完成大会注册缴费；应把参会成本计入投入。",
+    "note": "",
+    "priority": 3,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [],
+    "venue": "第十届全国激光雷达大会"
+  },
+  {
+    "id": "quantiphy",
+    "title": "QuantiPhy Challenge",
+    "platform": "会议官网",
+    "tags": [
+      "CV",
+      "大模型",
+      "多模态"
+    ],
+    "task": "从视频做定量物理推理；含 Main 与 OpenWeight 两条赛道。",
+    "entry": {
+      "text": "10 月 9 日 23:59 AoE → 北京 10/10 19:59",
+      "day": "2026-10-10",
+      "instant": "2026-10-09T23:59:00-12:00"
+    },
+    "submit": {
+      "text": "10 月 23 日 23:59 AoE → 北京 10/24 19:59",
+      "day": "2026-10-24",
+      "instant": "2026-10-23T23:59:00-12:00"
+    },
+    "requirements": "最多 5 人；Main 允许不同模型方案；OpenWeight 须用公开权重。提交 CSV，前三名需复现。",
+    "award": "每赛道 $1,000 / $500 / $250",
+    "url": "https://quantiphy.stanford.edu/competition/",
+    "status": "open",
+    "warning": "",
+    "note": "",
+    "priority": 1,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [
+      "QuantiPhy"
+    ],
+    "venue": "NeurIPS 2026"
+  },
+  {
+    "id": "benchmark",
+    "title": "Kaggle Benchmarking Challenge × DEV",
+    "platform": "Kaggle",
+    "tags": [
+      "大模型",
+      "Agent",
+      "多模态"
+    ],
+    "task": "自建模型评测基准，运行真实模型，并写出分析与洞见。",
+    "entry": {
+      "text": "随作品提交；无单独报名截止",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "10 月 11 日 23:59 PDT → 北京 10/12 14:59",
+      "day": "2026-10-12",
+      "instant": "2026-10-11T23:59:00-07:00"
+    },
+    "requirements": "18 岁以上；个人或最多 4 人。必须链接 Kaggle Benchmark，并按模板在 DEV 发布带标签文章。",
+    "award": "$2,500（5 × $500）",
+    "url": "https://dev.to/challenges/kaggle-2026-09-23",
+    "status": "open",
+    "warning": "参评奖金的文章须用英语；单人 / 每队仅一份作品。",
+    "note": "",
+    "priority": 2,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [
+      "Kaggle Benchmarking"
+    ],
+    "venue": ""
+  },
+  {
+    "id": "spark",
+    "title": "Spark-X2.5 端侧模型创新挑战赛",
+    "platform": "讯飞",
+    "tags": [
+      "大模型",
+      "Agent"
+    ],
+    "task": "用 Spark-X2.5-4B / 1.7B 做可交互、可运行的端侧应用。",
+    "entry": {
+      "text": "报名页为 11 月 10 日；另有更早材料节点",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "10/11 与 11/10 17:00 两种口径",
+      "day": "2026-10-11",
+      "instant": null
+    },
+    "requirements": "个人或最多 5 人；个人开发者、企业、学生均可。提交 PPT、代码、应用包 / Demo 和运行证明。",
+    "award": "¥100,000",
+    "url": "https://challenge.xfyun.cn/topic/info?type=Spark-X25",
+    "status": "open",
+    "warning": "日期冲突：赛程写 11/10 17:00，材料条款写 10/11 前，否则无复赛资格。先按 10/11 准备，须向主办方确认；官网未注明时区。",
+    "note": "",
+    "priority": 4,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [],
+    "venue": ""
+  },
+  {
+    "id": "rsna",
+    "title": "RSNA Knee Abnormality Detection",
+    "platform": "Kaggle",
+    "tags": [
+      "CV",
+      "医学",
+      "多模态"
+    ],
+    "task": "膝关节 MRI 与报告训练；预测 12 类异常，按宏平均 AUC 评分。",
+    "entry": {
+      "text": "10 月 15 日 23:59 UTC → 北京 10/16 07:59",
+      "day": "2026-10-16",
+      "instant": "2026-10-15T23:59:00Z"
+    },
+    "submit": {
+      "text": "10 月 22 日 23:59 UTC → 北京 10/23 07:59",
+      "day": "2026-10-23",
+      "instant": "2026-10-22T23:59:00Z"
+    },
+    "requirements": "报名与组队同日截止；Notebook ≤9 小时、无网络。可用免费公开外部数据与预训练权重。",
+    "award": "$77,000 · 主榜 + 效率奖",
+    "url": "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection",
+    "status": "open",
+    "warning": "获奖须公开源码和权重，并提交讲解视频等材料。",
+    "note": "",
+    "priority": 1,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [
+      "RSNA Knee"
+    ],
+    "venue": "RSNA 2026"
+  },
+  {
+    "id": "lingbot",
+    "title": "蚂蚁灵波具身大模型挑战赛",
+    "platform": "天池",
+    "tags": [
+      "CV",
+      "大模型",
+      "具身 / 机器人"
+    ],
+    "task": "基于 LingBot-VLA 2.0 做仿真训练、泛化评测与真机适配。",
+    "entry": {
+      "text": "10 月 26 日",
+      "day": "2026-10-26",
+      "instant": null
+    },
+    "submit": {
+      "text": "初赛 10 月 26 日 24:00",
+      "day": "2026-10-26",
+      "instant": null
+    },
+    "requirements": "必须 2–5 人组队；全球企业、高校、个人开发者可参加。统一 6B 模型和 RoboTwin 2.0 clean 设定。",
+    "award": "¥280,000",
+    "url": "https://tianchi.aliyun.com/competition/entrance/532514",
+    "status": "open",
+    "warning": "官网未明确时区；入围队伍须参加 11/13–15 上海线下真机决赛。算力需自备或申请支持。",
+    "note": "",
+    "priority": 2,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [
+      "蚂蚁灵波"
+    ],
+    "venue": ""
+  },
+  {
+    "id": "opencv",
+    "title": "OpenCV AI Competition 2026",
+    "platform": "Devpost",
+    "tags": [
+      "CV",
+      "Agent",
+      "多模态"
+    ],
+    "task": "用 OpenCV 5 和 AWS 构建视觉系统或视觉智能体应用。",
+    "entry": {
+      "text": "报名入口开放；未单列截止",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "10 月 26 日 · Pacific（页面时刻冲突）",
+      "day": "2026-10-27",
+      "instant": null
+    },
+    "requirements": "面向达到法定年龄的开发者；作品需有实质 OpenCV 5 功能及 AWS 组件。交付可评审项目。",
+    "award": "现金奖与云资源支持，见官方分项",
+    "url": "https://opencv26.devpost.com/",
+    "status": "open",
+    "warning": "页面顶部为 10/26 23:45 PDT，说明为 23:59 Pacific；稳妥按较早时刻（北京 10/27 14:45）准备。",
+    "note": "",
+    "priority": 3,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [
+      "OpenCV AI"
+    ],
+    "venue": ""
+  },
+  {
+    "id": "arc3",
+    "title": "ARC Prize 2026 · ARC-AGI-3",
+    "platform": "Kaggle",
+    "tags": [
+      "大模型",
+      "Agent",
+      "CV"
+    ],
+    "task": "交互式环境中的抽象推理与智能体泛化。",
+    "entry": {
+      "text": "10 月 26 日 23:59 UTC → 北京 10/27 07:59",
+      "day": "2026-10-27",
+      "instant": "2026-10-26T23:59:00Z"
+    },
+    "submit": {
+      "text": "11 月 2 日 23:59 UTC → 北京 11/3 07:59",
+      "day": "2026-11-03",
+      "instant": "2026-11-02T23:59:00Z"
+    },
+    "requirements": "报名 / 组队同日截止；Notebook ≤9 小时、无网络。获奖方案必须开源。",
+    "award": "$850,000 上限，含 $700,000 条件大奖",
+    "url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3",
+    "status": "open",
+    "warning": "巨额大奖须达到官方 100% 准确率条件；不等于无条件发放的榜单奖金。9/30 另有可选里程碑。",
+    "note": "",
+    "priority": 5,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [
+      "ARC-AGI-3"
+    ],
+    "venue": ""
+  },
+  {
+    "id": "arc2",
+    "title": "ARC Prize 2026 · ARC-AGI-2",
+    "platform": "Kaggle",
+    "tags": [
+      "大模型",
+      "CV"
+    ],
+    "task": "少样本抽象视觉网格推理与泛化。",
+    "entry": {
+      "text": "10 月 26 日 23:59 UTC → 北京 10/27 07:59",
+      "day": "2026-10-27",
+      "instant": "2026-10-26T23:59:00Z"
+    },
+    "submit": {
+      "text": "11 月 2 日 23:59 UTC → 北京 11/3 07:59",
+      "day": "2026-11-03",
+      "instant": "2026-11-02T23:59:00Z"
+    },
+    "requirements": "Kaggle 代码赛；需接受赛事规则，报名 / 组队同日截止。获奖有开源义务。",
+    "award": "$700,000 上限，含条件奖金",
+    "url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-2",
+    "status": "open",
+    "warning": "",
+    "note": "",
+    "priority": 5,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [
+      "ARC-AGI-2"
+    ],
+    "venue": ""
+  },
+  {
+    "id": "aimo",
+    "title": "AIMO Interpretability Challenge",
+    "platform": "会议官网",
+    "tags": [
+      "大模型"
+    ],
+    "task": "判断模型数学推理是否对扰动稳健；主赛与小模型赛道。",
+    "entry": {
+      "text": "已开放；无单独提前报名节点",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "11 月 1 日；技术报告 11 月 15 日",
+      "day": "2026-11-01",
+      "instant": null
+    },
+    "requirements": "官方明确学术、独立研究者、产业均可；不限团队人数或单位。Codabench 离线评测包。",
+    "award": "$12,500（含技术报告奖）",
+    "url": "https://aimo-interp.github.io/",
+    "status": "open",
+    "warning": "官网未注明截止时刻 / 时区。参评奖项须开源、可复现，并参与报告互评。",
+    "note": "",
+    "priority": 1,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [
+      "AIMO Interpretability"
+    ],
+    "venue": "NeurIPS 2026"
+  },
+  {
+    "id": "gemma-paper",
+    "title": "Gemma 4 Developer Agent · Paper Track",
+    "platform": "Kaggle",
+    "tags": [
+      "大模型",
+      "Agent"
+    ],
+    "task": "代码理解、图推理、Agent 优化或评测任务的原创研究。",
+    "entry": {
+      "text": "论文赛入口开放；无额外提前节点",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "11 月 12 日 23:59 UTC → 北京 11/13 07:59",
+      "day": "2026-11-13",
+      "instant": "2026-11-12T23:59:00Z"
+    },
+    "requirements": "与主赛分开提交原创、未发表研究；不是主赛必须完成的环节。",
+    "award": "$35,000",
+    "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent-paper",
+    "status": "open",
+    "warning": "",
+    "note": "日期、奖项与研究范围已在主赛官方说明核对。",
+    "priority": 3,
+    "verifiedAt": "2026-09-27",
+    "sources": [
+      {
+        "label": "主赛官方论文规则",
+        "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent"
+      }
+    ],
+    "old": [
+      "Gemma 4 Developer Agent Paper"
+    ],
+    "venue": ""
+  },
+  {
+    "id": "solar",
+    "title": "Solar Filament Segmentation 2026",
+    "platform": "Kaggle",
+    "tags": [
+      "CV"
+    ],
+    "task": "太阳 H-alpha 图像暗条分割；可用学习方法或传统视觉方法。",
+    "entry": {
+      "text": "Join Competition 开放；未单列报名节点",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "11 月 15 日 · 最终方案和报告",
+      "day": "2026-11-15",
+      "instant": null
+    },
+    "requirements": "社区赛；提交分割方案及最终报告，按官方评测与复核规则参评。",
+    "award": "奖项见官方规则",
+    "url": "https://www.kaggle.com/competitions/filament-segmentation-2026",
+    "status": "open",
+    "warning": "正文未标明精确截止时刻 / 时区；会场交流与正式榜单提交是不同节点。",
+    "note": "",
+    "priority": 4,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [
+      "Solar Filament"
+    ],
+    "venue": ""
+  },
+  {
+    "id": "3lc",
+    "title": "3LC Low-Light Detection Challenge",
+    "platform": "Kaggle",
+    "tags": [
+      "CV"
+    ],
+    "task": "低光图像目标检测；固定模型，以人工审核标签和数据质量提升精度。",
+    "entry": {
+      "text": "Join Competition 开放；未单列提前报名节点",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "11 月 21 日 23:59 UTC → 北京 11/22 07:59",
+      "day": "2026-11-22",
+      "instant": "2026-11-21T23:59:00Z"
+    },
+    "requirements": "最多 4 人；固定 YOLOv11n。训练和提交须经本机 3LC 插件；需同机浏览器与持久运行环境。",
+    "award": "$2,000",
+    "url": "https://www.kaggle.com/competitions/the-3lc-low-light-detection-challenge",
+    "status": "open",
+    "warning": "不支持远程 GPU / 临时 Notebook 工作流；评奖表单及项目材料另需于 11/30 23:59 UTC 前提交。",
+    "note": "",
+    "priority": 2,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [
+      "3LC Low-Light"
+    ],
+    "venue": ""
+  },
+  {
+    "id": "steer",
+    "title": "The Steerability Challenge",
+    "platform": "会议官网",
+    "tags": [
+      "大模型"
+    ],
+    "task": "降低模型不诚实行为，同时保持任务能力；评测模型干预方案。",
+    "entry": {
+      "text": "参赛入口开放；未单列提前截止",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "11 月 21 日 AoE（官网口径）",
+      "day": "2026-11-22",
+      "instant": null
+    },
+    "requirements": "个人或最多 5 人；研究者、产业及爱好者可参加。提交 .spipe 方案并接受复现。",
+    "award": "奖项见官方公告",
+    "url": "https://steerability.github.io/competition/",
+    "status": "open",
+    "warning": "奖金另受所在地区等规则限制；并非所有 NeurIPS 比赛都在 10/31 截止。",
+    "note": "",
+    "priority": 2,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [
+      "Steerability"
+    ],
+    "venue": "NeurIPS 2026"
+  },
+  {
+    "id": "gemma",
+    "title": "Gemma 4 Developer Agent · 主赛",
+    "platform": "Kaggle",
+    "tags": [
+      "大模型",
+      "Agent"
+    ],
+    "task": "构建能理解代码仓库、修改代码并通过测试的软件工程 Agent。",
+    "entry": {
+      "text": "11 月 25 日 23:59 UTC → 北京 11/26 07:59",
+      "day": "2026-11-26",
+      "instant": "2026-11-25T23:59:00Z"
+    },
+    "submit": {
+      "text": "12 月 2 日 23:59 UTC → 北京 12/3 07:59",
+      "day": "2026-12-03",
+      "instant": "2026-12-02T23:59:00Z"
+    },
+    "requirements": "报名 / 组队同日截止；所有 Agent 统一指定 Gemma 4 31B 量化模型，可附 LoRA；须用赛事 harness。",
+    "award": "$65,000",
+    "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent",
+    "status": "open",
+    "warning": "",
+    "note": "",
+    "priority": 1,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [
+      "Gemma 4 Developer Agent Competition"
+    ],
+    "venue": ""
+  },
+  {
+    "id": "zhihu-table",
+    "title": "知乎知学堂 · 复杂表格识别与内容理解",
+    "platform": "天池",
+    "tags": [
+      "CV",
+      "大模型",
+      "多模态"
+    ],
+    "task": "从图片和 PDF 恢复复杂表格、提取内容并做简单推理，提交 Excel 结果。",
+    "entry": {
+      "text": "当前季度入口开放；准确截止待确认",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "季度赛；总活动页列至 12/31",
+      "day": null,
+      "instant": null
+    },
+    "requirements": "仅个人参赛；所有模型、工具与计算必须使用阿里云及 Qwen 体系，禁止本地部署或其他模型。",
+    "award": "每季度 ¥20,000",
+    "url": "https://tianchi.aliyun.com/competition/entrance/532510",
+    "status": "open",
+    "warning": "总活动结束日不是季度报名日。报名页仅给倒计时；另有课程及云资源要求，先确认成本和截止时间。",
+    "note": "",
+    "priority": 5,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [],
+    "venue": ""
+  },
+  {
+    "id": "uniagent",
+    "title": "CIKM 2026 AnalytiCup · UniAgent",
+    "platform": "会议官网",
+    "tags": [
+      "检索 / RAG",
+      "Agent",
+      "大模型"
+    ],
+    "task": "针对大学行政案例检索法规、规划步骤并产出解决方案。",
+    "entry": {
+      "text": "9 月 25 日 AoE · 已截止",
+      "day": "2026-09-26",
+      "instant": null
+    },
+    "submit": {
+      "text": "10 月 15 日 AoE · run 提交",
+      "day": "2026-10-16",
+      "instant": null
+    },
+    "requirements": "仅已注册队伍继续；TIRA / Docker 评测，需提交运行结果及对应材料。",
+    "award": "学术交流与任务成果",
+    "url": "https://uniagent.webis.de/cikm26/uniagent26-web/index.html",
+    "status": "submission",
+    "warning": "已纠正旧版 9/30 报名、10/23 提交说法。现在不能确认接受新队伍。",
+    "note": "",
+    "priority": 5,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [
+      "UniAgent"
+    ],
+    "venue": "CIKM 2026"
+  },
+  {
+    "id": "mast",
+    "title": "FIRE 2026 · MAST",
+    "platform": "会议官网",
+    "tags": [
+      "检索 / RAG",
+      "Agent",
+      "大模型"
+    ],
+    "task": "多语言 Agent 搜索证据并回答复杂问题。",
+    "entry": {
+      "text": "9 月 25 日 23:59 AoE · 已截止",
+      "day": "2026-09-26",
+      "instant": null
+    },
+    "submit": {
+      "text": "9 月 25 日 23:59 AoE · 已截止",
+      "day": "2026-09-26",
+      "instant": null
+    },
+    "requirements": "注册与 run 同日关闭；后续 working notes 为既有参赛队伍环节。",
+    "award": "共享任务论文与评测",
+    "url": "https://mast-benchmark.github.io/",
+    "status": "closed",
+    "warning": "旧版未收录；官网延期后的时间仍已过去。",
+    "note": "",
+    "priority": 5,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [],
+    "venue": "FIRE 2026"
+  },
+  {
+    "id": "roco",
+    "title": "RoCo-Spring · Robust Correspondence",
+    "platform": "会议官网",
+    "tags": [
+      "CV"
+    ],
+    "task": "测试光流、立体匹配与场景流在图像损坏下的鲁棒性。",
+    "entry": {
+      "text": "参赛论文 9 月 25 日 · 已过",
+      "day": "2026-09-25",
+      "instant": null
+    },
+    "submit": {
+      "text": "定量结果 9 月 30 日",
+      "day": "2026-09-30",
+      "instant": null
+    },
+    "requirements": "所有参赛方案都要求论文；仅按时完成前置论文要求的队伍可继续。",
+    "award": "学术评测与交流",
+    "url": "https://roco-spring.github.io/",
+    "status": "submission",
+    "warning": "官网时间标为暂定，时区未写；10/31 是结果通知，不是新参赛提交截止。",
+    "note": "",
+    "priority": 5,
+    "verifiedAt": "2026-09-27",
+    "sources": [
+      {
+        "label": "参赛与论文规则",
+        "url": "https://roco-spring.github.io/rules-faq.html"
+      }
+    ],
+    "old": [
+      "RoCo-Spring"
+    ],
+    "venue": "NeurIPS 2026"
+  },
+  {
+    "id": "cross-body",
+    "title": "跨本体具身认知极限联合挑战赛",
+    "platform": "天池",
+    "tags": [
+      "CV",
+      "大模型",
+      "具身 / 机器人"
+    ],
+    "task": "训练可迁移至不同机器人本体的统一策略。",
+    "entry": {
+      "text": "报名是否同步延期，待确认",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "公告将初赛 A 延至 10 月 21 日",
+      "day": "2026-10-21",
+      "instant": null
+    },
+    "requirements": "原规则为 1–3 人并实名认证。需要机器人策略开发、仿真及本体适配能力。",
+    "award": "¥100,000",
+    "url": "https://tianchi.aliyun.com/competition/entrance/532508",
+    "status": "unclear",
+    "warning": "9/22 延期公告仅明确初赛 A 延期；正文报名仍写 9/21 14:00，顶部却可报名。先确认新队伍资格。",
+    "note": "",
+    "priority": 5,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [
+      "跨本体"
+    ],
+    "venue": ""
+  },
+  {
+    "id": "industrial",
+    "title": "CSIG · 复杂工业场景异常检测",
+    "platform": "天池",
+    "tags": [
+      "CV"
+    ],
+    "task": "Real-IAD Variety 工业异常分类、分割和零样本泛化。",
+    "entry": {
+      "text": "页面仍有按钮，但正式评测已结束",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "B 榜 9 月 15 日 · 已过",
+      "day": "2026-09-15",
+      "instant": null
+    },
+    "requirements": "个人或最多 5 人；限赛事数据，获奖需代码复现及现场答辩。",
+    "award": "¥40,000",
+    "url": "https://tianchi.aliyun.com/competition/entrance/532482",
+    "status": "closed",
+    "warning": "不能仅凭“立即报名”按钮判断可参赛；正文已进入评审与决赛阶段。",
+    "note": "",
+    "priority": 5,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [],
+    "venue": "CSIG"
+  },
+  {
+    "id": "wsdm",
+    "title": "WSDM Cup 2027",
+    "platform": "会议官网",
+    "tags": [
+      "检索 / RAG",
+      "推荐 / 广告"
+    ],
+    "task": "关注后续公布的具体 Cup 赛题；当前是承办方提案阶段。",
+    "entry": {
+      "text": "选手报名窗口尚未确认",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "10 月 20 日为赛事提案截止，不是参赛截止",
+      "day": null,
+      "instant": null
+    },
+    "requirements": "任务、数据、参赛资格和选手日程待正式发布。",
+    "award": "待公布",
+    "url": "https://www.wsdm-conference.org/2027/",
+    "status": "upcoming",
+    "warning": "不再把惯例上的 11 月开赛当作已官宣日期。",
+    "note": "",
+    "priority": 5,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [
+      "WSDM Cup"
+    ],
+    "venue": "WSDM 2027"
+  },
+  {
+    "id": "newsrec",
+    "title": "零基础入门推荐系统 · 新闻推荐",
+    "platform": "天池",
+    "tags": [
+      "推荐 / 广告"
+    ],
+    "task": "用户点击日志的 Top-5 新闻推荐；原学习赛资料。",
+    "entry": {
+      "text": "详情页显示“已结束”",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "不作为当前可提交比赛",
+      "day": null,
+      "instant": null
+    },
+    "requirements": "可参考已有数据说明、baseline 与论坛；下载权限以平台为准。",
+    "award": "学习资料",
+    "url": "https://tianchi.aliyun.com/competition/entrance/531842/information",
+    "status": "closed",
+    "warning": "搜索结果中的旧直播“报名”链接不代表今天仍开放。",
+    "note": "",
+    "priority": 5,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [],
+    "venue": ""
+  },
+  {
+    "id": "umud",
+    "title": "UMUD · 肌肉超声结构分析",
+    "platform": "Kaggle",
+    "tags": [
+      "CV",
+      "医学"
+    ],
+    "task": "从超声图像 / 视频帧估计肌厚、羽状角及肌束参数。",
+    "entry": {
+      "text": "Join Competition 存在；精确窗口待核",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "本次未从正文取得精确截止时间",
+      "day": null,
+      "instant": null
+    },
+    "requirements": "社区预测赛；前三名需提供可复现的公开代码仓库。",
+    "award": "$3,000（平台列表）",
+    "url": "https://www.kaggle.com/competitions/umud-challenge-muscle-architecture-in-ultrasound-data",
+    "status": "unclear",
+    "warning": "保留作为候选；补全时间与资格后再计入可参赛清单。",
+    "note": "",
+    "priority": 5,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [
+      "UMUD"
+    ],
+    "venue": ""
+  },
+  {
+    "id": "biohub",
+    "title": "Biohub · Cell Tracking During Development",
+    "platform": "Kaggle",
+    "tags": [
+      "CV",
+      "医学",
+      "3D"
+    ],
+    "task": "胚胎发育影像中的细胞追踪。",
+    "entry": {
+      "text": "9 月 22 日 23:59 UTC → 北京 9/23 07:59 · 已过",
+      "day": "2026-09-23",
+      "instant": "2026-09-22T23:59:00Z"
+    },
+    "submit": {
+      "text": "9 月 29 日 23:59 UTC → 北京 9/30 07:59",
+      "day": "2026-09-30",
+      "instant": "2026-09-29T23:59:00Z"
+    },
+    "requirements": "仅已报名队伍可继续；Notebook ≤12 小时、禁联网，允许免费公开的外部数据与权重。",
+    "award": "$60,000",
+    "url": "https://www.kaggle.com/competitions/biohub-cell-tracking-during-development",
+    "status": "submission",
+    "warning": "",
+    "note": "",
+    "priority": 5,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [
+      "Biohub"
+    ],
+    "venue": ""
+  },
+  {
+    "id": "kaggriculture",
+    "title": "Kaggriculture",
+    "platform": "Kaggle",
+    "tags": [
+      "Agent"
+    ],
+    "task": "编写在农业策略游戏中与其他机器人对抗的智能体。",
+    "entry": {
+      "text": "9 月 23 日 23:59 UTC → 北京 9/24 07:59 · 已过",
+      "day": "2026-09-24",
+      "instant": "2026-09-23T23:59:00Z"
+    },
+    "submit": {
+      "text": "9 月 30 日 23:59 UTC → 北京 10/1 07:59",
+      "day": "2026-10-01",
+      "instant": "2026-09-30T23:59:00Z"
+    },
+    "requirements": "仅已报名队伍可继续；提交 bot，截止后还会运行对局至榜单收敛。",
+    "award": "$50,000",
+    "url": "https://www.kaggle.com/competitions/kaggriculture",
+    "status": "submission",
+    "warning": "10 月榜单收敛阶段不是新报名或提交窗口。",
+    "note": "",
+    "priority": 5,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [
+      "Kaggriculture"
+    ],
+    "venue": ""
+  },
+  {
+    "id": "llm-practice",
+    "title": "LLM Classification Finetuning",
+    "platform": "Kaggle",
+    "tags": [
+      "大模型"
+    ],
+    "task": "用 Chatbot Arena 对话预测人类更喜欢的模型回答。",
+    "entry": {
+      "text": "Getting Started · Ongoing",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "长期练习，无本届奖金赛截止",
+      "day": null,
+      "instant": null
+    },
+    "requirements": "Kaggle 入门代码赛；按当前规则训练与提交。",
+    "award": "Knowledge · 学习练习",
+    "url": "https://www.kaggle.com/competitions/llm-classification-finetuning",
+    "status": "practice",
+    "warning": "这是长期入门赛，不与限时奖金赛混算。",
+    "note": "",
+    "priority": 5,
+    "verifiedAt": "2026-09-27",
+    "sources": [],
+    "old": [
+      "LLM Classification"
+    ],
+    "venue": ""
+  },
+  {
+    "id": "lightmycells2",
+    "title": "Light My Cells 2 · 透射光→荧光预测",
+    "platform": "会议官网",
+    "tags": [
+      "CV",
+      "医学"
+    ],
+    "task": "从无标记透射光显微图（BF/PC/DIC）预测 4 种细胞结构的荧光图（核、线粒体、微管、肌动蛋白）；新增任务：从图像堆栈重建荧光最大强度投影（MIP）。鼓励新架构、新损失函数与元数据感知训练策略。",
+    "entry": {
+      "text": "验证阶段已开放（9/21 起）；无单独报名截止",
+      "day": "2026-09-21",
+      "instant": null
+    },
+    "submit": {
+      "text": "验证期 9/21–11/30（可提交 5 次）· 评测期 12/1–13 仅 1 次 · 结果 12/18",
+      "day": "2026-12-13",
+      "instant": null
+    },
+    "requirements": "通过 grand-challenge 平台以算法容器提交（Docker 或可构建的 GitHub 仓库）。训练集 76 组研究、15 万+ 张图，数据含多中心、多显微镜、多细胞系的不均匀性与通道缺失。",
+    "award": "榜单排名（SSIM + PCC 按细胞器分别排名后取平均）；另设代码质量与可及性、轻量模型、训练/推理效率、元数据感知策略、AI 碳足迹等附加奖。关联 ISBI 2027。",
+    "url": "https://lightmycells2.grand-challenge.org/lightmycells2/",
+    "status": "open",
+    "warning": "评测期只有 1 次提交机会，需在验证期充分调优再交。榜单之外还有多个附加奖，值得单独准备材料。",
+    "note": "",
+    "priority": 2,
+    "verifiedAt": "2026-09-27",
+    "sources": [
+      "https://lightmycells2.grand-challenge.org/lightmycells2/",
+      "https://france-bioimaging.org/fbi-special-events/france-bioimaging-light-my-cells-2-challenge-is-open"
+    ],
+    "old": [],
+    "venue": "ISBI 2027"
+  },
+  {
+    "id": "virtual-embryo",
+    "title": "Virtual Embryo Challenge · NeurIPS 2026",
+    "platform": "会议官网",
+    "tags": [
+      "大模型",
+      "3D"
+    ],
+    "task": "预测胚胎发育在空间、尺度、时间与扰动下的变化，三个任务：T1 时间基因表达分布预测、T2 时空多尺度联合预测（心脏与整体胚胎分开计分）、T3 突变扰动预测。约 100 万细胞、11 个时间点。",
+    "entry": {
+      "text": "报名入口已开放（8/10 起）；无单独报名截止",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "测试期 10/20 开始（验证集放出、测试榜开放）；测试集真值隐藏，结果在 NeurIPS 2026 workshop 公布",
+      "day": "2026-10-20",
+      "instant": null
+    },
+    "requirements": "不参赛也可拿社区贡献奖。每个任务最多 2 次正式测试提交，提交后锁定。分 Human Team 与 Agent Team 两条独立赛道（Agent 赛道须由编码 agent / LLM 进化系统自行完成，需提交 trajectory、prompt 与 harness 代码，不可人工回灌判断）。",
+    "award": "$112K 总奖池：名次奖 $54K（每赛道 $27K，各含 1 个 $8K 一等奖 / 2 个 $5K 二等奖 / 3 个 $3K 三等奖）+ 通用性奖 $8K（用同一架构解多个任务）+ 差旅奖 $30K（15–20 名早期研究者）+ 社区贡献奖 $20K（教程、notebook、工具等，单项最高 $200，不限参赛者）",
+    "url": "https://virtualembryo.ai/challenge",
+    "status": "open",
+    "warning": "Agent 赛道要求提交可复现证据（轨迹、prompt、harness 代码），无法验证的方案不予评奖；社区贡献奖不参赛也能拿。",
+    "note": "",
+    "priority": 3,
+    "verifiedAt": "2026-09-27",
+    "sources": [
+      "https://virtualembryo.ai/challenge"
+    ],
+    "old": [],
+    "venue": "NeurIPS 2026"
+  },
+  {
+    "id": "robosyn-challenge",
+    "title": "RoboSynChallenge · NeurIPS 2026",
+    "platform": "会议官网",
+    "tags": [
+      "CV",
+      "具身 / 机器人"
+    ],
+    "task": "用可扩展的合成数据 + 少量真机示教训练操作策略，先在仿真里通过资格赛，再在统一的双臂真机平台上验证泛化。10 个官方任务分入门/中/高三档。",
+    "entry": {
+      "text": "报名 7/13 已开放；无单独报名截止",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "预赛提交截止 10/11 · 仿真评测 10/11–25 · 10/25 公布约 30–40 支决赛队 · 模型更新至 11/15 · 11/15 起真机终评",
+      "day": "2026-10-11",
+      "instant": null
+    },
+    "requirements": "预赛全程在仿真里完成，不需要机器人；仅决赛队在统一真机平台上评测。评审指标：任务成功率、动作步数（执行效率）、推理时间、策略运行时。",
+    "award": "12 月初于 NeurIPS 2026 现场颁奖并展示；官方提供代码库、教程、数据与 baseline。",
+    "url": "https://robosyn-bench.net/",
+    "status": "open",
+    "warning": "10/25 只公布约 30–40 支决赛队，未入围则止步；决赛需在真机平台复现，提前确认你能配合的提交节奏。",
+    "note": "",
+    "priority": 4,
+    "verifiedAt": "2026-09-27",
+    "sources": [
+      "https://robosyn-bench.net/"
+    ],
+    "old": [],
+    "venue": "NeurIPS 2026"
+  },
+  {
+    "id": "sapc2",
+    "title": "Speech Accessibility Project Challenge 2",
+    "platform": "会议官网",
+    "tags": [
+      "大模型"
+    ],
+    "task": "构音障碍语音识别（dysarthric ASR），从离线走向实时。两条赛道：无约束 ASR（任意模型规模，追 SOTA）、流式 ASR（比精度-延迟帕累托）。上一届最佳系统把 WER 从 Whisper-large-v2 基线的 17.82% 降到 8.11%。",
+    "entry": {
+      "text": "报名无明确截止；但须先申请数据",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "竞赛提交 10/24 AoE（北京 10/25 19:59）· Workshop 论文 10/31 AoE · 录取通知 11/7",
+      "day": "2026-10-24",
+      "instant": "2026-10-25T19:59:00+08:00"
+    },
+    "requirements": "先填团队注册表，再提交 Data Transfer and Use Agreement（DUA）与一页提案申请数据访问；官方提供启动套件与本地解码脚本。通过 Codabench 提交模型参数与推理代码。",
+    "award": "总奖金 $10,000，由 test2 留存集上位于「精度-延迟」帕累托前沿的团队均分。无约束赛道恰好 1 个非流式系统获奖；流式赛道可 1 个或多个。另可提交 3–6 页非存档 Workshop 论文。",
+    "url": "https://xiuwenz2.github.io/SAPC2-website/",
+    "status": "open",
+    "warning": "数据访问申请（DUA + 一页提案）审批通常要 2–4 周，提交截止 10/24 只剩约 4 周——现在才启动必须先确认数据能否及时拿到。",
+    "note": "",
+    "priority": 3,
+    "verifiedAt": "2026-09-27",
+    "sources": [
+      "https://xiuwenz2.github.io/SAPC2-website/"
+    ],
+    "old": [],
+    "venue": "NeurIPS 2026"
+  },
+  {
+    "id": "paiec",
+    "title": "Predictive AI Evaluation Competition · NeurIPS 2026",
+    "platform": "会议官网",
+    "tags": [
+      "Agent",
+      "大模型"
+    ],
+    "task": "从 AI 系统属性与基准项目属性预测未观测到的响应概率，不需要真的把模型跑在该项目上。按基准级冷启动评估，指标为 Brier ALC（学习曲线下面积，越低越好），在标签预算 0/1/3/7/15/31 下测量。",
+    "entry": {
+      "text": "报名无明确截止；须填团队注册表并经组织者批准",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "最终代码库与技术报告截止 10/30 23:59 AoE（北京 10/31 19:59），并邮件指定哪一份 Codabench 提交参与终评",
+      "day": "2026-10-30",
+      "instant": "2026-10-31T19:59:00+08:00"
+    },
+    "requirements": "不限学生、不限机构，鼓励跨机构组队，每队最多 6 人，每人只能进一支队伍。提交须用 Python，网络仅限批准的推理 API；单次运行上限 8 小时，最多挂 5 个模型仓库（合计 1024 GB），运行时不能下载模型，需自备算力与 API key。",
+    "award": "无现金奖金。NeurIPS 竞赛 session 含 5 场口头报告（约 60 分钟）+ 海报环节；评选主要看技术报告质量，其次预测性能与对数据整理/社区的贡献。",
+    "url": "https://aimslab.stanford.edu/competition",
+    "status": "open",
+    "warning": "无奖金，权益是 NeurIPS 现场报告机会；技术报告按 NeurIPS Evaluations & Datasets 审稿指南评估且不做正式同行评审。报名需组织者批准，别拖到截止前才注册。",
+    "note": "",
+    "priority": 4,
+    "verifiedAt": "2026-09-27",
+    "sources": [
+      "https://aimslab.stanford.edu/competition"
+    ],
+    "old": [],
+    "venue": "NeurIPS 2026"
+  },
+  {
+    "id": "iwdd-2027",
+    "title": "IWDD Contest 2027 · 非法倾倒检测（WACV 2027 workshop）",
+    "platform": "会议官网",
+    "tags": [
+      "CV"
+    ],
+    "task": "固定 CCTV 摄像头视频中的实时非法倾倒检测，需可部署到智能相机或嵌入式设备。区分静态堆放与动态抛掷两类行为。数据集 MIVIA-IWDD 共 500 段视频（250 正 / 250 负，完全平衡），正样本带倾倒时刻的时间标注。",
+    "entry": {
+      "text": "邮件报名索取训练集，无单独报名截止",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "方法提交 10/10（邮件）· 竞赛论文提交 10/15 · 通知 10/30 · Camera-ready 11/15",
+      "day": "2026-10-10",
+      "instant": null
+    },
+    "requirements": "提交包含 test.py（读视频目录、输出每段视频的检测时刻 TXT）、test.ipynb（装依赖并执行）、训练好的模型与全部支持文件的压缩包。评测在 Google Colab 上跑私有测试集。允许并鼓励使用额外外部数据。",
+    "award": "论文可投 WACV 2027 workshop，录用进 WACV 2027 Workshops Proceedings。主指标 F1；F1 相近时以 GPU 显存占用为次要判据（越省越好）。",
+    "url": "https://mivia.unisa.it/iwddcontest2027/",
+    "status": "open",
+    "warning": "提交方式与常见平台不同：靠邮件交压缩包，且评测在 Colab 里跑，必须自带 test.ipynb 与依赖说明。检测时刻有 3 秒宽容、超 10 秒作废，属于早期检测导向。",
+    "note": "",
+    "priority": 4,
+    "verifiedAt": "2026-09-27",
+    "sources": [
+      "https://mivia.unisa.it/iwddcontest2027/"
+    ],
+    "old": [],
+    "venue": "WACV 2027"
+  },
+  {
+    "id": "enveda-casmi26",
+    "title": "Enveda CASMI 2026 · 质谱预测分子结构",
+    "platform": "Kaggle",
+    "tags": [
+      "大模型"
+    ],
+    "task": "从复杂生物提取物的质谱预测小分子的 2D 化学结构。Kaggle 代码竞赛（Code Competition）。",
+    "entry": {
+      "text": "已开赛（约 9/15 起）；Kaggle 的 Merger & Entry 独立计时",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "约剩 3 个月，截止约 12/14",
+      "day": "2026-12-14",
+      "instant": null
+    },
+    "requirements": "Kaggle 账号 + 身份验证；以 notebook 提交（Code Competition），受每日提交次数限制。",
+    "award": "$50,000（首名 $16,000，前五名分层）· 奖项积分与奖牌",
+    "url": "https://www.kaggle.com/competitions/enveda-CASMI26-molecule-id-mass-spectra",
+    "status": "open",
+    "warning": "Kaggle 的 Entry 与最终提交是两条线，要以 Entry 那行为准判断还能不能加入；当前 1615 支队伍。",
+    "note": "",
+    "priority": 4,
+    "verifiedAt": "2026-09-27",
+    "sources": [
+      "https://www.kaggle.com/competitions/enveda-CASMI26-molecule-id-mass-spectra"
+    ],
+    "old": [],
+    "venue": "CASMI 2026"
+  },
+  {
+    "id": "tianchi-aftershock",
+    "title": "天池 · 余震预测技术国际大赛",
+    "platform": "天池",
+    "tags": [
+      "大模型"
+    ],
+    "task": "预测全球 Mw≥6.0 强震后特定时间窗内余震的最大震级与发生时间。排名赛阶段按月对 6.0 级以上地震后 7 天内 3 个时间窗提交预测。",
+    "entry": {
+      "text": "报名已于北京时间 6/1 8:00 截止（UTC 5/31 24:00）；页面残留的报名倒计时与「立即报名」按钮是旧数据",
+      "day": "2026-06-01",
+      "instant": "2026-06-01T08:00:00+08:00"
+    },
+    "submit": {
+      "text": "排名赛 6/1–11/30 进行中，按月提交预测；排名赛后专家组遴选 10 次地震计算累计总分",
+      "day": "2026-11-30",
+      "instant": null
+    },
+    "requirements": "面向全球公众开放，个人或团队最多 5 人，鼓励跨学科跨机构组队，每人只能加入一支队伍。需在天池平台注册并实名认证。",
+    "award": "总奖金 $30,000：一等 1 名 $10,000、二等 2 名各 $5,000、三等 5 名各 $2,000，均发获奖证书。",
+    "url": "https://tianchi.aliyun.com/competition/entrance/532460",
+    "status": "submission",
+    "warning": "报名已截止，现在无法加入；页面顶部的报名倒计时与按钮是残留数据，公告明确「页面如有显示冲突以通知为准」。已在队内的需按月提交，漏月无成绩。",
+    "note": "",
+    "priority": 5,
+    "verifiedAt": "2026-09-27",
+    "sources": [
+      "https://tianchi.aliyun.com/competition/entrance/532460"
+    ],
+    "old": [
+      {
+        "text": "原清单记为「至 10/31 仍开放报名」",
+        "reason": "实际报名 6/1 已截止，仅排名赛进行至 11/30"
+      }
+    ],
+    "venue": ""
+  },
+  {
+    "id": "climx",
+    "title": "ClimX · 极端气候模式模拟",
+    "platform": "Kaggle",
+    "tags": [
+      "大模型"
+    ],
+    "task": "用 ML 模拟 NorESM2-MM 地球系统模式对温室气体与气溶胶强迫的响应，在留出的未来情景下按 15 项气候极端指数（热浪、干旱、洪涝）评分。除主赛道外另有可选的不确定性量化（UQ）赛道。",
+    "entry": {
+      "text": "已开赛（9/1 起）",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "9/1 – 11/30",
+      "day": "2026-11-30",
+      "instant": null
+    },
+    "requirements": "Kaggle 账号；提供轻量版与全分辨率双档数据集、starter kit 与 baseline。",
+    "award": "主赛道前列队伍有有条件奖金与差旅支持。",
+    "url": "https://www.kaggle.com/competitions/climx-main-track",
+    "status": "open",
+    "warning": "奖金为有条件发放（组织方公告口径），具体条款需在 Kaggle 规则页确认。",
+    "note": "",
+    "priority": 4,
+    "verifiedAt": "2026-09-27",
+    "sources": [
+      "https://www.kaggle.com/competitions/climx-main-track"
+    ],
+    "old": [],
+    "venue": ""
+  },
+  {
+    "id": "chimera-agent",
+    "title": "CHIMERA-agent · 前列腺癌诊疗 Agent 挑战赛",
+    "platform": "会议官网",
+    "venue": "MICCAI 2026",
+    "tags": [
+      "医学",
+      "Agent",
+      "多模态"
+    ],
+    "task": "把前列腺癌诊疗建模为三个连续临床决策点：T1 活检前是否建议穿刺（仅 mpMRI 报告 + 基础临床变量）、T2 活检后风险分层（MRI + 病理 + 临床，按 EAU/NCCN 指南推荐主动监测/继续监测/等待观察/积极治疗）、T3 根治性前列腺切除术后生化复发（BCR）时间依赖风险预测。数据刻意包含缺失模态、纵向多次检查与跨模态冲突。",
+    "entry": {
+      "text": "开发阶段进行中；Debug 通道开放至 12/18 22:59，正式阶段时间线以子站为准",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "Debug 提交开放至 12/18 22:59；MICCAI 2026 半日 workshop 于 10/1 现场举行",
+      "day": "2026-12-18",
+      "instant": "2026-12-18T22:59:00+01:00"
+    },
+    "requirements": "以 JSON 提交，每例输出两个文件：预测 + **结构化推理链**（约 5KB）。推理要与该例的结构化输入字段对应，编造/矛盾/无法支撑的发现会被扣分；高分方案由临床专家额外评审推理的临床合理性。官方提供预训练模态工具（MRI 前列腺分区分割、活检与切除标本 Gleason 自动分级、MRI csPCa 检测）与逐例临床变量，不要求从零训练。",
+    "award": "MICCAI 2026 workshop 现场展示；无现金奖金说明。冠军级方案需能通过推理合理性评审。",
+    "url": "https://chimera-agent.grand-challenge.org/",
+    "status": "open",
+    "warning": "核心评分不止预测准确率，还评「推理链」——高准确但编造理由的方案排名会被压低。刻意设置缺失模态，需设计能处理不完整信息的 agent 策略。",
+    "note": "",
+    "priority": 2,
+    "verifiedAt": "2026-09-27",
+    "sources": [
+      "https://chimera-agent.grand-challenge.org/"
+    ],
+    "old": []
+  },
+  {
+    "id": "selma3d-2026",
+    "title": "SELMA3D 2026 · 3D 光片显微图像自监督分割",
+    "platform": "会议官网",
+    "venue": "MICCAI 2026",
+    "tags": [
+      "CV",
+      "医学",
+      "3D"
+    ],
+    "task": "3D light-sheet 显微图像的自监督学习（SSL）分割（MICCAI 2026 线下 satellite event）。分 preliminary test 与 final test 两个榜单。",
+    "entry": {
+      "text": "报名自 4/9 开放；训练集已放出",
+      "day": "2026-04-09",
+      "instant": null
+    },
+    "submit": {
+      "text": "preliminary test 提交与榜单 8/11–9/30 · final test 提交 9/14–9/30 · 现场活动 10/1",
+      "day": "2026-09-30",
+      "instant": null
+    },
+    "requirements": "通过 grand-challenge 平台提交（容器化算法）。训练集 4/23 放出，preliminary test 样本 6/1 放出、final test 样本 9/9 放出。",
+    "award": "MICCAI 2026 线下 challenge 活动现场展示与排名。",
+    "url": "https://selma3d2026.grand-challenge.org/timeline/",
+    "status": "open",
+    "warning": "final test 提交 9/30 截止，只剩 3 天；现场活动 10/1。这是 3D 显微图像分割，与 3D 点云/体数据方法可迁移。",
+    "note": "",
+    "priority": 2,
+    "verifiedAt": "2026-09-27",
+    "sources": [
+      "https://selma3d2026.grand-challenge.org/timeline/"
+    ],
+    "old": []
+  },
+  {
+    "id": "arc-whitebox",
+    "title": "ARC White-Box Estimation Challenge 2026",
+    "platform": "AIcrowd",
+    "venue": "",
+    "tags": [
+      "大模型"
+    ],
+    "task": "白盒机制估计：给定神经网络的权重，预测其期望的逐神经元激活值，要求比多次实际运行更精确。属可解释性 / 机制可解释（mechanistic interpretability）方向的定量基准。",
+    "entry": {
+      "text": "已开赛（Phase 1 已过）",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "Phase 2 进行中，约剩 21 天（约至 10/18）",
+      "day": "2026-10-18",
+      "instant": null
+    },
+    "requirements": "AIcrowd 平台注册参赛；当前 115 支队伍 / 1030 名参与者 / 2.28 万次提交。",
+    "award": "$150,000+ 总奖池（Alignment Research Center 主办）",
+    "url": "https://www.aicrowd.com/challenges/arc-white-box-estimation-challenge-2026",
+    "status": "open",
+    "warning": "截止日由页面「剩余 21 天」推算，需在 AIcrowd 赛事页确认确切日期。本条是通过新纳入的固定源（AIcrowd）发现的。",
+    "note": "",
+    "priority": 3,
+    "verifiedAt": "2026-09-27",
+    "sources": [
+      "https://www.aicrowd.com/challenges/arc-white-box-estimation-challenge-2026"
+    ],
+    "old": []
+  },
+  {
+    "id": "clear-ec",
+    "title": "CLEAR-EC · 角膜内皮图像质量评估",
+    "platform": "会议官网",
+    "venue": "",
+    "tags": [
+      "CV",
+      "医学"
+    ],
+    "task": "从角膜内皮镜（specular microscopy）图像预测三项移植物质量指标：细胞密度 CD、变异系数 CV、六角形细胞比例 HEX。目标是替代眼库手工逐格计数的流程，让移植评估更快、更标准化、可规模化。",
+    "entry": {
+      "text": "报名 7/15 开放，Phase I 已截止",
+      "day": "2026-07-15",
+      "instant": null
+    },
+    "submit": {
+      "text": "Phase I 提交 9/14 已截止 · Phase I 评估 9/30 前 5 队晋级 · Phase II 紧随其后（当前 debug 通道开放至 10/14 16:00）",
+      "day": "2026-10-14",
+      "instant": "2026-10-14T16:00:00+02:00"
+    },
+    "requirements": "容器化算法提交到 grand-challenge，对隐藏测试集逐图跑。训练集在 Zenodo 公开（含 CD/CV/HEX 真值），官方给 baseline（图像加载 → 细胞分割 → 指标计算）。Phase I 最多 3 次提交、Phase II 最多 2 次。",
+    "award": "最优模型将被**放到眼库试点**（pilot）；排名指标为三项指标平均绝对百分误差（越低越好）。",
+    "url": "https://clear-ec.grand-challenge.org/",
+    "status": "submission",
+    "warning": "Phase I 提交 9/14 已截止，Phase II 只对前 5 队开放——现在新队伍无法加入，只能等下一届。指标是回归型（CD/CV/HEX 三个连续值），与常见的分类/分割赛不同。",
+    "note": "",
+    "priority": 4,
+    "verifiedAt": "2026-09-27",
+    "sources": [
+      "https://clear-ec.grand-challenge.org/"
+    ],
+    "old": []
+  },
+  {
+    "id": "topbrain-v2",
+    "title": "TopBrain Segmentation Challenge V2 · 全脑血管解剖分割",
+    "platform": "会议官网",
+    "venue": "",
+    "tags": [
+      "CV",
+      "医学",
+      "3D"
+    ],
+    "task": "全脑血管解剖（CTA）分割。第二版，含 validation 榜单与 FinalTest 阶段。",
+    "entry": {
+      "text": "报名已开放（当前可提交 validation）",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "FinalTest 提交通道 12/11 23:00 开启",
+      "day": "2026-12-11",
+      "instant": null
+    },
+    "requirements": "grand-challenge 容器化算法提交；当前 154 名参与者、48 条 validation 结果。",
+    "award": "榜单排名；已有配套论文（TopBrain Segmentation Challenge for Whole Brain Vessel Anatomy）。",
+    "url": "https://topbrain2026.grand-challenge.org/",
+    "status": "open",
+    "warning": "列表页显示的是「FinalTest 通道 12/11 开启」，不等于现在不能做 validation——建议先跑 validation 榜再等 FinalTest。",
+    "note": "",
+    "priority": 4,
+    "verifiedAt": "2026-09-27",
+    "sources": [
+      "https://grand-challenge.org/challenges/"
+    ],
+    "old": []
+  },
+  {
+    "id": "cobra2026",
+    "title": "COBRA2026 · 盆腔锥形束 CT 重建",
+    "platform": "会议官网",
+    "venue": "",
+    "tags": [
+      "CV",
+      "医学",
+      "3D"
+    ],
+    "task": "放疗场景下的盆腔锥形束 CT（CBCT）重建。配套论文 COBRA2026 提供了一个大规模多中心盆腔 CBCT 投影数据集。",
+    "entry": {
+      "text": "报名已开放（validation 阶段可提交）",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "Test 阶段提交 2027/1/15 23:01 开启",
+      "day": "2027-01-15",
+      "instant": null
+    },
+    "requirements": "grand-challenge 容器化算法提交；当前 147 名参与者。数据集已在 arXiv 公开（arXiv:2607.20037）。",
+    "award": "榜单排名与论文署名机会。",
+    "url": "https://cobra2026.grand-challenge.org/",
+    "status": "open",
+    "warning": "Test 阶段要到 2027/1/15 才开，时间跨度长；与口腔 CBCT 同属锥形束 CT 重建，方法层面可借鉴。",
+    "note": "",
+    "priority": 4,
+    "verifiedAt": "2026-09-27",
+    "sources": [
+      "https://grand-challenge.org/challenges/"
+    ],
+    "old": []
+  },
+  {
+    "id": "dalphin",
+    "title": "DALPHIN · 数字病理 AI Copilot 基准",
+    "platform": "会议官网",
+    "venue": "",
+    "tags": [
+      "医学",
+      "多模态"
+    ],
+    "task": "在开放的多中心数据集上，把数字病理 AI Copilot 的表现与病理学家做基准对比。属「AI vs 专家」类基准赛。",
+    "entry": {
+      "text": "开放提交中",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "长期开放（43 名参与者、100 条结果）",
+      "day": null,
+      "instant": null
+    },
+    "requirements": "grand-challenge 平台提交。数据集为开放多中心数字病理（配套论文 arXiv:2605.03544）。",
+    "award": "榜单排名；适合做基线引用。",
+    "url": "https://dalphin.grand-challenge.org/",
+    "status": "open",
+    "warning": "页面只写 accepting submissions，未列具体截止日；长期开放型赛事，投入产出比需自己衡量。",
+    "note": "",
+    "priority": 4,
+    "verifiedAt": "2026-09-27",
+    "sources": [
+      "https://grand-challenge.org/challenges/"
+    ],
+    "old": []
+  },
+  {
+    "id": "beetle",
+    "title": "BEETLE · 乳腺癌 H&E 切片分割",
+    "platform": "会议官网",
+    "venue": "",
+    "tags": [
+      "CV",
+      "医学"
+    ],
+    "task": "H&E 染色病理切片中的乳腺癌区域分割，基于多中心数据集（配套论文 arXiv:2510.02037，A Multicentric Dataset for Training and Benchmarking Breast Cancer Segmentation in H&E Slides）。",
+    "entry": {
+      "text": "开放提交中",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "长期开放（204 名参与者、150 条结果）",
+      "day": null,
+      "instant": null
+    },
+    "requirements": "grand-challenge 平台提交。",
+    "award": "榜单排名。",
+    "url": "https://beetle.grand-challenge.org/",
+    "status": "open",
+    "warning": "页面只写 accepting submissions，未列截止日。",
+    "note": "",
+    "priority": 4,
+    "verifiedAt": "2026-09-27",
+    "sources": [
+      "https://grand-challenge.org/challenges/"
+    ],
+    "old": []
+  },
+  {
+    "id": "lunovo26",
+    "title": "LUNOVO26 · 肺结节体积测量",
+    "platform": "会议官网",
+    "venue": "",
+    "tags": [
+      "医学",
+      "3D"
+    ],
+    "task": "肺结节体积测量（Lung Nodule Volumetry）——体积测量精度直接影响随访与良恶性判断。",
+    "entry": {
+      "text": "开放提交中（当前仅 6 名参与者）",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "debug 阶段开放中，正式阶段截止日需在子站确认",
+      "day": null,
+      "instant": null
+    },
+    "requirements": "grand-challenge 平台提交。",
+    "award": "榜单排名。",
+    "url": "https://lunovo26.grand-challenge.org/",
+    "status": "open",
+    "warning": "**资格限制：明确只对持有 CE 认证产品的厂商开放，普通开发者无法报名**——本条收录但保留资格说明，按「唯一排除规则是仅限学生」的口径不作排除。",
+    "note": "",
+    "priority": 5,
+    "verifiedAt": "2026-09-27",
+    "sources": [
+      "https://grand-challenge.org/challenges/"
+    ],
+    "old": []
+  }
+]
