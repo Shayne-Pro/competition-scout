@@ -89,8 +89,21 @@ def main():
         "upcoming_to_open": upcoming_live,
         "due7": [t[0] + " (" + t[2] + ")" for t in due7],
     }
-    with open(BASE / "runs-log.jsonl", "a", encoding="utf-8") as f:
-        f.write(json.dumps(log, ensure_ascii=False) + "\n")
+    with open(BASE / "runs-log.jsonl", encoding="utf-8") as f:
+        lines = [l for l in f.read().splitlines() if l.strip()]
+    entry = json.dumps(log, ensure_ascii=False)
+    # 同一天多次运行（Actions + 本地任务）只保留最后一条
+    kept = []
+    for l in lines:
+        try:
+            if json.loads(l).get("date") == TODAY.isoformat():
+                continue
+        except Exception:
+            pass
+        kept.append(l)
+    kept.append(entry)
+    with open(BASE / "runs-log.jsonl", "w", encoding="utf-8") as f:
+        f.write("\n".join(kept) + "\n")
 
     print(json.dumps(log, ensure_ascii=False, indent=2))
     return 0
