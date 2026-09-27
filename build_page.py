@@ -19,6 +19,16 @@ SHOW_FOOTER = False
 events = json.load(open(SRC / "events.json", encoding="utf-8"))
 # 基准日期默认取「今天」（可被环境变量覆盖，便于复现历史构建或测试）。
 TODAY = datetime.date.fromisoformat(os.environ.get("BUILD_TODAY", datetime.date.today().isoformat()))
+# 核验时刻精确到秒（北京时间）：优先取 refresh-status.json 的 finishedAt（AI 核验完成时刻），
+# 无记录时用构建时刻。BUILD_NOW 可覆盖用于测试。
+_now_raw = os.environ.get("BUILD_NOW") or (
+    json.loads((SRC / "refresh-status.json").read_text(encoding="utf-8")).get("finishedAt")
+    if (SRC / "refresh-status.json").exists() else None)
+try:
+    _now = datetime.datetime.fromisoformat(str(_now_raw)) if _now_raw else datetime.datetime.now().astimezone()
+except ValueError:
+    _now = datetime.datetime.now().astimezone()
+NOW_DISPLAY = _now.astimezone(datetime.timezone(datetime.timedelta(hours=8))).strftime("%Y-%m-%d %H:%M:%S") + "（北京时间）"
 
 PLAT_CLASS = {"Kaggle": "kaggle", "天池": "cn", "讯飞": "xf", "Devpost": "devpost", "会议官网": "conf"}
 
@@ -315,7 +325,7 @@ HTML = """<!DOCTYPE html>
 
   <h1>CV / 大模型 / 搜广推 竞赛清单</h1>
   <p class="sub">逐条核对官方来源后确认还能参加的具体赛题。托管平台与所属会议分开标注，报名资格、提交要求与截止时间分别列出。</p>
-  <p class="hint">核验日期 <b>{today}</b> · 已启用非学生身份筛选 · 每条均附官方入口。竞赛时间与奖金常变动，报名前请以官网为准。<br>时区口径：<b>国内赛事（天池 / 讯飞 等）按北京时间 GMT+8</b>；海外赛事保留官网原始时区，并附北京时间换算。</p>
+  <p class="hint">核验日期 <b>{now_display}</b> · 已启用非学生身份筛选 · 每条均附官方入口。竞赛时间与奖金常变动，报名前请以官网为准。<br>时区口径：<b>国内赛事（天池 / 讯飞 等）按北京时间 GMT+8</b>；海外赛事保留官网原始时区，并附北京时间换算。</p>
 
   <div class="stats">
     <div class="stat"><p class="k">已核验具体条目</p><p class="v">{n_all}</p><p class="n">逐条核对官方来源</p></div>
@@ -522,7 +532,7 @@ sections = ""
 footer = ""
 
 out = HTML.format(
-    today=TODAY.isoformat(), css=CSS, rows=render_rows,
+    today=TODAY.isoformat(), now_display=NOW_DISPLAY, css=CSS, rows=render_rows,
     cloud_css=CLOUD_CSS, cloud_srcbar=CLOUD_SRCBAR, cloud_aipanel=CLOUD_AIPANEL,
     cloud_sdk=CLOUD_SDK, cloud_js=CLOUD_JS,
     n_all=n_all, n_open=n_open, n_week=n_week, n_pending=n_pending,
