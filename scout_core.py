@@ -117,7 +117,7 @@ def refresh_status(event, at):
     if event.get('verification', {}).get('state') != 'verified':
         return  # old or partially checked data cannot establish new state transitions
     st = event['status']
-    if st in ('unclear', 'practice', 'excluded'):
+    if st in ('unclear', 'practice', 'excluded', 'closed'):
         return
     end, entry = cutoff(event.get('submit')), cutoff(event.get('entry'))
     if end and end < at:

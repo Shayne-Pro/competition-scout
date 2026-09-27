@@ -27,13 +27,20 @@ def prepare(base=BASE, limit=20):
     validate_events(events)
     sources = read_json(base / 'sources.json')['sources']
     state = read_json(base / 'source-state.json', {})
-    due = []
+    due_by_url = {}
     for source in sources:
         if source['tier'] == 'discovery':
             continue
         last = state.get(source['url'], {}).get('lastSuccess')
         if source['tier'] != 'watch' or not last or (at.date() - __import__('datetime').date.fromisoformat(last)).days >= 7:
-            due.append(source)
+            url = valid_url(source['url'])
+            if url not in due_by_url:
+                due_by_url[url] = copy.deepcopy(source)
+            else:
+                # The registry can describe one page under multiple discovery categories.
+                # Scan it once, retaining both policies for the model.
+                due_by_url[url].setdefault('relatedEntries', []).append(copy.deepcopy(source))
+    due = list(due_by_url.values())
     target_ids = choose_targets(events, at, limit)
     task = {'runId': os.getenv('GITHUB_RUN_ID', str(uuid.uuid4())) + '-' + os.getenv('GITHUB_RUN_ATTEMPT', '1'),
             'date': at.date().isoformat(), 'startedAt': at.isoformat(), 'baseHash': data_hash(events),

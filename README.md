@@ -59,4 +59,6 @@ python3 ci_check.py
 
 `.agents/skills/competition-scout/` 使用标准 SKILL.md 格式，可以被支持 Agent Skills 的编码助手发现。仓库的数据 schema、`sources.json` 和确定性脚本也是工作流的一部分；这不是脱离仓库即可自动发布任意网站的通用插件。
 
+交互式编码助手也可直接执行 Skill：用 `fetch_page.py` 抓取并保存证据，写提案后调用相同的校验与构建脚本，无需调用仓库的 GLM 执行器。详细命令见 Skill。
+
 工具调用协议参考 [智谱 Function Calling](https://docs.bigmodel.cn/cn/guide/capabilities/function-calling)。新增字段或更换模型时，先执行离线回归，再在非 main 分支做有预算限制的 dry run，查看提案、证据与页面产物。
