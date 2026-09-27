@@ -26,13 +26,20 @@ jobs:
       - name: Date flip and reminders
         run: python3 daily_refresh.py
 
-      - name: AI verify and discover (optional, needs LLM_API_KEY)
+      - name: Scrape SPA sources (Playwright)
+        run: |
+          pip install playwright -q
+          python3 -m playwright install --with-deps chromium
+          python3 scrape_spa.py
+        continue-on-error: true   # 单源失败/Cloudflare 拦截不阻断；状态记入 spa_snapshot.json
+
+      - name: AI verify and discover (Zhipu glm-4.6)
         run: python3 ai_update.py
         env:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
           GH_MODEL: ${{ secrets.LLM_MODEL }}
-        continue-on-error: true   # 无 key 或 LLM 失败不阻断发布链路；状态记录在 runs-log
+        continue-on-error: true   # LLM 失败不阻断发布链路；状态记录在 runs-log
 
       - name: Rebuild page
         run: python3 build_page.py
