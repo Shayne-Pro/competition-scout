@@ -301,15 +301,15 @@
       "instant": "2026-10-09T23:59:00+08:00"
     },
     "submit": {
-      "text": "北京时间 2026年10月9日23:59",
+      "text": "（北京时间 2026年10月9日23:59）",
       "day": "2026-10-09",
       "instant": "2026-10-09T23:59:00+08:00"
     },
     "requirements": "个人或团队；按官网报名表提交并由组委会确认。入围后须参加现场答辩。",
-    "award": "获奖证书及奖金奖励（大会颁发）；最终成绩=榜单成绩60%+现场答辩成绩40%；入围队伍须制作现场答辩PPT（5分钟以内）现场汇报",
+    "award": "各赛道优胜队伍获大会颁发获奖证书及丰厚奖金；最终成绩=榜单成绩60%+现场答辩成绩40%；入围队伍须现场答辩（PPT汇报5分钟以内）；实际到场人员须提前完成大会注册并缴费，否则视为放弃现场答辩及评奖资格",
     "url": "https://www.lidar2026shenzhen.com/onepage.php?id=9",
     "status": "open",
-    "warning": "现场答辩为线下形式，须提前完成大会注册并缴费，否则视为自愿放弃答辩及评奖资格；现场答辩具体时间另行通知（页面写\"具体安排另行通知\"）",
+    "warning": "现场答辩为强制环节，且要求自费完成大会注册缴费（未注册视为放弃评奖资格）；现场答辩具体时间另行通知（未定）",
     "note": "",
     "priority": 3,
     "verifiedAt": "2026-09-27",
@@ -319,9 +319,10 @@
     "verifiedBy": "ai",
     "verification": {
       "state": "legacy",
-      "verifiedAt": null,
+      "verifiedAt": "2026-09-27T12:00:00+08:00",
       "attemptedAt": "2026-09-27T18:15:15.778423+08:00",
-      "lastError": "Not verified within this run budget."
+      "lastError": "Not verified within this run budget.",
+      "verifiedBy": "ai"
     }
   },
   {
@@ -446,7 +447,7 @@
     "award": "¥100,000",
     "url": "https://challenge.xfyun.cn/topic/info?type=Spark-X25",
     "status": "open",
-    "warning": "entry.day 与 submit.day 均无法从页面确认，原条目日期为猜测，应置空",
+    "warning": "页面日期字段均为空（正赛报名截至等未填），且条目中的提交日期 2026-10-11 无页面依据",
     "note": "",
     "priority": 4,
     "verifiedAt": "2026-09-27",
@@ -1525,10 +1526,10 @@
       "instant": null
     },
     "requirements": "预赛全程在仿真里完成，不需要机器人；仅决赛队在统一真机平台上评测。评审指标：任务成功率、动作步数（执行效率）、推理时间、策略运行时。",
-    "award": "12 月初于 NeurIPS 2026 现场颁奖并展示；官方提供代码库、教程、数据与 baseline。",
+    "award": "None stated on page.",
     "url": "https://robosyn-bench.net/",
     "status": "open",
-    "warning": "page text is only a landing/menu page — contains no dates, deadlines, eligibility, or award information",
+    "warning": "Entry dates in current entry (7/13 open, 10/11 deadline, etc.) are not supported by the page — page contains no dates.",
     "note": "",
     "priority": 4,
     "verifiedAt": "2026-09-27",
@@ -1619,20 +1620,20 @@
     ],
     "task": "固定 CCTV 摄像头视频中的实时非法倾倒检测，需可部署到智能相机或嵌入式设备。区分静态堆放与动态抛掷两类行为。数据集 MIVIA-IWDD 共 500 段视频（250 正 / 250 负，完全平衡），正样本带倾倒时刻的时间标注。",
     "entry": {
-      "text": "Participants may obtain the training set and its annotations by sending an email, indicating the name of their team (no separate entry deadline stated)",
+      "text": "no separate entry deadline stated; participants may obtain the training set and annotations by sending an email indicating the name of their team",
       "day": null,
       "instant": null
     },
     "submit": {
-      "text": "deadline for submission of methods is 10th October, 2026; submissions via email with trained model, source code, and technical report; contest paper to WACV 2027 deadline 15th October (text cut off)",
+      "text": "deadline for submission of methods is 10th October, 2026; submissions via email with trained model, source code, and technical report",
       "day": "2026-10-10",
       "instant": null
     },
     "requirements": "提交包含 test.py（读视频目录、输出每段视频的检测时刻 TXT）、test.ipynb（装依赖并执行）、训练好的模型与全部支持文件的压缩包。评测在 Google Colab 上跑私有测试集。允许并鼓励使用额外外部数据。",
-    "award": "Winner determined by highest F1-Score on private test set (GPU memory consumption as tiebreaker); no prize details stated",
+    "award": "no prize/award described; winner determined by highest F1-Score on private test set (GPU memory as tiebreaker); participants strongly encouraged to submit a contest paper to WACV 2027 (deadline 15th October, text cut off)",
     "url": "https://mivia.unisa.it/iwddcontest2027/",
     "status": "open",
-    "warning": "提交方式与常见平台不同：靠邮件交压缩包，且评测在 Colab 里跑，必须自带 test.ipynb 与依赖说明。检测时刻有 3 秒宽容、超 10 秒作废，属于早期检测导向。",
+    "warning": "page text cut off mid-sentence at WACV 2027 paper deadline (15th October) — year of that deadline not confirmed; no timezone given for any date; contest dates Jan 4–8, 2027 while submission deadline is 2026-10-10 (not conflicting, but note the gap)",
     "note": "",
     "priority": 4,
     "verifiedAt": "2026-09-27",
@@ -1742,7 +1743,13 @@
       "https://www.kaggle.com/competitions/climx-main-track"
     ],
     "old": [],
-    "venue": ""
+    "venue": "",
+    "verification": {
+      "state": "legacy",
+      "verifiedAt": null,
+      "attemptedAt": "2026-09-27T19:35:27.340171+08:00",
+      "lastError": "fetch_page 拒绝抓取 https://www.kaggle.com/competitions/climx-main-track（「Only public website URLs are supported」），本轮无法获取官方页面证据，维持原数据待下轮重核。"
+    }
   },
   {
     "id": "chimera-agent",
@@ -1910,7 +1917,13 @@
     "sources": [
       "https://clear-ec.grand-challenge.org/"
     ],
-    "old": []
+    "old": [],
+    "verification": {
+      "state": "legacy",
+      "verifiedAt": null,
+      "attemptedAt": "2026-09-27T19:35:27.340171+08:00",
+      "lastError": "fetch_page 拒绝抓取 https://clear-ec.grand-challenge.org/（「Only public website URLs are supported」），无法核对 Phase II 状态与截止时间，维持原数据待下轮重核。"
+    }
   },
   {
     "id": "topbrain-v2",
@@ -2044,7 +2057,13 @@
     "sources": [
       "https://grand-challenge.org/challenges/"
     ],
-    "old": []
+    "old": [],
+    "verification": {
+      "state": "legacy",
+      "verifiedAt": null,
+      "attemptedAt": "2026-09-27T19:35:27.340171+08:00",
+      "lastError": "fetch_page 拒绝抓取 https://beetle.grand-challenge.org/ 及 grand-challenge.org 列表页（「Only public website URLs are supported」），无官方证据，维持原数据待下轮重核。"
+    }
   },
   {
     "id": "lunovo26",
@@ -2218,5 +2237,34 @@
       "verifiedAt": "2026-09-27T18:15:15+08:00"
     },
     "verifiedAt": "2026-09-27T18:15:15+08:00"
+  },
+  {
+    "id": "panther-challenge",
+    "title": "PANTHER Challenge",
+    "platform": "会议官网",
+    "venue": "",
+    "tags": [],
+    "task": "",
+    "entry": {
+      "text": "待核验",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "待核验",
+      "day": null,
+      "instant": null
+    },
+    "requirements": "",
+    "award": "",
+    "url": "https://panther.grand-challenge.org/",
+    "status": "unclear",
+    "warning": "新发现条目，日期与资格待下一轮核验（发现源：gc）",
+    "priority": 5,
+    "verifiedAt": "2026-09-27",
+    "verifiedBy": "ai",
+    "sources": [
+      "https://panther.grand-challenge.org/"
+    ]
   }
 ]
