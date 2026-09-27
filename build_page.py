@@ -7,7 +7,7 @@ chip 计数为分面计数（反映在其他维度当前选中条件下还剩多
 """
 import json, pathlib, datetime, html, collections, re, os
 
-BASE = pathlib.Path("/Users/shayne/WorkBuddy/2026-09-22-13-27-11/cv-llm-competitions-2026")
+BASE = pathlib.Path(__file__).resolve().parent
 SRC = pathlib.Path(os.environ.get("EVENTS_DIR", str(BASE)))
 OUT = pathlib.Path(os.environ.get("OUT_HTML", str(BASE / "index.html")))
 ARCHIVE_JSON = pathlib.Path(os.environ.get("ARCHIVE_JSON", str(SRC / "archive.json")))
@@ -27,7 +27,8 @@ SHOW_ARCHIVE = False
 SHOW_FOOTER = False
 
 events = json.load(open(SRC / "events.json", encoding="utf-8"))
-TODAY = datetime.date(2026, 9, 27)
+# 基准日期默认取「今天」（可被环境变量覆盖，便于复现历史构建或测试）。
+TODAY = datetime.date.fromisoformat(os.environ.get("BUILD_TODAY", datetime.date.today().isoformat()))
 
 PLAT_CLASS = {"Kaggle": "kaggle", "天池": "cn", "讯飞": "xf", "Devpost": "devpost", "会议官网": "conf"}
 

@@ -1,0 +1,45 @@
+name: Daily refresh
+
+# 每日由 GitHub 服务器自动执行：状态翻转 + 重建页面 + 推回 main。
+# Pages 检测到 main 有新提交即自动重新部署，无需人工干预、不依赖本地 Mac。
+on:
+  schedule:
+    - cron: "20 0 * * *"   # UTC 00:20 = 北京时间 08:20（避开整点高峰，抢在本地 08:30 AI 任务前）
+  workflow_dispatch: {}     # 支持手动触发，便于调试
+
+permissions:
+  contents: write           # 允许把构建产物推回仓库
+
+concurrency:
+  group: daily-refresh
+  cancel-in-progress: false # 与本地任务推送撞车时排队而非互相取消
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Daily refresh (date flip + reminders)
+        run: python3 daily_refresh.py
+
+      - name: Rebuild page
+        run: python3 build_page.py
+
+      - name: Self check
+        run: python3 ci_check.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "无变更，跳过提交"
+          else
+            git commit -m "每日刷新 $(date +%F)：状态翻转与页面重建（GitHub Actions）"
+            git push
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

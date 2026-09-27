@@ -1,0 +1,45 @@
+{
+  "reminded": [
+    [
+      "biohub",
+      "submit",
+      "2026-09-30"
+    ],
+    [
+      "chip-phenotype",
+      "entry",
+      "2026-09-27"
+    ],
+    [
+      "chip-phenotype",
+      "submit",
+      "2026-10-01"
+    ],
+    [
+      "kaggriculture",
+      "submit",
+      "2026-10-01"
+    ],
+    [
+      "roco",
+      "submit",
+      "2026-09-30"
+    ],
+    [
+      "selma3d-2026",
+      "submit",
+      "2026-09-30"
+    ],
+    [
+      "smp-graph",
+      "entry",
+      "2026-09-30"
+    ],
+    [
+      "smp-graph",
+      "submit",
+      "2026-09-30"
+    ]
+  ],
+  "lastRun": "2026-09-27"
+}
