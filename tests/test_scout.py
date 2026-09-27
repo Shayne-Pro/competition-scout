@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 import agent_refresh
 import scout
-from scout_core import (BEIJING, choose_targets, cutoff, event_key, refresh_status,
+from scout_core import (BEIJING, choose_targets, cutoff, display_timestamp, event_key, refresh_status,
                         source_urls, validate_events, validate_node, write_json)
 
 
@@ -59,6 +59,16 @@ class CoreTests(unittest.TestCase):
         a, b = event('a'), event('b')
         a['verification'] = {'attemptedAt': '2026-09-27T10:00:00+08:00'}
         self.assertEqual(choose_targets([a, b], dt.datetime(2026, 9, 28, tzinfo=BEIJING), 1), ['b'])
+
+    def test_second_precision_verification_keeps_legacy_queue_compatibility(self):
+        at = dt.datetime(2026, 10, 4, tzinfo=BEIJING)
+        for stamp in ('2026-09-27', '2026-09-27T08:20:45+08:00'):
+            e = event()
+            e.update(verifiedAt=stamp, verification={'state': 'verified', 'verifiedAt': stamp})
+            validate_events([e])
+            self.assertEqual(choose_targets([e], at), ['existing'])
+        self.assertEqual(display_timestamp('2026-09-27T00:20:45Z'), '2026-09-27 08:20:45（北京时间）')
+        self.assertEqual(display_timestamp('2026-09-27'), '2026-09-27（仅记录日期）')
 
     def test_invalid_or_contradictory_dates_are_rejected(self):
         for bad in [node('2026-02-30', kind='deadline'), node('2026-10-11'),
@@ -147,7 +157,8 @@ class PipelineTests(unittest.TestCase):
         self.assertIsNone(result['submit']['day'])
         self.assertIsNone(result['submit']['instant'])
         self.assertEqual(result['status'], 'excluded')
-        self.assertEqual(result['verification']['verifiedAt'], '2026-09-27')
+        self.assertEqual(result['verification']['verifiedAt'], '2026-09-27T08:20:00+08:00')
+        self.assertEqual(result['verifiedAt'], result['verification']['verifiedAt'])
 
     def test_invalid_proposal_leaves_all_published_data_unchanged(self):
         before = (self.base / 'events.json').read_bytes()

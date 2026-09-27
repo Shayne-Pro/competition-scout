@@ -179,11 +179,11 @@ def apply(base=BASE):
         old_verified = record.get('verification', {}).get('verifiedAt')
         record.update(payload)
         record.update(eligibility=item['eligibility'], sources=[ev['url'] for ev in item['evidence']], verifiedBy='agent')
-        verification = {'state': item['verification'], 'attemptedAt': at.isoformat(), 'evidence': item['evidence'],
-                        'runId': task['runId'], 'verifiedAt': task['date'] if item['verification'] == 'verified' else old_verified}
+        verification = {'state': item['verification'], 'attemptedAt': at.isoformat(timespec='seconds'), 'evidence': item['evidence'],
+                        'runId': task['runId'], 'verifiedAt': at.isoformat(timespec='seconds') if item['verification'] == 'verified' else old_verified}
         record['verification'] = verification
         if item['verification'] == 'verified':
-            record['verifiedAt'] = task['date']
+            record['verifiedAt'] = at.isoformat(timespec='seconds')
         if item['eligibility'] == 'student_only':
             record['status'] = 'excluded'
         refresh_status(record, at)

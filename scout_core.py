@@ -73,6 +73,19 @@ def parse_instant(value):
     return instant
 
 
+def verification_date(value):
+    """Read both historical date-only records and timezone-aware verification times."""
+    if re.fullmatch(r'\d{4}-\d{2}-\d{2}', value):
+        return dt.date.fromisoformat(value)
+    return parse_instant(value).astimezone(BEIJING).date()
+
+
+def display_timestamp(value):
+    if re.fullmatch(r'\d{4}-\d{2}-\d{2}', value):
+        return value + '（仅记录日期）'
+    return parse_instant(value).astimezone(BEIJING).strftime('%Y-%m-%d %H:%M:%S') + '（北京时间）'
+
+
 def timezone(name):
     return dt.timezone(dt.timedelta(hours=-12)) if name == 'AoE' else ZoneInfo(name)
 
@@ -169,7 +182,9 @@ def validate_events(events):
                 if node.get('instant'):
                     parse_instant(node['instant'])
         if e.get('verifiedAt'):
-            dt.date.fromisoformat(e['verifiedAt'])
+            verification_date(e['verifiedAt'])
+        if e.get('verification', {}).get('verifiedAt'):
+            verification_date(e['verification']['verifiedAt'])
 
 
 def choose_targets(events, at, limit=20):
@@ -184,7 +199,7 @@ def choose_targets(events, at, limit=20):
         if e['status'] in ('excluded', 'practice'):
             continue
         verified = e.get('verification', {}).get('verifiedAt')
-        stale = not verified or (at.date() - dt.date.fromisoformat(verified)).days >= 7
+        stale = not verified or (at.date() - verification_date(verified)).days >= 7
         if stale or e['status'] in ('unclear', 'upcoming') or 0 <= days_left(e, at) <= 14:
             eligible.append(e)
     return [e['id'] for e in sorted(eligible, key=score)[:limit]]
