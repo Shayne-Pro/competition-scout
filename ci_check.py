@@ -26,8 +26,12 @@ class Page(HTMLParser):
 def main():
     events = json.loads((BASE / 'events.json').read_text())
     validate_events(events)
+    site = BASE / 'docs'
+    for path in site.rglob('*'):
+        if path.is_symlink() or (path.is_file() and path.relative_to(site).as_posix() not in {'index.html', '.nojekyll'}):
+            raise ValueError('Unexpected file in public Pages directory: ' + str(path.relative_to(site)))
     page = Page()
-    page.feed((BASE / 'index.html').read_text())
+    page.feed((site / 'index.html').read_text())
     visible = [e['id'] for e in events if e['status'] != 'excluded']
     if len(page.ids) != len(visible) or set(page.ids) != set(visible):
         raise ValueError('rendered event IDs differ from the catalogue')

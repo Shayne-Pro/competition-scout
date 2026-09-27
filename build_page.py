@@ -10,7 +10,7 @@ from scout_core import now, days_left as event_days_left, validate_events, displ
 
 BASE = pathlib.Path(__file__).resolve().parent
 SRC = pathlib.Path(os.environ.get("EVENTS_DIR", str(BASE)))
-OUT = pathlib.Path(os.environ.get("OUT_HTML", str(BASE / "index.html")))
+OUT = pathlib.Path(os.environ.get("OUT_HTML", str(BASE / "docs" / "index.html")))
 ARCHIVE_JSON = pathlib.Path(os.environ.get("ARCHIVE_JSON", str(SRC / "archive.json")))
 
 SHOW_SECTIONS = False
@@ -548,6 +548,7 @@ out = HTML.format(
     chips_win=chips("win", win_count),
     sections=sections, footer=footer,
 )
+OUT.parent.mkdir(parents=True, exist_ok=True)
 OUT.write_text(out, encoding="utf-8")
 print("written:", OUT)
 print("条目 %d · 可新参加 %d · 7 天内 %d · 待确认 %d" % (n_all, n_open, n_week, n_pending))
