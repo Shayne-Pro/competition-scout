@@ -254,7 +254,7 @@
     ],
     "task": "点云配准、SLAM、建筑 / 树木建模与语义 / 实例分割等 7 个赛道。",
     "entry": {
-      "text": "自通知发布后至北京时间 2026年10月9日23:59",
+      "text": "自该通知发布后至北京时间 2026年10月9日23:59",
       "day": "2026-10-09",
       "instant": "2026-10-09T23:59:00+08:00"
     },
@@ -264,10 +264,10 @@
       "instant": "2026-10-09T23:59:00+08:00"
     },
     "requirements": "个人或团队；按官网报名表提交并由组委会确认。入围后须参加现场答辩。",
-    "award": "各赛道优胜队伍获大会颁发的获奖证书及奖金奖励；最终成绩=榜单成绩60%+现场答辩成绩40%，现场答辩须制作PPT（5分钟以内）",
+    "award": "各赛道优胜队伍获大会颁发的获奖证书及奖金；现场答辩成绩占40%、榜单成绩占60%；入围现场答辩者须提前完成大会注册并缴费，未按要求注册视为放弃答辩及评奖资格；入围队伍须制作PPT现场答辩（5分钟以内），具体安排另行通知",
     "url": "https://www.lidar2026shenzhen.com/onepage.php?id=9",
     "status": "open",
-    "warning": "现场答辩为强制环节（不注册缴费视为放弃评奖）；答辩具体时间另行通知",
+    "warning": "page said: 现场答辩需现场参加并完成大会注册缴费，否则视为放弃评奖资格；答辩具体时间尚未公布（另行通知）",
     "note": "",
     "priority": 3,
     "verifiedAt": "2026-09-27",
@@ -367,13 +367,14 @@
     "award": "¥100,000",
     "url": "https://challenge.xfyun.cn/topic/info?type=Spark-X25",
     "status": "open",
-    "warning": "日期冲突：赛程写 11/10 17:00，材料条款写 10/11 前，否则无复赛资格。先按 10/11 准备，须向主办方确认；官网未注明时区。",
+    "warning": "页面未显示该赛事的任何具体日期（报名/提交时间均为空占位）",
     "note": "",
     "priority": 4,
     "verifiedAt": "2026-09-27",
     "sources": [],
     "old": [],
-    "venue": ""
+    "venue": "",
+    "verifiedBy": "ai"
   },
   {
     "id": "rsna",
@@ -1226,7 +1227,7 @@
     "award": "12 月初于 NeurIPS 2026 现场颁奖并展示；官方提供代码库、教程、数据与 baseline。",
     "url": "https://robosyn-bench.net/",
     "status": "open",
-    "warning": "10/25 只公布约 30–40 支决赛队，未入围则止步；决赛需在真机平台复现，提前确认你能配合的提交节奏。",
+    "warning": "page text is only a landing/menu page — contains no dates, deadlines, eligibility, or award information",
     "note": "",
     "priority": 4,
     "verifiedAt": "2026-09-27",
@@ -1234,7 +1235,8 @@
       "https://robosyn-bench.net/"
     ],
     "old": [],
-    "venue": "NeurIPS 2026"
+    "venue": "NeurIPS 2026",
+    "verifiedBy": "ai"
   },
   {
     "id": "sapc2",
@@ -1486,7 +1488,7 @@
       "instant": null
     },
     "submit": {
-      "text": "Preliminary test submission/leaderboard 2026-08-11–2026-09-30; final test submission/leaderboard 2026-09-14–2026-09-30; in-person event 2026-10-01",
+      "text": "August 11th, 2026 - September 30th, 2026: Opening of submission and leaderboard for the preliminary test set; September 14th, 2026 - September 30th, 2026: Opening of submission and leaderboard for the final test set",
       "day": "2026-09-30",
       "instant": null
     },
@@ -1494,7 +1496,7 @@
     "award": "Page text contains no award or obligations info; October 1st, 2026 in-person challenge event stated.",
     "url": "https://selma3d2026.grand-challenge.org/timeline/",
     "status": "open",
-    "warning": "Page lists 'April 23th, 2025' for training dataset release — year conflicts with other 2026 dates (likely typo). Timezone not specified for any date.",
+    "warning": "page contains a likely typo: training dataset release dated 'April 23th, 2025' (appears inconsistent with 2026 timeline)",
     "note": "",
     "priority": 2,
     "verifiedAt": "2026-09-27",
