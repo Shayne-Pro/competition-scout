@@ -9,8 +9,11 @@
 3. 全部写回 events.json；拿不准的一律 status=unclear，禁止推测补全。
 
 环境变量：
-  GITHUB_TOKEN —— Actions 自动注入；本地调试需手动提供
-  GH_MODEL     —— 默认 openai/gpt-4.1
+  LLM_API_KEY / LLM_BASE_URL —— OpenAI 兼容端点的 key 与地址（如 DeepSeek/智谱/Kimi）。
+    未配置时 AI 环节自动跳过（记录到 runs-log，不阻断发布链路）。
+    实测备注：GITHUB_TOKEN 调 GitHub Models 在当前环境返回假应答（任何请求都回 OK），
+    故不能依赖 GITHUB_TOKEN；需要真实的 LLM_API_KEY。
+  GH_MODEL     —— 模型名（默认 openai/gpt-4.1，配 key 后按 provider 改，如 deepseek-chat）
   BUILD_TODAY  —— 测试用基准日期
 """
 import datetime
@@ -27,7 +30,8 @@ import html as HTMLMOD
 BASE = pathlib.Path(__file__).resolve().parent
 TODAY = datetime.date.fromisoformat(os.environ.get("BUILD_TODAY", datetime.date.today().isoformat()))
 MODEL = os.environ.get("GH_MODEL", "openai/gpt-4.1")
-LLM_URL = "https://models.github.ai/inference/chat/completions"
+LLM_URL = os.environ.get("LLM_BASE_URL", "https://models.github.ai/inference") .rstrip("/") + "/chat/completions"
+LLM_KEY = os.environ.get("LLM_API_KEY", "")
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"}
 ACTIVE = {"open", "submission"}
 
@@ -36,8 +40,9 @@ log = {"date": TODAY.isoformat(), "verified": [], "verify_failed": [],
 
 
 def llm(prompt, max_tokens=700, tries=3):
-    """调 GitHub Models。返回纯文本；失败返回 None。"""
-    tok = os.environ.get("GITHUB_TOKEN", "")
+    """调 OpenAI 兼容端点。未配 key 直接返回 None（跳过 AI 环节）。"""
+    if not LLM_KEY:
+        return None
     for i in range(tries):
         try:
             req = urllib.request.Request(
@@ -46,13 +51,13 @@ def llm(prompt, max_tokens=700, tries=3):
                     "model": MODEL,
                     "messages": [{"role": "user", "content": prompt}],
                     "max_tokens": max_tokens,
-                    "response_format": {"type": "json_object"},
+                    "response_format": {"type": "text/plain"},
                 }).encode(),
-                headers={"Authorization": "Bearer " + tok,
+                headers={"Authorization": "Bearer " + LLM_KEY,
                          "Content-Type": "application/json", **UA},
             )
             body = urllib.request.urlopen(req, timeout=120).read().decode()
-            data = json.loads(body)  # 非合法 JSON 说明端点被拦/代理假应答，直接失败
+            data = json.loads(body)  # 非法 JSON（如代理假应答）→ 重试
             return data["choices"][0]["message"]["content"]
         except Exception as e:
             log.setdefault("llm_errors", []).append("%s (try %d)" % (repr(e)[:120], i + 1))
@@ -144,7 +149,7 @@ def verify_all(events):
     targets = pick_verify_targets(events)
     if not targets:
         return
-    if not llm("Reply with exactly: PING"):  # LLM 不可用则整轮跳过核验
+    if not llm("Reply with exactly: PING"):  # key 未配或端点不可用 → 整轮跳过核验
         log["verify_failed"].append("LLM unavailable on runner")
         return
     for pid in targets:
