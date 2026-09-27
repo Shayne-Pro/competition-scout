@@ -12,16 +12,6 @@ SRC = pathlib.Path(os.environ.get("EVENTS_DIR", str(BASE)))
 OUT = pathlib.Path(os.environ.get("OUT_HTML", str(BASE / "index.html")))
 ARCHIVE_JSON = pathlib.Path(os.environ.get("ARCHIVE_JSON", str(SRC / "archive.json")))
 
-CLOUD = {
-    "endpoint": "https://competition-scout.app.workbuddy.host",
-    "publishableKey": "wbpk_REMOVED",
-}
-
-# 站内云端能力（覆盖层 + AI 问答）总开关。
-# GitHub Pages 上云服务会因 Origin 校验拒绝请求，且用户要的「AI」是每日更新用 AI，
-# 不是站内问答，所以默认关闭，页面输出为纯静态。
-ENABLE_CLOUD = False
-
 SHOW_SECTIONS = False
 SHOW_ARCHIVE = False
 SHOW_FOOTER = False
@@ -300,40 +290,15 @@ CSS = """  :root{
     .chiplabel{min-width:100%}
   }"""
 
-CLOUD_CSS = """  .srcbar{display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-size:12px;color:var(--t3);
-    margin:0 0 14px}
-  .srcbar .dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px;vertical-align:1px}
-  .srcbar .dot.ok{background:#639922}
-  .srcbar .dot.warn{background:#ba7517}
-  .srcbar .dot.off{background:#b4b2a9}
-  .ai{background:var(--bg);border:1px solid var(--line2);border-radius:12px;padding:14px 18px;margin-bottom:16px}
-  .ai .hd{font-size:13px;font-weight:500;margin:0 0 8px}
-  .ai .row{display:flex;gap:8px;align-items:center}
-  .ai input{flex:1 1 auto;min-width:0;font-family:inherit;font-size:13px;padding:7px 11px}
-  .ai .hintline{font-size:12px;color:var(--t3);margin:8px 0 0}
-  .ai .ans{display:none;margin:10px 0 0;padding:10px 12px;background:var(--bg2);
-    border-radius:8px;font-size:13px;line-height:1.7;white-space:pre-wrap;word-break:break-word}
-  .ai .ans.on{display:block}
-  .ai .ans.err{background:var(--red-f);color:var(--red-t)}""" if ENABLE_CLOUD else ""
+CLOUD_CSS = ""  # 已彻底移除云端能力（2026-09-27）；如需恢复见 git 历史 _cloud_block.js
 
-CLOUD_SRCBAR = ('  <p class="srcbar" id="srcbar"><span><span class="dot off"></span>'
-                '正在连接云端…</span></p>\n') if ENABLE_CLOUD else ""
+CLOUD_SRCBAR = ""
 
-CLOUD_AIPANEL = """  <div class="ai" id="aiPanel">
-    <p class="hd">用自然语言筛选</p>
-    <div class="row">
-      <input id="aiInput" type="text" placeholder="例如：医学影像相关、两周内截止、非学生才能报的有哪些？" autocomplete="off">
-      <button class="btn" id="aiBtn">问 AI</button>
-      <button class="btn" id="aiStop" style="display:none">停止</button>
-    </div>
-    <p class="hintline">只把当前筛选出的条目（最多 40 条）发给模型，不会上传完整数据。回答仅供参考，报名前请以官网为准。</p>
-    <div class="ans" id="aiAns"></div>
-  </div>""" if ENABLE_CLOUD else ""
+CLOUD_AIPANEL = ""
 
-CLOUD_SDK = ('<script src="https://cdn.jsdelivr.net/npm/@tencent-ai/'
-             'workbuddy-cloud-sdk@dev/lib/index.global.js"></script>\n') if ENABLE_CLOUD else ""
+CLOUD_SDK = ""
 
-CLOUD_JS = open(str(BASE / "_cloud_block.js"), encoding="utf-8").read() if ENABLE_CLOUD else ""
+CLOUD_JS = ""
 
 HTML = """<!DOCTYPE html>
 <html lang="zh-CN">
@@ -558,7 +523,6 @@ footer = ""
 
 out = HTML.format(
     today=TODAY.isoformat(), css=CSS, rows=render_rows,
-    endpoint=CLOUD["endpoint"], publishableKey=CLOUD["publishableKey"],
     cloud_css=CLOUD_CSS, cloud_srcbar=CLOUD_SRCBAR, cloud_aipanel=CLOUD_AIPANEL,
     cloud_sdk=CLOUD_SDK, cloud_js=CLOUD_JS,
     n_all=n_all, n_open=n_open, n_week=n_week, n_pending=n_pending,
