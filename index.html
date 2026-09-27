@@ -124,27 +124,27 @@
   <p class="hint">核验日期 <b>2026-09-27</b> · 已启用非学生身份筛选 · 每条均附官方入口。竞赛时间与奖金常变动，报名前请以官网为准。<br>时区口径：<b>国内赛事（天池 / 讯飞 等）按北京时间 GMT+8</b>；海外赛事保留官网原始时区，并附北京时间换算。</p>
 
   <div class="stats">
-    <div class="stat"><p class="k">已核验具体条目</p><p class="v">53</p><p class="n">逐条核对官方来源</p></div>
+    <div class="stat"><p class="k">已核验具体条目</p><p class="v">56</p><p class="n">逐条核对官方来源</p></div>
     <div class="stat"><p class="k">可新参加</p><p class="v">35</p><p class="n">未发现已过的强制前置节点</p></div>
     <div class="stat"><p class="k">7 天内行动截止</p><p class="v">6</p><p class="n">仅计可新参加 / 仅已报名</p></div>
-    <div class="stat"><p class="k">待确认 / 待发布</p><p class="v">8</p><p class="n">身份资格或日期不明</p></div>
+    <div class="stat"><p class="k">待确认 / 待发布</p><p class="v">11</p><p class="n">身份资格或日期不明</p></div>
     <div class="stat"><p class="k">覆盖托管平台</p><p class="v">6</p><p class="n">另有 13 个所属会议</p></div>
   </div>
 
 
   <div class="filters">
     <div class="frow"><span class="chiplabel">托管平台</span>
-    <button class="chip on" data-dim="plat" data-f="all">全部<span class="cnt">53</span></button>
-    <button class="chip" data-dim="plat" data-f="会议官网">会议官网<span class="cnt">22</span></button>
+    <button class="chip on" data-dim="plat" data-f="all">全部<span class="cnt">56</span></button>
+    <button class="chip" data-dim="plat" data-f="会议官网">会议官网<span class="cnt">23</span></button>
     <button class="chip" data-dim="plat" data-f="Kaggle">Kaggle<span class="cnt">14</span></button>
     <button class="chip" data-dim="plat" data-f="天池">天池<span class="cnt">9</span></button>
-    <button class="chip" data-dim="plat" data-f="讯飞">讯飞<span class="cnt">6</span></button>
+    <button class="chip" data-dim="plat" data-f="讯飞">讯飞<span class="cnt">8</span></button>
     <button class="chip" data-dim="plat" data-f="AIcrowd">AIcrowd<span class="cnt">1</span></button>
     <button class="chip" data-dim="plat" data-f="Devpost">Devpost<span class="cnt">1</span></button>
     </div>
     <div class="frow"><span class="chiplabel">所属会议</span>
-    <button class="chip on" data-dim="venue" data-f="all">全部<span class="cnt">53</span></button>
-    <button class="chip" data-dim="venue" data-f="__none__">平台自办赛<span class="cnt">31</span></button>
+    <button class="chip on" data-dim="venue" data-f="all">全部<span class="cnt">56</span></button>
+    <button class="chip" data-dim="venue" data-f="__none__">平台自办赛<span class="cnt">34</span></button>
     <button class="chip" data-dim="venue" data-f="NeurIPS 2026">NeurIPS 2026<span class="cnt">8</span></button>
     <button class="chip" data-dim="venue" data-f="CHIP 2026">CHIP 2026<span class="cnt">2</span></button>
     <button class="chip" data-dim="venue" data-f="MICCAI 2026">MICCAI 2026<span class="cnt">2</span></button>
@@ -172,11 +172,11 @@
     <button class="chip" data-dim="tag" data-f="emb">具身 / 机器人<span class="cnt">3</span></button>
     </div>
     <div class="frow"><span class="chiplabel">截止窗口</span>
-    <button class="chip on" data-dim="win" data-f="all">全部<span class="cnt">53</span></button>
+    <button class="chip on" data-dim="win" data-f="all">全部<span class="cnt">56</span></button>
     <button class="chip" data-dim="win" data-f="w7">7 天内<span class="cnt">11</span></button>
     <button class="chip" data-dim="win" data-f="w30">8–30 天<span class="cnt">18</span></button>
     <button class="chip" data-dim="win" data-f="later">30 天以上<span class="cnt">14</span></button>
-    <button class="chip" data-dim="win" data-f="past">已截止 / 无日期<span class="cnt">10</span></button>
+    <button class="chip" data-dim="win" data-f="past">已截止 / 无日期<span class="cnt">13</span></button>
     </div>
     <div class="frow"><span class="chiplabel">其他</span>
     <button class="chip toggle" id="liveToggle">仅可新参加</button>
@@ -189,7 +189,7 @@
         <option value="deadline">截止日最近优先</option>
         <option value="priority">优先级 P1 → P5</option>
       </select>
-      <span class="visline" style="margin:0 0 0 6px">当前显示 <b id="visCount">53</b> / 53 条<span id="hiddenNote"></span></span>
+      <span class="visline" style="margin:0 0 0 6px">当前显示 <b id="visCount">56</b> / 56 条<span id="hiddenNote"></span></span>
     </div>
   </div>
 
@@ -248,14 +248,14 @@
         <td class="c-prize">$65,000</td>
       </tr>
       <tr data-id="selma3d-2026" data-status="open" data-plat="会议官网" data-venue="MICCAI 2026" data-tag="cv med 3d"
-          data-days="3" data-pri="2" data-vby="human">
+          data-days="3" data-pri="2" data-vby="ai">
         <td class="c-name"><a href="https://selma3d2026.grand-challenge.org/timeline/" target="_blank" rel="noopener">SELMA3D 2026 · 3D 光片显微图像自监督分割</a><span class="st open">可新参加</span>
           <div class="tagrow"><span class="cat conf">会议官网</span><span class="cat venue">MICCAI 2026</span><span class="pri">P2</span></div>
           <div class="tagrow"><span class="cat">CV</span><span class="cat">医学</span><span class="cat">3D</span></div></td>
         <td class="c-dir">3D light-sheet 显微图像的自监督学习（SSL）分割（MICCAI 2026 线下 satellite event）。分 preliminary test 与 final test 两个榜单。</td>
-        <td class="c-time"><div class="tline"><span class="tlabel">报名</span>报名自 4/9 开放；训练集已放出</div><div class="tline"><span class="tlabel">提交</span>preliminary test 提交与榜单 8/11–9/30 · final test 提交 9/14–9/30 · 现场活动 10/1</div><div class="warn">final test 提交 9/30 截止，只剩 3 天；现场活动 10/1。这是 3D 显微图像分割，与 3D 点云/体数据方法可迁移。</div></td>
+        <td class="c-time"><div class="tline"><span class="tlabel">报名</span>Challenge website launch and challenge registration opening</div><div class="tline"><span class="tlabel">提交</span>Preliminary test submission/leaderboard 2026-08-11–2026-09-30; final test submission/leaderboard 2026-09-14–2026-09-30; in-person event 2026-10-01</div><div class="warn">Page lists &#x27;April 23th, 2025&#x27; for training dataset release — year conflicts with other 2026 dates (likely typo). Timezone not specified for any date.。</div></td>
         <td class="c-req">通过 grand-challenge 平台提交（容器化算法）。训练集 4/23 放出，preliminary test 样本 6/1 放出、final test 样本 9/9 放出。</td>
-        <td class="c-prize">MICCAI 2026 线下 challenge 活动现场展示与排名。</td>
+        <td class="c-prize">Page text contains no award or obligations info; October 1st, 2026 in-person challenge event stated.</td>
       </tr>
       <tr data-id="chip-code" data-status="open" data-plat="天池" data-venue="CHIP 2026" data-tag="llm agent med"
           data-days="10" data-pri="2" data-vby="human">
@@ -348,14 +348,14 @@
         <td class="c-prize">¥55,000</td>
       </tr>
       <tr data-id="lidar" data-status="open" data-plat="会议官网" data-venue="第十届全国激光雷达大会" data-tag="cv 3d"
-          data-days="12" data-pri="3" data-vby="human">
+          data-days="12" data-pri="3" data-vby="ai">
         <td class="c-name"><a href="https://www.lidar2026shenzhen.com/onepage.php?id=9" target="_blank" rel="noopener">第十届全国激光雷达大会 · 数据处理大赛</a><span class="st open">可新参加</span>
           <div class="tagrow"><span class="cat conf">会议官网</span><span class="cat venue">第十届全国激光雷达大会</span><span class="pri">P3</span></div>
           <div class="tagrow"><span class="cat">CV</span><span class="cat">3D</span></div></td>
         <td class="c-dir">点云配准、SLAM、建筑 / 树木建模与语义 / 实例分割等 7 个赛道。</td>
-        <td class="c-time"><div class="tline"><span class="tlabel">报名</span>10 月 9 日 23:59 · 北京时间</div><div class="tline"><span class="tlabel">提交</span>10 月 9 日 23:59 · 北京时间</div><div class="warn">入围现场答辩须完成大会注册缴费；应把参会成本计入投入。</div></td>
+        <td class="c-time"><div class="tline"><span class="tlabel">报名</span>自通知发布后至北京时间 2026年10月9日23:59</div><div class="tline"><span class="tlabel">提交</span>北京时间 2026年10月9日23:59</div><div class="warn">现场答辩为强制环节（不注册缴费视为放弃评奖）；答辩具体时间另行通知。</div></td>
         <td class="c-req">个人或团队；按官网报名表提交并由组委会确认。入围后须参加现场答辩。</td>
-        <td class="c-prize">奖金、证书（依赛道规则）</td>
+        <td class="c-prize">各赛道优胜队伍获大会颁发的获奖证书及奖金奖励；最终成绩=榜单成绩60%+现场答辩成绩40%，现场答辩须制作PPT（5分钟以内）</td>
       </tr>
       <tr data-id="arc-whitebox" data-status="open" data-plat="AIcrowd" data-venue="__none__" data-tag="llm"
           data-days="21" data-pri="3" data-vby="human">
@@ -408,14 +408,14 @@
         <td class="c-prize">$35,000</td>
       </tr>
       <tr data-id="iwdd-2027" data-status="open" data-plat="会议官网" data-venue="WACV 2027" data-tag="cv"
-          data-days="13" data-pri="4" data-vby="human">
+          data-days="13" data-pri="4" data-vby="ai">
         <td class="c-name"><a href="https://mivia.unisa.it/iwddcontest2027/" target="_blank" rel="noopener">IWDD Contest 2027 · 非法倾倒检测（WACV 2027 workshop）</a><span class="st open">可新参加</span>
           <div class="tagrow"><span class="cat conf">会议官网</span><span class="cat venue">WACV 2027</span><span class="pri">P4</span></div>
           <div class="tagrow"><span class="cat">CV</span></div></td>
         <td class="c-dir">固定 CCTV 摄像头视频中的实时非法倾倒检测，需可部署到智能相机或嵌入式设备。区分静态堆放与动态抛掷两类行为。数据集 MIVIA-IWDD 共 500 段视频（250 正 / 250 负，完全平衡），正样本带倾倒时刻的时间标注。</td>
-        <td class="c-time"><div class="tline"><span class="tlabel">报名</span>邮件报名索取训练集，无单独报名截止</div><div class="tline"><span class="tlabel">提交</span>方法提交 10/10（邮件）· 竞赛论文提交 10/15 · 通知 10/30 · Camera-ready 11/15</div><div class="warn">提交方式与常见平台不同：靠邮件交压缩包，且评测在 Colab 里跑，必须自带 test.ipynb 与依赖说明。检测时刻有 3 秒宽容、超 10 秒作废，属于早期检测导向。</div></td>
+        <td class="c-time"><div class="tline"><span class="tlabel">报名</span>Participants may obtain the training set and its annotations by sending an email, indicating the name of their team (no separate entry deadline stated)</div><div class="tline"><span class="tlabel">提交</span>deadline for submission of methods is 10th October, 2026; submissions via email with trained model, source code, and technical report; contest paper to WACV 2027 deadline 15th October (text cut off)</div><div class="warn">提交方式与常见平台不同：靠邮件交压缩包，且评测在 Colab 里跑，必须自带 test.ipynb 与依赖说明。检测时刻有 3 秒宽容、超 10 秒作废，属于早期检测导向。</div></td>
         <td class="c-req">提交包含 test.py（读视频目录、输出每段视频的检测时刻 TXT）、test.ipynb（装依赖并执行）、训练好的模型与全部支持文件的压缩包。评测在 Google Colab 上跑私有测试集。允许并鼓励使用额外外部数据。</td>
-        <td class="c-prize">论文可投 WACV 2027 workshop，录用进 WACV 2027 Workshops Proceedings。主指标 F1；F1 相近时以 GPU 显存占用为次要判据（越省越好）。</td>
+        <td class="c-prize">Winner determined by highest F1-Score on private test set (GPU memory consumption as tiebreaker); no prize details stated</td>
       </tr>
       <tr data-id="spark" data-status="open" data-plat="讯飞" data-venue="__none__" data-tag="llm agent"
           data-days="14" data-pri="4" data-vby="human">
@@ -686,6 +686,36 @@
         <td class="c-time"><div class="tline"><span class="tlabel">报名</span>Join Competition 存在；精确窗口待核</div><div class="tline"><span class="tlabel">提交</span>本次未从正文取得精确截止时间</div><div class="warn">保留作为候选；补全时间与资格后再计入可参赛清单。</div></td>
         <td class="c-req">社区预测赛；前三名需提供可复现的公开代码仓库。</td>
         <td class="c-prize">$3,000（平台列表）</td>
+      </tr>
+      <tr data-id="airway-tree-modeling-26" data-status="unclear" data-plat="会议官网" data-venue="__none__" data-tag=""
+          data-days="-1" data-pri="5" data-vby="ai">
+        <td class="c-name"><a href="https://atm26.grand-challenge.org/" target="_blank" rel="noopener">Airway Tree Modeling 26</a><span class="st unclear">待确认</span>
+          <div class="tagrow"><span class="cat conf">会议官网</span><span class="pri">P5</span></div>
+          <div class="tagrow"></div></td>
+        <td class="c-dir"></td>
+        <td class="c-time"><div class="tline"><span class="tlabel">报名</span>待核验</div><div class="tline"><span class="tlabel">提交</span>待核验</div><div class="warn">新发现条目，日期与资格待下一轮核验（发现源：gc）。</div></td>
+        <td class="c-req"></td>
+        <td class="c-prize"></td>
+      </tr>
+      <tr data-id="auto-1790499747" data-status="unclear" data-plat="讯飞" data-venue="__none__" data-tag=""
+          data-days="-1" data-pri="5" data-vby="ai">
+        <td class="c-name"><a href="https://challenge.xfyun.cn/" target="_blank" rel="noopener">恶劣场景下的车道线检测挑战赛</a><span class="st unclear">待确认</span>
+          <div class="tagrow"><span class="cat xf">讯飞</span><span class="pri">P5</span></div>
+          <div class="tagrow"></div></td>
+        <td class="c-dir"></td>
+        <td class="c-time"><div class="tline"><span class="tlabel">报名</span>待核验</div><div class="tline"><span class="tlabel">提交</span>待核验</div><div class="warn">新发现条目，日期与资格待下一轮核验（发现源：xfyun）。</div></td>
+        <td class="c-req"></td>
+        <td class="c-prize"></td>
+      </tr>
+      <tr data-id="auto-1790499749" data-status="unclear" data-plat="讯飞" data-venue="__none__" data-tag=""
+          data-days="-1" data-pri="5" data-vby="ai">
+        <td class="c-name"><a href="https://challenge.xfyun.cn/" target="_blank" rel="noopener">复杂背景下结果枝实例分割挑战赛</a><span class="st unclear">待确认</span>
+          <div class="tagrow"><span class="cat xf">讯飞</span><span class="pri">P5</span></div>
+          <div class="tagrow"></div></td>
+        <td class="c-dir"></td>
+        <td class="c-time"><div class="tline"><span class="tlabel">报名</span>待核验</div><div class="tline"><span class="tlabel">提交</span>待核验</div><div class="warn">新发现条目，日期与资格待下一轮核验（发现源：xfyun）。</div></td>
+        <td class="c-req"></td>
+        <td class="c-prize"></td>
       </tr>
       <tr data-id="wsdm" data-status="upcoming" data-plat="会议官网" data-venue="WSDM 2027" data-tag="rag rec"
           data-days="-1" data-pri="5" data-vby="human">
