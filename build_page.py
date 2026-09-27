@@ -163,9 +163,11 @@ def row(e):
     venue_attr = venue or NO_VENUE
     venue_pill = ('<span class="cat venue">%s</span>' % html.escape(venue)) if venue else ""
     vby = e.get("verifiedBy") or "human"
+    vby_label = {"human": "人工核验", "ai": "API 核验", "agent": "WorkBuddy 核验", "auto": "系统推算"}.get(vby)
+    vby_pill = ('<span class="vb %s">%s</span>' % (vby, vby_label)) if vby_label and vby != "human" else ""
     return """      <tr data-id="{eid}" data-status="{st}" data-plat="{plat}" data-venue="{venue}" data-tag="{tags_s}"
           data-days="{days}" data-pri="{pri}" data-vby="{vby}">
-        <td class="c-name"><a href="{url}" target="_blank" rel="noopener">{title}</a><span class="st {st}">{stlabel}</span>
+        <td class="c-name"><a href="{url}" target="_blank" rel="noopener">{title}</a><span class="st {st}">{stlabel}</span>{vby_pill}
           <div class="tagrow"><span class="cat {pcls}">{plat}</span>{venue_pill}<span class="pri">P{pri}</span></div>
           <div class="tagrow">{tags}</div></td>
         <td class="c-dir">{task}</td>
@@ -173,7 +175,7 @@ def row(e):
         <td class="c-req">{req}</td>
         <td class="c-prize">{award}</td>
       </tr>""".format(
-        eid=html.escape(e["id"]), vby=vby,
+        eid=html.escape(e["id"]), vby=vby, vby_pill=vby_pill,
         st=st, plat=html.escape(e["platform"]), pcls=plat_class(e["platform"]),
         venue=html.escape(venue_attr), venue_pill=venue_pill,
         tags_s=tag_slugs, days=days_left(e), pri=e.get("priority", 9),
@@ -262,6 +264,10 @@ CSS = """  :root{
   .tagrow{margin-top:6px}
   .st{display:inline-block;font-size:11px;padding:1px 7px;border-radius:999px;margin-left:6px;white-space:nowrap;vertical-align:1px}
   .st.open{background:#eaf3de;color:#3b6d11}
+  .vb{display:inline-block;font-size:11px;padding:1px 7px;border-radius:999px;margin-left:4px;white-space:nowrap;vertical-align:1px;border:1px solid var(--line2)}
+  .vb.agent{background:#e6f1fb;color:#0c447c}
+  .vb.ai{background:#f3eefa;color:#4a3b8c}
+  .vb.auto{background:#faeeda;color:#854f0b}
   .st.submission{background:#e6f1fb;color:#185fa5}
   .st.unclear{background:#fbfbfa;color:#888780;border:1px solid var(--line2)}
   .st.upcoming{background:#faeeda;color:#854f0b}

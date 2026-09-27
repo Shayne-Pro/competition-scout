@@ -77,6 +77,10 @@
   .tagrow{margin-top:6px}
   .st{display:inline-block;font-size:11px;padding:1px 7px;border-radius:999px;margin-left:6px;white-space:nowrap;vertical-align:1px}
   .st.open{background:#eaf3de;color:#3b6d11}
+  .vb{display:inline-block;font-size:11px;padding:1px 7px;border-radius:999px;margin-left:4px;white-space:nowrap;vertical-align:1px;border:1px solid var(--line2)}
+  .vb.agent{background:#e6f1fb;color:#0c447c}
+  .vb.ai{background:#f3eefa;color:#4a3b8c}
+  .vb.auto{background:#faeeda;color:#854f0b}
   .st.submission{background:#e6f1fb;color:#185fa5}
   .st.unclear{background:#fbfbfa;color:#888780;border:1px solid var(--line2)}
   .st.upcoming{background:#faeeda;color:#854f0b}
@@ -210,7 +214,7 @@
     <tbody>
       <tr data-id="quantiphy" data-status="open" data-plat="会议官网" data-venue="NeurIPS 2026" data-tag="cv llm mm"
           data-days="13" data-pri="1" data-vby="agent">
-        <td class="c-name"><a href="https://quantiphy.stanford.edu/competition/" target="_blank" rel="noopener">QuantiPhy Challenge</a><span class="st open">可新参加</span>
+        <td class="c-name"><a href="https://quantiphy.stanford.edu/competition/" target="_blank" rel="noopener">QuantiPhy Challenge</a><span class="st open">可新参加</span><span class="vb agent">WorkBuddy 核验</span>
           <div class="tagrow"><span class="cat conf">会议官网</span><span class="cat venue">NeurIPS 2026</span><span class="pri">P1</span></div>
           <div class="tagrow"><span class="cat">CV</span><span class="cat">大模型</span><span class="cat">多模态</span></div></td>
         <td class="c-dir">从视频做定量物理推理（尺寸、速度、加速度）；含 Main 与 Open-Weight 两条赛道，指标为 Mean Relative Accuracy。</td>
@@ -220,7 +224,7 @@
       </tr>
       <tr data-id="rsna" data-status="open" data-plat="Kaggle" data-venue="RSNA 2026" data-tag="cv med mm"
           data-days="19" data-pri="1" data-vby="agent">
-        <td class="c-name"><a href="https://www.kaggle.com/competitions/rsna-knee-abnormality-detection" target="_blank" rel="noopener">RSNA Knee Abnormality Detection</a><span class="st open">可新参加</span>
+        <td class="c-name"><a href="https://www.kaggle.com/competitions/rsna-knee-abnormality-detection" target="_blank" rel="noopener">RSNA Knee Abnormality Detection</a><span class="st open">可新参加</span><span class="vb agent">WorkBuddy 核验</span>
           <div class="tagrow"><span class="cat kaggle">Kaggle</span><span class="cat venue">RSNA 2026</span><span class="pri">P1</span></div>
           <div class="tagrow"><span class="cat">CV</span><span class="cat">医学</span><span class="cat">多模态</span></div></td>
         <td class="c-dir">膝关节 MRI 与放射报告多模态建模；预测 12 类临床异常，按宏平均 AUC 评分。</td>
@@ -230,7 +234,7 @@
       </tr>
       <tr data-id="aimo" data-status="open" data-plat="会议官网" data-venue="NeurIPS 2026" data-tag="llm"
           data-days="35" data-pri="1" data-vby="agent">
-        <td class="c-name"><a href="https://aimo-interp.github.io/" target="_blank" rel="noopener">AIMO Interpretability Challenge</a><span class="st open">可新参加</span>
+        <td class="c-name"><a href="https://aimo-interp.github.io/" target="_blank" rel="noopener">AIMO Interpretability Challenge</a><span class="st open">可新参加</span><span class="vb agent">WorkBuddy 核验</span>
           <div class="tagrow"><span class="cat conf">会议官网</span><span class="cat venue">NeurIPS 2026</span><span class="pri">P1</span></div>
           <div class="tagrow"><span class="cat">大模型</span></div></td>
         <td class="c-dir">判断模型对未见奥赛题的解答是稳健还是伪稳健：对单个问题–模型对输出 robust/spurious；主赛道（含 gpt-oss-120b）与小模型赛道（&lt;10B）。</td>
@@ -240,7 +244,7 @@
       </tr>
       <tr data-id="gemma" data-status="open" data-plat="Kaggle" data-venue="__none__" data-tag="llm agent"
           data-days="60" data-pri="1" data-vby="agent">
-        <td class="c-name"><a href="https://www.kaggle.com/competitions/gemma-4-developer-agent" target="_blank" rel="noopener">Gemma 4 Developer Agent · 主赛</a><span class="st open">可新参加</span>
+        <td class="c-name"><a href="https://www.kaggle.com/competitions/gemma-4-developer-agent" target="_blank" rel="noopener">Gemma 4 Developer Agent · 主赛</a><span class="st open">可新参加</span><span class="vb agent">WorkBuddy 核验</span>
           <div class="tagrow"><span class="cat kaggle">Kaggle</span><span class="pri">P1</span></div>
           <div class="tagrow"><span class="cat">大模型</span><span class="cat">Agent</span></div></td>
         <td class="c-dir">后训练 Gemma 4 构建自主软件工程 Agent：导航复杂代码库并起草修复真实 issue，按验证测试通过率评分。</td>
@@ -270,7 +274,7 @@
       </tr>
       <tr data-id="lingbot" data-status="open" data-plat="天池" data-venue="__none__" data-tag="cv llm emb"
           data-days="29" data-pri="2" data-vby="agent">
-        <td class="c-name"><a href="https://tianchi.aliyun.com/competition/entrance/532514" target="_blank" rel="noopener">蚂蚁灵波具身大模型挑战赛</a><span class="st open">可新参加</span>
+        <td class="c-name"><a href="https://tianchi.aliyun.com/competition/entrance/532514" target="_blank" rel="noopener">蚂蚁灵波具身大模型挑战赛</a><span class="st open">可新参加</span><span class="vb agent">WorkBuddy 核验</span>
           <div class="tagrow"><span class="cat cn">天池</span><span class="pri">P2</span></div>
           <div class="tagrow"><span class="cat">CV</span><span class="cat">大模型</span><span class="cat">具身 / 机器人</span></div></td>
         <td class="c-dir">基于开源 LingBot-VLA 2.0 做模型复现、训练调优、仿真泛化评测与真机适配；线上初赛 + 上海线下真机黑客马拉松。</td>
@@ -310,7 +314,7 @@
       </tr>
       <tr data-id="chip-phenotype" data-status="open" data-plat="天池" data-venue="CHIP 2026" data-tag="llm med rag"
           data-days="0" data-pri="3" data-vby="agent">
-        <td class="c-name"><a href="https://tianchi.aliyun.com/competition/entrance/532512" target="_blank" rel="noopener">CHIP 2026 · 特定患者表型概念识别</a><span class="st open">可新参加</span>
+        <td class="c-name"><a href="https://tianchi.aliyun.com/competition/entrance/532512" target="_blank" rel="noopener">CHIP 2026 · 特定患者表型概念识别</a><span class="st open">可新参加</span><span class="vb agent">WorkBuddy 核验</span>
           <div class="tagrow"><span class="cat cn">天池</span><span class="cat venue">CHIP 2026</span><span class="pri">P3</span></div>
           <div class="tagrow"><span class="cat">大模型</span><span class="cat">医学</span><span class="cat">检索 / RAG</span></div></td>
         <td class="c-dir">从 PMC 生物医学全文抽取并标准化特定患者表型概念（HPO）：子任务 1 全文表型识别与标准化，子任务 2 特定患者表型关联；支持传统 NLP、LLM 与 RAG。</td>
@@ -330,7 +334,7 @@
       </tr>
       <tr data-id="lidar" data-status="open" data-plat="会议官网" data-venue="第十届全国激光雷达大会" data-tag="cv 3d"
           data-days="12" data-pri="3" data-vby="ai">
-        <td class="c-name"><a href="https://www.lidar2026shenzhen.com/onepage.php?id=9" target="_blank" rel="noopener">第十届全国激光雷达大会 · 数据处理大赛</a><span class="st open">可新参加</span>
+        <td class="c-name"><a href="https://www.lidar2026shenzhen.com/onepage.php?id=9" target="_blank" rel="noopener">第十届全国激光雷达大会 · 数据处理大赛</a><span class="st open">可新参加</span><span class="vb ai">API 核验</span>
           <div class="tagrow"><span class="cat conf">会议官网</span><span class="cat venue">第十届全国激光雷达大会</span><span class="pri">P3</span></div>
           <div class="tagrow"><span class="cat">CV</span><span class="cat">3D</span></div></td>
         <td class="c-dir">点云配准、SLAM、建筑 / 树木建模与语义 / 实例分割等 7 个赛道。</td>
@@ -370,7 +374,7 @@
       </tr>
       <tr data-id="opencv" data-status="open" data-plat="Devpost" data-venue="__none__" data-tag="cv agent mm"
           data-days="30" data-pri="3" data-vby="agent">
-        <td class="c-name"><a href="https://opencv26.devpost.com/" target="_blank" rel="noopener">OpenCV AI Competition 2026, powered by AWS</a><span class="st open">可新参加</span>
+        <td class="c-name"><a href="https://opencv26.devpost.com/" target="_blank" rel="noopener">OpenCV AI Competition 2026, powered by AWS</a><span class="st open">可新参加</span><span class="vb agent">WorkBuddy 核验</span>
           <div class="tagrow"><span class="cat devpost">Devpost</span><span class="pri">P3</span></div>
           <div class="tagrow"><span class="cat">CV</span><span class="cat">Agent</span><span class="cat">多模态</span></div></td>
         <td class="c-dir">用 OpenCV 5 + AWS 构建视觉系统或视觉智能体（Physical AI / Generative AI）；可选加分赛道：Best Use of COOL（Graviton/Arm 云优化）与 Agentic Vision（视觉证据驱动的多步 agent 循环）。</td>
@@ -390,7 +394,7 @@
       </tr>
       <tr data-id="iwdd-2027" data-status="open" data-plat="会议官网" data-venue="WACV 2027" data-tag="cv"
           data-days="13" data-pri="4" data-vby="ai">
-        <td class="c-name"><a href="https://mivia.unisa.it/iwddcontest2027/" target="_blank" rel="noopener">IWDD Contest 2027 · 非法倾倒检测（WACV 2027 workshop）</a><span class="st open">可新参加</span>
+        <td class="c-name"><a href="https://mivia.unisa.it/iwddcontest2027/" target="_blank" rel="noopener">IWDD Contest 2027 · 非法倾倒检测（WACV 2027 workshop）</a><span class="st open">可新参加</span><span class="vb ai">API 核验</span>
           <div class="tagrow"><span class="cat conf">会议官网</span><span class="cat venue">WACV 2027</span><span class="pri">P4</span></div>
           <div class="tagrow"><span class="cat">CV</span></div></td>
         <td class="c-dir">固定 CCTV 摄像头视频中的实时非法倾倒检测，需可部署到智能相机或嵌入式设备。区分静态堆放与动态抛掷两类行为。数据集 MIVIA-IWDD 共 500 段视频（250 正 / 250 负，完全平衡），正样本带倾倒时刻的时间标注。</td>
@@ -400,7 +404,7 @@
       </tr>
       <tr data-id="spark" data-status="open" data-plat="讯飞" data-venue="__none__" data-tag="llm agent"
           data-days="14" data-pri="4" data-vby="ai">
-        <td class="c-name"><a href="https://challenge.xfyun.cn/topic/info?type=Spark-X25" target="_blank" rel="noopener">Spark-X2.5 端侧模型创新挑战赛</a><span class="st open">可新参加</span>
+        <td class="c-name"><a href="https://challenge.xfyun.cn/topic/info?type=Spark-X25" target="_blank" rel="noopener">Spark-X2.5 端侧模型创新挑战赛</a><span class="st open">可新参加</span><span class="vb ai">API 核验</span>
           <div class="tagrow"><span class="cat xf">讯飞</span><span class="pri">P4</span></div>
           <div class="tagrow"><span class="cat">大模型</span><span class="cat">Agent</span></div></td>
         <td class="c-dir">用 Spark-X2.5-4B / 1.7B 做可交互、可运行的端侧应用。</td>
@@ -410,7 +414,7 @@
       </tr>
       <tr data-id="robosyn-challenge" data-status="open" data-plat="会议官网" data-venue="NeurIPS 2026" data-tag="cv emb"
           data-days="14" data-pri="4" data-vby="ai">
-        <td class="c-name"><a href="https://robosyn-bench.net/" target="_blank" rel="noopener">RoboSynChallenge · NeurIPS 2026</a><span class="st open">可新参加</span>
+        <td class="c-name"><a href="https://robosyn-bench.net/" target="_blank" rel="noopener">RoboSynChallenge · NeurIPS 2026</a><span class="st open">可新参加</span><span class="vb ai">API 核验</span>
           <div class="tagrow"><span class="cat conf">会议官网</span><span class="cat venue">NeurIPS 2026</span><span class="pri">P4</span></div>
           <div class="tagrow"><span class="cat">CV</span><span class="cat">具身 / 机器人</span></div></td>
         <td class="c-dir">用可扩展的合成数据 + 少量真机示教训练操作策略，先在仿真里通过资格赛，再在统一的双臂真机平台上验证泛化。10 个官方任务分入门/中/高三档。</td>
@@ -450,7 +454,7 @@
       </tr>
       <tr data-id="event-6ad83c0101a326be" data-status="open" data-plat="DrivenData" data-venue="__none__" data-tag="cv"
           data-days="68" data-pri="4" data-vby="agent">
-        <td class="c-name"><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/" target="_blank" rel="noopener">The Geologic Enhanced Mapping System (GEMS) Prize Challenge</a><span class="st open">可新参加</span>
+        <td class="c-name"><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/" target="_blank" rel="noopener">The Geologic Enhanced Mapping System (GEMS) Prize Challenge</a><span class="st open">可新参加</span><span class="vb agent">WorkBuddy 核验</span>
           <div class="tagrow"><span class="cat other">DrivenData</span><span class="pri">P4</span></div>
           <div class="tagrow"><span class="cat">CV</span></div></td>
         <td class="c-dir">构建算法生成增强地质断层数据集：基于 USGS 第四纪断层训练数据，在 GeoDAWN 区域预测新识别的隐伏断层，支持地热与关键矿产勘探。</td>
@@ -550,7 +554,7 @@
       </tr>
       <tr data-id="biohub" data-status="submission" data-plat="Kaggle" data-venue="__none__" data-tag="cv med 3d"
           data-days="3" data-pri="2" data-vby="agent">
-        <td class="c-name"><a href="https://www.kaggle.com/competitions/biohub-cell-tracking-during-development" target="_blank" rel="noopener">Biohub · Cell Tracking During Development</a><span class="st submission">仅已报名</span>
+        <td class="c-name"><a href="https://www.kaggle.com/competitions/biohub-cell-tracking-during-development" target="_blank" rel="noopener">Biohub · Cell Tracking During Development</a><span class="st submission">仅已报名</span><span class="vb agent">WorkBuddy 核验</span>
           <div class="tagrow"><span class="cat kaggle">Kaggle</span><span class="pri">P2</span></div>
           <div class="tagrow"><span class="cat">CV</span><span class="cat">医学</span><span class="cat">3D</span></div></td>
         <td class="c-dir">斑马鱼胚胎 3D+time 显微图像的细胞检测、跨帧跟踪与分裂事件识别、谱系重建；边缘 Jaccard + 分裂 Jaccard 组合指标。</td>
@@ -560,7 +564,7 @@
       </tr>
       <tr data-id="kaggriculture" data-status="submission" data-plat="Kaggle" data-venue="__none__" data-tag="agent llm"
           data-days="4" data-pri="3" data-vby="agent">
-        <td class="c-name"><a href="https://www.kaggle.com/competitions/kaggriculture" target="_blank" rel="noopener">Kaggriculture（Kaggle Simulation）</a><span class="st submission">仅已报名</span>
+        <td class="c-name"><a href="https://www.kaggle.com/competitions/kaggriculture" target="_blank" rel="noopener">Kaggriculture（Kaggle Simulation）</a><span class="st submission">仅已报名</span><span class="vb agent">WorkBuddy 核验</span>
           <div class="tagrow"><span class="cat kaggle">Kaggle</span><span class="pri">P3</span></div>
           <div class="tagrow"><span class="cat">Agent</span><span class="cat">大模型</span></div></td>
         <td class="c-dir">回合制农场经营模拟对弈 agent：30 天 / 720 回合双人对局，种植、养殖、雇工、买地、动态市场交易，以最终现金多者胜。</td>
@@ -610,7 +614,7 @@
       </tr>
       <tr data-id="selma3d-2026" data-status="unclear" data-plat="会议官网" data-venue="MICCAI 2026" data-tag="cv med 3d"
           data-days="3" data-pri="2" data-vby="agent">
-        <td class="c-name"><a href="https://selma3d2026.grand-challenge.org/timeline/" target="_blank" rel="noopener">SELMA3D 2026 · 3D 光片显微图像自监督分割</a><span class="st unclear">待确认</span>
+        <td class="c-name"><a href="https://selma3d2026.grand-challenge.org/timeline/" target="_blank" rel="noopener">SELMA3D 2026 · 3D 光片显微图像自监督分割</a><span class="st unclear">待确认</span><span class="vb agent">WorkBuddy 核验</span>
           <div class="tagrow"><span class="cat conf">会议官网</span><span class="cat venue">MICCAI 2026</span><span class="pri">P2</span></div>
           <div class="tagrow"><span class="cat">CV</span><span class="cat">医学</span><span class="cat">3D</span></div></td>
         <td class="c-dir">3D 光片显微图像自监督学习（SSL）分割（MICCAI 2026 satellite event）；Task 1 与 Task 2 两任务榜单。</td>
@@ -620,7 +624,7 @@
       </tr>
       <tr data-id="lightmycells2" data-status="unclear" data-plat="会议官网" data-venue="ISBI 2027" data-tag="cv med"
           data-days="-1" data-pri="2" data-vby="agent">
-        <td class="c-name"><a href="https://lightmycells2.grand-challenge.org/evaluation/" target="_blank" rel="noopener">Light My Cells 2 · 透射光→荧光预测</a><span class="st unclear">待确认</span>
+        <td class="c-name"><a href="https://lightmycells2.grand-challenge.org/evaluation/" target="_blank" rel="noopener">Light My Cells 2 · 透射光→荧光预测</a><span class="st unclear">待确认</span><span class="vb agent">WorkBuddy 核验</span>
           <div class="tagrow"><span class="cat conf">会议官网</span><span class="cat venue">ISBI 2027</span><span class="pri">P2</span></div>
           <div class="tagrow"><span class="cat">CV</span><span class="cat">医学</span></div></td>
         <td class="c-dir">从无标记透射光显微图预测核、线粒体、微管、肌动蛋白 4 种细胞结构荧光图；新增任务：从透射光图像堆栈重建荧光 MIP；已提交 ISBI 2027。</td>
@@ -700,7 +704,7 @@
       </tr>
       <tr data-id="airway-tree-modeling-26" data-status="unclear" data-plat="会议官网" data-venue="__none__" data-tag=""
           data-days="-1" data-pri="5" data-vby="ai">
-        <td class="c-name"><a href="https://atm26.grand-challenge.org/" target="_blank" rel="noopener">Airway Tree Modeling 26</a><span class="st unclear">待确认</span>
+        <td class="c-name"><a href="https://atm26.grand-challenge.org/" target="_blank" rel="noopener">Airway Tree Modeling 26</a><span class="st unclear">待确认</span><span class="vb ai">API 核验</span>
           <div class="tagrow"><span class="cat conf">会议官网</span><span class="pri">P5</span></div>
           <div class="tagrow"></div></td>
         <td class="c-dir"></td>
@@ -710,7 +714,7 @@
       </tr>
       <tr data-id="auto-1790499747" data-status="unclear" data-plat="讯飞" data-venue="__none__" data-tag=""
           data-days="-1" data-pri="5" data-vby="ai">
-        <td class="c-name"><a href="https://challenge.xfyun.cn/" target="_blank" rel="noopener">恶劣场景下的车道线检测挑战赛</a><span class="st unclear">待确认</span>
+        <td class="c-name"><a href="https://challenge.xfyun.cn/" target="_blank" rel="noopener">恶劣场景下的车道线检测挑战赛</a><span class="st unclear">待确认</span><span class="vb ai">API 核验</span>
           <div class="tagrow"><span class="cat xf">讯飞</span><span class="pri">P5</span></div>
           <div class="tagrow"></div></td>
         <td class="c-dir"></td>
@@ -720,7 +724,7 @@
       </tr>
       <tr data-id="auto-1790499749" data-status="unclear" data-plat="讯飞" data-venue="__none__" data-tag=""
           data-days="-1" data-pri="5" data-vby="ai">
-        <td class="c-name"><a href="https://challenge.xfyun.cn/" target="_blank" rel="noopener">复杂背景下结果枝实例分割挑战赛</a><span class="st unclear">待确认</span>
+        <td class="c-name"><a href="https://challenge.xfyun.cn/" target="_blank" rel="noopener">复杂背景下结果枝实例分割挑战赛</a><span class="st unclear">待确认</span><span class="vb ai">API 核验</span>
           <div class="tagrow"><span class="cat xf">讯飞</span><span class="pri">P5</span></div>
           <div class="tagrow"></div></td>
         <td class="c-dir"></td>
@@ -730,7 +734,7 @@
       </tr>
       <tr data-id="panther-challenge" data-status="unclear" data-plat="会议官网" data-venue="__none__" data-tag=""
           data-days="-1" data-pri="5" data-vby="ai">
-        <td class="c-name"><a href="https://panther.grand-challenge.org/" target="_blank" rel="noopener">PANTHER Challenge</a><span class="st unclear">待确认</span>
+        <td class="c-name"><a href="https://panther.grand-challenge.org/" target="_blank" rel="noopener">PANTHER Challenge</a><span class="st unclear">待确认</span><span class="vb ai">API 核验</span>
           <div class="tagrow"><span class="cat conf">会议官网</span><span class="pri">P5</span></div>
           <div class="tagrow"></div></td>
         <td class="c-dir"></td>
