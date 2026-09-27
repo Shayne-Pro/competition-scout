@@ -1,0 +1,4 @@
+interface:
+  display_name: "Competition Scout"
+  short_description: "Discover competitions and verify official dates and eligibility"
+  default_prompt: "Use $competition-scout to refresh this repository's competition catalogue with official evidence."

@@ -1,62 +1,130 @@
 name: Daily refresh
 
-# 每日由 GitHub 服务器自动执行：AI 核验/发现 → 状态翻转 → 重建页面 → 推回 main。
-# Pages 检测到 main 有新提交即自动重新部署，无需人工干预、不依赖本地 Mac。
-# LLM 走 GitHub Models 免费层（公开仓库），模型在 ai_update.py 的 GH_MODEL 里配置。
 on:
   schedule:
-    - cron: "20 0 * * *"   # UTC 00:20 = 北京时间 08:20（避开整点高峰）
-  workflow_dispatch: {}     # 手动触发（调试用）
+    - cron: '20 0 * * *' # 北京时间 08:20；GitHub 可能延迟调度。
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: '只验证并上传产物，不写 main 或部署页面'
+        type: boolean
+        default: true
+      max_steps:
+        description: '本次 Agent 最大模型轮数（1–100）'
+        type: number
+        default: 100
+      target_limit:
+        description: '本次最多复核条目数（1–20）'
+        type: number
+        default: 20
 
 permissions:
-  contents: write           # 允许把构建产物推回仓库
-  models: read              # GitHub Models 免费推理（公开仓库免费额度）
+  contents: read
 
 concurrency:
   group: daily-refresh
-  cancel-in-progress: false # 与本地任务推送撞车时排队而非互相取消
+  cancel-in-progress: false
+
+env:
+  TZ: Asia/Shanghai
+  PYTHONUNBUFFERED: '1'
 
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      ready: ${{ steps.package.outputs.ready }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Date flip and reminders
-        run: python3 daily_refresh.py
-
-      - name: Scrape SPA sources (Playwright)
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install browser fallback
         run: |
-          pip install playwright -q
+          python3 -m pip install -r requirements.txt
           python3 -m playwright install --with-deps chromium
-          python3 scrape_spa.py
-        continue-on-error: true   # 单源失败/Cloudflare 拦截不阻断；状态记入 spa_snapshot.json
-
-      - name: AI verify and discover (Zhipu glm-5.3-flash)
-        run: python3 ai_update.py
+      - name: Check deterministic code
+        run: python3 -m unittest discover -s tests -v
+      - name: Prepare source and verification queues
+        env:
+          TARGET_LIMIT: ${{ inputs.target_limit || 20 }}
+        run: python3 scout.py prepare --limit "$TARGET_LIMIT"
+      - name: Run competition-scout Skill with GLM
+        id: agent
+        continue-on-error: true
         env:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
-          GH_MODEL: ${{ secrets.LLM_MODEL }}
-        continue-on-error: true   # LLM 失败不阻断发布链路；状态记录在 runs-log
-
-      - name: Rebuild page
-        run: python3 build_page.py
-
-      - name: Self check
-        run: python3 ci_check.py
-
-      - name: Commit and push if changed
-        run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          if git diff --cached --quiet; then
-            echo "无变更，跳过提交"
-          else
-            git commit -m "每日刷新 $(date +%F)：AI 核验/发现 + 状态翻转 + 页面重建（GitHub Actions）"
-            git push
-          fi
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+          AGENT_MAX_STEPS: ${{ inputs.max_steps || 100 }}
+          AGENT_MAX_SECONDS: '1200'
+        run: python3 agent_refresh.py
+      - name: Apply validated proposal or retain previous data
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AGENT_OUTCOME: ${{ steps.agent.outcome }}
+        run: |
+          if [ "$AGENT_OUTCOME" = success ]; then
+            python3 scout.py apply
+          else
+            python3 scout.py failed
+          fi
+          python3 daily_refresh.py
+          python3 build_page.py
+          python3 ci_check.py
+      - name: Package publication files
+        id: package
+        run: |
+          python3 scripts/package_run.py
+          echo 'ready=true' >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: catalogue-${{ github.run_id }}
+          path: .scout/catalogue/
+          include-hidden-files: true
+          retention-days: 14
+      - name: Preserve proposal and evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scout-evidence-${{ github.run_id }}
+          path: |
+            .scout/task.json
+            .scout/proposal.json
+            .scout/evidence.json
+            .scout/agent.jsonl
+          include-hidden-files: true
+          retention-days: 7
+      - name: Fail visibly when the Agent did not run successfully
+        if: steps.agent.outcome != 'success'
+        run: exit 1
+
+  publish:
+    needs: refresh
+    if: >-
+      always() && needs.refresh.outputs.ready == 'true' &&
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'schedule' || inputs.dry_run == false)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      pages: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: catalogue-${{ github.run_id }}
+          path: .scout/publish/
+      - name: Commit the validated catalogue and request Pages build
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/publish.py .scout/publish
