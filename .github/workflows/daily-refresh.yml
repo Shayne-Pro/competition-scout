@@ -26,11 +26,13 @@ jobs:
       - name: Date flip and reminders
         run: python3 daily_refresh.py
 
-      - name: AI verify and discover (GitHub Models)
+      - name: AI verify and discover (optional, needs LLM_API_KEY)
         run: python3 ai_update.py
         env:
-          GH_MODEL: openai/gpt-4.1
-        continue-on-error: true   # LLM / 外网抖动不阻断发布链路；失败会记录在 runs-log
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+          GH_MODEL: ${{ secrets.LLM_MODEL }}
+        continue-on-error: true   # 无 key 或 LLM 失败不阻断发布链路；状态记录在 runs-log
 
       - name: Rebuild page
         run: python3 build_page.py
