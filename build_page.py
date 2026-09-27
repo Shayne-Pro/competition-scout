@@ -6,6 +6,7 @@
 chip 计数为分面计数（反映在其他维度当前选中条件下还剩多少），不是全量固定值。
 """
 import json, pathlib, datetime, html, collections, re, os
+from scout_core import now, days_left as event_days_left, validate_events, display_timestamp
 
 BASE = pathlib.Path(__file__).resolve().parent
 SRC = pathlib.Path(os.environ.get("EVENTS_DIR", str(BASE)))
@@ -17,8 +18,11 @@ SHOW_ARCHIVE = False
 SHOW_FOOTER = False
 
 events = json.load(open(SRC / "events.json", encoding="utf-8"))
+validate_events(events)
+events = [e for e in events if e["status"] != "excluded"]
 # 基准日期默认取「今天」（可被环境变量覆盖，便于复现历史构建或测试）。
-TODAY = datetime.date.fromisoformat(os.environ.get("BUILD_TODAY", datetime.date.today().isoformat()))
+NOW = now()
+TODAY = NOW.date()
 
 PLAT_CLASS = {"Kaggle": "kaggle", "天池": "cn", "讯飞": "xf", "Devpost": "devpost", "会议官网": "conf"}
 
@@ -40,7 +44,7 @@ STATUS = {
     "practice": ("practice", "长期练习", 4),
     "closed": ("closed", "已结束", 5),
 }
-WINDOWS = [("w7", "7 天内"), ("w30", "8–30 天"), ("later", "30 天以上"), ("past", "已截止 / 无日期")]
+WINDOWS = [("w7", "7 天内"), ("w30", "8–30 天"), ("later", "30 天以上"), ("past", "日期待核 / 已截止")]
 
 
 def days_to(day):
@@ -53,10 +57,7 @@ def days_to(day):
 
 
 def days_left(e):
-    ds = [d for d in (days_to(e.get("entry", {}).get("day")), days_to(e.get("submit", {}).get("day")))
-          if d is not None]
-    fut = [d for d in ds if d >= 0]
-    return min(fut) if fut else -1
+    return event_days_left(e, NOW)
 
 
 DOMESTIC = {"天池", "讯飞", "百度", "DataFountain", "阿里云天池"}
@@ -135,15 +136,15 @@ def chips(dim, items, order=None, labels=None):
     return "\n    ".join(out)
 
 
-def row(e):
+def row(e, order=0):
     st, st_label, _ = STATUS.get(e["status"], ("closed", e["status"], 9))
     domestic = e["platform"] in DOMESTIC
     times = []
     for label, key in (("报名", "entry"), ("提交", "submit")):
         node = e.get(key) or {}
-        txt = normalize_tz(node.get("text") or "—", domestic)
+        txt = node.get("text") or "—"
         times.append('<div class="tline"><span class="tlabel">%s</span>%s</div>' % (label, html.escape(txt)))
-    warn_txt = normalize_tz(e.get("warning") or "", domestic)
+    warn_txt = e.get("warning") or ""
     if warn_txt and warn_txt != "—" and not re.search(r"[。！？…”》]$", warn_txt):
         warn_txt += "。"
     warn = '<div class="warn">%s</div>' % html.escape(warn_txt) if warn_txt else ""
@@ -153,32 +154,44 @@ def row(e):
     venue_attr = venue or NO_VENUE
     venue_pill = ('<span class="cat venue">%s</span>' % html.escape(venue)) if venue else ""
     vby = e.get("verifiedBy") or "human"
+    verification_data = e.get("verification", {})
+    verified = verification_data.get("verifiedAt")
+    label = ("最近核验 " + display_timestamp(verified)) if verified else "历史记录待复核"
+    if verification_data.get("state") == "partial":
+        label += " · 信息待确认"
+    if verification_data.get("lastError"):
+        label += " · 最近复核失败"
+    verification = html.escape(label)
     return """      <tr data-id="{eid}" data-status="{st}" data-plat="{plat}" data-venue="{venue}" data-tag="{tags_s}"
-          data-days="{days}" data-pri="{pri}" data-vby="{vby}">
+          data-days="{days}" data-pri="{pri}" data-vby="{vby}" data-ord="{order}">
         <td class="c-name"><a href="{url}" target="_blank" rel="noopener">{title}</a><span class="st {st}">{stlabel}</span>
           <div class="tagrow"><span class="cat {pcls}">{plat}</span>{venue_pill}<span class="pri">P{pri}</span></div>
-          <div class="tagrow">{tags}</div></td>
+          <div class="tagrow">{tags}</div><div class="muted">{verification}</div></td>
         <td class="c-dir">{task}</td>
         <td class="c-time">{times}{warn}</td>
         <td class="c-req">{req}</td>
         <td class="c-prize">{award}</td>
       </tr>""".format(
-        eid=html.escape(e["id"]), vby=vby,
+        eid=html.escape(e["id"]), vby=html.escape(vby), order=order, verification=verification,
         st=st, plat=html.escape(e["platform"]), pcls=plat_class(e["platform"]),
         venue=html.escape(venue_attr), venue_pill=venue_pill,
         tags_s=tag_slugs, days=days_left(e), pri=e.get("priority", 9),
-        url=e["url"], title=html.escape(e["title"]), stlabel=st_label, tags=tags,
+        url=html.escape(e["url"], quote=True), title=html.escape(e["title"]), stlabel=st_label, tags=tags,
         task=html.escape(e["task"]), times="".join(times), warn=warn,
         req=html.escape(e["requirements"]), award=html.escape(e["award"]))
 
 
-render_rows = []
-for i, e in enumerate(events):
-    r = row(e)
-    r = r.replace('data-pri="%s">' % e.get("priority", 9),
-                  'data-pri="%s" data-ord="%d">' % (e.get("priority", 9), i), 1)
-    render_rows.append(r)
-render_rows = "\n".join(render_rows)
+render_rows = "\n".join(row(e, i) for i, e in enumerate(events))
+refresh_file = SRC / "refresh-status.json"
+refresh = json.loads(refresh_file.read_text(encoding="utf-8")) if refresh_file.exists() else {}
+state_label = {"ok": "已完成", "partial": "部分完成，有来源或条目未核实", "failed": "失败，保留既有数据"}.get(refresh.get("state"), "尚无 Agent 运行记录")
+refresh_text = state_label
+if refresh.get("finishedAt"):
+    refresh_text += " · 最近运行 " + display_timestamp(refresh["finishedAt"])
+if refresh:
+    refresh_text += " · 本轮核验 %s 条，来源 %s/%s" % (refresh.get("verified", 0), refresh.get("sourcesOk", 0), refresh.get("sourcesTotal", 0))
+refresh_text = html.escape(refresh_text)
+
 
 CSS = """  :root{
     --bg:#ffffff; --bg2:#f7f7f5; --line:rgba(0,0,0,.12); --line2:rgba(0,0,0,.06);
@@ -314,11 +327,12 @@ HTML = """<!DOCTYPE html>
 <div class="wrap">
 
   <h1>CV / 大模型 / 搜广推 竞赛清单</h1>
-  <p class="sub">逐条核对官方来源后确认还能参加的具体赛题。托管平台与所属会议分开标注，报名资格、提交要求与截止时间分别列出。</p>
-  <p class="hint">核验日期 <b>{today}</b> · 已启用非学生身份筛选 · 每条均附官方入口。竞赛时间与奖金常变动，报名前请以官网为准。<br>时区口径：<b>国内赛事（天池 / 讯飞 等）按北京时间 GMT+8</b>；海外赛事保留官网原始时区，并附北京时间换算。</p>
+  <p class="sub">持续发现并核验竞赛；待确认与历史记录单独标注。托管平台与所属会议分开标注，报名资格、提交要求与截止时间分别列出。</p>
+  <p class="hint">页面构建 <b data-build-date="{today}">{build_time}</b> · 有证据的学生专属赛事不展示；资格不明保留待确认。<br>截止时刻按官网时区核实；缺少时区时不自动判定截止。历史日期需复核后才参与倒计时。</p>
+  <p class="note" id="refresh-status">Agent 更新：{refresh_text}</p>
 
   <div class="stats">
-    <div class="stat"><p class="k">已核验具体条目</p><p class="v">{n_all}</p><p class="n">逐条核对官方来源</p></div>
+    <div class="stat"><p class="k">收录条目</p><p class="v">{n_all}</p><p class="n">含待确认与历史记录</p></div>
     <div class="stat"><p class="k">可新参加</p><p class="v">{n_open}</p><p class="n">未发现已过的强制前置节点</p></div>
     <div class="stat"><p class="k">7 天内行动截止</p><p class="v">{n_week}</p><p class="n">仅计可新参加 / 仅已报名</p></div>
     <div class="stat"><p class="k">待确认 / 待发布</p><p class="v">{n_pending}</p><p class="n">身份资格或日期不明</p></div>
@@ -522,7 +536,8 @@ sections = ""
 footer = ""
 
 out = HTML.format(
-    today=TODAY.isoformat(), css=CSS, rows=render_rows,
+    build_time=display_timestamp(NOW.isoformat()),
+    today=TODAY.isoformat(), css=CSS, rows=render_rows, refresh_text=refresh_text,
     cloud_css=CLOUD_CSS, cloud_srcbar=CLOUD_SRCBAR, cloud_aipanel=CLOUD_AIPANEL,
     cloud_sdk=CLOUD_SDK, cloud_js=CLOUD_JS,
     n_all=n_all, n_open=n_open, n_week=n_week, n_pending=n_pending,

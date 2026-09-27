@@ -1,48 +1,40 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""构建自检（CI 与本地共用）：结构校验 + 渲染后行数一致性。
-
-校验点：
-1. index.html 的 <tr data-id> 行数 == events.json 条目数；
-2. id 无重复；
-3. 页面数据截至日期 == BUILD_TODAY（默认今天）；
-4. 基础 HTML 结构完整（table/tbody/script 闭合）。
-"""
+"""Validate catalogue schema and the generated page's identity/date contract."""
+from html.parser import HTMLParser
+from pathlib import Path
 import json
-import datetime
-import pathlib
-import re
-import sys
+from scout_core import now, validate_events
 
-BASE = pathlib.Path(__file__).resolve().parent
-today = datetime.date.fromisoformat(
-    __import__("os").environ.get("BUILD_TODAY", datetime.date.today().isoformat())
-).isoformat()
+BASE = Path(__file__).resolve().parent
 
-ok = True
-events = json.loads((BASE / "events.json").read_text(encoding="utf-8"))
-html = (BASE / "index.html").read_text(encoding="utf-8")
 
-ids = [e["id"] for e in events]
-if len(ids) != len(set(ids)):
-    dup = [i for i in set(ids) if ids.count(i) > 1]
-    print("FAIL: events.json 存在重复 id:", dup)
-    ok = False
+class Page(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.ids, self.dates, self.status = [], [], False
 
-rows = len(re.findall(r"<tr data-id=", html))  # 页面无模板行，每行对应一条赛事
-if rows != len(events):
-    print("FAIL: 页面行数 %d != 条目数 %d" % (rows, len(events)))
-    ok = False
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if tag == 'tr' and 'data-id' in attrs:
+            self.ids.append(attrs['data-id'])
+        if 'data-build-date' in attrs:
+            self.dates.append(attrs['data-build-date'])
+        if attrs.get('id') == 'refresh-status':
+            self.status = True
 
-if today not in html:
-    print("FAIL: 页面未见数据截至日期 %s" % today)
-    ok = False
 
-for tag in ("</table>", "</tbody>", "</script>"):
-    if html.count(tag) == 0:
-        print("FAIL: 缺少 %s" % tag)
-        ok = False
+def main():
+    events = json.loads((BASE / 'events.json').read_text())
+    validate_events(events)
+    page = Page()
+    page.feed((BASE / 'index.html').read_text())
+    visible = [e['id'] for e in events if e['status'] != 'excluded']
+    if len(page.ids) != len(visible) or set(page.ids) != set(visible):
+        raise ValueError('rendered event IDs differ from the catalogue')
+    if page.dates != [now().date().isoformat()] or not page.status:
+        raise ValueError('missing exact build date or refresh-status banner')
+    print('PASS: %d visible events; schema, IDs, date and refresh banner verified.' % len(visible))
 
-if ok:
-    print("PASS: %d 条，页面行数一致，结构完整，数据截至 %s" % (len(events), today))
-sys.exit(0 if ok else 1)
+
+if __name__ == '__main__':
+    main()
