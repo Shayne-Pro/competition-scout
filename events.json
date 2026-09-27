@@ -264,10 +264,10 @@
       "instant": "2026-10-09T23:59:00+08:00"
     },
     "requirements": "个人或团队；按官网报名表提交并由组委会确认。入围后须参加现场答辩。",
-    "award": "各赛道优胜队伍获大会颁发的获奖证书及奖金；现场答辩成绩占40%、榜单成绩占60%；入围现场答辩者须提前完成大会注册并缴费，未按要求注册视为放弃答辩及评奖资格；入围队伍须制作PPT现场答辩（5分钟以内），具体安排另行通知",
+    "award": "获奖证书及奖金奖励（大会颁发）；最终成绩=榜单成绩60%+现场答辩成绩40%；入围队伍须制作现场答辩PPT（5分钟以内）现场汇报",
     "url": "https://www.lidar2026shenzhen.com/onepage.php?id=9",
     "status": "open",
-    "warning": "page said: 现场答辩需现场参加并完成大会注册缴费，否则视为放弃评奖资格；答辩具体时间尚未公布（另行通知）",
+    "warning": "现场答辩为线下形式，须提前完成大会注册并缴费，否则视为自愿放弃答辩及评奖资格；现场答辩具体时间另行通知（页面写\"具体安排另行通知\"）",
     "note": "",
     "priority": 3,
     "verifiedAt": "2026-09-27",
@@ -354,12 +354,12 @@
     ],
     "task": "用 Spark-X2.5-4B / 1.7B 做可交互、可运行的端侧应用。",
     "entry": {
-      "text": "报名页为 11 月 10 日；另有更早材料节点",
+      "text": "页面未给出报名日期",
       "day": null,
       "instant": null
     },
     "submit": {
-      "text": "10/11 与 11/10 17:00 两种口径",
+      "text": "页面未给出提交日期",
       "day": "2026-10-11",
       "instant": null
     },
@@ -367,7 +367,7 @@
     "award": "¥100,000",
     "url": "https://challenge.xfyun.cn/topic/info?type=Spark-X25",
     "status": "open",
-    "warning": "页面未显示该赛事的任何具体日期（报名/提交时间均为空占位）",
+    "warning": "entry.day 与 submit.day 均无法从页面确认，原条目日期为猜测，应置空",
     "note": "",
     "priority": 4,
     "verifiedAt": "2026-09-27",
@@ -1483,7 +1483,7 @@
     ],
     "task": "3D light-sheet 显微图像的自监督学习（SSL）分割（MICCAI 2026 线下 satellite event）。分 preliminary test 与 final test 两个榜单。",
     "entry": {
-      "text": "Challenge website launch and challenge registration opening",
+      "text": "April 9th, 2026: Challenge website launch and challenge registration opening",
       "day": "2026-04-09",
       "instant": null
     },
@@ -1493,10 +1493,10 @@
       "instant": null
     },
     "requirements": "通过 grand-challenge 平台提交（容器化算法）。训练集 4/23 放出，preliminary test 样本 6/1 放出、final test 样本 9/9 放出。",
-    "award": "Page text contains no award or obligations info; October 1st, 2026 in-person challenge event stated.",
+    "award": "not stated on page; page mentions in-person challenge event on October 1st, 2026 (MICCAI 2026 in-person satellite event)",
     "url": "https://selma3d2026.grand-challenge.org/timeline/",
     "status": "open",
-    "warning": "page contains a likely typo: training dataset release dated 'April 23th, 2025' (appears inconsistent with 2026 timeline)",
+    "warning": "page lists \"April 23th, 2025: Release of training dataset\" — year 2025 appears to be a typo/conflict with 2026 timeline",
     "note": "",
     "priority": 2,
     "verifiedAt": "2026-09-27",
