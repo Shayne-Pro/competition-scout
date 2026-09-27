@@ -10,10 +10,10 @@
 
 环境变量：
   LLM_API_KEY / LLM_BASE_URL —— OpenAI 兼容端点。当前配置：智谱 coding 端点
-    （https://open.bigmodel.cn/api/coding/paas/v4），模型 glm-4.6。
+    （https://open.bigmodel.cn/api/coding/paas/v4），模型 glm-5.3-flash。
     注意智谱是思考模型：thinking enabled 时答案在 reasoning_content；本脚本统一
     thinking disabled（已实测有效，content 直接可用）。
-  GH_MODEL     —— 模型名（默认 glm-4.6）
+  GH_MODEL     —— 模型名（默认 glm-5.3-flash；请求 glm-4.6/4.5 会被路由到 5.3-flash）
   BUILD_TODAY  —— 测试用基准日期
 """
 import datetime
@@ -29,7 +29,7 @@ import html as HTMLMOD
 
 BASE = pathlib.Path(__file__).resolve().parent
 TODAY = datetime.date.fromisoformat(os.environ.get("BUILD_TODAY", datetime.date.today().isoformat()))
-MODEL = os.environ.get("GH_MODEL", "glm-4.6")
+MODEL = os.environ.get("GH_MODEL", "glm-5.3-flash")
 LLM_URL = os.environ.get("LLM_BASE_URL", "https://open.bigmodel.cn/api/coding/paas/v4").rstrip("/") + "/chat/completions"
 LLM_KEY = os.environ.get("LLM_API_KEY", "")
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"}

@@ -33,7 +33,7 @@ jobs:
           python3 scrape_spa.py
         continue-on-error: true   # 单源失败/Cloudflare 拦截不阻断；状态记入 spa_snapshot.json
 
-      - name: AI verify and discover (Zhipu glm-4.6)
+      - name: AI verify and discover (Zhipu glm-5.3-flash)
         run: python3 ai_update.py
         env:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
