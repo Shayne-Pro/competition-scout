@@ -84,6 +84,14 @@ class CoreTests(unittest.TestCase):
         self.assertEqual(e['status'], 'closed')
         self.assertEqual(cutoff(node('2026-10-24', kind='deadline', timezone='AoE')).astimezone(BEIJING).day, 25)
 
+    def test_explicitly_closed_event_cannot_reopen_from_dates_alone(self):
+        e = event()
+        e.update(status='closed', verification={'state': 'verified'})
+        e['entry'] = node('2026-09-01', kind='deadline', timezone='UTC')
+        e['submit'] = node('2026-10-30', kind='deadline', timezone='UTC')
+        refresh_status(e, dt.datetime(2026, 9, 28, tzinfo=BEIJING))
+        self.assertEqual(e['status'], 'closed')
+
     def test_opening_is_not_a_deadline_and_unknown_zone_cannot_expire(self):
         self.assertIsNone(cutoff(node('2026-09-01', kind='opening', timezone='UTC')))
         self.assertIsNone(cutoff(node('2026-09-01', kind='deadline', timezone='unknown')))
@@ -160,6 +168,16 @@ class PipelineTests(unittest.TestCase):
             proposal[key] = []
             with self.assertRaises(ValueError):
                 scout.validate_proposal(proposal, self.task, [event()])
+
+    def test_real_source_registry_can_stage_a_proposal(self):
+        shutil.copy2(ROOT / 'sources.json', self.base / 'sources.json')
+        task = scout.prepare(self.base)
+        urls = [item['url'] for item in task['sources']]
+        self.assertEqual(len(urls), len(set(urls)))
+        agent = agent_refresh.Agent(self.base)
+        staged = agent.save()
+        self.assertEqual(len(staged['sources']), len(urls))
+        self.assertTrue(any(s.get('relatedEntries') for s in task['sources']))
 
     def test_changed_baseline_and_stale_proposal_are_rejected(self):
         other = event()
