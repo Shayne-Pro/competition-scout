@@ -6,7 +6,7 @@
 chip 计数为分面计数（反映在其他维度当前选中条件下还剩多少），不是全量固定值。
 """
 import json, pathlib, datetime, html, collections, re, os
-from scout_core import now, days_left as event_days_left, validate_events
+from scout_core import now, days_left as event_days_left, validate_events, display_timestamp
 
 BASE = pathlib.Path(__file__).resolve().parent
 SRC = pathlib.Path(os.environ.get("EVENTS_DIR", str(BASE)))
@@ -156,7 +156,7 @@ def row(e, order=0):
     vby = e.get("verifiedBy") or "human"
     verification_data = e.get("verification", {})
     verified = verification_data.get("verifiedAt")
-    label = ("最近核验 " + verified) if verified else "历史记录待复核"
+    label = ("最近核验 " + display_timestamp(verified)) if verified else "历史记录待复核"
     if verification_data.get("state") == "partial":
         label += " · 信息待确认"
     if verification_data.get("lastError"):
@@ -187,7 +187,7 @@ refresh = json.loads(refresh_file.read_text(encoding="utf-8")) if refresh_file.e
 state_label = {"ok": "已完成", "partial": "部分完成，有来源或条目未核实", "failed": "失败，保留既有数据"}.get(refresh.get("state"), "尚无 Agent 运行记录")
 refresh_text = state_label
 if refresh.get("finishedAt"):
-    refresh_text += " · 最近运行 " + refresh["finishedAt"]
+    refresh_text += " · 最近运行 " + display_timestamp(refresh["finishedAt"])
 if refresh:
     refresh_text += " · 本轮核验 %s 条，来源 %s/%s" % (refresh.get("verified", 0), refresh.get("sourcesOk", 0), refresh.get("sourcesTotal", 0))
 refresh_text = html.escape(refresh_text)
@@ -328,7 +328,7 @@ HTML = """<!DOCTYPE html>
 
   <h1>CV / 大模型 / 搜广推 竞赛清单</h1>
   <p class="sub">持续发现并核验竞赛；待确认与历史记录单独标注。托管平台与所属会议分开标注，报名资格、提交要求与截止时间分别列出。</p>
-  <p class="hint">页面构建 <b data-build-date="{today}">{today}</b> · 有证据的学生专属赛事不展示；资格不明保留待确认。<br>截止时刻按官网时区核实；缺少时区时不自动判定截止。历史日期需复核后才参与倒计时。</p>
+  <p class="hint">页面构建 <b data-build-date="{today}">{build_time}</b> · 有证据的学生专属赛事不展示；资格不明保留待确认。<br>截止时刻按官网时区核实；缺少时区时不自动判定截止。历史日期需复核后才参与倒计时。</p>
   <p class="note" id="refresh-status">Agent 更新：{refresh_text}</p>
 
   <div class="stats">
@@ -536,6 +536,7 @@ sections = ""
 footer = ""
 
 out = HTML.format(
+    build_time=display_timestamp(NOW.isoformat()),
     today=TODAY.isoformat(), css=CSS, rows=render_rows, refresh_text=refresh_text,
     cloud_css=CLOUD_CSS, cloud_srcbar=CLOUD_SRCBAR, cloud_aipanel=CLOUD_AIPANEL,
     cloud_sdk=CLOUD_SDK, cloud_js=CLOUD_JS,
