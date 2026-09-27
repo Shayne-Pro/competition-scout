@@ -27,7 +27,8 @@ SHOW_ARCHIVE = False
 SHOW_FOOTER = False
 
 events = json.load(open(SRC / "events.json", encoding="utf-8"))
-TODAY = datetime.date(2026, 9, 27)
+# 基准日期默认取「今天」（可被环境变量覆盖，便于复现历史构建或测试）。
+TODAY = datetime.date.fromisoformat(os.environ.get("BUILD_TODAY", datetime.date.today().isoformat()))
 
 PLAT_CLASS = {"Kaggle": "kaggle", "天池": "cn", "讯飞": "xf", "Devpost": "devpost", "会议官网": "conf"}
 
