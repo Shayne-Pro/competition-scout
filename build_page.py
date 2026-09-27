@@ -617,6 +617,16 @@ HTML = """<!DOCTYPE html>
       bar.innerHTML = '<span><span class="dot ' + dotCls + '"></span>' + esc(text) + '</span>';
     }}
 
+    // 云端不可达时（例如托管在 github.io，Origin 与云端应用的保留域名不一致），
+    // 隐藏 AI 面板并把状态行改成静态版说明，避免看着像坏了。
+    function degradeToStatic(reason) {{
+      var ai = document.getElementById('aiPanel');
+      if (ai) ai.style.display = 'none';
+      var n = document.querySelectorAll('tbody tr').length;
+      setSrcbar('off', '静态快照 ' + n + ' 条 · 每日由自动任务重建并发布' +
+        (reason ? '（云端不可达：' + reason + '）' : ''));
+    }}
+
     function bjTime(iso) {{
       var d = new Date(iso);
       if (isNaN(d)) return String(iso).slice(0, 16).replace('T', ' ');
@@ -628,7 +638,7 @@ HTML = """<!DOCTYPE html>
     function boot() {{
       var base = document.querySelectorAll('tbody tr').length;
       if (!window.WorkBuddyCloud) {{
-        setSrcbar('off', '本地基线快照 ' + base + ' 条（云端 SDK 未加载，可能离线）');
+        degradeToStatic('云端 SDK 未加载');
         return;
       }}
       cloud = WorkBuddyCloud.createWorkBuddyCloud({{
@@ -648,8 +658,7 @@ HTML = """<!DOCTYPE html>
         setSrcbar(o.run && o.run.ok === false ? 'warn' : 'ok',
           '云端已连接 · 基线 ' + o.base + ' 条 + 覆盖 ' + (o.st.patched + o.st.added) + ' 条（' + fresh + '）');
       }}).catch(function (err) {{
-        setSrcbar('warn', '云端读取失败，当前显示本地基线快照 ' + base + ' 条：' +
-          ((err && err.message) ? err.message : '未知错误'));
+        degradeToStatic((err && err.message) ? err.message : '未知错误');
       }});
     }}
 
