@@ -1,8 +1,8 @@
 {
   "state": "ok",
-  "finishedAt": "2026-09-27T19:46:43+08:00",
-  "verified": 4,
-  "sourcesOk": 5,
-  "sourcesTotal": 6,
-  "runner": "local-scripts"
+  "finishedAt": "2026-10-06T14:41:25+08:00",
+  "verified": 21,
+  "sourcesOk": 6,
+  "sourcesTotal": 7,
+  "runner": "workbuddy-agent"
 }
