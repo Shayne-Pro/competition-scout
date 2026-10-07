@@ -1,17 +1,22 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""用 Playwright 无头浏览器抓三个 SPA 列表源（脚本直抓拿不到正文的那三个）。
+"""用 Playwright 无头浏览器抓 SPA 列表源（脚本直抓拿不到正文的源）。
 
-输出 spa_snapshot.json：[{source, url, text}]，供 ai_update.py 的发现环节消费。
+输出 spa_snapshot.json：{"snapshots": [{source, url, text}], "failed": [...]}。
 设计约束：
 - 本地与 GitHub Actions runner 都能跑（依赖 playwright + chromium）；
 - 单源失败不阻断（记入 failed）；
-- Kaggle 必须用完整版 Chromium（channel="chromium" 新 headless 模式）过 Cloudflare，
-  headless shell 会被卡在「正在检查浏览器」页。
+- Kaggle 优先走官方 API v1（需 ~/.kaggle/kaggle.json 或 KAGGLE_USERNAME/KAGGLE_KEY，
+  2026-10 起 Cloudflare 对无头浏览器与 curl 一律弹 reCAPTCHA，Playwright 路径已不可用）；
+  无凭据时记明确失败原因，由 agent 在每日流程里 WebFetch 兜底；
+- 天池/讯飞仍用 Playwright（Kaggle 必须用完整版 Chromium channel="chromium" 过检查，
+  headless shell 会被卡在「正在检查浏览器」页）。
 """
+import base64
 import json
 import pathlib
 import sys
+import urllib.request
 
 BASE = pathlib.Path(__file__).resolve().parent
 OUT = BASE / "spa_snapshot.json"
@@ -25,6 +30,57 @@ SOURCES = [
 ]
 
 
+def kaggle_credentials():
+    """返回 (username, key) 或 None。优先环境变量，其次 ~/.kaggle/kaggle.json。"""
+    import os
+    u, k = os.environ.get("KAGGLE_USERNAME"), os.environ.get("KAGGLE_KEY")
+    if u and k:
+        return u, k
+    p = pathlib.Path.home() / ".kaggle" / "kaggle.json"
+    if p.exists():
+        try:
+            d = json.loads(p.read_text(encoding="utf-8"))
+            if d.get("username") and d.get("key"):
+                return d["username"], d["key"]
+        except Exception:
+            pass
+    return None
+
+
+def fetch_kaggle_api():
+    """官方 API v1 拉最近创建的 general 组比赛（2 页 × 20 条，发现环节够用）。
+
+    返回 snapshots 元素；失败抛异常（由调用方记 failed）。
+    """
+    cred = kaggle_credentials()
+    if not cred:
+        raise RuntimeError("no kaggle credentials (put ~/.kaggle/kaggle.json or set "
+                           "KAGGLE_USERNAME/KAGGLE_KEY); agent 应 WebFetch 兜底")
+    auth = base64.b64encode(("%s:%s" % cred).encode()).decode()
+    lines = []
+    for page in (1, 2):
+        url = ("https://www.kaggle.com/api/v1/competitions/list"
+               "?sortBy=recentlyCreated&group=general&page=%d" % page)
+        req = urllib.request.Request(url, headers={
+            "Authorization": "Basic " + auth, "User-Agent": UA})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            data = json.loads(r.read().decode())
+        for c in data:
+            lines.append(" | ".join([
+                c.get("ref") or "", c.get("category") or "",
+                (c.get("title") or "")[:80],
+                "deadline=" + (c.get("deadline") or "")[:10],
+                "reward=" + str(c.get("reward") or ""),
+                "teams=" + str(c.get("teamCount") or ""),
+                "started=" + (c.get("enabledDate") or "")[:10]]))
+        if len(data) < 20:
+            break
+    if not lines:
+        raise RuntimeError("kaggle api returned 0 items")
+    return {"source": "kaggle", "url": "https://www.kaggle.com/api/v1/competitions/list",
+            "text": "\n".join(lines)[:12000]}
+
+
 def main():
     try:
         from playwright.sync_api import sync_playwright
@@ -33,6 +89,11 @@ def main():
         OUT.write_text("[]", encoding="utf-8")
         return 0
     snap, failed = [], []
+    # Kaggle：Playwright 已过不了 Cloudflare（2026-10 起 reCAPTCHA），走官方 API
+    try:
+        snap.append(fetch_kaggle_api())
+    except Exception as e:
+        failed.append("kaggle: %s" % e)
     with sync_playwright() as p:
         try:
             browser = p.chromium.launch(channel="chromium", headless=True,
@@ -40,6 +101,8 @@ def main():
         except Exception:
             browser = p.chromium.launch(headless=True)  # 兜底：完整版不存在时用 shell
         for name, url in SOURCES:
+            if name == "kaggle":
+                continue  # 已由官方 API 处理
             pg = None
             try:
                 # Kaggle 的 Cloudflare 检查对 zh-CN 更严，英文站用 en-US context（实测通过）
