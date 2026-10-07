@@ -396,7 +396,8 @@
       "instant": "2026-10-09T23:59:00-12:00",
       "kind": "deadline",
       "text": "Registration closes October 9, 2026 · 23:59 AoE → 北京 10/10 19:59",
-      "timezone": "AoE"
+      "timezone": "AoE",
+      "mandatory": true
     },
     "submit": {
       "day": "2026-10-24",
@@ -405,23 +406,16 @@
       "text": "Final submission deadline October 23, 2026 · 23:59 AoE → 北京 10/24 19:59",
       "timezone": "AoE"
     },
-    "requirements": "最多 5 人；每人每赛道一队。Main 赛道模型不限；Open-Weight 赛道推理时只能用公开权重与工具。提交 CSV（每天最多 3 次评分提交）；前三名须 14 天内提供复现包。",
-    "award": "每赛道 $1,000 / $500 / $250",
+    "requirements": "个人或团队参赛，每队最多5人，每人每赛道一队。CSV经官网提交，每天最多3次评分；Open-Weight赛道须使用公开权重与工具。前三名须在14天内提供可复现代码、权重及说明。",
+    "award": "每赛道一等奖$1,000、二等奖$500、三等奖$250。",
     "url": "https://quantiphy.stanford.edu/competition/",
     "status": "open",
-    "warning": "报名 10/9 23:59 AoE 截止（北京 10/10 19:59，剩 3 天，官网倒计时进行中）；9/14 官方修正了 32 个 ID 的单位表述，已提交者需核对。",
+    "warning": "强制报名先于最终提交截止；Open-Weight及获奖复现要求需逐项满足。9月14日官方更正32个ID的单位表述。",
     "note": "",
     "priority": 1,
-    "verifiedAt": "2026-10-07T10:26:54+08:00",
+    "verifiedAt": "2026-10-07T12:11:44+08:00",
     "sources": [
-      {
-        "label": "official",
-        "url": "https://quantiphy.stanford.edu/competition/"
-      },
-      {
-        "label": "official",
-        "url": "https://quantiphy.stanford.edu/competition/"
-      }
+      "https://quantiphy.stanford.edu/competition/"
     ],
     "old": [
       "QuantiPhy"
@@ -431,19 +425,24 @@
     "verifiedBy": "agent",
     "verification": {
       "state": "verified",
-      "attemptedAt": "2026-09-27T18:15:15+08:00",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": "2026-10-07T12:11:44+08:00",
+      "previousVerifiedAt": "2026-10-07T10:26:54+08:00",
+      "runId": "codex-2026-10-07-manual",
       "evidence": [
         {
-          "quote": "Team registration and edits to existing teams close on October 9, 2026 at 23:59 Anywhere on Earth (AoE).",
-          "url": "https://quantiphy.stanford.edu/competition/"
-        },
-        {
-          "quote": "The final submission deadline remains October 23, 2026 at 23:59 AoE.",
-          "url": "https://quantiphy.stanford.edu/competition/"
+          "url": "https://quantiphy.stanford.edu/competition/",
+          "summary": "报名10月9日23:59 AoE，终交10月23日23:59 AoE；规则列明人数、CSV及获奖复现义务。",
+          "fields": [
+            "entry",
+            "submit",
+            "requirements",
+            "award",
+            "eligibility"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
         }
-      ],
-      "runId": "36311263414-1",
-      "verifiedAt": "2026-09-27T18:15:15+08:00"
+      ]
     }
   },
   {
@@ -530,7 +529,8 @@
     ],
     "old": [],
     "venue": "",
-    "verifiedBy": "agent"
+    "verifiedBy": "agent",
+    "note": ""
   },
   {
     "id": "rsna",
@@ -543,36 +543,32 @@
     ],
     "task": "膝关节 MRI 与放射报告多模态建模；预测 12 类临床异常，按宏平均 AUC 评分。",
     "entry": {
+      "text": "Entry and Team Merger Deadline: October 15, 2026, 11:59 PM UTC → 北京10月16日07:59",
+      "instant": "2026-10-15T23:59:00+00:00",
       "day": "2026-10-16",
-      "instant": "2026-10-15T23:59:00Z",
       "kind": "deadline",
-      "text": "October 15, 2026 - Entry Deadline（报名与组队同日截止）",
+      "mandatory": true,
       "timezone": "UTC"
     },
     "submit": {
+      "text": "Final Submission Deadline: October 22, 2026, 11:59 PM UTC → 北京10月23日07:59",
+      "instant": "2026-10-22T23:59:00+00:00",
       "day": "2026-10-23",
-      "instant": "2026-10-22T23:59:00Z",
       "kind": "deadline",
-      "text": "October 22, 2026 - Final Submission Deadline；Winners 材料截止 11/5",
       "timezone": "UTC"
     },
-    "requirements": "报名与组队同日截止；Notebook ≤9 小时、无网络。可用免费公开外部数据与预训练权重。获奖须公开源码与权重、提交讲解视频。",
-    "award": "$77,000（主榜 + 效率奖赛道）",
+    "requirements": "Kaggle账号；18岁或当地成年年龄，适用地域限制；最多5人，每日5次提交、终评最多2份。Notebook离线运行不超过9小时，输出submission.csv；外部数据/权重须公开可获得。获奖者须交训练/推理代码、权重、方法说明与短视频，11月5日23:59 UTC截止。",
+    "award": "总奖$77,000：主榜前十名$9,000/$7,000/$6,500/$6,000/$5,500及第6–10名各$5,000；效率奖$7,000/$6,000/$5,000。RSNA表彰活动获邀者注册费可豁免。",
     "url": "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection",
     "status": "open",
-    "warning": "获奖者须公开源码、权重并提交讲解视频等材料。",
+    "warning": "Rules把获奖许可写为CC-BY-NC 4.0，同时称其为OSI认可且不限制商业使用，措辞存在冲突，获奖前需向主办方确认。代表单位参赛须获单位知情同意。",
     "note": "",
     "priority": 1,
-    "verifiedAt": "2026-10-07T10:26:54+08:00",
+    "verifiedAt": "2026-10-07T12:11:44+08:00",
     "sources": [
-      {
-        "label": "official",
-        "url": "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection"
-      },
-      {
-        "label": "official",
-        "url": "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection"
-      }
+      "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection",
+      "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection/overview",
+      "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection/rules"
     ],
     "old": [
       "RSNA Knee"
@@ -582,19 +578,32 @@
     "verifiedBy": "agent",
     "verification": {
       "state": "verified",
-      "attemptedAt": "2026-09-27T18:15:15+08:00",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": "2026-10-07T12:11:44+08:00",
+      "previousVerifiedAt": "2026-10-07T10:26:54+08:00",
+      "runId": "codex-2026-10-07-manual",
       "evidence": [
         {
-          "quote": "October 15, 2026 - Entry Deadline. You must accept the competition rules before this date in order to compete.",
-          "url": "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection"
+          "url": "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection/overview",
+          "summary": "赛程明确报名/合并10月15日、终交10月22日，均23:59 UTC；Notebook限制与获奖材料见总览。",
+          "fields": [
+            "entry",
+            "submit",
+            "requirements",
+            "award"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
         },
         {
-          "quote": "October 22, 2026 - Final Submission Deadline.",
-          "url": "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection"
+          "url": "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection/rules",
+          "summary": "规则列明成年、地域、人数与单位授权要求；获奖许可段落有相互冲突的商业使用措辞。",
+          "fields": [
+            "eligibility",
+            "warning"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
         }
-      ],
-      "runId": "36311263414-1",
-      "verifiedAt": "2026-09-27T18:15:15+08:00"
+      ]
     }
   },
   {
@@ -929,7 +938,12 @@
     "note": "",
     "priority": 4,
     "verifiedAt": "2026-09-27",
-    "sources": [],
+    "sources": [
+      {
+        "label": "既有详情URL（本轮未重核）",
+        "url": "https://www.kaggle.com/competitions/filament-segmentation-2026"
+      }
+    ],
     "old": [
       "Solar Filament"
     ],
@@ -961,7 +975,12 @@
     "note": "",
     "priority": 2,
     "verifiedAt": "2026-09-27",
-    "sources": [],
+    "sources": [
+      {
+        "label": "既有详情URL（本轮未重核）",
+        "url": "https://www.kaggle.com/competitions/the-3lc-low-light-detection-challenge"
+      }
+    ],
     "old": [
       "3LC Low-Light"
     ],
@@ -999,7 +1018,12 @@
     "note": "",
     "priority": 2,
     "verifiedAt": "2026-09-27",
-    "sources": [],
+    "sources": [
+      {
+        "label": "既有详情URL（本轮未重核）",
+        "url": "https://steerability.github.io/competition/"
+      }
+    ],
     "old": [
       "Steerability"
     ],
@@ -1179,7 +1203,12 @@
     "note": "",
     "priority": 5,
     "verifiedAt": "2026-09-27",
-    "sources": [],
+    "sources": [
+      {
+        "label": "既有详情URL（本轮未重核）",
+        "url": "https://mast-benchmark.github.io/"
+      }
+    ],
     "old": [],
     "venue": "FIRE 2026"
   },
@@ -1291,7 +1320,12 @@
     "note": "",
     "priority": 5,
     "verifiedAt": "2026-09-27",
-    "sources": [],
+    "sources": [
+      {
+        "label": "既有详情URL（本轮未重核）",
+        "url": "https://tianchi.aliyun.com/competition/entrance/532482"
+      }
+    ],
     "old": [],
     "venue": "CSIG"
   },
@@ -1322,7 +1356,12 @@
     "note": "",
     "priority": 5,
     "verifiedAt": "2026-09-27",
-    "sources": [],
+    "sources": [
+      {
+        "label": "既有详情URL（本轮未重核）",
+        "url": "https://www.wsdm-conference.org/2027/"
+      }
+    ],
     "old": [
       "WSDM Cup"
     ],
@@ -1354,7 +1393,12 @@
     "note": "",
     "priority": 5,
     "verifiedAt": "2026-09-27",
-    "sources": [],
+    "sources": [
+      {
+        "label": "既有详情URL（本轮未重核）",
+        "url": "https://tianchi.aliyun.com/competition/entrance/531842/information"
+      }
+    ],
     "old": [],
     "venue": ""
   },
@@ -1385,7 +1429,12 @@
     "note": "",
     "priority": 5,
     "verifiedAt": "2026-09-27",
-    "sources": [],
+    "sources": [
+      {
+        "label": "既有详情URL（本轮未重核）",
+        "url": "https://www.kaggle.com/competitions/umud-challenge-muscle-architecture-in-ultrasound-data"
+      }
+    ],
     "old": [
       "UMUD"
     ],
@@ -1534,7 +1583,12 @@
     "note": "",
     "priority": 5,
     "verifiedAt": "2026-09-27",
-    "sources": [],
+    "sources": [
+      {
+        "label": "既有详情URL（本轮未重核）",
+        "url": "https://www.kaggle.com/competitions/llm-classification-finetuning"
+      }
+    ],
     "old": [
       "LLM Classification"
     ],
@@ -1694,34 +1748,66 @@
       "instant": null
     },
     "submit": {
-      "text": "竞赛提交 10/24 AoE（北京 10/25 19:59）· Workshop 论文 10/31 AoE · 录取通知 11/7 · NeurIPS session 12/11 15:30–17:45（悉尼，暂定）",
-      "day": "2026-10-24",
-      "instant": "2026-10-25T19:59:00+08:00"
+      "text": "Competition submissions: October 24, 2026 (AoE)；未明示时刻，准确北京时间待确认。Workshop论文10月31日AoE是独立可选节点。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown",
+      "officialDay": "2026-10-24",
+      "timezone": "AoE"
     },
-    "requirements": "先填团队注册表，再提交 Data Transfer and Use Agreement（DUA）与一页提案申请数据访问；官方提供启动套件与本地解码脚本。通过 Codabench 提交模型参数与推理代码。",
-    "award": "总奖金 $10,000，由 test2 留存集上位于「精度-延迟」帕累托前沿的团队均分。无约束赛道恰好 1 个非流式系统获奖；流式赛道可 1 个或多个。另可提交 3–6 页非存档 Workshop 论文。",
+    "requirements": "先注册团队，再提交DUA和一页提案申请数据，审批通常2–4周。经Codabench交模型参数及推理代码；最终主指标CER，WER仅作参考。代码不强制开源，Workshop论文可选。",
+    "award": "总奖$10,000，按保留test2上的精度/延迟Pareto前沿规则分配；不提交Workshop论文也可参赛及获奖。",
     "url": "https://xiuwenz2.github.io/SAPC2-website/",
-    "status": "open",
-    "warning": "数据访问申请（DUA + 一页提案）审批通常要 2–4 周，提交截止 10/24 只剩约 4 周——现在才启动必须先确认数据能否及时拿到。",
+    "status": "unclear",
+    "warning": "官网只给10月24日AoE日期，没有明确时刻，不能确认准确北京时间；参赛身份/单位限制仍需核DUA。数据审批通常2–4周，应先确认能否赶上截止。",
     "note": "",
     "priority": 3,
     "verifiedAt": "2026-10-07T10:26:54+08:00",
     "sources": [
       "https://xiuwenz2.github.io/SAPC2-website/",
-      {
-        "label": "official",
-        "url": "https://xiuwenz2.github.io/SAPC2-website/"
-      }
+      "https://xiuwenz2.github.io/SAPC2-website/faqs/",
+      "https://xiuwenz2.github.io/SAPC2-website/timeline/"
     ],
     "old": [],
     "venue": "NeurIPS 2026",
     "verification": {
-      "state": "legacy",
-      "verifiedAt": null,
-      "attemptedAt": "2026-09-27T18:15:15.778423+08:00",
-      "lastError": "Not verified within this run budget."
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": "2026-10-07T10:26:54+08:00",
+      "previousVerifiedAt": "2026-10-07T10:26:54+08:00",
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://xiuwenz2.github.io/SAPC2-website/",
+          "summary": "提交日期为10月24日AoE；DUA与一页提案，审批2–4周。",
+          "fields": [
+            "submit",
+            "requirements",
+            "award"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        },
+        {
+          "url": "https://xiuwenz2.github.io/SAPC2-website/faqs/",
+          "summary": "CER为最终主指标，代码不要求开源，论文不是参赛或奖金前提。",
+          "fields": [
+            "requirements",
+            "award"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        },
+        {
+          "url": "https://xiuwenz2.github.io/SAPC2-website/timeline/",
+          "summary": "Leaderboard于10月24日关闭；日期页也没有截止时刻。",
+          "fields": [
+            "warning"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
     },
-    "verifiedBy": "agent"
+    "verifiedBy": "agent",
+    "eligibility": "unknown"
   },
   {
     "id": "paiec",
@@ -1733,33 +1819,54 @@
     ],
     "task": "从 AI 系统属性与基准项目属性预测未观测到的响应概率，不需要真的把模型跑在该项目上。按基准级冷启动评估，指标为 Brier ALC（学习曲线下面积，越低越好），在标签预算 0/1/3/7/15/31 下测量。",
     "entry": {
-      "text": "报名无明确截止；须填团队注册表并经组织者批准",
+      "text": "团队注册免费；官网未给单独报名截止。",
+      "instant": null,
       "day": null,
-      "instant": null
+      "kind": "unknown"
     },
     "submit": {
-      "text": "Final codebase and technical report deadline: 30 October 2026 at 23:59 AoE（北京 10/31 19:59），并邮件指定哪一份 Codabench 提交参与终评；NeurIPS session 12/11 08:00–10:15（悉尼现场）",
-      "day": "2026-10-30",
-      "instant": "2026-10-31T19:59:00+08:00"
+      "text": "Final codebase and technical report: 30 October 2026 at 23:59 AoE → 北京10月31日19:59",
+      "instant": "2026-10-30T23:59:00-12:00",
+      "day": "2026-10-31",
+      "kind": "deadline",
+      "timezone": "AoE"
     },
-    "requirements": "不限学生、不限机构，鼓励跨机构组队，每队最多 6 人，每人只能进一支队伍。提交须用 Python，网络仅限批准的推理 API；单次运行上限 8 小时，最多挂 5 个模型仓库（合计 1024 GB），运行时不能下载模型，需自备算力与 API key。",
-    "award": "无现金奖金。NeurIPS 竞赛 session 含 5 场口头报告（约 60 分钟）+ 海报环节；评选主要看技术报告质量，其次预测性能与对数据整理/社区的贡献。",
+    "requirements": "任何机构背景的个人可参加，每队最多6人，每人仅一队。注册需姓名、单位、邮箱及平台用户名；Python ZIP提交代码，评分网络仅限批准的推理API。终交代码及技术报告后邮件指定Codabench终评提交。",
+    "award": "官网介绍NeurIPS口头/海报展示机会，本次读取未见现金奖金公告。展示遴选要求技术报告、开发及运行代码与新增训练数据公开，并通过OpenReview提交。",
     "url": "https://aimslab.stanford.edu/competition",
     "status": "open",
-    "warning": "无奖金，权益是 NeurIPS 现场报告机会；技术报告按 NeurIPS Evaluations & Datasets 审稿指南评估且不做正式同行评审。报名需组织者批准，别拖到截止前才注册。",
+    "warning": "争取展示资格须公开代码及新增训练数据；评分时禁止联网工具，仅可调用批准的推理API。",
     "note": "",
     "priority": 4,
-    "verifiedAt": "2026-10-07T10:26:54+08:00",
+    "verifiedAt": "2026-10-07T12:11:44+08:00",
     "sources": [
-      "https://aimslab.stanford.edu/competition",
-      {
-        "label": "official",
-        "url": "https://aimslab.stanford.edu/competition"
-      }
+      "https://aimslab.stanford.edu/competition"
     ],
     "old": [],
     "venue": "NeurIPS 2026",
-    "verifiedBy": "agent"
+    "verifiedBy": "agent",
+    "eligibility": "open",
+    "verification": {
+      "state": "verified",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": "2026-10-07T12:11:44+08:00",
+      "previousVerifiedAt": "2026-10-07T10:26:54+08:00",
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://aimslab.stanford.edu/competition",
+          "summary": "终交10月30日23:59 AoE；任何机构背景个人可参加，最多6人；注册免费，展示要求公开材料。",
+          "fields": [
+            "entry",
+            "submit",
+            "requirements",
+            "award",
+            "eligibility"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
   },
   {
     "id": "iwdd-2027",
@@ -1930,33 +2037,64 @@
     ],
     "task": "把前列腺癌诊疗建模为三个连续临床决策点：T1 活检前是否建议穿刺（仅 mpMRI 报告 + 基础临床变量）、T2 活检后风险分层（MRI + 病理 + 临床，按 EAU/NCCN 指南推荐主动监测/继续监测/等待观察/积极治疗）、T3 根治性前列腺切除术后生化复发（BCR）时间依赖风险预测。数据刻意包含缺失模态、纵向多次检查与跨模态冲突。",
     "entry": {
-      "text": "开发阶段进行中；Debug 通道开放至 12/18 22:59，正式阶段时间线以子站为准",
+      "text": "官网时间线：10 Jul 2026开放注册；正式验证/测试提交阶段现已结束。",
+      "instant": null,
       "day": null,
-      "instant": null
+      "kind": "unknown"
     },
     "submit": {
-      "text": "Debug 提交开放至 12/18 22:59；MICCAI 2026 半日 workshop 于 10/1 现场举行",
-      "day": "2026-12-18",
-      "instant": "2026-12-18T22:59:00+01:00"
+      "text": "Deadline for validation and test submissions: 14 Sep 2026 at 12:00 CEST (noon) → 北京9月14日18:00",
+      "instant": "2026-09-14T12:00:00+02:00",
+      "day": "2026-09-14",
+      "kind": "deadline",
+      "timezone": "CEST"
     },
-    "requirements": "以 JSON 提交，每例输出两个文件：预测 + **结构化推理链**（约 5KB）。推理要与该例的结构化输入字段对应，编造/矛盾/无法支撑的发现会被扣分；高分方案由临床专家额外评审推理的临床合理性。官方提供预训练模态工具（MRI 前列腺分区分割、活检与切除标本 Gleason 自动分级、MRI csPCa 检测）与逐例临床变量，不要求从零训练。",
-    "award": "MICCAI 2026 workshop 现场展示；无现金奖金说明。冠军级方案需能通过推理合理性评审。",
+    "requirements": "单人也须建队，每人仅一队；须验证GC账号并显示实名、单位与国家。提交离线Docker推理容器，内置权重，通过官方MCP接口使用工具。闭合测试须提交方法稿与代码；外部数据/权重须免费公开、许可合规并声明。",
+    "award": "官网规则提及奖项及排除组织单位成员获奖，但本次未找到奖金金额公告。",
     "url": "https://chimera-agent.grand-challenge.org/",
-    "status": "open",
-    "warning": "核心评分不止预测准确率，还评「推理链」——高准确但编造理由的方案排名会被压低。刻意设置缺失模态，需设计能处理不完整信息的 agent 策略。",
+    "status": "closed",
+    "warning": "调试通道可用时间不能作为正式参赛截止；正式验证/测试已在9月14日结束。公开训练数据结果受主办方论文发布前的禁发期约束。",
     "note": "",
     "priority": 2,
-    "verifiedAt": "2026-09-27",
+    "verifiedAt": "2026-10-07T12:11:44+08:00",
     "sources": [
-      "https://chimera-agent.grand-challenge.org/"
+      "https://chimera-agent.grand-challenge.org/",
+      "https://chimera-agent.grand-challenge.org/timeline/",
+      "https://chimera-agent.grand-challenge.org/rules/"
     ],
     "old": [],
     "verification": {
-      "state": "legacy",
-      "verifiedAt": null,
-      "attemptedAt": "2026-09-27T18:15:15.778423+08:00",
-      "lastError": "Not verified within this run budget."
-    }
+      "state": "verified",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": "2026-10-07T12:11:44+08:00",
+      "previousVerifiedAt": "2026-09-27",
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://chimera-agent.grand-challenge.org/timeline/",
+          "summary": "验证与测试提交截止9月14日12:00 CEST；正式阶段已结束。",
+          "fields": [
+            "entry",
+            "submit",
+            "status"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        },
+        {
+          "url": "https://chimera-agent.grand-challenge.org/rules/",
+          "summary": "规则明确实名团队、离线Docker、官方MCP、外部资源声明、闭合测试材料和禁发期。",
+          "fields": [
+            "eligibility",
+            "requirements",
+            "award",
+            "warning"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    },
+    "eligibility": "open",
+    "verifiedBy": "agent"
   },
   {
     "id": "selma3d-2026",
@@ -2322,7 +2460,9 @@
         "label": "official",
         "url": "https://atm26.grand-challenge.org/timeline/"
       }
-    ]
+    ],
+    "note": "",
+    "old": []
   },
   {
     "id": "auto-1790499747",
@@ -2358,7 +2498,9 @@
         "label": "official",
         "url": "https://challenge.xfyun.cn/"
       }
-    ]
+    ],
+    "note": "",
+    "old": []
   },
   {
     "id": "auto-1790499749",
@@ -2394,7 +2536,9 @@
         "label": "official",
         "url": "https://challenge.xfyun.cn/"
       }
-    ]
+    ],
+    "note": "",
+    "old": []
   },
   {
     "id": "event-6ad83c0101a326be",
@@ -2447,7 +2591,9 @@
       "runId": "36311263414-1",
       "verifiedAt": "2026-09-27T18:15:15+08:00"
     },
-    "verifiedAt": "2026-09-27T18:15:15+08:00"
+    "verifiedAt": "2026-09-27T18:15:15+08:00",
+    "note": "",
+    "old": []
   },
   {
     "id": "panther-challenge",
@@ -2490,7 +2636,9 @@
         "label": "official",
         "url": "https://panther.grand-challenge.org/timeline/"
       }
-    ]
+    ],
+    "note": "",
+    "old": []
   },
   {
     "id": "agenthon-2026",
@@ -2503,35 +2651,66 @@
     ],
     "task": "AI Agent 金融输出可验证竞赛，四条赛道：T1 Coding（金融代码）、T2 Forecasting（预测）、T3 Simulation（市场模拟）、T4 Explainability（可解释）。沙箱 Docker 运行、无公网；Coding/Forecasting/Explainability 可经受限连接调 House Nemotron。",
     "entry": {
-      "day": "2026-10-12",
+      "text": "Registration and Development end: 12 Oct 2026, 23:59 AoE → 北京10月13日19:59",
       "instant": "2026-10-12T23:59:00-12:00",
+      "day": "2026-10-13",
       "kind": "deadline",
-      "text": "Registration 17 Aug – 12 Oct 2026，23:59 AoE → 北京 10/13 19:59",
+      "mandatory": true,
       "timezone": "AoE"
     },
     "submit": {
-      "day": "2026-10-25",
+      "text": "Final and Verification close: 25 Oct 2026, 23:59 AoE → 北京10月26日19:59",
       "instant": "2026-10-25T23:59:00-12:00",
+      "day": "2026-10-26",
       "kind": "deadline",
-      "text": "Final + Verification 13–25 Oct，23:59 AoE → 北京 10/26 19:59",
       "timezone": "AoE"
     },
-    "requirements": "每队每赛道一份提交；沙箱 Docker、无公网；最后一次开发运行须在 10/12 20:00 UTC 前启动。Workshop 论文投稿 9/30 AoE 已截止。",
-    "award": "$12,000 总额：每赛道 $1,500/$1,000/$500",
-    "url": "https://www.alphathon.org",
+    "requirements": "每队1–3人，18岁或当地成年年龄，每人一队；单位代表须单位同意。容器沙箱运行，每队每赛道一份终交。最后开发运行须10月12日20:00 UTC前启动（北京10月13日04:00）。获奖者须14天内按OSI许可公开源码并配合身份核验。",
+    "award": "总奖$12,000，四赛道各$1,500/$1,000/$500。",
+    "url": "https://www.agenthon.net/",
     "status": "open",
-    "warning": "T1 榜自 10/5 00:00 AoE 起仅统计 9/25 05:00 UTC 后上传的运行。获奖队伍在 NeurIPS Atlanta 现场汇报（12/12）。",
+    "warning": "首页10月12日指开发/报名截止，Rules终评为10月25日AoE，须区分阶段。获奖队受Atlanta现场报告及费用责任条款约束；旅行、会议注册等费用由参赛者承担。",
     "note": "",
     "priority": 2,
-    "verifiedAt": "2026-10-06T15:00:00+08:00",
+    "verifiedAt": "2026-10-07T12:11:44+08:00",
     "verifiedBy": "agent",
     "eligibility": "open",
     "sources": [
-      {
-        "label": "official",
-        "url": "https://www.alphathon.org"
-      }
-    ]
+      "https://www.alphathon.org",
+      "https://www.agenthon.net/",
+      "https://www.agenthon.net/rules/"
+    ],
+    "verification": {
+      "state": "verified",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": "2026-10-07T12:11:44+08:00",
+      "previousVerifiedAt": "2026-10-06T15:00:00+08:00",
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://www.agenthon.net/",
+          "summary": "官网现用Agenthon名称及域名；首页开发阶段10月12日。",
+          "fields": [
+            "url",
+            "warning"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        },
+        {
+          "url": "https://www.agenthon.net/rules/",
+          "summary": "报名/开发12日23:59 AoE，终评25日23:59 AoE；1–3人成年团队、12,000美元奖池、公开代码和获奖履约要求。",
+          "fields": [
+            "entry",
+            "submit",
+            "eligibility",
+            "requirements",
+            "award"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    },
+    "old": []
   },
   {
     "id": "fair-universe-wl2",
@@ -2544,35 +2723,60 @@
     ],
     "task": "弱引力透镜收敛图（2D 场）的分布外（OoD）检测：识别偏离训练分布的测试数据，面向宇宙学推断的系统误差量化。",
     "entry": {
-      "day": null,
+      "text": "官网称Phase 2提交开放；独立报名限制需核Codabench规则。",
       "instant": null,
-      "kind": "unknown",
-      "text": "Codabench 随时加入；无单独报名节点",
-      "timezone": "unknown"
+      "day": null,
+      "kind": "unknown"
     },
     "submit": {
-      "day": "2026-10-11",
-      "instant": "2026-10-11T23:59:00Z",
+      "text": "Phase 2 submissions until 11:59 PM October 11th 2026 (UTC) → 北京10月12日07:59",
+      "instant": "2026-10-11T23:59:00+00:00",
+      "day": "2026-10-12",
       "kind": "deadline",
-      "text": "Phase 2 提交截止 11:59 PM October 11th 2026 (UTC) → 北京 10/12 07:59",
       "timezone": "UTC"
     },
     "requirements": "Codabench 提交（competition 10902）；官方 GitHub 仓库与白皮书 arXiv:2604.14451。",
-    "award": "见 Codabench 赛页（主办方 LBNL/Paris-Saclay/UW/ChaLearn）",
+    "award": "Phase 2奖金及附加条件尚未核到；不能沿用Phase 1奖项。",
     "url": "https://fair-universe.lbl.gov",
-    "status": "open",
-    "warning": "Phase 1（NeurIPS 2025）已收官，当前为 Phase 2。",
+    "status": "unclear",
+    "warning": "截止日期已核；Codabench详情本次只返回界面外壳，Phase 2参赛资格、提交细则与奖项条件仍待核。",
     "note": "",
     "priority": 3,
     "verifiedAt": "2026-10-07T10:26:54+08:00",
     "verifiedBy": "agent",
-    "eligibility": "open",
+    "eligibility": "unknown",
     "sources": [
-      {
-        "label": "official",
-        "url": "https://fair-universe.lbl.gov"
-      }
-    ]
+      "https://fair-universe.lbl.gov",
+      "https://fair-universe.lbl.gov/",
+      "https://www.codabench.org/competitions/10902/"
+    ],
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": "2026-10-07T10:26:54+08:00",
+      "previousVerifiedAt": "2026-10-07T10:26:54+08:00",
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://fair-universe.lbl.gov/",
+          "summary": "官网明确Phase 2终交10月11日23:59 UTC；Phase 1规则不能直接沿用。",
+          "fields": [
+            "submit",
+            "status"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        },
+        {
+          "url": "https://www.codabench.org/competitions/10902/",
+          "summary": "本次抓取仅平台导航，没有赛事规则正文。",
+          "fields": [
+            "warning"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    },
+    "old": []
   },
   {
     "id": "learn2design-2026",
@@ -2613,7 +2817,8 @@
         "label": "official",
         "url": "https://www.learn2design2026.com/"
       }
-    ]
+    ],
+    "old": []
   },
   {
     "id": "fusion-equilibrium",
@@ -2654,7 +2859,8 @@
         "label": "official",
         "url": "https://fusion-equilibrium-challenge.sophelio.io/"
       }
-    ]
+    ],
+    "old": []
   },
   {
     "id": "simulacrabench",
@@ -2694,7 +2900,8 @@
         "label": "official",
         "url": "https://simulacrabench.org/"
       }
-    ]
+    ],
+    "old": []
   },
   {
     "id": "amp-challenge",
@@ -2706,35 +2913,65 @@
     ],
     "task": "生成式 AI 抗菌肽设计首个标准化对战基准：提交 50,000 条肽库 + top-100 列表；计算评估后最多 20 队进入湿实验验证（每队从 top-50 随机抽 25 条合成测试 MIC/HC50，UPenn de la Fuente 实验室统一执行）。五个排名类别：广谱/革兰阳性/革兰阴性/MDR ESKAPE/最优选择性。",
     "entry": {
-      "day": null,
+      "text": "官网FAQ称任意个人/团队可参加，学术/企业均可，注册免费；本届计算提交已结束。",
       "instant": null,
-      "kind": "unknown",
-      "text": "注册免费开放；4 月起 competition call opens",
-      "timezone": "unknown"
+      "day": null,
+      "kind": "unknown"
     },
     "submit": {
-      "day": "2026-10-01",
-      "instant": "2026-10-01T23:59:00-12:00",
-      "kind": "deadline",
-      "text": "Submission deadline: October 1, 2026 (AOE) → 北京 10/2 19:59（已过）",
+      "text": "Submission deadline: October 1, 2026 (AOE)；官网未明示时刻，准确北京时间未确认；该日期现已过去。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown",
+      "officialDay": "2026-10-01",
       "timezone": "AoE"
     },
-    "requirements": "任意生成方法（LM/扩散/VAE/GFlowNets/RL/贝叶斯/进化）；完整要求（公开仓库+许可+固定种子+训练数据披露）才具备论文共同署名资格；序列须符合官方设计约束。",
-    "award": "无现金奖：湿实验验证免费（主办方承担合成与测试）、基准论文共同署名、肽段存入 DBAASP/APD3。",
+    "requirements": "按官方模板交50,000条肽库、排序top-100、摘要、训练来源说明及权重/推理仓库；最低参与允许私有仓库向组织者授权。论文共同署名须公开仓库、OSI许可、uv入口、锁文件、固定种子及完整数据披露。",
+    "award": "主办方承担肽合成与实验测试费用；满足完整复现要求可具论文共同署名资格。本次未见现金奖金公告。",
     "url": "https://szczurek-lab.github.io/amp-challenge-website/",
     "status": "closed",
-    "warning": "计算提交已于 10/1 AOE 截止；后续为计算评估（10 月）、NeurIPS 现赛（12/6–12）、湿实验窗口 2026/10–2027/2、验证 2027/3–4。合成失败不重测。",
+    "warning": "原先23:59 AoE时刻缺少官方明确依据，已移除推算instant。网站标NeurIPS 2026而模板仓库名为2027，未另建同赛条目；共同署名需要完整开源和数据披露。",
     "note": "",
     "priority": 4,
-    "verifiedAt": "2026-10-06T15:00:00+08:00",
-    "verifiedBy": "auto",
+    "verifiedAt": "2026-10-07T12:11:44+08:00",
+    "verifiedBy": "agent",
     "eligibility": "open",
     "sources": [
-      {
-        "label": "official",
-        "url": "https://szczurek-lab.github.io/amp-challenge-website/"
-      }
-    ]
+      "https://szczurek-lab.github.io/amp-challenge-website/",
+      "https://szczurek-lab.github.io/amp-challenge-website/assets/index-DZ01t1QT.js",
+      "https://github.com/szczurek-lab/amp-challenge-2027"
+    ],
+    "verification": {
+      "state": "verified",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": "2026-10-07T12:11:44+08:00",
+      "previousVerifiedAt": "2026-10-06T15:00:00+08:00",
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://szczurek-lab.github.io/amp-challenge-website/assets/index-DZ01t1QT.js",
+          "summary": "官网SPA当前加载资源含10月1日2026 AOE截止、开放个人/学术/企业参与、免费注册和测试。",
+          "fields": [
+            "entry",
+            "submit",
+            "status",
+            "eligibility",
+            "award"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        },
+        {
+          "url": "https://github.com/szczurek-lab/amp-challenge-2027",
+          "summary": "官方链接模板区分最低参与与共同署名完整复现要求，仓库名含2027。",
+          "fields": [
+            "requirements",
+            "warning"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    },
+    "old": []
   },
   {
     "id": "realpde",
@@ -2775,7 +3012,8 @@
         "label": "official",
         "url": "https://realpdecompetition.github.io/"
       }
-    ]
+    ],
+    "old": []
   },
   {
     "id": "smart-buildings-2026",
@@ -2816,7 +3054,8 @@
         "label": "official",
         "url": "https://smart-buildings-2026.github.io/competition/"
       }
-    ]
+    ],
+    "old": []
   },
   {
     "id": "chi-bench",
@@ -3220,7 +3459,7 @@
     },
     "requirements": "社区 Hackathon（不授 Kaggle 积分/奖牌）。",
     "award": "$22,200（拆分未取到）",
-    "url": "https://www.kaggle.com/competitions/ai-4s-open-innovation-artificial-intelligence-for-life-scien",
+    "url": "https://www.kaggle.com/competitions/ai-4-s-open-innovation-artificial-intelligence-for-life-scien",
     "status": "unclear",
     "warning": "详情页两个 URL 变体均 404/抓空（列表页有入口但详情打不开），仅能从列表页倒计时推断 ≈10/11 截止；标 unclear 待下轮重试。",
     "priority": 4,
@@ -3233,7 +3472,2163 @@
       {
         "label": "official",
         "url": "https://www.kaggle.com/competitions"
-      }
-    ]
+      },
+      "https://www.kaggle.com/competitions/ai-4-s-open-innovation-artificial-intelligence-for-life-scien"
+    ],
+    "discoveryAttempt": {
+      "at": "2026-10-07T12:11:44+08:00",
+      "runId": "codex-2026-10-07-manual",
+      "summary": "官方列表使用ai-4-s标识，按同名同任务视为原赛事另一入口，未新增。"
+    }
+  },
+  {
+    "id": "trackrad2025",
+    "title": "TrackRAD2025 · MRI放疗实时肿瘤追踪",
+    "url": "https://trackrad2025.grand-challenge.org/",
+    "task": "在动态2D cine-MRI中从首帧肿瘤轮廓持续追踪分割。",
+    "tags": [
+      "医学",
+      "CV"
+    ],
+    "platform": "会议官网",
+    "venue": "MICCAI 2025",
+    "status": "practice",
+    "priority": 7,
+    "requirements": "GC验证账号，每队最多5人，一人/队仅一账号；全自动Docker算法，A10G 24GiB，单帧推理不超过1秒加加载耗时。外部数据/预训练模型须在2025年3月15日前公开并声明。",
+    "award": "2025正式奖项前五名$1,000/$600/$400/$300/$200；当前为赛后评测，官网未宣称仍可争取原奖金。",
+    "warning": "Rules中正式测试年份写成2023，与2025赛名/其他节点矛盾；当前赛后提交开放，但准确关闭日不明，不能采用API的2026年end_date。",
+    "note": "已核官网赛后阶段及Rules；原正式赛现金奖为历史信息。",
+    "entry": {
+      "text": "官网宣布post-challenge phase现已开放。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "官网允许赛后提交数年，未给准确关闭日期。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://trackrad2025.grand-challenge.org/",
+      "https://trackrad2025.grand-challenge.org/rules/",
+      "https://trackrad2025.grand-challenge.org/submission-instructions/"
+    ],
+    "eligibility": "open",
+    "verifiedAt": "2026-10-07T12:11:44+08:00",
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "verified",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": "2026-10-07T12:11:44+08:00",
+      "previousVerifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://trackrad2025.grand-challenge.org/",
+          "summary": "官网明确赛后阶段现已开放。",
+          "fields": [
+            "status"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        },
+        {
+          "url": "https://trackrad2025.grand-challenge.org/rules/",
+          "summary": "允许赛后提交数年；列明5人、验证账号、公开资源截止、计算限制及历史奖金；测试年份有冲突。",
+          "fields": [
+            "entry",
+            "submit",
+            "requirements",
+            "eligibility",
+            "award",
+            "warning"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        },
+        {
+          "url": "https://trackrad2025.grand-challenge.org/submission-instructions/",
+          "summary": "官方容器提交说明及赛后评测流程。",
+          "fields": [
+            "requirements"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "isles-24",
+    "title": "ISLES 2024 · 治疗前影像预测最终卒中梗死",
+    "url": "https://isles-24.grand-challenge.org/",
+    "task": "从治疗前NCCT/CTP/CTA与临床资料分割最终梗死区。",
+    "tags": [
+      "医学",
+      "CV"
+    ],
+    "platform": "会议官网",
+    "venue": "MICCAI 2024",
+    "status": "closed",
+    "priority": 7,
+    "requirements": "验证GC账号，每人仅一账号/一队；Docker提交。2024 MICCAI正式榜要求摘要、方法表、Workshop注册证明及宽松开源许可仓库。",
+    "award": "官网规则介绍正式榜与论文共同署名条件，本次未见现金金额。",
+    "warning": "API把2024赛事标为2026 OPEN，官网仍是2024截止且说明会议后关闭，不能据API视为开放。原文用CET，按明确的UTC+1记录。",
+    "note": "2024历史赛事；API开放标记与官网有冲突。",
+    "entry": {
+      "text": "2024参赛材料表截止August 30 at 23:59 CET → 北京8月31日06:59",
+      "instant": "2024-08-30T23:59:00+01:00",
+      "day": "2024-08-31",
+      "kind": "deadline",
+      "mandatory": true,
+      "timezone": "CET"
+    },
+    "submit": {
+      "text": "Docker deadline: August 28, 2024 at 23:59 CET → 北京8月29日06:59",
+      "instant": "2024-08-28T23:59:00+01:00",
+      "day": "2024-08-29",
+      "kind": "deadline",
+      "timezone": "CET"
+    },
+    "old": [],
+    "sources": [
+      "https://isles-24.grand-challenge.org/",
+      "https://isles-24.grand-challenge.org/challenge-rules/",
+      "https://isles-24.grand-challenge.org/news-updates/"
+    ],
+    "eligibility": "open",
+    "verifiedAt": "2026-10-07T12:11:44+08:00",
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "verified",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": "2026-10-07T12:11:44+08:00",
+      "previousVerifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://isles-24.grand-challenge.org/",
+          "summary": "正文明确2024训练及Docker截止，验证账号必需。",
+          "fields": [
+            "identity",
+            "submit"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        },
+        {
+          "url": "https://isles-24.grand-challenge.org/challenge-rules/",
+          "summary": "一般个人/团队账户规则及2024会议榜材料，说明会议后关闭。",
+          "fields": [
+            "eligibility",
+            "requirements",
+            "award",
+            "status"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        },
+        {
+          "url": "https://isles-24.grand-challenge.org/news-updates/",
+          "summary": "Docker截止8月28日、注册材料8月30日23:59 CET。",
+          "fields": [
+            "entry",
+            "submit"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "spider",
+    "title": "SPIDER · 脊柱MRI分割",
+    "url": "https://spider.grand-challenge.org/",
+    "task": "对MRI中的椎体、椎间盘与椎管分别分割。",
+    "tags": [
+      "医学",
+      "CV"
+    ],
+    "platform": "会议官网",
+    "venue": "",
+    "status": "practice",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "官方Timeline确认长期开放；完整资格、容器提交规则及奖项尚待核，不能用API的2027 end_date作为截止。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "官方Timeline：run indefinitely and remain open，无固定截止。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://spider.grand-challenge.org/",
+      "https://spider.grand-challenge.org/timeline/"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "previousVerifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://spider.grand-challenge.org/timeline/",
+          "summary": "官方确认不设固定结束日期的长期benchmark。",
+          "fields": [
+            "status",
+            "submit"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "doserad2026",
+    "title": "DoseRAD2026 · 放疗实时3D剂量计算",
+    "url": "https://doserad2026.grand-challenge.org/",
+    "task": "在CT/MRI上对独立光子/质子束做快速3D剂量计算。",
+    "tags": [
+      "医学",
+      "3D"
+    ],
+    "platform": "会议官网",
+    "venue": "MICCAI 2026",
+    "status": "practice",
+    "priority": 6,
+    "requirements": "验证GC账号，最多5人，一人/队仅一账号；全自动方法。额外数据和预训练模型须2026年4月10日前公开并声明；正式赛每任务冠军须14天内公开代码、权重及额外生成数据。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "当前为赛后评测，不把原正式赛奖金机会延续到赛后；12月31日结束时刻/时区未明示。正式获奖要求MICCAI现场报告、LNCS方法稿及表单。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "官网列赛后阶段01/10/2026–31/12/2026。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "Post-challenge phase: 01/10/2026–31/12/2026；未明示结束时刻/时区，准确北京时间待确认。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown",
+      "officialDay": "2026-12-31"
+    },
+    "old": [],
+    "sources": [
+      "https://doserad2026.grand-challenge.org/",
+      "https://doserad2026.grand-challenge.org/timeline-and-rules/"
+    ],
+    "eligibility": "open",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "previousVerifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://doserad2026.grand-challenge.org/timeline-and-rules/",
+          "summary": "正式测试8月31日结束，赛后10月1日–12月31日；一般团队规则、公开资源截止和获奖材料/现场要求。",
+          "fields": [
+            "status",
+            "entry",
+            "submit",
+            "eligibility",
+            "requirements",
+            "warning"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pengwin2026",
+    "title": "PENGWIN 2026 · 骨盆骨折分割与复位规划",
+    "url": "https://pengwin2026.grand-challenge.org/",
+    "task": "3D CT骨盆骨折自动/交互分割与复位规划。",
+    "tags": [
+      "医学",
+      "3D"
+    ],
+    "platform": "会议官网",
+    "venue": "MICCAI 2026",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "官网已公布正式结果且提交截止已过；参赛身份、完整奖项及材料规则尚待核，保留待确认，不视为当前开放。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "Algorithm submission: Aug 19, 2026 23:59 AoE (UTC−12) → 北京8月20日19:59；方法说明8月22日是独立节点。",
+      "instant": "2026-08-19T23:59:00-12:00",
+      "day": "2026-08-20",
+      "kind": "deadline",
+      "timezone": "AoE"
+    },
+    "old": [],
+    "sources": [
+      "https://pengwin2026.grand-challenge.org/"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://pengwin2026.grand-challenge.org/",
+          "summary": "已识别官方候选身份和任务；缺失字段已显式标待确认。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "surgvu26",
+    "title": "SurgVU 2026 · 手术视觉理解",
+    "url": "https://surgvu26.grand-challenge.org/",
+    "task": "手术视频弱监督器械/关键点定位与视频问答。",
+    "tags": [
+      "医学",
+      "CV",
+      "多模态"
+    ],
+    "platform": "会议官网",
+    "venue": "MICCAI 2026",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "官网称总现金奖最高$8,500；分配及获奖条件需核Prizes页。",
+    "warning": "官网正式注册/测试节点已结束，但准确时区、参赛资格、完整奖金及报告履约规则仍待核；不以API end_date补全。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "New registrations deadline: August 15th, 2026；未明示时刻/时区。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown",
+      "officialDay": "2026-08-15"
+    },
+    "submit": {
+      "text": "End of final test phase: September 6th, 2026；方法报告September 13th是另一个节点。未明示时刻/时区。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown",
+      "officialDay": "2026-09-06"
+    },
+    "old": [],
+    "sources": [
+      "https://surgvu26.grand-challenge.org/",
+      "https://surgvu26.grand-challenge.org/important-dates/"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "previousVerifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://surgvu26.grand-challenge.org/important-dates/",
+          "summary": "注册8月15日、最终测试9月6日、报告9月13日；未给时刻/时区。",
+          "fields": [
+            "entry",
+            "submit",
+            "warning"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        },
+        {
+          "url": "https://surgvu26.grand-challenge.org/",
+          "summary": "手术器械定位/视频问答与最高8,500美元奖项介绍。",
+          "fields": [
+            "task",
+            "award"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "isles-26",
+    "title": "ISLES 2026 · T1 MRI卒中梗死分割",
+    "url": "https://isles-26.grand-challenge.org/",
+    "task": "在跨中心T1加权MRI中分割急性、亚急性及慢性梗死。",
+    "tags": [
+      "医学",
+      "CV"
+    ],
+    "platform": "会议官网",
+    "venue": "MICCAI 2026",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "官网容器截止已过；CET按原文UTC+1保留。完整资格与奖项仍待Challenge Rules核验。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "Challenge Closing (Dockers Submission): August 19, 2026 (23:59 CET) → 北京8月20日06:59",
+      "instant": "2026-08-19T23:59:00+01:00",
+      "day": "2026-08-20",
+      "kind": "deadline",
+      "timezone": "CET"
+    },
+    "old": [],
+    "sources": [
+      "https://isles-26.grand-challenge.org/"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://isles-26.grand-challenge.org/",
+          "summary": "已识别官方候选身份和任务；缺失字段已显式标待确认。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "reg2026",
+    "title": "REG² 2026 · 病理推理报告生成",
+    "url": "https://reg2026.grand-challenge.org/",
+    "task": "从病理WSI生成报告、结构化诊断推理及视觉依据。",
+    "tags": [
+      "医学",
+      "大模型",
+      "Agent"
+    ],
+    "platform": "会议官网",
+    "venue": "MICCAI 2026",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "官网写第1–4名€800/€400/€200/€100，第5名证书；附加条件待核。",
+    "warning": "正式测试窗口已过；论文、代码和禁发条款另行规定，资格及完整履约要求未核完。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "Test phase 2 closes: 20 July 2026 18:00 KST / 09:00 UTC → 北京7月20日17:00",
+      "instant": "2026-07-20T18:00:00+09:00",
+      "day": "2026-07-20",
+      "kind": "deadline",
+      "timezone": "KST"
+    },
+    "old": [],
+    "sources": [
+      "https://reg2026.grand-challenge.org/"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://reg2026.grand-challenge.org/",
+          "summary": "已识别官方候选身份和任务；缺失字段已显式标待确认。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "topaneu-26",
+    "title": "TopAneu 2026 · 多模态颅内动脉瘤分析",
+    "url": "https://topaneu-26.grand-challenge.org/",
+    "task": "CTA/MRA按血管位置检出、分类并分割颅内动脉瘤。",
+    "tags": [
+      "医学",
+      "CV",
+      "3D"
+    ],
+    "platform": "会议官网",
+    "venue": "MICCAI 2026",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "验证GC账号；Docker提交，每队一份最终容器；外部数据须披露。完整参赛身份及奖项规则待核。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "正式提交已截止；商业数据使用需数据所有者许可，完整资格和奖项未核完。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "Submission phase ends: Sep 21, 2026 11:59 PM CEST → 北京9月22日05:59",
+      "instant": "2026-09-21T23:59:00+02:00",
+      "day": "2026-09-22",
+      "kind": "deadline",
+      "timezone": "CEST"
+    },
+    "old": [],
+    "sources": [
+      "https://topaneu-26.grand-challenge.org/"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://topaneu-26.grand-challenge.org/",
+          "summary": "已识别官方候选身份和任务；缺失字段已显式标待确认。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "odin2026-toothfairy4",
+    "title": "ODIN 2026 · ToothFairy4",
+    "url": "https://odin2026.grand-challenge.org/",
+    "task": "从3D CBCT生成颌面/外科诊疗报告。",
+    "tags": [
+      "医学",
+      "3D",
+      "大模型",
+      "多模态"
+    ],
+    "platform": "会议官网",
+    "venue": "MICCAI 2026",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "已从官方列表发现；尚未完成详情/Rules核验，准确报名与提交日期、资格及附加条件待确认。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://odin2026.grand-challenge.org/"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://odin2026.grand-challenge.org/",
+          "summary": "已识别官方候选身份和任务；缺失字段已显式标待确认。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    },
+    "identity": {
+      "site": "odin2026.grand-challenge.org",
+      "year": 2026,
+      "track": "ToothFairy4"
+    }
+  },
+  {
+    "id": "odin2026-bite2text",
+    "title": "ODIN 2026 · Bite2Text",
+    "url": "https://odin2026.grand-challenge.org/",
+    "task": "从3D口内扫描与2D口内照片生成正畸报告。",
+    "tags": [
+      "医学",
+      "3D",
+      "大模型",
+      "多模态"
+    ],
+    "platform": "会议官网",
+    "venue": "MICCAI 2026",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "已从官方列表发现；尚未完成详情/Rules核验，准确报名与提交日期、资格及附加条件待确认。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://odin2026.grand-challenge.org/"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://odin2026.grand-challenge.org/",
+          "summary": "已识别官方候选身份和任务；缺失字段已显式标待确认。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    },
+    "identity": {
+      "site": "odin2026.grand-challenge.org",
+      "year": 2026,
+      "track": "Bite2Text"
+    }
+  },
+  {
+    "id": "kaggle-arc-prize-2026-paper-track",
+    "title": "ARC Prize 2026 · Paper Track",
+    "url": "https://www.kaggle.com/competitions/arc-prize-2026-paper-track",
+    "task": "提交ARC Prize方法与概念研究论文。",
+    "tags": [
+      "大模型"
+    ],
+    "platform": "Kaggle",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "已从官方列表发现；尚未完成详情/Rules核验，准确报名与提交日期、资格及附加条件待确认。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://www.kaggle.com/competitions/arc-prize-2026-paper-track",
+      "https://www.kaggle.com/competitions"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://www.kaggle.com/competitions",
+          "summary": "本轮浏览器列表已识别该比赛标识与任务；没有用相对倒计时推算日期。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "kaggle-playground-series-s6e10",
+    "title": "Predicting Airline Satisfaction",
+    "url": "https://www.kaggle.com/competitions/playground-series-s6e10",
+    "task": "Playground S6E10旅客满意度预测。",
+    "tags": [],
+    "platform": "Kaggle",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "已从官方列表发现；尚未完成详情/Rules核验，准确报名与提交日期、资格及附加条件待确认。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://www.kaggle.com/competitions/playground-series-s6e10",
+      "https://www.kaggle.com/competitions"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://www.kaggle.com/competitions",
+          "summary": "本轮浏览器列表已识别该比赛标识与任务；没有用相对倒计时推算日期。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "kaggle-the-pokemon-company-ptcg-ai-battle-challenge-playground",
+    "title": "PTCG AI Battle Challenge · Playground",
+    "url": "https://www.kaggle.com/competitions/the-pokemon-company-ptcg-ai-battle-challenge-playground",
+    "task": "构建宝可梦卡牌对战训练Agent。",
+    "tags": [
+      "Agent"
+    ],
+    "platform": "Kaggle",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "已从官方列表发现；尚未完成详情/Rules核验，准确报名与提交日期、资格及附加条件待确认。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://www.kaggle.com/competitions/the-pokemon-company-ptcg-ai-battle-challenge-playground",
+      "https://www.kaggle.com/competitions"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://www.kaggle.com/competitions",
+          "summary": "本轮浏览器列表已识别该比赛标识与任务；没有用相对倒计时推算日期。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "kaggle-privacy-first-agentic-ai",
+    "title": "The 6th World Championship in Data Science & AI (2026/27)",
+    "url": "https://www.kaggle.com/competitions/privacy-first-agentic-ai",
+    "task": "围绕Yankee AI和Chroma DB构建隐私优先的Agentic AI。",
+    "tags": [
+      "Agent",
+      "检索 / RAG"
+    ],
+    "platform": "Kaggle",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "已从官方列表发现；尚未完成详情/Rules核验，准确报名与提交日期、资格及附加条件待确认。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://www.kaggle.com/competitions/privacy-first-agentic-ai",
+      "https://www.kaggle.com/competitions"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://www.kaggle.com/competitions",
+          "summary": "本轮浏览器列表已识别该比赛标识与任务；没有用相对倒计时推算日期。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "kaggle-playground-series-s6e9",
+    "title": "Predicting Electric Vehicle Purchases",
+    "url": "https://www.kaggle.com/competitions/playground-series-s6e9",
+    "task": "电动车购买预测。",
+    "tags": [],
+    "platform": "Kaggle",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "已从官方列表发现；尚未完成详情/Rules核验，准确报名与提交日期、资格及附加条件待确认。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://www.kaggle.com/competitions/playground-series-s6e9",
+      "https://www.kaggle.com/competitions"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://www.kaggle.com/competitions",
+          "summary": "本轮浏览器列表已识别该比赛标识与任务；没有用相对倒计时推算日期。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "kaggle-pokemon-tcg-ai-battle-challenge-strategy",
+    "title": "PTCG AI Battle Challenge · Strategy",
+    "url": "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle-challenge-strategy",
+    "task": "卡牌对战策略Agent。",
+    "tags": [
+      "Agent"
+    ],
+    "platform": "Kaggle",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "已从官方列表发现；尚未完成详情/Rules核验，准确报名与提交日期、资格及附加条件待确认。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle-challenge-strategy",
+      "https://www.kaggle.com/competitions"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://www.kaggle.com/competitions",
+          "summary": "本轮浏览器列表已识别该比赛标识与任务；没有用相对倒计时推算日期。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "kaggle-ai-agent-security-multi-step-tool-attacks",
+    "title": "AI Agent Security · Multi-Step Tool Attacks",
+    "url": "https://www.kaggle.com/competitions/ai-agent-security-multi-step-tool-attacks",
+    "task": "多步骤工具攻击中的Agent安全评测。",
+    "tags": [
+      "Agent"
+    ],
+    "platform": "Kaggle",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "已从官方列表发现；尚未完成详情/Rules核验，准确报名与提交日期、资格及附加条件待确认。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://www.kaggle.com/competitions/ai-agent-security-multi-step-tool-attacks",
+      "https://www.kaggle.com/competitions"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://www.kaggle.com/competitions",
+          "summary": "本轮浏览器列表已识别该比赛标识与任务；没有用相对倒计时推算日期。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "kaggle-playground-series-s6e8",
+    "title": "Predicting Smartphone Addiction",
+    "url": "https://www.kaggle.com/competitions/playground-series-s6e8",
+    "task": "智能手机成瘾预测。",
+    "tags": [],
+    "platform": "Kaggle",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "已从官方列表发现；尚未完成详情/Rules核验，准确报名与提交日期、资格及附加条件待确认。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://www.kaggle.com/competitions/playground-series-s6e8",
+      "https://www.kaggle.com/competitions"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://www.kaggle.com/competitions",
+          "summary": "本轮浏览器列表已识别该比赛标识与任务；没有用相对倒计时推算日期。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "kaggle-pokemon-tcg-ai-battle",
+    "title": "PTCG AI Battle Challenge · Simulation",
+    "url": "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle",
+    "task": "卡牌对战模拟。",
+    "tags": [
+      "Agent"
+    ],
+    "platform": "Kaggle",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "已从官方列表发现；尚未完成详情/Rules核验，准确报名与提交日期、资格及附加条件待确认。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://www.kaggle.com/competitions/pokemon-tcg-ai-battle",
+      "https://www.kaggle.com/competitions"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://www.kaggle.com/competitions",
+          "summary": "本轮浏览器列表已识别该比赛标识与任务；没有用相对倒计时推算日期。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "kaggle-autonomous-agent-prediction-beta",
+    "title": "Autonomous Agent Prediction (Beta)",
+    "url": "https://www.kaggle.com/competitions/autonomous-agent-prediction-beta",
+    "task": "自主Agent预测。",
+    "tags": [
+      "Agent"
+    ],
+    "platform": "Kaggle",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "已从官方列表发现；尚未完成详情/Rules核验，准确报名与提交日期、资格及附加条件待确认。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://www.kaggle.com/competitions/autonomous-agent-prediction-beta",
+      "https://www.kaggle.com/competitions"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://www.kaggle.com/competitions",
+          "summary": "本轮浏览器列表已识别该比赛标识与任务；没有用相对倒计时推算日期。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "kaggle-rogii-wellbore-geology-prediction",
+    "title": "ROGII · Wellbore Geology Prediction",
+    "url": "https://www.kaggle.com/competitions/rogii-wellbore-geology-prediction",
+    "task": "井筒地质预测。",
+    "tags": [],
+    "platform": "Kaggle",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "已从官方列表发现；尚未完成详情/Rules核验，准确报名与提交日期、资格及附加条件待确认。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://www.kaggle.com/competitions/rogii-wellbore-geology-prediction",
+      "https://www.kaggle.com/competitions"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://www.kaggle.com/competitions",
+          "summary": "本轮浏览器列表已识别该比赛标识与任务；没有用相对倒计时推算日期。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "kaggle-playground-series-s6e7",
+    "title": "Predicting Student Health Risk",
+    "url": "https://www.kaggle.com/competitions/playground-series-s6e7",
+    "task": "学生健康风险预测；任务对象为学生不等于学生限定参赛。",
+    "tags": [],
+    "platform": "Kaggle",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "已从官方列表发现；尚未完成详情/Rules核验，准确报名与提交日期、资格及附加条件待确认。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://www.kaggle.com/competitions/playground-series-s6e7",
+      "https://www.kaggle.com/competitions"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://www.kaggle.com/competitions",
+          "summary": "本轮浏览器列表已识别该比赛标识与任务；没有用相对倒计时推算日期。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "kaggle-titanic",
+    "title": "Titanic · Machine Learning from Disaster",
+    "url": "https://www.kaggle.com/competitions/titanic",
+    "task": "泰坦尼克号生存预测基础练习。",
+    "tags": [],
+    "platform": "Kaggle",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "已从官方列表发现；尚未完成详情/Rules核验，准确报名与提交日期、资格及附加条件待确认。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://www.kaggle.com/competitions/titanic",
+      "https://www.kaggle.com/competitions"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://www.kaggle.com/competitions",
+          "summary": "本轮浏览器列表已识别该比赛标识与任务；没有用相对倒计时推算日期。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "kaggle-house-prices-advanced-regression-techniques",
+    "title": "House Prices · Advanced Regression Techniques",
+    "url": "https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques",
+    "task": "房价回归与特征工程练习。",
+    "tags": [],
+    "platform": "Kaggle",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "已从官方列表发现；尚未完成详情/Rules核验，准确报名与提交日期、资格及附加条件待确认。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques",
+      "https://www.kaggle.com/competitions"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://www.kaggle.com/competitions",
+          "summary": "本轮浏览器列表已识别该比赛标识与任务；没有用相对倒计时推算日期。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "kaggle-spaceship-titanic",
+    "title": "Spaceship Titanic",
+    "url": "https://www.kaggle.com/competitions/spaceship-titanic",
+    "task": "预测被运送到另一维度的乘客。",
+    "tags": [],
+    "platform": "Kaggle",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "已从官方列表发现；尚未完成详情/Rules核验，准确报名与提交日期、资格及附加条件待确认。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://www.kaggle.com/competitions/spaceship-titanic",
+      "https://www.kaggle.com/competitions"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://www.kaggle.com/competitions",
+          "summary": "本轮浏览器列表已识别该比赛标识与任务；没有用相对倒计时推算日期。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "tianchi-532440",
+    "title": "CSS 2026 · CBCT金属伪影消除",
+    "url": "https://tianchi.aliyun.com/competition/entrance/532440",
+    "task": "CBCT金属伪影消除。",
+    "tags": [
+      "医学",
+      "3D"
+    ],
+    "platform": "天池",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "官方列表标为已结束，尚未核到详情中的完整资格与准确提交节点；列表赛事结束日不能直接等同最终参赛截止。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://tianchi.aliyun.com/competition/entrance/532440",
+      "https://tianchi.aliyun.com/competition/algorithmList"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://tianchi.aliyun.com/competition/algorithmList",
+          "summary": "浏览器第一页列出该比赛标识、题目和已结束标签；具体节点与资格待核。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "tianchi-532344",
+    "title": "睿创杯高校创新创业赛 · 双光目标检测",
+    "url": "https://tianchi.aliyun.com/competition/entrance/532344",
+    "task": "轻量化可见光/红外双光目标检测。",
+    "tags": [
+      "CV"
+    ],
+    "platform": "天池",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "本轮官方列表标为已结束，但未核完整详情、资格与精确节点；保留待确认。高校赛须核是否仅限在校学生，确认后按排除规则处理。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://tianchi.aliyun.com/competition/entrance/532344",
+      "https://tianchi.aliyun.com/competition/algorithmList"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://tianchi.aliyun.com/competition/algorithmList",
+          "summary": "浏览器第一页列出该比赛标识、题目和已结束标签；具体节点与资格待核。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "tianchi-532346",
+    "title": "睿创杯高校创新创业赛 · 大模型生成",
+    "url": "https://tianchi.aliyun.com/competition/entrance/532346",
+    "task": "基于大模型的图像/场景生成。",
+    "tags": [
+      "大模型",
+      "CV"
+    ],
+    "platform": "天池",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "本轮官方列表标为已结束，但未核完整详情、资格与精确节点；保留待确认。高校赛须核是否仅限在校学生，确认后按排除规则处理。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://tianchi.aliyun.com/competition/entrance/532346",
+      "https://tianchi.aliyun.com/competition/algorithmList"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://tianchi.aliyun.com/competition/algorithmList",
+          "summary": "浏览器第一页列出该比赛标识、题目和已结束标签；具体节点与资格待核。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "tianchi-532277",
+    "title": "WWW2025 · 多模态对话意图识别",
+    "url": "https://tianchi.aliyun.com/competition/entrance/532277",
+    "task": "客户服务多模态对话意图识别。",
+    "tags": [
+      "大模型",
+      "多模态"
+    ],
+    "platform": "天池",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "官方列表标为已结束，尚未核到详情中的完整资格与准确提交节点；列表赛事结束日不能直接等同最终参赛截止。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://tianchi.aliyun.com/competition/entrance/532277",
+      "https://tianchi.aliyun.com/competition/algorithmList"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://tianchi.aliyun.com/competition/algorithmList",
+          "summary": "浏览器第一页列出该比赛标识、题目和已结束标签；具体节点与资格待核。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "tianchi-532266",
+    "title": "APTOS 2024 · 眼底照生成OCT",
+    "url": "https://tianchi.aliyun.com/competition/entrance/532266",
+    "task": "从眼底照片生成OCT。",
+    "tags": [
+      "医学",
+      "CV"
+    ],
+    "platform": "天池",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "官方列表标为已结束，尚未核到详情中的完整资格与准确提交节点；列表赛事结束日不能直接等同最终参赛截止。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://tianchi.aliyun.com/competition/entrance/532266",
+      "https://tianchi.aliyun.com/competition/algorithmList"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://tianchi.aliyun.com/competition/algorithmList",
+          "summary": "浏览器第一页列出该比赛标识、题目和已结束标签；具体节点与资格待核。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "tianchi-532195",
+    "title": "Chinagraph 2024 · 先临精鹰杯3D重建",
+    "url": "https://tianchi.aliyun.com/competition/entrance/532195",
+    "task": "高精度三维重建。",
+    "tags": [
+      "3D",
+      "CV"
+    ],
+    "platform": "天池",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "官方列表标为已结束，尚未核到详情中的完整资格与准确提交节点；列表赛事结束日不能直接等同最终参赛截止。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://tianchi.aliyun.com/competition/entrance/532195",
+      "https://tianchi.aliyun.com/competition/algorithmList"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://tianchi.aliyun.com/competition/algorithmList",
+          "summary": "浏览器第一页列出该比赛标识、题目和已结束标签；具体节点与资格待核。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "tianchi-532189",
+    "title": "CCKS2024 · 突发事件关系抽取",
+    "url": "https://tianchi.aliyun.com/competition/entrance/532189",
+    "task": "篇章级突发事件关系抽取。",
+    "tags": [
+      "大模型"
+    ],
+    "platform": "天池",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "官方列表标为已结束，尚未核到详情中的完整资格与准确提交节点；列表赛事结束日不能直接等同最终参赛截止。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://tianchi.aliyun.com/competition/entrance/532189",
+      "https://tianchi.aliyun.com/competition/algorithmList"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://tianchi.aliyun.com/competition/algorithmList",
+          "summary": "浏览器第一页列出该比赛标识、题目和已结束标签；具体节点与资格待核。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "tianchi-532190",
+    "title": "CCKS2024 · 突发事件摘要生成",
+    "url": "https://tianchi.aliyun.com/competition/entrance/532190",
+    "task": "篇章级突发事件摘要生成。",
+    "tags": [
+      "大模型"
+    ],
+    "platform": "天池",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "官方列表标为已结束，尚未核到详情中的完整资格与准确提交节点；列表赛事结束日不能直接等同最终参赛截止。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://tianchi.aliyun.com/competition/entrance/532190",
+      "https://tianchi.aliyun.com/competition/algorithmList"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://tianchi.aliyun.com/competition/algorithmList",
+          "summary": "浏览器第一页列出该比赛标识、题目和已结束标签；具体节点与资格待核。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "tianchi-532191",
+    "title": "ISCSLP2024 · 构音障碍严重度评估",
+    "url": "https://tianchi.aliyun.com/competition/entrance/532191",
+    "task": "多模态构音障碍严重程度自动评估。",
+    "tags": [
+      "医学",
+      "多模态"
+    ],
+    "platform": "天池",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "仅完成官方候选页识别；参赛身份、人数、单位授权、费用及提交材料尚待Rules核验。",
+    "award": "待核官网奖项及附加条件。",
+    "warning": "官方列表标为已结束，尚未核到详情中的完整资格与准确提交节点；列表赛事结束日不能直接等同最终参赛截止。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://tianchi.aliyun.com/competition/entrance/532191",
+      "https://tianchi.aliyun.com/competition/algorithmList"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://tianchi.aliyun.com/competition/algorithmList",
+          "summary": "浏览器第一页列出该比赛标识、题目和已结束标签；具体节点与资格待核。",
+          "fields": [
+            "identity",
+            "task"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "amd-lablab-ai-academy-challenge",
+    "title": "Lablab × AMD AI Academy Challenge",
+    "url": "https://lablab.ai/ai-hackathons/amd-lablab-ai-academy-challenge",
+    "task": "三个月AMD开发者学习、构建、分享计划，列表称仅个人参与。",
+    "tags": [
+      "Agent"
+    ],
+    "platform": "会议官网",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "只允许个人；可在项目期间任意时间加入，完成学习/挑战积累XP，无需本地AMD硬件。Legend级还须完成末期解锁的最终挑战。",
+    "award": "总现金$5,000：首三位达到Legend分别$2,500/$1,500/$1,000；另有排名徽章及AMD额度。",
+    "warning": "现金奖不是仅按XP排名；须完成末期解锁挑战且抢先达到Legend，准确最终提交节点待公告。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "FAQ明确可任意时间加入；未给单独报名截止。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "活动September 1 – December 1, 2026；最终挑战末期才解锁，准确终交时间/时区未公告。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown",
+      "officialDay": "2026-12-01"
+    },
+    "old": [],
+    "sources": [
+      "https://lablab.ai/ai-hackathons/amd-lablab-ai-academy-challenge",
+      "https://lablab.ai/event"
+    ],
+    "eligibility": "unknown",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "previousVerifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://lablab.ai/ai-hackathons/amd-lablab-ai-academy-challenge",
+          "summary": "个人参与、期间可随时加入；首三位Legend现金奖，活动9月1日–12月1日，最终挑战末期解锁。",
+          "fields": [
+            "entry",
+            "submit",
+            "requirements",
+            "award",
+            "warning"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "amd-developer-hackathon-act-iii",
+    "title": "AMD Developer Hackathon · ACT III",
+    "url": "https://lablab.ai/ai-hackathons/amd-developer-hackathon-act-iii",
+    "task": "在AMD GPU上构建AI Agent或高性能应用；官网详情线上12–18 October 2026，现场17–18日。",
+    "tags": [
+      "Agent"
+    ],
+    "platform": "会议官网",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "官网欢迎所有经验水平，1–6人；须加入AMD AI Developer Program以及lablab/Discord。提交公开GitHub仓库、演示应用URL、封面、视频及幻灯片；作品原创且MIT合规。",
+    "award": "官网标总奖$12,000+，AMD及Google各$5,000，另有Evolus方案/额度及合作方奖励；奖金可能90天内发放，赞助奖须集成对应技术。",
+    "warning": "列表线上12–17日与详情12–18日不一致，Event Schedule尚待公告，准确终交时刻待确认。现场批准制，旅行住宿不报销；需公开仓库。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "最终参赛提交截止待核；不以平台API日期或相对倒计时补全。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "old": [],
+    "sources": [
+      "https://lablab.ai/ai-hackathons/amd-developer-hackathon-act-iii",
+      "https://lablab.ai/event"
+    ],
+    "eligibility": "open",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "previousVerifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://lablab.ai/ai-hackathons/amd-developer-hackathon-act-iii",
+          "summary": "详情注明1–6人、ADP前置、公开仓库/视频/幻灯片、12,000美元以上奖项；活动时间与列表有差异，精确赛程未公告。",
+          "fields": [
+            "task",
+            "eligibility",
+            "requirements",
+            "award",
+            "warning"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "vultr-hackathon",
+    "title": "Vultr · Agent Rush Hackathon",
+    "url": "https://lablab.ai/ai-hackathons/vultr-hackathon",
+    "task": "Agent应用开发；列表给2026年11月3–8日线上及8日现场阶段。",
+    "tags": [
+      "Agent"
+    ],
+    "platform": "会议官网",
+    "venue": "",
+    "status": "unclear",
+    "priority": 6,
+    "requirements": "1–6人，欢迎所有经验水平；加入lablab及Discord。作品在Vultr沙箱执行真实代码/浏览器任务，须原创、MIT合规，提交公开GitHub仓库、可用Demo URL、视频和幻灯片。",
+    "award": "现金$9,000及额度$5,000：第一名$5,000+$3,000额度，第二名$3,000+$1,000额度，第三名$1,000+$1,000额度；奖金发放可能90天。",
+    "warning": "现场参与需批准且旅行住宿不报销；公开仓库与MIT合规是提交要求，精确赛程尚未公告。",
+    "note": "本轮发现入表，未标为今日完整核验。",
+    "entry": {
+      "text": "报名截止及资格待核。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown"
+    },
+    "submit": {
+      "text": "活动3–8 November 2026；Event Schedule: To be announced，最终提交时刻/时区待公告。",
+      "instant": null,
+      "day": null,
+      "kind": "unknown",
+      "officialDay": "2026-11-08"
+    },
+    "old": [],
+    "sources": [
+      "https://lablab.ai/ai-hackathons/vultr-hackathon",
+      "https://lablab.ai/event"
+    ],
+    "eligibility": "open",
+    "verifiedAt": null,
+    "verifiedBy": "agent",
+    "verification": {
+      "state": "partial",
+      "attemptedAt": "2026-10-07T12:11:44+08:00",
+      "verifiedAt": null,
+      "previousVerifiedAt": null,
+      "runId": "codex-2026-10-07-manual",
+      "evidence": [
+        {
+          "url": "https://lablab.ai/ai-hackathons/vultr-hackathon",
+          "summary": "线上11月3–8日及8日现场；1–6人，公开仓库/Demo/视频/幻灯片，9,000美元现金及5,000额度，精确赛程未公告。",
+          "fields": [
+            "eligibility",
+            "requirements",
+            "award",
+            "submit",
+            "warning"
+          ],
+          "fetchedAt": "2026-10-07T12:11:44+08:00"
+        }
+      ]
+    }
   }
 ]

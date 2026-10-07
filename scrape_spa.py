@@ -4,19 +4,20 @@
 
 输出 spa_snapshot.json：{"snapshots": [{source, url, text}], "failed": [...]}。
 设计约束：
-- 本地与 GitHub Actions runner 都能跑（依赖 playwright + chromium）；
+- 本地运行（浏览器路径依赖 playwright + chromium）；
 - 单源失败不阻断（记入 failed）；
 - Kaggle 优先走官方 API v1（需 ~/.kaggle/kaggle.json 或 KAGGLE_USERNAME/KAGGLE_KEY，
-  2026-10 起 Cloudflare 对无头浏览器与 curl 一律弹 reCAPTCHA，Playwright 路径已不可用）；
-  无凭据时记明确失败原因，由 agent 在每日流程里 WebFetch 兜底；
-- 天池/讯飞仍用 Playwright（Kaggle 必须用完整版 Chromium channel="chromium" 过检查，
-  headless shell 会被卡在「正在检查浏览器」页）。
+  无凭据或 API 失败时记录原因，由 agent 使用现有浏览器读取官网兜底）；
+- 快照只覆盖已抓正文范围，不代表全平台扫描成功。
 """
 import base64
 import json
 import pathlib
 import sys
 import urllib.request
+import datetime
+import os
+from refresh_core import atomic_json, BEIJING
 
 BASE = pathlib.Path(__file__).resolve().parent
 OUT = BASE / "spa_snapshot.json"
@@ -48,7 +49,7 @@ def kaggle_credentials():
 
 
 def fetch_kaggle_api():
-    """官方 API v1 拉最近创建的 general 组比赛（2 页 × 20 条，发现环节够用）。
+    """官方 API v1 拉 general 组前两页；只是有限发现范围。
 
     返回 snapshots 元素；失败抛异常（由调用方记 failed）。
     """
@@ -81,29 +82,38 @@ def fetch_kaggle_api():
             "text": "\n".join(lines)[:12000]}
 
 
-def main():
+def run():
+    fetched = datetime.datetime.now(BEIJING).isoformat(timespec="seconds")
+    result = {"runId": os.environ.get("SCOUT_RUN_ID", fetched), "fetchedAt": fetched, "snapshots": [], "failed": [], "results": []}
+    snap, failed = result["snapshots"], result["failed"]
+    atomic_json(OUT, result)
+    try:
+        item = fetch_kaggle_api()
+        item.update(fetchedAt=fetched, coverage="general group, first two recently-created pages; not complete platform coverage")
+        snap.append(item)
+    except Exception as e:
+        failed.append("kaggle: %s" % e)
+    atomic_json(OUT, result)
     try:
         from playwright.sync_api import sync_playwright
     except ImportError:
-        print("playwright 未安装，跳过 SPA 抓取", file=sys.stderr)
-        OUT.write_text("[]", encoding="utf-8")
-        return 0
-    snap, failed = [], []
-    # Kaggle：Playwright 已过不了 Cloudflare（2026-10 起 reCAPTCHA），走官方 API
-    try:
-        snap.append(fetch_kaggle_api())
-    except Exception as e:
-        failed.append("kaggle: %s" % e)
+        failed.extend(["tianchi: playwright unavailable", "xfyun: playwright unavailable"])
+        return finish(result)
     with sync_playwright() as p:
         try:
             browser = p.chromium.launch(channel="chromium", headless=True,
                                         args=["--disable-blink-features=AutomationControlled"])
         except Exception:
-            browser = p.chromium.launch(headless=True)  # 兜底：完整版不存在时用 shell
+            try:
+                browser = p.chromium.launch(headless=True)
+            except Exception:
+                failed.extend(["tianchi: chromium unavailable", "xfyun: chromium unavailable"])
+                return finish(result)
         for name, url in SOURCES:
             if name == "kaggle":
                 continue  # 已由官方 API 处理
             pg = None
+            ctx = None
             try:
                 # Kaggle 的 Cloudflare 检查对 zh-CN 更严，英文站用 en-US context（实测通过）
                 ctx = browser.new_context(
@@ -118,21 +128,43 @@ def main():
                     if ("检查浏览器" not in body and "Checking your browser" not in body
                             and len(body) > 500):
                         break
-                if len(body) < 500:
+                blocked = any(marker.lower() in body.lower() for marker in ("检查浏览器", "Checking your browser", "Verify you are human", "reCAPTCHA", "Access denied"))
+                if len(body) < 500 or blocked:
                     failed.append(name + ": page still empty/check after 40s")
                 else:
                     snap.append({"source": name, "url": url,
-                                 "text": body[:12000]})  # 每源最多 12K 字符
+                                 "text": body[:12000], "fetchedAt": fetched,
+                                 "coverage": "visible first-page body; may be truncated"})
             except Exception as e:
                 failed.append("%s: %r" % (name, e))
             finally:
                 if pg:
                     pg.close()
-                ctx.close()
+                if ctx:
+                    ctx.close()
         browser.close()
-    OUT.write_text(json.dumps({"snapshots": snap, "failed": failed}, ensure_ascii=False, indent=2),
-                   encoding="utf-8")
-    print("spa_snapshot.json: %d 源抓到, %d 失败 %s" % (len(snap), len(failed), failed or ""))
+    return finish(result)
+
+
+def finish(result):
+    successful = {s["source"] for s in result["snapshots"]}
+    result["results"] = [{"source": name, "state": "ok" if name in successful else "failed", "fetchedAt": result["fetchedAt"], "errors": [f for f in result["failed"] if f.startswith(name + ":")]} for name, _ in SOURCES]
+    atomic_json(OUT, result)
+    print("spa_snapshot.json: %d 源抓到, %d 失败" % (len(successful), len(result["failed"])))
+    return 0 if not result["failed"] else 2
+
+
+def main():
+    try:
+        return run()
+    except Exception as exc:
+        # Browser driver startup/context shutdown can fail before normal finish.
+        result = json.loads(OUT.read_text(encoding="utf-8"))
+        successful = {s["source"] for s in result["snapshots"]}
+        for name, _ in SOURCES:
+            if name not in successful and not any(f.startswith(name + ":") for f in result["failed"]):
+                result["failed"].append(f"{name}: browser startup/run failed ({type(exc).__name__})")
+        return finish(result)
 
 
 if __name__ == "__main__":

@@ -6,6 +6,7 @@
 chip 计数为分面计数（反映在其他维度当前选中条件下还剩多少），不是全量固定值。
 """
 import json, pathlib, datetime, html, collections, re, os
+from refresh_core import clock_now, build_today, action_days
 
 BASE = pathlib.Path(__file__).resolve().parent
 SRC = pathlib.Path(os.environ.get("EVENTS_DIR", str(BASE)))
@@ -18,17 +19,27 @@ SHOW_FOOTER = False
 
 events = json.load(open(SRC / "events.json", encoding="utf-8"))
 # 基准日期默认取「今天」（可被环境变量覆盖，便于复现历史构建或测试）。
-TODAY = datetime.date.fromisoformat(os.environ.get("BUILD_TODAY", datetime.date.today().isoformat()))
+CURRENT_NOW = clock_now()
+TODAY = build_today(CURRENT_NOW)
+REFRESH = json.loads((SRC / "refresh-status.json").read_text(encoding="utf-8")) if (SRC / "refresh-status.json").exists() else {}
 # 核验时刻精确到秒（北京时间）：优先取 refresh-status.json 的 finishedAt（AI 核验完成时刻），
 # 无记录时用构建时刻。BUILD_NOW 可覆盖用于测试。
 _now_raw = os.environ.get("BUILD_NOW") or (
-    json.loads((SRC / "refresh-status.json").read_text(encoding="utf-8")).get("finishedAt")
+    REFRESH.get("finishedAt")
     if (SRC / "refresh-status.json").exists() else None)
 try:
     _now = datetime.datetime.fromisoformat(str(_now_raw)) if _now_raw else datetime.datetime.now().astimezone()
 except ValueError:
     _now = datetime.datetime.now().astimezone()
 NOW_DISPLAY = _now.astimezone(datetime.timezone(datetime.timedelta(hours=8))).strftime("%Y-%m-%d %H:%M:%S") + "（北京时间）"
+REFRESH_STATE = REFRESH.get("state", "unknown")
+REFRESH_LABEL = {"ok": "完成", "partial": "部分完成", "failed": "失败"}.get(REFRESH_STATE, "未记录")
+REFRESH_RUNNER = "Codex" if REFRESH.get("runner") == "codex-agent" else "智能体"
+REFRESH_SUMMARY = "%s · 本轮%s核验 %s 条 · 发现源 %s/%s 成功" % (REFRESH_LABEL, REFRESH_RUNNER, REFRESH.get("verified", 0), REFRESH.get("sourcesOk", 0), REFRESH.get("sourcesTotal", 0))
+REFRESH_FAILURES = "；".join(str(x.get("name", x.get("url", "来源"))) if isinstance(x, dict) else str(x) for x in REFRESH.get("failedSources", []))
+if REFRESH_FAILURES:
+    REFRESH_SUMMARY += " · %s 个来源未完成" % len(REFRESH.get("failedSources", []))
+REFRESH_DETAILS = ('<details class="hint"><summary>查看未完成来源</summary><p>' + html.escape(REFRESH_FAILURES) + '</p></details>') if REFRESH_FAILURES else ""
 
 PLAT_CLASS = {"Kaggle": "kaggle", "天池": "cn", "讯飞": "xf", "Devpost": "devpost", "会议官网": "conf"}
 
@@ -63,10 +74,7 @@ def days_to(day):
 
 
 def days_left(e):
-    ds = [d for d in (days_to(e.get("entry", {}).get("day")), days_to(e.get("submit", {}).get("day")))
-          if d is not None]
-    fut = [d for d in ds if d >= 0]
-    return min(fut) if fut else -1
+    return action_days(e, TODAY, CURRENT_NOW)
 
 
 DOMESTIC = {"天池", "讯飞", "百度", "DataFountain", "阿里云天池"}
@@ -163,7 +171,13 @@ def row(e):
     venue_attr = venue or NO_VENUE
     venue_pill = ('<span class="cat venue">%s</span>' % html.escape(venue)) if venue else ""
     vby = e.get("verifiedBy") or "human"
-    vby_label = {"human": "人工核验", "ai": "API 核验", "agent": "WorkBuddy 核验", "auto": "系统推算"}.get(vby)
+    vby_label = {"human": "人工核验", "ai": "API 核验", "agent": "智能体核验", "auto": "系统推算"}.get(vby)
+    if vby == "agent":
+        record = e.get("verification") or {}
+        if record.get("state") == "partial":
+            vby_label = "字段待核"
+        elif e["id"] not in REFRESH.get("verifiedIds", []):
+            vby_label = "历史记录"
     vby_pill = ('<span class="vb %s">%s</span>' % (vby, vby_label)) if vby_label and vby != "human" else ""
     return """      <tr data-id="{eid}" data-status="{st}" data-plat="{plat}" data-venue="{venue}" data-tag="{tags_s}"
           data-days="{days}" data-pri="{pri}" data-vby="{vby}">
@@ -179,7 +193,7 @@ def row(e):
         st=st, plat=html.escape(e["platform"]), pcls=plat_class(e["platform"]),
         venue=html.escape(venue_attr), venue_pill=venue_pill,
         tags_s=tag_slugs, days=days_left(e), pri=e.get("priority", 9),
-        url=e["url"], title=html.escape(e["title"]), stlabel=st_label, tags=tags,
+        url=html.escape(e["url"], quote=True), title=html.escape(e["title"]), stlabel=st_label, tags=tags,
         task=html.escape(e["task"]), times="".join(times), warn=warn,
         req=html.escape(e["requirements"]), award=html.escape(e["award"]))
 
@@ -331,10 +345,11 @@ HTML = """<!DOCTYPE html>
 
   <h1>CV / 大模型 / 搜广推 竞赛清单</h1>
   <p class="sub">逐条核对官方来源后确认还能参加的具体赛题。托管平台与所属会议分开标注，报名资格、提交要求与截止时间分别列出。</p>
-  <p class="hint">核验日期 <b>{now_display}</b> · 已启用非学生身份筛选 · 每条均附官方入口。竞赛时间与奖金常变动，报名前请以官网为准。<br>时区口径：<b>国内赛事（天池 / 讯飞 等）按北京时间 GMT+8</b>；海外赛事保留官网原始时区，并附北京时间换算。</p>
+  <p class="hint">本轮核验完成时间 <b>{now_display}</b><br><span data-refresh-state="{refresh_state}">{refresh_summary}</span><br>每条保留自身核验记录；资格或日期待确认的条目已标注。竞赛时间与奖金常变动，报名前请以官网为准。<br>时区口径：day 统一按北京时间；海外赛事保留官网原始时区，并附北京时间换算。</p>
+  {refresh_details}
 
   <div class="stats">
-    <div class="stat"><p class="k">已核验具体条目</p><p class="v">{n_all}</p><p class="n">逐条核对官方来源</p></div>
+    <div class="stat"><p class="k">清单记录数</p><p class="v">{n_all}</p><p class="n">含历史及待确认条目</p></div>
     <div class="stat"><p class="k">可新参加</p><p class="v">{n_open}</p><p class="n">未发现已过的强制前置节点</p></div>
     <div class="stat"><p class="k">7 天内行动截止</p><p class="v">{n_week}</p><p class="n">仅计可新参加 / 仅已报名</p></div>
     <div class="stat"><p class="k">待确认 / 待发布</p><p class="v">{n_pending}</p><p class="n">身份资格或日期不明</p></div>
@@ -538,7 +553,7 @@ sections = ""
 footer = ""
 
 out = HTML.format(
-    today=TODAY.isoformat(), now_display=NOW_DISPLAY, css=CSS, rows=render_rows,
+    today=TODAY.isoformat(), now_display=NOW_DISPLAY, refresh_state=html.escape(REFRESH_STATE), refresh_summary=html.escape(REFRESH_SUMMARY), refresh_details=REFRESH_DETAILS, css=CSS, rows=render_rows,
     cloud_css=CLOUD_CSS, cloud_srcbar=CLOUD_SRCBAR, cloud_aipanel=CLOUD_AIPANEL,
     cloud_sdk=CLOUD_SDK, cloud_js=CLOUD_JS,
     n_all=n_all, n_open=n_open, n_week=n_week, n_pending=n_pending,

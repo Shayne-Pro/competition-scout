@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-27",
+  "updatedAt": "2026-10-07T12:13:13+08:00",
   "scope": "固定源是「基准巡检清单」，不是白名单。检索范围包括但不限于这些源：任何渠道发现的赛事都应先入表（status=unclear），再补核官网。",
   "rules": {
     "exclusionPolicy": {
@@ -27,7 +27,10 @@
       "lastScan": "2026-09-27",
       "hits": 14,
       "scan": "WebFetch 列表页；返回空时换 ?sortOption=recently-created 或 ?prestigeFilter=money 重试",
-      "note": "Featured / Research / Community 三分区都要看。Merger & Entry 与最终提交是两条线，判断能否加入要取前者"
+      "note": "Featured / Research / Community 三分区都要看。Merger & Entry 与最终提交是两条线，判断能否加入要取前者",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "partial",
+      "lastAttemptSummary": "浏览器兜底成功读取平台首页的Featured/Research/Community推荐卡片；未覆盖全部分区和分页。"
     },
     {
       "name": "天池 算法大赛",
@@ -37,7 +40,10 @@
       "lastScan": "2026-09-27",
       "hits": 9,
       "scan": "列表页 + 逐条进详情页核赛程与公告",
-      "note": "列表页混入大量往年已结束赛事。页面残留的报名按钮/倒计时可能与公告冲突，以公告为准"
+      "note": "列表页混入大量往年已结束赛事。页面残留的报名按钮/倒计时可能与公告冲突，以公告为准",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "partial",
+      "lastAttemptSummary": "浏览器兜底读取算法列表第1页，共21页；其余分页及AI大模型赛分区待扫。"
     },
     {
       "name": "讯飞 AI 开发者大赛",
@@ -47,37 +53,49 @@
       "lastScan": "2026-09-27",
       "hits": 6,
       "scan": "首页 + 各赛题详情页",
-      "note": "算法赛题滚动开放。资格须逐题核，平台「面向全球开发者」的介绍不能作为非学生资格的依据"
+      "note": "算法赛题滚动开放。资格须逐题核，平台「面向全球开发者」的介绍不能作为非学生资格的依据",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "partial",
+      "lastAttemptSummary": "浏览器首页读取3个热门赛题；算法列表返回“赛题上新中”，未取得完整72+赛题目录。"
     },
     {
       "name": "NeurIPS Competition Track 官博 + Dates 页",
       "url": "https://blog.neurips.cc/",
       "tier": "core",
       "cadence": "每轮",
-      "lastScan": "2026-09-27",
+      "lastScan": "2026-10-07",
       "hits": 8,
       "scan": "官博年度公告（含全量入选名单与官网链接）+ neurips.cc/Conferences/<year>/Dates",
-      "note": "Dates 页的「competitions must be finished by」不等于各赛各自截止，必须逐赛到任务站核"
+      "note": "Dates 页的「competitions must be finished by」不等于各赛各自截止，必须逐赛到任务站核",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "ok",
+      "lastAttemptSummary": "已读2026年度官博入选16赛全名单，全部已有；已读官方Dates页，未将提案/会议截止当参赛截止。"
     },
     {
       "name": "grand-challenge.org",
       "url": "https://grand-challenge.org/challenges/",
       "tier": "core",
       "cadence": "每轮",
-      "lastScan": "2026-09-27",
+      "lastScan": "2026-10-07",
       "hits": 9,
-      "scan": "站点 challenges 列表 + 逐赛事子站 /timeline/ 页",
-      "note": "医学影像 challenge 最大聚集地。本轮实跑列表页，命中 9 条在窗口内的赛事。**列表页状态仍不可信**：ToothFairy3 与 PANTHER 都标着「Accepting submissions」，实为 2025 届、早已收官——必须点进子站 /timeline/ 核对。另有大量赛事标「Challenge completed」可直接过滤。"
+      "scan": "官方API分页跟随next到null，核count/唯一数；子站Rules/Timeline核真正阶段，API status/end_date仅作候选信号。",
+      "note": "不得按API completed/OPEN直接排除或认定可报名；旧赛及伪end_date须读官网，长期评测与正式竞赛区分。",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "ok",
+      "lastAttemptSummary": "官方API3页全量264条，count和唯一数一致；10个候选子站已读取，ODIN按2赛道拆分，API状态不作为事实。"
     },
     {
       "name": "Codabench",
-      "url": "https://www.codabench.org/",
+      "url": "https://www.codabench.org/competitions/public/",
       "tier": "core",
       "cadence": "每轮",
       "lastScan": "2026-09-27",
       "hits": 0,
       "scan": "公开 challenge 列表页",
-      "note": "本轮实跑首页：页面只有平台介绍与新闻，**公开 challenge 需要进 codabench.org/competitions/public/ 才能拿到列表**，首页抓不到。下次要直接抓公开赛事列表页。"
+      "note": "本轮实跑首页：页面只有平台介绍与新闻，**公开 challenge 需要进 codabench.org/competitions/public/ 才能拿到列表**，首页抓不到。下次要直接抓公开赛事列表页。",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "failed",
+      "lastAttemptSummary": "公开赛事列表返回平台导航外壳，无赛事规则或有效卡片。"
     },
     {
       "name": "AIcrowd",
@@ -87,7 +105,10 @@
       "lastScan": "2026-09-27",
       "hits": 1,
       "scan": "challenges 列表页",
-      "note": "本轮实跑：全部历史 challenge 里只有 ARC White-Box Estimation Challenge 2026 仍在进行（$150K+，Phase 2 剩余约 21 天）。其余均为 2020–2025 年已结束赛事。该源命中率低但单场体量大，值得保留在 core。"
+      "note": "本轮实跑：全部历史 challenge 里只有 ARC White-Box Estimation Challenge 2026 仍在进行（$150K+，Phase 2 剩余约 21 天）。其余均为 2020–2025 年已结束赛事。该源命中率低但单场体量大，值得保留在 core。",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "partial",
+      "lastAttemptSummary": "已取得challenge列表正文；历史项目及详情未全部核验，覆盖范围仅所读列表。"
     },
     {
       "name": "视觉会议 workshop CFP（CVPR / ICCV / ECCV / WACV / BMVC / ACCV）",
@@ -97,7 +118,10 @@
       "lastScan": "2026-09-27",
       "hits": 1,
       "scan": "visionbib 年度索引 + 各 workshop 单页 CFP；找不到官网时搜「visionbib <会议> <workshop> call」",
-      "note": "索引页常是归档占位，单篇 CFP 页可用。challenge 一般随 workshop 提案在年初上线，主会投稿截止 ≠ challenge 窗口"
+      "note": "索引页常是归档占位，单篇 CFP 页可用。challenge 一般随 workshop 提案在年初上线，主会投稿截止 ≠ challenge 窗口",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "failed",
+      "lastAttemptSummary": "官方入口TLS自签名证书验证失败，web兜底超时；未绕过证书检查。"
     },
     {
       "name": "机器学习会议 workshop / competition（ICLR / ICML / AAAI / IJCAI）",
@@ -107,7 +131,10 @@
       "lastScan": "—",
       "hits": 0,
       "scan": "各会官网 workshop 列表 + OpenReview group 页",
-      "note": "ICLR 没有 competition track，别当成赛事平台；ICML/AAAI 有竞赛但常与workshop绑定"
+      "note": "ICLR 没有 competition track，别当成赛事平台；ICML/AAAI 有竞赛但常与workshop绑定",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "partial",
+      "lastAttemptSummary": "只读OpenReview场馆索引；ICLR/ICML/AAAI/IJCAI各会challenge页面未全扫。"
     },
     {
       "name": "医学影像会议（MICCAI / MIDL / IPMI / ISBI / SPIE Medical Imaging）",
@@ -117,7 +144,10 @@
       "lastScan": "2026-09-27",
       "hits": 2,
       "scan": "MICCAI SIG-Challenges 目录页（带问题类别与数据许可）+ 各会官网 + grand-challenge 子站",
-      "note": "MICCAI 系是医学方向主力，本届已截止时要把下一届提案期记进 known-empty"
+      "note": "MICCAI 系是医学方向主力，本届已截止时要把下一届提案期记进 known-empty",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "partial",
+      "lastAttemptSummary": "读MICCAI SIG challenge目录；MIDL/IPMI/ISBI/SPIE等会议及所有目录子页未全扫。"
     },
     {
       "name": "IR / DM 会议（CIKM / WSDM / SIGIR / RecSys / KDD / TREC / FIRE）",
@@ -127,7 +157,10 @@
       "lastScan": "2026-09-27",
       "hits": 5,
       "scan": "各会官网 Call for Participation + AnalytiCup / Cup / Challenge 专页",
-      "note": "搜广推主战场。必须区分「赛事提案截止（招募办赛方）」与「参赛截止」"
+      "note": "搜广推主战场。必须区分「赛事提案截止（招募办赛方）」与「参赛截止」",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "partial",
+      "lastAttemptSummary": "只读CIKM2026官网；WSDM/SIGIR/RecSys/KDD/TREC/FIRE全部分支未全扫。"
     },
     {
       "name": "国内学术会议评测（CHIP / SMP / CCKS / NLPCC / CCIR / CSIG 系）",
@@ -137,7 +170,10 @@
       "lastScan": "2026-09-27",
       "hits": 2,
       "scan": "各会官网评测任务页（常同时挂在天池）",
-      "note": "多要求获奖后自费注册参会、口头汇报并撰文，否则取消成绩——这类成本要写进 warning"
+      "note": "多要求获奖后自费注册参会、口头汇报并撰文，否则取消成绩——这类成本要写进 warning",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "failed",
+      "lastAttemptSummary": "CHIP入口TLS证书验证失败，web兜底超时；SMP/CCKS/NLPCC/CCIR等分支仍待扫。"
     },
     {
       "name": "EvalAI",
@@ -147,7 +183,10 @@
       "lastScan": "2026-09-27",
       "hits": 0,
       "scan": "challenges 列表",
-      "note": "本轮抓 /web/challenges/challenge-page/all 只拿到站点简介、无正文（前端渲染）。需改用带筛选参数的列表页或换抓取方式。"
+      "note": "本轮抓 /web/challenges/challenge-page/all 只拿到站点简介、无正文（前端渲染）。需改用带筛选参数的列表页或换抓取方式。",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "failed",
+      "lastAttemptSummary": "返回空正文，未取得可核赛事列表。"
     },
     {
       "name": "DrivenData",
@@ -157,7 +196,10 @@
       "lastScan": "—",
       "hits": 0,
       "scan": "competitions 列表",
-      "note": "偏社会公益 / 医疗 / 气候。本轮未接入"
+      "note": "偏社会公益 / 医疗 / 气候。本轮未接入",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "partial",
+      "lastAttemptSummary": "读官方竞赛总览并确认GEMS已有；其余benchmark/practice/历史赛候选未完成详情核验和入表。"
     },
     {
       "name": "Devpost",
@@ -167,7 +209,10 @@
       "lastScan": "2026-09-27",
       "hits": 1,
       "scan": "hackathons 列表（可按 Open 筛选）",
-      "note": "本轮只有 OpenCV AI Competition 一条命中，未系统扫描"
+      "note": "本轮只有 OpenCV AI Competition 一条命中，未系统扫描",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "failed",
+      "lastAttemptSummary": "只返回导航及通用介绍，没有有效hackathon卡片。"
     },
     {
       "name": "Zindi",
@@ -177,7 +222,10 @@
       "lastScan": "—",
       "hits": 0,
       "scan": "competitions 列表",
-      "note": "非洲区赛事为主，偶有开放给全球的"
+      "note": "非洲区赛事为主，偶有开放给全球的",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "failed",
+      "lastAttemptSummary": "只取得零散页面标签，没有有效赛事正文。"
     },
     {
       "name": "CodaLab",
@@ -187,7 +235,10 @@
       "lastScan": "—",
       "hits": 0,
       "scan": "worksheets / competitions",
-      "note": "学术 challenge 托管台，界面陈旧但仍有活跃赛事"
+      "note": "学术 challenge 托管台，界面陈旧但仍有活跃赛事",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "partial",
+      "lastAttemptSummary": "平台说明迁往Codabench；未取得仍在运行的完整赛事列表。"
     },
     {
       "name": "lablab.ai",
@@ -197,7 +248,10 @@
       "lastScan": "—",
       "hits": 0,
       "scan": "events 列表",
-      "note": "以 LLM/Agent 短周期 hackathon 为主"
+      "note": "以 LLM/Agent 短周期 hackathon 为主",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "partial",
+      "lastAttemptSummary": "已核3个当前/未来活动详情并入表，精确终交赛程未公告；历史活动尚未全扫。"
     },
     {
       "name": "Hugging Face Spaces / Benchmarks",
@@ -207,7 +261,10 @@
       "lastScan": "—",
       "hits": 0,
       "scan": "challenge/leaderboard 类 space",
-      "note": "部分组织方用 HF Space 托管提交与榜单"
+      "note": "部分组织方用 HF Space 托管提交与榜单",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "partial",
+      "lastAttemptSummary": "只读Spaces应用目录，未扫描全部competition/benchmark公告。"
     },
     {
       "name": "MLCommons / ChaLearn",
@@ -217,7 +274,10 @@
       "lastScan": "—",
       "hits": 0,
       "scan": "官网 + ChaLearn 系列",
-      "note": "偏基准与算法效率评测"
+      "note": "偏基准与算法效率评测",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "partial",
+      "lastAttemptSummary": "只读MLCommons官网总览；各项目及ChaLearn赛事入口未全扫。"
     },
     {
       "name": "企业自建赛事（阿里妈妈 / 腾讯 TAAC / 字节 / 快手 / 小红书 / 美团 / 京东 / 蚂蚁 / 华为云 / OPPO / vivo）",
@@ -267,7 +327,10 @@
       "lastScan": "2026-09-27",
       "hits": 0,
       "scan": "官网 + 搜索兜底（/developer/contests 长期 404；详情页常托管在 cann-elec.gccorg.com）",
-      "note": "算子挑战赛 S9 报名 9/15 已截止，待 S10；Harness 挑战赛限在校学生"
+      "note": "算子挑战赛 S9 报名 9/15 已截止，待 S10；Harness 挑战赛限在校学生",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "failed",
+      "lastAttemptSummary": "返回loading页面，没有有效AAIC2026赛程正文。"
     },
     {
       "name": "百度 AI Studio / 商业 AI 技术创新大赛",
@@ -277,7 +340,10 @@
       "lastScan": "2026-09-27",
       "hits": 0,
       "scan": "AI Studio 竞赛页 + cti.baidu.com",
-      "note": "2026 商业赛为邀请制极客夏令营，无公开报名入口；AI Studio 有长期赛题需逐条核是否限学生"
+      "note": "2026 商业赛为邀请制极客夏令营，无公开报名入口；AI Studio 有长期赛题需逐条核是否限学生",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "failed",
+      "lastAttemptSummary": "只返回站点标题，没有有效比赛卡片。"
     },
     {
       "name": "DataFountain",
@@ -287,7 +353,10 @@
       "lastScan": "2026-09-27",
       "hits": 0,
       "scan": "官网 + discussion.datafountain.cn 赛事上新",
-      "note": "6G/B6G 无线通信 AI 大赛测评 9/1–10/30 在窗口内，但需确认非学生资格后才收录"
+      "note": "6G/B6G 无线通信 AI 大赛测评 9/1–10/30 在窗口内，但需确认非学生资格后才收录",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "partial",
+      "lastAttemptSummary": "已读官方首页公告；6G与高校创新赛身份及完整赛事列表仍待详情核验。"
     },
     {
       "name": "腾讯 TAAC / KDD Cup",
@@ -297,7 +366,10 @@
       "lastScan": "2026-09-27",
       "hits": 0,
       "scan": "官网",
-      "note": "2026 届 8/12 已颁奖；学术赛道限全职学生，仅工业赛道对社会开放；2027 届预计 3 月启动——届时需提高为 core"
+      "note": "2026 届 8/12 已颁奖；学术赛道限全职学生，仅工业赛道对社会开放；2027 届预计 3 月启动——届时需提高为 core",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "failed",
+      "lastAttemptSummary": "返回空正文，未取得TAAC/KDD Cup有效列表。"
     },
     {
       "name": "RecSys / TREC / SIGIR / CCKS / NLPCC",
@@ -307,7 +379,10 @@
       "lastScan": "2026-09-27",
       "hits": 0,
       "scan": "各会官网",
-      "note": "2026 届多已收官或报名未开。窗口期集中在 2–7 月与 10–11 月，需按月份排期"
+      "note": "2026 届多已收官或报名未开。窗口期集中在 2–7 月与 10–11 月，需按月份排期",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "partial",
+      "lastAttemptSummary": "只读RecSys官网；TREC/SIGIR/CCKS/NLPCC等其余分支待扫。"
     },
     {
       "name": "MICCAI challenge 目录",
@@ -317,7 +392,10 @@
       "lastScan": "2026-09-27",
       "hits": 0,
       "scan": "SIG-Challenges 目录 + grand-challenge 子站",
-      "note": "2026 届多数已截止（MICCAI 2026 于 9/27–10/1 在 Strasbourg 举行）；下一届提案通常在年初"
+      "note": "2026 届多数已截止（MICCAI 2026 于 9/27–10/1 在 Strasbourg 举行）；下一届提案通常在年初",
+      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
+      "scanState": "partial",
+      "lastAttemptSummary": "已读取MICCAI SIG目录；所有子站及资格/赛程未全核。"
     },
     {
       "name": "邮件列表 / Google Group",

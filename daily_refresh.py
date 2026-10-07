@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 """每日确定性刷新（无网络、无 AI，纯日期运算）。
 
-由 GitHub Actions 定时工作流每天调用，也在本地每日任务里复用：
-1. 状态翻转：open/submission 且报名与提交日期均已过去 → closed（标 verifiedBy=auto）；
-   upcoming 已进入报名或提交窗口 → open。
+由 Codex 本地定时任务调用：
+1. 只按已知截止推导状态；未知提交截止不得推断已收官。
+   精确时刻优先，开始时间与截止时间分开，保留原核验来源。
 2. 窗口提醒：7 天内到期且此前未提醒过的条目，记进 notified.json（每条截止日只提醒一次）。
 3. 运行日志：把当日摘要追加进 runs-log.jsonl，供回查「哪天发生了什么」。
 
@@ -14,11 +14,11 @@ import json
 import datetime
 import pathlib
 import sys
+from refresh_core import clock_now, build_today, derived_status, deadline_passed, atomic_json
 
 BASE = pathlib.Path(__file__).resolve().parent
-TODAY = datetime.date.fromisoformat(
-    __import__("os").environ.get("BUILD_TODAY", datetime.date.today().isoformat())
-)
+NOW = clock_now()
+TODAY = build_today(NOW)
 
 ACTIVE = {"open", "submission"}
 
@@ -30,7 +30,7 @@ def load(p, default):
 
 
 def save(p, obj):
-    p.write_text(json.dumps(obj, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    atomic_json(p, obj)
 
 
 def d(day):
@@ -44,23 +44,23 @@ def main():
     events = load(BASE / "events.json", [])
     notified = load(BASE / "notified.json", {"reminded": []})
     reminded = set(map(tuple, notified.get("reminded", [])))
+    log_path = BASE / "runs-log.jsonl"
+    lines = log_path.read_text(encoding="utf-8").splitlines() if log_path.exists() else []
 
-    flipped, upcoming_live = [], []
+    flipped, upcoming_live, changes = [], [], []
     for e in events:
-        ed = d((e.get("entry") or {}).get("day") or "")
-        sd = d((e.get("submit") or {}).get("day") or "")
-        last = max([x for x in (ed, sd) if x], default=None)
         st = e.get("status")
-
-        if st in ACTIVE and last is not None and last < TODAY:
-            e["status"] = "closed"
-            e["verifiedBy"] = "auto"
-            flipped.append(e["title"])
-        elif st == "upcoming":
-            starts = [x for x in (ed, sd) if x and x <= TODAY]
-            if starts:
-                e["status"] = "open"
+        new = derived_status(e, TODAY, NOW)
+        if new != st:
+            e["status"] = new
+            e["statusDerivation"] = {"at": NOW.isoformat(timespec="seconds"), "from": st, "to": new, "basis": "known_deadlines"}
+            changes.append({"id": e["id"], "from": st, "to": new})
+            if new == "closed":
+                flipped.append(e["title"])
+            elif st == "upcoming" and new == "open":
                 upcoming_live.append(e["title"])
+            elif new == "unclear" and not e.get("warning"):
+                e["warning"] = "已知截止与参赛状态需要复核，不能仅按日期确认全部阶段结束。"
 
     # 7 天内到期提醒（一次性，按 id+截止日去重）
     due7 = []
@@ -70,7 +70,7 @@ def main():
         for key in ("entry", "submit"):
             node = e.get(key) or {}
             day = d(node.get("day") or "")
-            if day and 0 <= (day - TODAY).days <= 7:
+            if day and deadline_passed(node, TODAY, NOW) is False and 0 <= (day - TODAY).days <= 7:
                 tag = (e["id"], key, node["day"])
                 if tag not in reminded:
                     due7.append((e["title"], key, node["day"]))
@@ -88,11 +88,10 @@ def main():
         "flipped_closed": flipped,
         "upcoming_to_open": upcoming_live,
         "due7": [t[0] + " (" + t[2] + ")" for t in due7],
+        "status_changes": changes,
     }
-    with open(BASE / "runs-log.jsonl", encoding="utf-8") as f:
-        lines = [l for l in f.read().splitlines() if l.strip()]
     entry = json.dumps(log, ensure_ascii=False)
-    # 同一天多次运行（Actions + 本地任务）只保留最后一条
+    # 同日运行摘要保留最近一次；核验证据由 refresh-status 和 events 保存。
     kept = []
     for l in lines:
         try:
@@ -102,8 +101,9 @@ def main():
             pass
         kept.append(l)
     kept.append(entry)
-    with open(BASE / "runs-log.jsonl", "w", encoding="utf-8") as f:
-        f.write("\n".join(kept) + "\n")
+    temporary = log_path.with_name(log_path.name + ".tmp")
+    temporary.write_text("\n".join(kept) + "\n", encoding="utf-8")
+    temporary.replace(log_path)
 
     print(json.dumps(log, ensure_ascii=False, indent=2))
     return 0
