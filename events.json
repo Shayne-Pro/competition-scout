@@ -2817,5 +2817,423 @@
         "url": "https://smart-buildings-2026.github.io/competition/"
       }
     ]
+  },
+  {
+    "id": "chi-bench",
+    "title": "CHI-Bench · 医疗行政长程 Agent 基准（IEEE Big Data Cup 2026）",
+    "platform": "Kaggle",
+    "venue": "IEEE Big Data 2026",
+    "tags": [
+      "Agent",
+      "医学",
+      "大模型"
+    ],
+    "task": "AI Agent 在 χ-World 医疗运营模拟器中完成 prior authorization / utilization management / care management 长程工作流：取证、套政策、调 MCP/REST 工具、与模拟人沟通并推动案件到正确结局；75 公开任务 + 约 75 未公开私有任务，pass@1 / pass^3 评分。",
+    "entry": {
+      "day": "2026-11-08",
+      "instant": "2026-11-07T23:59:00Z",
+      "kind": "deadline",
+      "text": "Entry & Team-merger: November 7, 2026 11:59 PM UTC → 北京 11/8 07:59",
+      "timezone": "UTC"
+    },
+    "submit": {
+      "day": "2026-11-16",
+      "instant": "2026-11-15T23:59:00Z",
+      "kind": "deadline",
+      "text": "Final Kaggle submission: November 15, 2026 11:59 PM UTC → 北京 11/16 07:59；结果 11/23、决赛材料 12/7；IEEE Big Data 2026 于 12/14–17 Phoenix",
+      "timezone": "UTC"
+    },
+    "requirements": "每队最多 5 人；须先申请 HuggingFace gated 数据集 Managed-Care Operations Handbook（每人各自审批）；本地 Docker + uv 运行 χ-Bench，评测 judge 锁定 claude-opus-4-7；获奖须提交完整可复现包（审计包+源码+容器+报告）。",
+    "award": "$3,000：Gold $1,500 / Silver $1,000 / Bronze $500 + Reliability Award（最佳 pass^3，Kudos）",
+    "url": "https://www.kaggle.com/competitions/chi-bench",
+    "status": "open",
+    "warning": "公开榜是开发榜（选手自控环境产出 reward），最终排名以主办方在私有任务上复跑为准；须先获批 HF handbook 访问权才能跑基准。",
+    "priority": 2,
+    "verifiedAt": "2026-10-07T11:45:11+08:00",
+    "verifiedBy": "agent",
+    "note": "",
+    "old": [],
+    "eligibility": "open",
+    "sources": [
+      {
+        "label": "official",
+        "url": "https://www.kaggle.com/competitions/chi-bench"
+      }
+    ]
+  },
+  {
+    "id": "nfl-bdb-2027",
+    "title": "NFL Big Data Bowl 2027 · Combine 传感器数据挖掘",
+    "platform": "Kaggle",
+    "venue": "",
+    "tags": [
+      "数据挖掘"
+    ],
+    "task": "用 NFL Scouting Combine 10Hz 球员追踪数据与常规赛追踪数据建立分析框架，挖掘 Combine 体测动作与 NFL 正赛表现之间可落地的非显性关联（新指标/位置组对比/单科目分析）；写作赛（≤2000 词 + <10 图表），32 队 analytics 评委打分。",
+    "entry": {
+      "day": null,
+      "instant": null,
+      "kind": "unknown",
+      "text": "10/6 开赛；未列单独 Entry 截止",
+      "timezone": "UTC"
+    },
+    "submit": {
+      "day": "2027-01-07",
+      "instant": "2027-01-06T23:59:00Z",
+      "kind": "deadline",
+      "text": "Final Submission: January 6, 2027 11:59 PM UTC → 北京 1/7 07:59；评审 1/7–1/25，结果 1/26",
+      "timezone": "UTC"
+    },
+    "requirements": "写作提交（markdown + 公开 Notebook）；必须使用球员追踪数据否则不计分；Football/DS/写作/可视化按 30/30/20/20 加权。",
+    "award": "$100,000：Open Track $45K（6×$5K+$10K 类）+ University Track $45K（限本科生）+ 大奖 $10K（Finalist 现场评审）",
+    "url": "https://www.kaggle.com/competitions/nfl-big-data-bowl-2027",
+    "status": "open",
+    "warning": "University Track 仅限本科生（独立赛道，Open Track 无资格限制，按口径不排除）；Finalist 获邀赴 2027 NFL Combine 现场。",
+    "priority": 3,
+    "verifiedAt": "2026-10-07T11:45:11+08:00",
+    "verifiedBy": "agent",
+    "note": "",
+    "old": [],
+    "eligibility": "open",
+    "sources": [
+      {
+        "label": "official",
+        "url": "https://www.kaggle.com/competitions/nfl-big-data-bowl-2027"
+      }
+    ]
+  },
+  {
+    "id": "wear-hasca-2026",
+    "title": "3rd WEAR Dataset Challenge · 可穿戴+第一人称视频活动识别（HASCA 2026）",
+    "platform": "Kaggle",
+    "venue": "UbiComp/ISWC 2026 · HASCA",
+    "tags": [
+      "多模态",
+      "CV"
+    ],
+    "task": "基于 WEAR 数据集（22 人 18 种户外运动）的人体活动识别：给定 1 秒滑窗的惯性传感器数据与第一人称视频的 VideoMAEv2-Base 预抽取特征，预测活动标签，macro F1 评测。",
+    "entry": {
+      "day": null,
+      "instant": null,
+      "kind": "unknown",
+      "text": "Kaggle 提交开放中（列表页倒计时约 6 天）",
+      "timezone": "unknown"
+    },
+    "submit": {
+      "day": null,
+      "instant": null,
+      "kind": "unknown",
+      "text": "Kaggle 关闭倒计时约 6 天（≈10/13，页面未公布确切日期）；获奖所需技术报告已于 7/5 AoE 截止",
+      "timezone": "unknown"
+    },
+    "requirements": "最终排名与获奖须向 HASCA workshop 提交技术报告（6 页 ACM 格式，经 PCS）并到会报告——该通道 7/5 已截止；Kaggle 榜仍可提交。",
+    "award": "€300/€150/€75（前 3 名，须满足报告+到会条件）",
+    "url": "https://www.kaggle.com/competitions/3rd-wear-dataset-challenge-hasca-2026",
+    "status": "open",
+    "warning": "现在加入只能刷榜，无法进入获奖排名（报告通道 7/5 已关）；HASCA workshop 10/11–12 上海（暂定）公布最终排名。",
+    "priority": 4,
+    "verifiedAt": "2026-10-07T11:45:11+08:00",
+    "verifiedBy": "agent",
+    "note": "",
+    "old": [],
+    "eligibility": "open",
+    "sources": [
+      {
+        "label": "official",
+        "url": "https://www.kaggle.com/competitions/3rd-wear-dataset-challenge-hasca-2026"
+      }
+    ]
+  },
+  {
+    "id": "trafficflowbench",
+    "title": "TrafficFlowBench · 高速公路交通流多任务基准（IEEE Big Data Cup 2026）",
+    "platform": "Kaggle",
+    "venue": "IEEE Big Data 2026",
+    "tags": [
+      "数据挖掘",
+      "多模态"
+    ],
+    "task": "五分钟级高速公路走廊数据（10 走廊 11 个月）四任务：状态重建（挖空补全）、短时排队预测（60 分钟历史→30 分钟）、物理一致性（基本图+车辆守恒自动评分）、路径流/OD 估计；统一榜 0.35/0.30/0.15/0.20 加权。",
+    "entry": {
+      "day": "2026-10-26",
+      "instant": "2026-10-25T23:59:00-12:00",
+      "kind": "deadline",
+      "text": "评奖注册邮件截止 October 25, 2026 23:59 AoE → 北京 10/26 19:59（发 trafficflowbench@gmail.com，含队名与全队信息；不影响数据下载与刷榜）",
+      "timezone": "AoE"
+    },
+    "submit": {
+      "day": "2026-11-07",
+      "instant": "2026-11-06T23:59:00Z",
+      "kind": "deadline",
+      "text": "Kaggle 最终提交 November 6（页面倒计时为准）→ 北京 11/7；代码+PDF 报告 11/10 23:59 AoE；复现验证 11/11–17；获奖公布 11/18",
+      "timezone": "UTC"
+    },
+    "requirements": "数据公开可下载；仅注册队可评奖（top10 进复核池，代码复现误差须 <1% 私榜分）；终评 = 0.85×榜 + 0.15×报告分。",
+    "award": "IEEE Big Data Cup 奖项/证书（赛页未列现金拆分）；获奖队受邀 12/14–17 Phoenix 大会展示（非必须到场）",
+    "url": "https://www.kaggle.com/competitions/2026-ieee-big-data-traffic-flow-bench",
+    "status": "open",
+    "warning": "只刷 Kaggle 榜不注册（10/25 邮件）拿不到奖；Task 3 物理分没有独立提交，靠 Task 1 答案自动计算。",
+    "priority": 3,
+    "verifiedAt": "2026-10-07T11:45:11+08:00",
+    "verifiedBy": "agent",
+    "note": "",
+    "old": [],
+    "eligibility": "open",
+    "sources": [
+      {
+        "label": "official",
+        "url": "https://www.kaggle.com/competitions/2026-ieee-big-data-traffic-flow-bench"
+      }
+    ]
+  },
+  {
+    "id": "misconception-k12",
+    "title": "CoLearn · K-12 手写数学过程 misconceptions 识别",
+    "platform": "Kaggle",
+    "venue": "",
+    "tags": [
+      "多模态",
+      "大模型"
+    ],
+    "task": "看学生手写数学过程照片，从 75 类教师定义的 misconception 分类中预测根因（或 NONE 判对）：3,498 测试样本、1,500 标注训练 + 50,000 无标注可做半监督；印尼语+英语真迹（涂改/淡铅笔/拍摄倾斜），MAP@3 评测。",
+    "entry": {
+      "day": null,
+      "instant": null,
+      "kind": "unknown",
+      "text": "10/6 开赛；未列单独 Entry 截止",
+      "timezone": "UTC"
+    },
+    "submit": {
+      "day": "2026-11-18",
+      "instant": "2026-11-17T23:59:00Z",
+      "kind": "deadline",
+      "text": "Final Submission: November 17, 2026 11:59 PM UTC → 北京 11/18 07:59",
+      "timezone": "UTC"
+    },
+    "requirements": "免费 GPU 配额内可跑完全程；领奖须按开源许可公开完整方案。",
+    "award": "$6,000：$3,000/$2,000/$1,000（CoLearn/IQ Edu 赞助，30 天内直付）",
+    "url": "https://www.kaggle.com/competitions/misconception-detection-in-k-12-student-math-workings",
+    "status": "open",
+    "warning": "约 1/3 测试样本为「无 misconception」，误报正确作答会显著掉分。",
+    "priority": 3,
+    "verifiedAt": "2026-10-07T11:45:11+08:00",
+    "verifiedBy": "agent",
+    "note": "",
+    "old": [],
+    "eligibility": "open",
+    "sources": [
+      {
+        "label": "official",
+        "url": "https://www.kaggle.com/competitions/misconception-detection-in-k-12-student-math-workings"
+      }
+    ]
+  },
+  {
+    "id": "ai-emulation-carbonglobe",
+    "title": "AI Emulation Challenge · 全球陆地碳循环模拟器（IEEE Big Data Cup 2026）",
+    "platform": "Kaggle",
+    "venue": "IEEE Big Data 2026",
+    "tags": [
+      "AI4Science",
+      "多模态"
+    ],
+    "task": "基于 CarbonGlobe 基准（NeurIPS 2025，40 年 0.5° 全球网格、136 输入变量）训练 ED 生态系统模型的 ML 模拟器，自回归滚动预测 7 个碳变量（植被高度/AGB/土壤碳/LAI/GPP/NPP/Rh）的多十年演化轨迹。",
+    "entry": {
+      "day": null,
+      "instant": null,
+      "kind": "unknown",
+      "text": "7/1 数据发布；未列单独 Entry 截止",
+      "timezone": "unknown"
+    },
+    "submit": {
+      "day": "2026-11-15",
+      "instant": null,
+      "kind": "deadline",
+      "text": "November 15, 2026 — 最终方案+技术报告截止（赛页声明以 Kaggle 平台提交截止为准）；获奖公布 11/25",
+      "timezone": "unknown"
+    },
+    "requirements": "数据经 Kaggle/HF 公开；官方提供教程 notebook 与 Random Forest 基线；评测看隐藏未来状态，长时程漂移是关键。",
+    "award": "$700 差旅奖（一等 $500 / 二等 $200）+ 获奖证书；受邀 12/14–17 IEEE BigData 2026 Phoenix 展示",
+    "url": "https://www.kaggle.com/competitions/ieee-bigdata-cup-2026-ai-emulation-challenge",
+    "status": "open",
+    "warning": "正文写 11/15 截止，但 Kaggle 列表页倒计时约 1 个月（≈11 月上旬），两者不完全一致——以赛页 Kaggle 倒计时为准。",
+    "priority": 3,
+    "verifiedAt": "2026-10-07T11:45:11+08:00",
+    "verifiedBy": "agent",
+    "note": "",
+    "old": [],
+    "eligibility": "open",
+    "sources": [
+      {
+        "label": "official",
+        "url": "https://www.kaggle.com/competitions/ieee-bigdata-cup-2026-ai-emulation-challenge"
+      }
+    ]
+  },
+  {
+    "id": "soil-grain-size",
+    "title": "土壤粒径分布图像预测（GRID · BOKU）",
+    "platform": "Kaggle",
+    "venue": "",
+    "tags": [
+      "CV"
+    ],
+    "task": "从土壤表面照片预测累计粒径分布曲线（DIN EN ISO 14688-1 的 11 个粒径点，0.002–200mm）；对数加权 EMD（Wasserstein-1）评测，终评 = 0.30×公榜 + 0.70×私榜。",
+    "entry": {
+      "day": null,
+      "instant": null,
+      "kind": "unknown",
+      "text": "提交开放中（约 5 个月前开赛）",
+      "timezone": "unknown"
+    },
+    "submit": {
+      "day": null,
+      "instant": null,
+      "kind": "unknown",
+      "text": "页面无 Timeline 段；Kaggle 列表页倒计时约 2 个月（≈12 月上旬截止）",
+      "timezone": "unknown"
+    },
+    "requirements": "提供忽略图像的平凡基线；预测须单调非降、200mm 处为 100。",
+    "award": "$500：$300/$150/$50（EU GRID 项目资助）",
+    "url": "https://www.kaggle.com/competitions/soil-grain-size-from-photos",
+    "status": "unclear",
+    "warning": "赛页未公布确切日期，仅能从列表页倒计时推断 ≈12 月上旬截止；标 unclear 待下轮补核。",
+    "priority": 4,
+    "verifiedAt": "2026-10-07T11:45:11+08:00",
+    "verifiedBy": "agent",
+    "note": "",
+    "old": [],
+    "eligibility": "open",
+    "sources": [
+      {
+        "label": "official",
+        "url": "https://www.kaggle.com/competitions/soil-grain-size-from-photos"
+      }
+    ]
+  },
+  {
+    "id": "flagos-season2",
+    "title": "FlagOS 开放计算全球挑战赛 S2 · SGLang 算子优化 / MiniCPM5-2B 推理优化",
+    "platform": "Kaggle",
+    "venue": "",
+    "tags": [
+      "大模型",
+      "系统优化"
+    ],
+    "task": "两赛道：T1 SGLang 推理框架 200+ 常用算子在多芯片上的正确性与性能优化（占领/攻克/极限性能三档奖）；T2 基于 FlagOS 软件栈对 MiniCPM5-2B 做端到端推理吞吐优化。FlagOS 社区与 IEEE 联办。",
+    "entry": {
+      "day": null,
+      "instant": null,
+      "kind": "opening",
+      "text": "7/19 官网开放注册（flagos.io，评奖必须走官网注册，Kaggle 报名不替代）",
+      "timezone": "unknown"
+    },
+    "submit": {
+      "day": null,
+      "instant": null,
+      "kind": "unknown",
+      "text": "赛季 7–12 月；Kaggle 列表页倒计时约 3 个月（≈2027/1 上旬），确切截止日未公布",
+      "timezone": "unknown"
+    },
+    "requirements": "个人或 ≤5 人队；每队只能选一个赛道提交且不可换；须在 FlagOS 官网真实信息注册否则取消评奖资格。",
+    "award": "共 $14,925：T1 $5,925（多档）+ T2 $9,000（$4,500/$3,000/$1,500）",
+    "url": "https://www.kaggle.com/competitions/flag-os-open-computing-global-challenge-season-2",
+    "status": "unclear",
+    "warning": "赛季窗口写 7–12 月但 Kaggle 倒计时约 3 个月（≈2027/1），两个口径不一致且无确切日期；评奖必须先在 flagos.io 官网注册。",
+    "priority": 4,
+    "verifiedAt": "2026-10-07T11:45:11+08:00",
+    "verifiedBy": "agent",
+    "note": "",
+    "old": [],
+    "eligibility": "open",
+    "sources": [
+      {
+        "label": "official",
+        "url": "https://www.kaggle.com/competitions/flag-os-open-computing-global-challenge-season-2"
+      }
+    ]
+  },
+  {
+    "id": "memecoins-pump-dump",
+    "title": "Memecoins: Pump or Dump? · Solana 链上 Meme 币预测",
+    "platform": "Kaggle",
+    "venue": "",
+    "tags": [
+      "数据挖掘"
+    ],
+    "task": "用 pump.fun 新发 Meme 币的链上数据预测涨跌，评分发生在尚未发生的未来交易日（时间外样本评测）。",
+    "entry": {
+      "day": null,
+      "instant": null,
+      "kind": "unknown",
+      "text": "提交开放中",
+      "timezone": "unknown"
+    },
+    "submit": {
+      "day": null,
+      "instant": null,
+      "kind": "unknown",
+      "text": "Kaggle 列表页倒计时约 2 个月（≈12 月上旬截止），确切日期未取到",
+      "timezone": "unknown"
+    },
+    "requirements": "评分基于未来真实交易日表现，无法用历史泄漏作弊。",
+    "award": "$5,000（拆分未取到）",
+    "url": "https://www.kaggle.com/competitions/memecoins-pump-or-dump",
+    "status": "unclear",
+    "warning": "赛页本轮三次抓取均失败（WebFetch 返回空），日期仅能从列表页倒计时推断 ≈12 月上旬；标 unclear 待下轮重试。",
+    "priority": 4,
+    "verifiedAt": "2026-10-07T11:45:11+08:00",
+    "verifiedBy": "agent",
+    "note": "",
+    "old": [],
+    "eligibility": "open",
+    "sources": [
+      {
+        "label": "official",
+        "url": "https://www.kaggle.com/competitions/memecoins-pump-or-dump"
+      }
+    ]
+  },
+  {
+    "id": "ai4s-lifescience",
+    "title": "AI4S Open Innovation: AI for Life Science · 器官芯片开放创新",
+    "platform": "Kaggle",
+    "venue": "",
+    "tags": [
+      "AI4Science",
+      "医学"
+    ],
+    "task": "AI + Organ-on-a-Chip（器官芯片）开放创新挑战，面向体外生命系统的建模与实验设计（社区 Hackathon 赛）。",
+    "entry": {
+      "day": null,
+      "instant": null,
+      "kind": "unknown",
+      "text": "列表页显示 4 天后截止（≈10/11）",
+      "timezone": "unknown"
+    },
+    "submit": {
+      "day": null,
+      "instant": null,
+      "kind": "unknown",
+      "text": "Kaggle 列表页倒计时 4 天（≈10/11 截止），确切日期未取到",
+      "timezone": "unknown"
+    },
+    "requirements": "社区 Hackathon（不授 Kaggle 积分/奖牌）。",
+    "award": "$22,200（拆分未取到）",
+    "url": "https://www.kaggle.com/competitions/ai-4s-open-innovation-artificial-intelligence-for-life-scien",
+    "status": "unclear",
+    "warning": "详情页两个 URL 变体均 404/抓空（列表页有入口但详情打不开），仅能从列表页倒计时推断 ≈10/11 截止；标 unclear 待下轮重试。",
+    "priority": 4,
+    "verifiedAt": "2026-10-07T11:45:11+08:00",
+    "verifiedBy": "agent",
+    "note": "",
+    "old": [],
+    "eligibility": "open",
+    "sources": [
+      {
+        "label": "official",
+        "url": "https://www.kaggle.com/competitions"
+      }
+    ]
   }
 ]

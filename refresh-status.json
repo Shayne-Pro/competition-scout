@@ -1,7 +1,7 @@
 {
   "state": "ok",
-  "finishedAt": "2026-10-07T10:27:06+08:00",
-  "verified": 21,
+  "finishedAt": "2026-10-07T11:45:31+08:00",
+  "verified": 13,
   "sourcesOk": 5,
   "sourcesTotal": 6,
   "runner": "workbuddy-agent"
