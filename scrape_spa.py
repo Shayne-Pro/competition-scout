@@ -11,8 +11,10 @@
 - 快照只覆盖已抓正文范围，不代表全平台扫描成功。
 """
 import base64
+import argparse
 import json
 import pathlib
+import re
 import sys
 import urllib.request
 import datetime
@@ -29,6 +31,36 @@ SOURCES = [
     ("tianchi", "https://tianchi.aliyun.com/competition/algorithmList"),
     ("xfyun", "https://challenge.xfyun.cn/"),
 ]
+SOURCE_URLS = dict(SOURCES, **{
+    "devpost": "https://devpost.com/hackathons",
+    "ascend": "https://www.hiascend.com/developer/AAIC2026",
+    "baidu": "https://aistudio.baidu.com/competition",
+    "tencent": "https://algo.qq.com/",
+    "zindi": "https://zindi.world/competitions",
+})
+
+
+def has_list_content(name, body, links):
+    """Navigation text and HTTP 200 alone do not prove a usable list."""
+    if any(marker.lower() in body.lower() for marker in ("检查浏览器", "Checking your browser", "Verify you are human", "reCAPTCHA", "Access denied")):
+        return False
+    patterns = {
+        "kaggle": r"/competitions/[^/?#]+",
+        "tianchi": r"/competition/entrance/\d+",
+        "baidu": r"/competition/detail/\d+",
+        "devpost": r"https://(?!secure\.|help\.|info\.|www\.)[^/]+\.devpost\.com/",
+        "ascend": r"/developer/(?:contests/details/|ops)",
+        "zindi": r"/competitions/[^/?#]+",
+    }
+    if name in patterns:
+        if name == "devpost" and not ("participants" in body and "in prizes" in body):
+            return False
+        return bool(len(body) > 500 and any(re.search(patterns[name], link.get("url", "")) and link.get("text", "").strip() for link in links))
+    if name == "xfyun":
+        return "报名截止时间" in body and "举办方" in body
+    if name == "tencent":
+        return all(marker in body for marker in ("TAAC x KDD Cup", "Timeline", "Eligibility", "Industrial"))
+    return False
 
 
 def kaggle_credentials():
@@ -84,20 +116,22 @@ def fetch_kaggle_api():
 
 def run():
     fetched = datetime.datetime.now(BEIJING).isoformat(timespec="seconds")
-    result = {"runId": os.environ.get("SCOUT_RUN_ID", fetched), "fetchedAt": fetched, "snapshots": [], "failed": [], "results": []}
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    result = {"runId": os.environ.get("SCOUT_RUN_ID", fetched), "fetchedAt": fetched, "snapshots": [], "failed": [], "results": [], "attemptErrors": []}
     snap, failed = result["snapshots"], result["failed"]
     atomic_json(OUT, result)
-    try:
-        item = fetch_kaggle_api()
-        item.update(fetchedAt=fetched, coverage="general group, first two recently-created pages; not complete platform coverage")
-        snap.append(item)
-    except Exception as e:
-        failed.append("kaggle: %s" % e)
+    if any(name == "kaggle" for name, _ in SOURCES):
+        try:
+            item = fetch_kaggle_api()
+            item.update(fetchedAt=fetched, coverage="general group, first two recently-created pages; not complete platform coverage")
+            snap.append(item)
+        except Exception as e:
+            failed.append("kaggle: %s" % e)
     atomic_json(OUT, result)
     try:
         from playwright.sync_api import sync_playwright
     except ImportError:
-        failed.extend(["tianchi: playwright unavailable", "xfyun: playwright unavailable"])
+        failed.extend([name + ": playwright unavailable" for name, _ in SOURCES if name != "kaggle"])
         return finish(result)
     with sync_playwright() as p:
         try:
@@ -107,34 +141,37 @@ def run():
             try:
                 browser = p.chromium.launch(headless=True)
             except Exception:
-                failed.extend(["tianchi: chromium unavailable", "xfyun: chromium unavailable"])
+                failed.extend([name + ": chromium unavailable" for name, _ in SOURCES if name != "kaggle"])
                 return finish(result)
         for name, url in SOURCES:
-            if name == "kaggle":
-                continue  # 已由官方 API 处理
+            if name == "kaggle" and any(item["source"] == "kaggle" for item in snap):
+                continue
             pg = None
             ctx = None
             try:
-                # Kaggle 的 Cloudflare 检查对 zh-CN 更严，英文站用 en-US context（实测通过）
                 ctx = browser.new_context(
                     user_agent=UA, locale="en-US" if name == "kaggle" else "zh-CN",
                     viewport={"width": 1440, "height": 900})
                 pg = ctx.new_page()
                 pg.goto(url, wait_until="domcontentloaded", timeout=60000)
                 body = ""
+                links = []
                 for _ in range(8):  # 最多等 40s：SPA 渲染 / Cloudflare 检查页自动跳转
                     pg.wait_for_timeout(5000)
                     body = pg.inner_text("body")
-                    if ("检查浏览器" not in body and "Checking your browser" not in body
-                            and len(body) > 500):
+                    links = pg.locator("a[href]").evaluate_all("elements => elements.map(a => ({text: a.innerText.trim(), url: a.href})).filter(a => a.text)")
+                    if has_list_content(name, body, links):
                         break
-                blocked = any(marker.lower() in body.lower() for marker in ("检查浏览器", "Checking your browser", "Verify you are human", "reCAPTCHA", "Access denied"))
-                if len(body) < 500 or blocked:
-                    failed.append(name + ": page still empty/check after 40s")
+                if not has_list_content(name, body, links):
+                    failed.append(name + ": no valid competition content after 40s (navigation/check/login shell is not a list)")
                 else:
+                    attempts = [f for f in failed if f.startswith(name + ":")]
+                    result["attemptErrors"].extend(attempts)
+                    failed[:] = [f for f in failed if not f.startswith(name + ":")]
                     snap.append({"source": name, "url": url,
-                                 "text": body[:12000], "fetchedAt": fetched,
-                                 "coverage": "visible first-page body; may be truncated"})
+                                 "finalUrl": pg.url, "text": body[:12000], "links": links, "fetchedAt": datetime.datetime.now(BEIJING).isoformat(timespec="seconds"),
+                                 "truncated": len(body) > 12000,
+                                 "coverage": "visible first-page body and links; pagination, subcategories and detail verification incomplete"})
             except Exception as e:
                 failed.append("%s: %r" % (name, e))
             finally:
@@ -142,19 +179,30 @@ def run():
                     pg.close()
                 if ctx:
                     ctx.close()
+                atomic_json(OUT, result)
         browser.close()
     return finish(result)
 
 
 def finish(result):
     successful = {s["source"] for s in result["snapshots"]}
-    result["results"] = [{"source": name, "state": "ok" if name in successful else "failed", "fetchedAt": result["fetchedAt"], "errors": [f for f in result["failed"] if f.startswith(name + ":")]} for name, _ in SOURCES]
+    result["finishedAt"] = datetime.datetime.now(BEIJING).isoformat(timespec="seconds")
+    times = {s["source"]: s.get("fetchedAt", result["fetchedAt"]) for s in result["snapshots"]}
+    result["results"] = [{"source": name, "state": "partial" if name in successful else "failed", "fetchState": "ok" if name in successful else "failed", "coverageState": "partial" if name in successful else "none", "fetchedAt": times.get(name, result["finishedAt"]), "errors": [f for f in result["failed"] if f.startswith(name + ":")]} for name, _ in SOURCES]
     atomic_json(OUT, result)
-    print("spa_snapshot.json: %d 源抓到, %d 失败" % (len(successful), len(result["failed"])))
+    print("spa_snapshot.json: %d 源抓到, %d 源失败（%d 次失败尝试）" % (len(successful), len(SOURCES) - len(successful), len(result["failed"])))
     return 0 if not result["failed"] else 2
 
 
-def main():
+def main(argv=()):
+    global OUT, SOURCES
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=pathlib.Path, default=OUT)
+    parser.add_argument("--sources", nargs="+", choices=SOURCE_URLS)
+    args = parser.parse_args(argv)
+    OUT = args.output
+    if args.sources:
+        SOURCES = [(name, SOURCE_URLS[name]) for name in dict.fromkeys(args.sources)]
     try:
         return run()
     except Exception as exc:
@@ -168,4 +216,4 @@ def main():
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(main(sys.argv[1:]))

@@ -36,10 +36,18 @@ REFRESH_STATE = REFRESH.get("state", "unknown")
 REFRESH_LABEL = {"ok": "完成", "partial": "部分完成", "failed": "失败"}.get(REFRESH_STATE, "未记录")
 REFRESH_RUNNER = "Codex" if REFRESH.get("runner") == "codex-agent" else "智能体"
 REFRESH_SUMMARY = "%s · 本轮%s核验 %s 条 · 发现源 %s/%s 成功" % (REFRESH_LABEL, REFRESH_RUNNER, REFRESH.get("verified", 0), REFRESH.get("sourcesOk", 0), REFRESH.get("sourcesTotal", 0))
-REFRESH_FAILURES = "；".join(str(x.get("name", x.get("url", "来源"))) if isinstance(x, dict) else str(x) for x in REFRESH.get("failedSources", []))
+REFRESH_FAILURES = "；".join((str(x.get("name", x.get("url", "来源"))) + "（" + ("抓取失败" if x.get("state") == "failed" else "范围待补") + "）：" + str(x.get("reason", ""))) if isinstance(x, dict) else str(x) for x in REFRESH.get("failedSources", []))
 if REFRESH_FAILURES:
-    REFRESH_SUMMARY += " · %s 个来源未完成" % len(REFRESH.get("failedSources", []))
+    failure_count = sum(x.get("state") == "failed" for x in REFRESH.get("sourceResults", []))
+    pending_count = sum(x.get("state") == "partial" for x in REFRESH.get("sourceResults", []))
+    if failure_count:
+        REFRESH_SUMMARY += " · %s 源抓取失败" % failure_count
+    if pending_count:
+        REFRESH_SUMMARY += " · %s 源范围待补" % pending_count
 REFRESH_DETAILS = ('<details class="hint"><summary>查看未完成来源</summary><p>' + html.escape(REFRESH_FAILURES) + '</p></details>') if REFRESH_FAILURES else ""
+if REFRESH.get("sourceRecoveryFinishedAt"):
+    recovery_time = datetime.datetime.fromisoformat(REFRESH["sourceRecoveryFinishedAt"]).astimezone(datetime.timezone(datetime.timedelta(hours=8))).strftime("%Y-%m-%d %H:%M:%S")
+    REFRESH_DETAILS = '<p class="hint">来源补查：' + html.escape(recovery_time) + '（北京时间）；列表抓取恢复不等于逐条核验完成。</p>' + REFRESH_DETAILS
 
 PLAT_CLASS = {"Kaggle": "kaggle", "天池": "cn", "讯飞": "xf", "Devpost": "devpost", "会议官网": "conf"}
 

@@ -28,7 +28,15 @@
         "官方网页",
         "浏览器兜底"
       ],
-      "error": null
+      "error": null,
+      "lastRecoveryAt": "2026-10-07T12:40:15+08:00",
+      "retrieval": {
+        "method": "codex-existing-browser",
+        "fetchState": "ok",
+        "inventoryState": "partial",
+        "scriptFallbackRequired": true,
+        "reason": "official API requires local credentials (401); anonymous headless attempt had no usable list; existing browser read public card sections"
+      }
     },
     {
       "name": "天池 算法大赛",
@@ -39,9 +47,17 @@
       "attempts": [
         "scrape_spa",
         "官方网页",
-        "浏览器兜底"
+        "浏览器兜底",
+        "browser-snapshot-in-default-python"
       ],
-      "error": null
+      "error": null,
+      "retrieval": {
+        "method": "browser-snapshot",
+        "fetchState": "ok",
+        "inventoryState": "partial",
+        "snapshotSource": "tianchi"
+      },
+      "lastRecoveryAt": "2026-10-07T12:40:15+08:00"
     },
     {
       "name": "讯飞 AI 开发者大赛",
@@ -52,9 +68,17 @@
       "attempts": [
         "scrape_spa",
         "官方网页",
-        "浏览器兜底"
+        "浏览器兜底",
+        "browser-snapshot-in-default-python"
       ],
-      "error": null
+      "error": null,
+      "retrieval": {
+        "method": "browser-snapshot",
+        "fetchState": "ok",
+        "inventoryState": "partial",
+        "snapshotSource": "xfyun"
+      },
+      "lastRecoveryAt": "2026-10-07T12:40:15+08:00"
     },
     {
       "name": "NeurIPS Competition Track 官博 + Dates 页",
@@ -85,14 +109,37 @@
     },
     {
       "name": "Codabench",
-      "url": "https://www.codabench.org/",
-      "state": "failed",
-      "scope": "公开赛事列表返回平台导航外壳，无赛事规则或有效卡片。",
-      "fetchedAt": "2026-10-07T12:13:13+08:00",
+      "url": "https://www.codabench.org/competitions/public/",
+      "state": "partial",
+      "scope": "API列表已读16页，共1528条，唯一ID数与count一致。历史/教学/非赛事内容的分类、排重及候选规则核验待完成。",
+      "fetchedAt": "2026-10-07T12:40:15+08:00",
       "attempts": [
-        "官方网页"
+        "官方网页",
+        "official-public-api"
       ],
-      "error": null
+      "error": null,
+      "fetchState": "ok",
+      "retrieval": {
+        "method": "official-public-api",
+        "inventoryState": "complete",
+        "items": 1528,
+        "pages": 16,
+        "apiUrls": [
+          "https://www.codabench.org/api/competitions/public/?ordering=recent&page_size=100"
+        ]
+      },
+      "attemptResults": [
+        {
+          "state": "failed",
+          "reason": "公开赛事列表返回平台导航外壳，无赛事规则或有效卡片。",
+          "phase": "initial-run"
+        },
+        {
+          "state": "fetched",
+          "method": "official-public-api",
+          "checkedAt": "2026-10-07T12:40:15+08:00"
+        }
+      ]
     },
     {
       "name": "AIcrowd",
@@ -108,13 +155,36 @@
     {
       "name": "视觉会议 workshop CFP（CVPR / ICCV / ECCV / WACV / BMVC / ACCV）",
       "url": "https://conferences.visionbib.com/",
-      "state": "failed",
-      "scope": "官方入口TLS自签名证书验证失败，web兜底超时；未绕过证书检查。",
-      "fetchedAt": "2026-10-07T12:13:13+08:00",
+      "state": "partial",
+      "scope": "Visionbib原入口仍证书错误；已读取CVPR2026官方workshop目录及ECCV官网作为替代。ICCV/WACV/BMVC/ACCV等分支和challenge子站待扫。",
+      "fetchedAt": "2026-10-07T12:40:15+08:00",
       "attempts": [
-        "官方网页"
+        "官方网页",
+        "official-alternative-pages"
       ],
-      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1032)>"
+      "error": null,
+      "fetchState": "ok",
+      "retrieval": {
+        "method": "official-alternative-pages",
+        "inventoryState": "partial",
+        "fallbackUrls": [
+          "https://cvpr.thecvf.com/Conferences/2026/Workshops",
+          "https://eccv.ecva.net/"
+        ],
+        "primaryFailure": "CERTIFICATE_VERIFY_FAILED"
+      },
+      "attemptResults": [
+        {
+          "state": "failed",
+          "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1032)>",
+          "phase": "initial-run"
+        },
+        {
+          "state": "fetched",
+          "method": "official-alternative-pages",
+          "checkedAt": "2026-10-07T12:40:15+08:00"
+        }
+      ]
     },
     {
       "name": "机器学习会议 workshop / competition（ICLR / ICML / AAAI / IJCAI）",
@@ -152,24 +222,71 @@
     {
       "name": "国内学术会议评测（CHIP / SMP / CCKS / NLPCC / CCIR / CSIG 系）",
       "url": "https://www.cips-chip.org.cn/",
-      "state": "failed",
-      "scope": "CHIP入口TLS证书验证失败，web兜底超时；SMP/CCKS/NLPCC/CCIR等分支仍待扫。",
-      "fetchedAt": "2026-10-07T12:13:13+08:00",
+      "state": "partial",
+      "scope": "CHIP原入口仍证书错误；已读取天池官方托管的CHIP2026医学NLP代码任务，含赛程、企业/单位与获奖参会规则。SMP/CCKS/NLPCC/CCIR/CSIG等分支待扫。",
+      "fetchedAt": "2026-10-07T12:40:15+08:00",
       "attempts": [
-        "官方网页"
+        "官方网页",
+        "official-hosted-alternative"
       ],
-      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1032)>"
+      "error": null,
+      "fetchState": "ok",
+      "retrieval": {
+        "method": "official-hosted-alternative",
+        "inventoryState": "partial",
+        "fallbackUrls": [
+          "https://tianchi.aliyun.com/competition/entrance/532480"
+        ],
+        "primaryFailure": "CERTIFICATE_VERIFY_FAILED"
+      },
+      "attemptResults": [
+        {
+          "state": "failed",
+          "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1032)>",
+          "phase": "initial-run"
+        },
+        {
+          "state": "fetched",
+          "method": "official-hosted-alternative",
+          "checkedAt": "2026-10-07T12:40:15+08:00"
+        }
+      ]
     },
     {
       "name": "EvalAI",
       "url": "https://eval.ai/",
-      "state": "failed",
-      "scope": "返回空正文，未取得可核赛事列表。",
-      "fetchedAt": "2026-10-07T12:13:13+08:00",
+      "state": "partial",
+      "scope": "官方公开API当前19条、未来0条、历史482条，全量6页/count一致；候选排重、资格与规则待核，不把API阶段日期当官网赛程。",
+      "fetchedAt": "2026-10-07T12:40:15+08:00",
       "attempts": [
-        "官方网页"
+        "官方网页",
+        "official-public-api"
       ],
-      "error": null
+      "error": null,
+      "fetchState": "ok",
+      "retrieval": {
+        "method": "official-public-api",
+        "inventoryState": "complete",
+        "items": 501,
+        "pages": 6,
+        "apiUrls": [
+          "https://eval.ai/api/challenges/challenge/present/approved/public",
+          "https://eval.ai/api/challenges/challenge/future/approved/public",
+          "https://eval.ai/api/challenges/challenge/past/approved/public"
+        ]
+      },
+      "attemptResults": [
+        {
+          "state": "failed",
+          "reason": "返回空正文，未取得可核赛事列表。",
+          "phase": "initial-run"
+        },
+        {
+          "state": "fetched",
+          "method": "official-public-api",
+          "checkedAt": "2026-10-07T12:40:15+08:00"
+        }
+      ]
     },
     {
       "name": "DrivenData",
@@ -185,24 +302,63 @@
     {
       "name": "Devpost",
       "url": "https://devpost.com/hackathons",
-      "state": "failed",
-      "scope": "只返回导航及通用介绍，没有有效hackathon卡片。",
-      "fetchedAt": "2026-10-07T12:13:13+08:00",
+      "state": "partial",
+      "scope": "已用渲染后的浏览器正文取得9张赛事卡片；仅当前推荐页，14018条目录的筛选、分页和新候选资格仍待处理。",
+      "fetchedAt": "2026-10-07T12:40:15+08:00",
       "attempts": [
-        "官方网页"
+        "官方网页",
+        "browser-snapshot"
       ],
-      "error": null
+      "error": null,
+      "fetchState": "ok",
+      "retrieval": {
+        "method": "browser-snapshot",
+        "inventoryState": "partial",
+        "snapshotSource": "devpost"
+      },
+      "attemptResults": [
+        {
+          "state": "failed",
+          "reason": "只返回导航及通用介绍，没有有效hackathon卡片。",
+          "phase": "initial-run"
+        },
+        {
+          "state": "fetched",
+          "method": "browser-snapshot",
+          "checkedAt": "2026-10-07T12:40:15+08:00"
+        }
+      ]
     },
     {
       "name": "Zindi",
-      "url": "https://zindi.africa/competitions",
-      "state": "failed",
-      "scope": "只取得零散页面标签，没有有效赛事正文。",
-      "fetchedAt": "2026-10-07T12:13:13+08:00",
+      "url": "https://zindi.world/competitions",
+      "state": "partial",
+      "scope": "官网已迁移到zindi.world；浏览器取得5个开放赛与15个历史赛卡片。506个历史条目未全翻页，规则与地域限制待核。",
+      "fetchedAt": "2026-10-07T12:40:15+08:00",
       "attempts": [
-        "官方网页"
+        "官方网页",
+        "browser-snapshot"
       ],
-      "error": null
+      "error": null,
+      "fetchState": "ok",
+      "retrieval": {
+        "method": "browser-snapshot",
+        "inventoryState": "partial",
+        "snapshotSource": "zindi",
+        "resolvedUrl": "https://zindi.world/competitions"
+      },
+      "attemptResults": [
+        {
+          "state": "failed",
+          "reason": "只取得零散页面标签，没有有效赛事正文。",
+          "phase": "initial-run"
+        },
+        {
+          "state": "fetched",
+          "method": "browser-snapshot",
+          "checkedAt": "2026-10-07T12:40:15+08:00"
+        }
+      ]
     },
     {
       "name": "CodaLab",
@@ -251,24 +407,63 @@
     {
       "name": "昇腾 AI 创新大赛",
       "url": "https://www.hiascend.com/developer/AAIC2026",
-      "state": "failed",
-      "scope": "返回loading页面，没有有效AAIC2026赛程正文。",
-      "fetchedAt": "2026-10-07T12:13:13+08:00",
+      "state": "partial",
+      "scope": "渲染正文已取得算子挑战赛S9与Harness挑战赛S1入口及奖金信息；子赛详情、资格和确切截止待核。",
+      "fetchedAt": "2026-10-07T12:40:15+08:00",
       "attempts": [
-        "官方网页"
+        "官方网页",
+        "browser-snapshot"
       ],
-      "error": null
+      "error": null,
+      "fetchState": "ok",
+      "retrieval": {
+        "method": "browser-snapshot",
+        "inventoryState": "partial",
+        "snapshotSource": "ascend"
+      },
+      "attemptResults": [
+        {
+          "state": "failed",
+          "reason": "返回loading页面，没有有效AAIC2026赛程正文。",
+          "phase": "initial-run"
+        },
+        {
+          "state": "fetched",
+          "method": "browser-snapshot",
+          "checkedAt": "2026-10-07T12:40:15+08:00"
+        }
+      ]
     },
     {
       "name": "百度 AI Studio / 商业 AI 技术创新大赛",
-      "url": "https://aistudio.baidu.com/aistudio/competition",
-      "state": "failed",
-      "scope": "只返回站点标题，没有有效比赛卡片。",
-      "fetchedAt": "2026-10-07T12:13:13+08:00",
+      "url": "https://aistudio.baidu.com/competition",
+      "state": "partial",
+      "scope": "官网现行/competition页面取得10张进行中卡片和5页分页导航；后4页及赛题规则待扫，长期榜单日期不作正式赛程。",
+      "fetchedAt": "2026-10-07T12:40:15+08:00",
       "attempts": [
-        "官方网页"
+        "官方网页",
+        "browser-snapshot"
       ],
-      "error": null
+      "error": null,
+      "fetchState": "ok",
+      "retrieval": {
+        "method": "browser-snapshot",
+        "inventoryState": "partial",
+        "snapshotSource": "baidu",
+        "resolvedUrl": "https://aistudio.baidu.com/competition"
+      },
+      "attemptResults": [
+        {
+          "state": "failed",
+          "reason": "只返回站点标题，没有有效比赛卡片。",
+          "phase": "initial-run"
+        },
+        {
+          "state": "fetched",
+          "method": "browser-snapshot",
+          "checkedAt": "2026-10-07T12:40:15+08:00"
+        }
+      ]
     },
     {
       "name": "DataFountain",
@@ -284,13 +479,32 @@
     {
       "name": "腾讯 TAAC / KDD Cup",
       "url": "https://algo.qq.com/",
-      "state": "failed",
-      "scope": "返回空正文，未取得TAAC/KDD Cup有效列表。",
-      "fetchedAt": "2026-10-07T12:13:13+08:00",
+      "state": "partial",
+      "scope": "官网TAAC×KDD2026正文已读，含工业/学术资格和正式赛程；快照正文截断，尚需完整规则/最新公告与年度核验，不推测2027窗口。",
+      "fetchedAt": "2026-10-07T12:40:15+08:00",
       "attempts": [
-        "官方网页"
+        "官方网页",
+        "browser-snapshot"
       ],
-      "error": null
+      "error": null,
+      "fetchState": "ok",
+      "retrieval": {
+        "method": "browser-snapshot",
+        "inventoryState": "partial",
+        "snapshotSource": "tencent"
+      },
+      "attemptResults": [
+        {
+          "state": "failed",
+          "reason": "返回空正文，未取得TAAC/KDD Cup有效列表。",
+          "phase": "initial-run"
+        },
+        {
+          "state": "fetched",
+          "method": "browser-snapshot",
+          "checkedAt": "2026-10-07T12:40:15+08:00"
+        }
+      ]
     },
     {
       "name": "RecSys / TREC / SIGIR / CCKS / NLPCC",
@@ -337,8 +551,8 @@
     {
       "name": "Codabench",
       "url": "https://www.codabench.org/",
-      "state": "failed",
-      "reason": "公开赛事列表返回平台导航外壳，无赛事规则或有效卡片。"
+      "state": "partial",
+      "reason": "API列表已读16页，共1528条，唯一ID数与count一致。历史/教学/非赛事内容的分类、排重及候选规则核验待完成。"
     },
     {
       "name": "AIcrowd",
@@ -349,8 +563,8 @@
     {
       "name": "视觉会议 workshop CFP（CVPR / ICCV / ECCV / WACV / BMVC / ACCV）",
       "url": "https://conferences.visionbib.com/",
-      "state": "failed",
-      "reason": "官方入口TLS自签名证书验证失败，web兜底超时；未绕过证书检查。"
+      "state": "partial",
+      "reason": "Visionbib原入口仍证书错误；已读取CVPR2026官方workshop目录及ECCV官网作为替代。ICCV/WACV/BMVC/ACCV等分支和challenge子站待扫。"
     },
     {
       "name": "机器学习会议 workshop / competition（ICLR / ICML / AAAI / IJCAI）",
@@ -373,14 +587,14 @@
     {
       "name": "国内学术会议评测（CHIP / SMP / CCKS / NLPCC / CCIR / CSIG 系）",
       "url": "https://www.cips-chip.org.cn/",
-      "state": "failed",
-      "reason": "CHIP入口TLS证书验证失败，web兜底超时；SMP/CCKS/NLPCC/CCIR等分支仍待扫。"
+      "state": "partial",
+      "reason": "CHIP原入口仍证书错误；已读取天池官方托管的CHIP2026医学NLP代码任务，含赛程、企业/单位与获奖参会规则。SMP/CCKS/NLPCC/CCIR/CSIG等分支待扫。"
     },
     {
       "name": "EvalAI",
       "url": "https://eval.ai/",
-      "state": "failed",
-      "reason": "返回空正文，未取得可核赛事列表。"
+      "state": "partial",
+      "reason": "官方公开API当前19条、未来0条、历史482条，全量6页/count一致；候选排重、资格与规则待核，不把API阶段日期当官网赛程。"
     },
     {
       "name": "DrivenData",
@@ -391,14 +605,14 @@
     {
       "name": "Devpost",
       "url": "https://devpost.com/hackathons",
-      "state": "failed",
-      "reason": "只返回导航及通用介绍，没有有效hackathon卡片。"
+      "state": "partial",
+      "reason": "已用渲染后的浏览器正文取得9张赛事卡片；仅当前推荐页，14018条目录的筛选、分页和新候选资格仍待处理。"
     },
     {
       "name": "Zindi",
       "url": "https://zindi.africa/competitions",
-      "state": "failed",
-      "reason": "只取得零散页面标签，没有有效赛事正文。"
+      "state": "partial",
+      "reason": "官网已迁移到zindi.world；浏览器取得5个开放赛与15个历史赛卡片。506个历史条目未全翻页，规则与地域限制待核。"
     },
     {
       "name": "CodaLab",
@@ -427,14 +641,14 @@
     {
       "name": "昇腾 AI 创新大赛",
       "url": "https://www.hiascend.com/developer/AAIC2026",
-      "state": "failed",
-      "reason": "返回loading页面，没有有效AAIC2026赛程正文。"
+      "state": "partial",
+      "reason": "渲染正文已取得算子挑战赛S9与Harness挑战赛S1入口及奖金信息；子赛详情、资格和确切截止待核。"
     },
     {
       "name": "百度 AI Studio / 商业 AI 技术创新大赛",
       "url": "https://aistudio.baidu.com/aistudio/competition",
-      "state": "failed",
-      "reason": "只返回站点标题，没有有效比赛卡片。"
+      "state": "partial",
+      "reason": "官网现行/competition页面取得10张进行中卡片和5页分页导航；后4页及赛题规则待扫，长期榜单日期不作正式赛程。"
     },
     {
       "name": "DataFountain",
@@ -445,8 +659,8 @@
     {
       "name": "腾讯 TAAC / KDD Cup",
       "url": "https://algo.qq.com/",
-      "state": "failed",
-      "reason": "返回空正文，未取得TAAC/KDD Cup有效列表。"
+      "state": "partial",
+      "reason": "官网TAAC×KDD2026正文已读，含工业/学术资格和正式赛程；快照正文截断，尚需完整规则/最新公告与年度核验，不推测2027窗口。"
     },
     {
       "name": "RecSys / TREC / SIGIR / CCKS / NLPCC",
@@ -586,7 +800,7 @@
     "trackrad2025",
     "isles-24"
   ],
-  "scheduledCoverage": "计划26个发现源，2个完整完成、15个范围未完成、9个抓取失败。详情成功8条，其余明确待核。",
+  "scheduledCoverage": "来源补查：原9个失败来源均取得有效正文或官方替代正文；2个旧入口仍证书错误。26源中2个完成、24个范围/候选处理待补。原8条赛事核验和finishedAt保留，不把抓取计为核验。",
   "verificationTargetIds": [
     "quantiphy",
     "rsna",
@@ -596,5 +810,29 @@
     "agenthon-2026",
     "fair-universe-wl2",
     "amp-challenge"
-  ]
+  ],
+  "sourceRecoveryFinishedAt": "2026-10-07T12:40:15+08:00",
+  "sourceRecovery": {
+    "previousFailedSources": 9,
+    "recoveredSources": [
+      "Codabench",
+      "EvalAI",
+      "Devpost",
+      "Zindi",
+      "昇腾 AI 创新大赛",
+      "百度 AI Studio / 商业 AI 技术创新大赛",
+      "腾讯 TAAC / KDD Cup",
+      "视觉会议 workshop CFP（CVPR / ICCV / ECCV / WACV / BMVC / ACCV）",
+      "国内学术会议评测（CHIP / SMP / CCKS / NLPCC / CCIR / CSIG 系）"
+    ],
+    "primaryUrlsStillFailing": [
+      "https://conferences.visionbib.com/",
+      "https://www.cips-chip.org.cn/"
+    ],
+    "officialApiInventories": {
+      "Codabench": 1528,
+      "EvalAI": 501
+    },
+    "factVerificationChanged": false
+  }
 }

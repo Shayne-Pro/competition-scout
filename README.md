@@ -20,12 +20,20 @@ python3 build_page.py
 # 最终自检（数据日期、状态、证据/来源覆盖、页面核验时间及公开目录）
 python3 ci_check.py
 # 截止、CI 和抓取失败回归测试
-python3 -m unittest -q test_refresh
+python3 -m unittest -q test_refresh test_source_lists
 # 抓 Kaggle/天池/讯飞三个 SPA 列表页（Playwright，可选，供人工/智能体浏览）
-python3 scrape_spa.py
+python3 scrape_spa.py --output .scout/spa_snapshot.json
+# 官方公开 API：Codabench 全量列表 + EvalAI 当前/未来/历史列表，逐页核 count
+python3 fetch_source_lists.py
+# 其他动态源的兜底（同样只有所读页面范围，不能宣称全平台核验）
+python3 scrape_spa.py --output .scout/secondary_snapshot.json --sources devpost ascend baidu tencent zindi
 ```
 
 数据文件：`events.json`（赛事条目）、`sources.json`（检索源注册表）、`notified.json`（提醒去重）、`runs-log.jsonl`（每日运行日志，同日去重）、`refresh-status.json`（最近一轮核验状态，页面横幅与其 `finishedAt` 即「核验日期」）。
+
+抓取环境：默认 WorkBuddy 虚拟环境已安装 Playwright 和 Chromium；基础 Python 路径 `versions/3.13.12/bin/python3` 未安装 Playwright，只用于标准库脚本。Kaggle 官方 API 在本机缺少凭据时返回 401，无头浏览器也可能只得到检查页，此时用 Codex 现有浏览器读取公开赛事卡片。不得解验证码、关闭证书校验或把登录/导航外壳计为成功。`scrape_spa.py` 分开记录 `fetchState` 和 `coverageState`；浏览器成功只表示取得当前页正文，后续分页与详情仍待处理。
+
+`fetch_source_lists.py` 的 `complete` 只表示完整公开列表已读且唯一 ID 数与 `count` 一致，不是资格、日期或规则已核验；产物只存在被忽略的 `.scout/source-lists`。Codabench 的分页 `next` 会指向一个本机无法连接的后台域名，脚本保留原链接供审计，并使用已实测有效的公开域名访问同一路径和参数。失败时保留已读记录和下一页指针，不能将旧成功快照当本轮结果。
 
 ## 数据规则
 

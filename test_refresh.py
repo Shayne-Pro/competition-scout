@@ -107,6 +107,24 @@ class PublicationGate(unittest.TestCase):
 
 
 class Scraping(unittest.TestCase):
+    def test_long_navigation_shell_is_not_a_list(self):
+        self.assertFalse(scrape_spa.has_list_content("tianchi", "首页 登录 天池大赛 " * 100, [{"text": "天池大赛", "url": "https://tianchi.aliyun.com/competition/algorithmList"}]))
+
+    def test_blocked_page_is_not_success_even_with_detail_link(self):
+        self.assertFalse(scrape_spa.has_list_content("kaggle", "Verify you are human " * 50, [{"text": "RSNA", "url": "https://www.kaggle.com/competitions/rsna"}]))
+
+    def test_devpost_login_link_is_not_a_competition_card(self):
+        self.assertFalse(scrape_spa.has_list_content("devpost", "Log in and browse hackathons " * 100, [{"text": "Log in", "url": "https://secure.devpost.com/users/login"}]))
+
+    def test_first_page_body_is_partial_coverage(self):
+        with tempfile.TemporaryDirectory() as directory:
+            result = {"fetchedAt": "2026-10-07T12:00:00+08:00", "snapshots": [{"source": "tianchi"}], "failed": ["kaggle: no credentials", "xfyun: empty"]}
+            with patch.object(scrape_spa, "OUT", Path(directory) / "snapshot.json"):
+                scrape_spa.finish(result)
+            row = next(r for r in result["results"] if r["source"] == "tianchi")
+            self.assertEqual(row["fetchState"], "ok")
+            self.assertEqual(row["state"], "partial")
+
     def test_driver_startup_failure_writes_source_results(self):
         import sys
         from types import SimpleNamespace

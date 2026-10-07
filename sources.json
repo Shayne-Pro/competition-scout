@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T12:13:13+08:00",
+  "updatedAt": "2026-10-07T12:40:15+08:00",
   "scope": "固定源是「基准巡检清单」，不是白名单。检索范围包括但不限于这些源：任何渠道发现的赛事都应先入表（status=unclear），再补核官网。",
   "rules": {
     "exclusionPolicy": {
@@ -92,10 +92,19 @@
       "lastScan": "2026-09-27",
       "hits": 0,
       "scan": "公开 challenge 列表页",
-      "note": "本轮实跑首页：页面只有平台介绍与新闻，**公开 challenge 需要进 codabench.org/competitions/public/ 才能拿到列表**，首页抓不到。下次要直接抓公开赛事列表页。",
-      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
-      "scanState": "failed",
-      "lastAttemptSummary": "公开赛事列表返回平台导航外壳，无赛事规则或有效卡片。"
+      "note": "API列表已读16页，共1528条，唯一ID数与count一致。历史/教学/非赛事内容的分类、排重及候选规则核验待完成。",
+      "lastAttemptAt": "2026-10-07T12:40:15+08:00",
+      "scanState": "partial",
+      "lastAttemptSummary": "API列表已读16页，共1528条，唯一ID数与count一致。历史/教学/非赛事内容的分类、排重及候选规则核验待完成。",
+      "retrieval": {
+        "method": "official-public-api",
+        "inventoryState": "complete",
+        "items": 1528,
+        "pages": 16,
+        "apiUrls": [
+          "https://www.codabench.org/api/competitions/public/?ordering=recent&page_size=100"
+        ]
+      }
     },
     {
       "name": "AIcrowd",
@@ -119,9 +128,22 @@
       "hits": 1,
       "scan": "visionbib 年度索引 + 各 workshop 单页 CFP；找不到官网时搜「visionbib <会议> <workshop> call」",
       "note": "索引页常是归档占位，单篇 CFP 页可用。challenge 一般随 workshop 提案在年初上线，主会投稿截止 ≠ challenge 窗口",
-      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
-      "scanState": "failed",
-      "lastAttemptSummary": "官方入口TLS自签名证书验证失败，web兜底超时；未绕过证书检查。"
+      "lastAttemptAt": "2026-10-07T12:40:15+08:00",
+      "scanState": "partial",
+      "lastAttemptSummary": "Visionbib原入口仍证书错误；已读取CVPR2026官方workshop目录及ECCV官网作为替代。ICCV/WACV/BMVC/ACCV等分支和challenge子站待扫。",
+      "retrieval": {
+        "method": "official-alternative-pages",
+        "inventoryState": "partial",
+        "fallbackUrls": [
+          "https://cvpr.thecvf.com/Conferences/2026/Workshops",
+          "https://eccv.ecva.net/"
+        ],
+        "primaryFailure": "CERTIFICATE_VERIFY_FAILED"
+      },
+      "fallbackUrls": [
+        "https://cvpr.thecvf.com/Conferences/2026/Workshops",
+        "https://eccv.ecva.net/"
+      ]
     },
     {
       "name": "机器学习会议 workshop / competition（ICLR / ICML / AAAI / IJCAI）",
@@ -171,9 +193,20 @@
       "hits": 2,
       "scan": "各会官网评测任务页（常同时挂在天池）",
       "note": "多要求获奖后自费注册参会、口头汇报并撰文，否则取消成绩——这类成本要写进 warning",
-      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
-      "scanState": "failed",
-      "lastAttemptSummary": "CHIP入口TLS证书验证失败，web兜底超时；SMP/CCKS/NLPCC/CCIR等分支仍待扫。"
+      "lastAttemptAt": "2026-10-07T12:40:15+08:00",
+      "scanState": "partial",
+      "lastAttemptSummary": "CHIP原入口仍证书错误；已读取天池官方托管的CHIP2026医学NLP代码任务，含赛程、企业/单位与获奖参会规则。SMP/CCKS/NLPCC/CCIR/CSIG等分支待扫。",
+      "retrieval": {
+        "method": "official-hosted-alternative",
+        "inventoryState": "partial",
+        "fallbackUrls": [
+          "https://tianchi.aliyun.com/competition/entrance/532480"
+        ],
+        "primaryFailure": "CERTIFICATE_VERIFY_FAILED"
+      },
+      "fallbackUrls": [
+        "https://tianchi.aliyun.com/competition/entrance/532480"
+      ]
     },
     {
       "name": "EvalAI",
@@ -183,10 +216,21 @@
       "lastScan": "2026-09-27",
       "hits": 0,
       "scan": "challenges 列表",
-      "note": "本轮抓 /web/challenges/challenge-page/all 只拿到站点简介、无正文（前端渲染）。需改用带筛选参数的列表页或换抓取方式。",
-      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
-      "scanState": "failed",
-      "lastAttemptSummary": "返回空正文，未取得可核赛事列表。"
+      "note": "官方公开API当前19条、未来0条、历史482条，全量6页/count一致；候选排重、资格与规则待核，不把API阶段日期当官网赛程。",
+      "lastAttemptAt": "2026-10-07T12:40:15+08:00",
+      "scanState": "partial",
+      "lastAttemptSummary": "官方公开API当前19条、未来0条、历史482条，全量6页/count一致；候选排重、资格与规则待核，不把API阶段日期当官网赛程。",
+      "retrieval": {
+        "method": "official-public-api",
+        "inventoryState": "complete",
+        "items": 501,
+        "pages": 6,
+        "apiUrls": [
+          "https://eval.ai/api/challenges/challenge/present/approved/public",
+          "https://eval.ai/api/challenges/challenge/future/approved/public",
+          "https://eval.ai/api/challenges/challenge/past/approved/public"
+        ]
+      }
     },
     {
       "name": "DrivenData",
@@ -210,22 +254,33 @@
       "hits": 1,
       "scan": "hackathons 列表（可按 Open 筛选）",
       "note": "本轮只有 OpenCV AI Competition 一条命中，未系统扫描",
-      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
-      "scanState": "failed",
-      "lastAttemptSummary": "只返回导航及通用介绍，没有有效hackathon卡片。"
+      "lastAttemptAt": "2026-10-07T12:40:15+08:00",
+      "scanState": "partial",
+      "lastAttemptSummary": "已用渲染后的浏览器正文取得9张赛事卡片；仅当前推荐页，14018条目录的筛选、分页和新候选资格仍待处理。",
+      "retrieval": {
+        "method": "browser-snapshot",
+        "inventoryState": "partial",
+        "snapshotSource": "devpost"
+      }
     },
     {
       "name": "Zindi",
-      "url": "https://zindi.africa/competitions",
+      "url": "https://zindi.world/competitions",
       "tier": "watch",
       "cadence": "每两周",
       "lastScan": "—",
       "hits": 0,
       "scan": "competitions 列表",
-      "note": "非洲区赛事为主，偶有开放给全球的",
-      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
-      "scanState": "failed",
-      "lastAttemptSummary": "只取得零散页面标签，没有有效赛事正文。"
+      "note": "官网已迁移到zindi.world；浏览器取得5个开放赛与15个历史赛卡片。506个历史条目未全翻页，规则与地域限制待核。",
+      "lastAttemptAt": "2026-10-07T12:40:15+08:00",
+      "scanState": "partial",
+      "lastAttemptSummary": "官网已迁移到zindi.world；浏览器取得5个开放赛与15个历史赛卡片。506个历史条目未全翻页，规则与地域限制待核。",
+      "retrieval": {
+        "method": "browser-snapshot",
+        "inventoryState": "partial",
+        "snapshotSource": "zindi",
+        "resolvedUrl": "https://zindi.world/competitions"
+      }
     },
     {
       "name": "CodaLab",
@@ -328,22 +383,33 @@
       "hits": 0,
       "scan": "官网 + 搜索兜底（/developer/contests 长期 404；详情页常托管在 cann-elec.gccorg.com）",
       "note": "算子挑战赛 S9 报名 9/15 已截止，待 S10；Harness 挑战赛限在校学生",
-      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
-      "scanState": "failed",
-      "lastAttemptSummary": "返回loading页面，没有有效AAIC2026赛程正文。"
+      "lastAttemptAt": "2026-10-07T12:40:15+08:00",
+      "scanState": "partial",
+      "lastAttemptSummary": "渲染正文已取得算子挑战赛S9与Harness挑战赛S1入口及奖金信息；子赛详情、资格和确切截止待核。",
+      "retrieval": {
+        "method": "browser-snapshot",
+        "inventoryState": "partial",
+        "snapshotSource": "ascend"
+      }
     },
     {
       "name": "百度 AI Studio / 商业 AI 技术创新大赛",
-      "url": "https://aistudio.baidu.com/aistudio/competition",
+      "url": "https://aistudio.baidu.com/competition",
       "tier": "known-empty",
       "cadence": "每轮重扫",
       "lastScan": "2026-09-27",
       "hits": 0,
       "scan": "AI Studio 竞赛页 + cti.baidu.com",
       "note": "2026 商业赛为邀请制极客夏令营，无公开报名入口；AI Studio 有长期赛题需逐条核是否限学生",
-      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
-      "scanState": "failed",
-      "lastAttemptSummary": "只返回站点标题，没有有效比赛卡片。"
+      "lastAttemptAt": "2026-10-07T12:40:15+08:00",
+      "scanState": "partial",
+      "lastAttemptSummary": "官网现行/competition页面取得10张进行中卡片和5页分页导航；后4页及赛题规则待扫，长期榜单日期不作正式赛程。",
+      "retrieval": {
+        "method": "browser-snapshot",
+        "inventoryState": "partial",
+        "snapshotSource": "baidu",
+        "resolvedUrl": "https://aistudio.baidu.com/competition"
+      }
     },
     {
       "name": "DataFountain",
@@ -366,10 +432,15 @@
       "lastScan": "2026-09-27",
       "hits": 0,
       "scan": "官网",
-      "note": "2026 届 8/12 已颁奖；学术赛道限全职学生，仅工业赛道对社会开放；2027 届预计 3 月启动——届时需提高为 core",
-      "lastAttemptAt": "2026-10-07T12:13:13+08:00",
-      "scanState": "failed",
-      "lastAttemptSummary": "返回空正文，未取得TAAC/KDD Cup有效列表。"
+      "note": "官网TAAC×KDD2026正文已读，含工业/学术资格和正式赛程；快照正文截断，尚需完整规则/最新公告与年度核验，不推测2027窗口。",
+      "lastAttemptAt": "2026-10-07T12:40:15+08:00",
+      "scanState": "partial",
+      "lastAttemptSummary": "官网TAAC×KDD2026正文已读，含工业/学术资格和正式赛程；快照正文截断，尚需完整规则/最新公告与年度核验，不推测2027窗口。",
+      "retrieval": {
+        "method": "browser-snapshot",
+        "inventoryState": "partial",
+        "snapshotSource": "tencent"
+      }
     },
     {
       "name": "RecSys / TREC / SIGIR / CCKS / NLPCC",
@@ -443,19 +514,21 @@
       "gap": "Codabench 公开赛事列表页未拿到（首页无列表）",
       "impact": "中",
       "why": "首页只有平台介绍；列表在 /competitions/public/",
-      "fix": "下次直接抓公开列表页并分页"
+      "fix": "已接入fetch_source_lists.py官方全量分页；详情处理仍在待核队列。",
+      "retrievalFixedAt": "2026-10-07T12:40:15+08:00"
     },
     {
       "gap": "EvalAI 抓取方式失效（前端渲染，正文取不到）",
       "impact": "中",
       "why": "/web/challenges/challenge-page/all 返回站点简介",
-      "fix": "改用后端接口或带 status=open 的筛选页"
+      "fix": "已接入fetch_source_lists.py官方全量分页；详情处理仍在待核队列。",
+      "retrievalFixedAt": "2026-10-07T12:40:15+08:00"
     },
     {
       "gap": "grand-challenge 子站 timeline 仍需逐个人工核",
       "impact": "中",
       "why": "列表页状态不可信（ToothFairy3、PANTHER 均误标 accepting）",
-      "fix": "先按「Challenge completed」过滤，剩下的一律进子站 timeline 核"
+      "fix": "API状态不做排除或官网阶段证据；按子站Rules/Timeline区分正式竞赛和长期评测。"
     },
     {
       "gap": "会议列表仍不全：缺 ICDM / ICMR / ICPR / ICASSP / Interspeech / ACL 系 / EMNLP 系 的 challenge",
