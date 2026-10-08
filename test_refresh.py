@@ -9,7 +9,7 @@ from unittest.mock import patch
 import ci_check
 import daily_refresh
 import scrape_spa
-from refresh_core import BEIJING, derived_status, action_days
+from refresh_core import BEIJING, derived_status, action_days, is_excluded
 
 NOW = dt.datetime(2026, 10, 7, 12, tzinfo=BEIJING)
 TODAY = NOW.date()
@@ -76,6 +76,27 @@ class PublicationGate(unittest.TestCase):
 
     def test_valid_fixture(self):
         self.assertEqual(self.errors(), [])
+
+    def test_student_only_hidden_but_record_preserved(self):
+        self.e["exclusion"] = {"reason": "student-only", "evidence": [{"url": self.e["url"], "quote": "All team members must be enrolled students"}]}
+        self.page = self.page.replace('<tr data-id="sample">', '')
+        self.assertEqual(self.errors(), [])
+        self.assertEqual(self.e["id"], "sample")
+
+    def test_exclusion_requires_official_quote(self):
+        self.e["exclusion"] = {"reason": "student-only", "evidence": []}
+        self.page = self.page.replace('<tr data-id="sample">', '')
+        self.assertTrue(any("exclusion lacks" in error for error in self.errors()))
+
+    def test_unknown_or_mixed_eligibility_stays_visible(self):
+        for value in ("unknown", "students-and-industry"):
+            self.e["eligibility"] = {"state": value}
+            self.assertFalse(is_excluded(self.e))
+            self.assertEqual(self.errors(), [])
+
+    def test_other_exclusion_reason_rejected(self):
+        self.e["exclusion"] = {"reason": "low-prize", "evidence": []}
+        self.assertTrue(any("only student-only" in error for error in self.errors()))
 
     def test_invalid_calendar_date_rejected(self):
         self.e["submit"]["day"] = "2026-99-99"

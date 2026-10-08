@@ -6,7 +6,7 @@
 chip 计数为分面计数（反映在其他维度当前选中条件下还剩多少），不是全量固定值。
 """
 import json, pathlib, datetime, html, collections, re, os
-from refresh_core import clock_now, build_today, action_days
+from refresh_core import clock_now, build_today, action_days, is_excluded
 
 BASE = pathlib.Path(__file__).resolve().parent
 SRC = pathlib.Path(os.environ.get("EVENTS_DIR", str(BASE)))
@@ -18,6 +18,7 @@ SHOW_ARCHIVE = False
 SHOW_FOOTER = False
 
 events = json.load(open(SRC / "events.json", encoding="utf-8"))
+events = [e for e in events if not is_excluded(e)]
 # 基准日期默认取「今天」（可被环境变量覆盖，便于复现历史构建或测试）。
 CURRENT_NOW = clock_now()
 TODAY = build_today(CURRENT_NOW)
@@ -36,6 +37,8 @@ REFRESH_STATE = REFRESH.get("state", "unknown")
 REFRESH_LABEL = {"ok": "完成", "partial": "部分完成", "failed": "失败"}.get(REFRESH_STATE, "未记录")
 REFRESH_RUNNER = "Codex" if REFRESH.get("runner") == "codex-agent" else "智能体"
 REFRESH_SUMMARY = "%s · 本轮%s核验 %s 条 · 发现源 %s/%s 成功" % (REFRESH_LABEL, REFRESH_RUNNER, REFRESH.get("verified", 0), REFRESH.get("sourcesOk", 0), REFRESH.get("sourcesTotal", 0))
+if REFRESH.get("excludedIds"):
+    REFRESH_SUMMARY += " · 已排除学生专属 %s 条（历史ID保留）" % len(REFRESH["excludedIds"])
 REFRESH_FAILURES = "；".join((str(x.get("name", x.get("url", "来源"))) + "（" + ("抓取失败" if x.get("state") == "failed" else "范围待补") + "）：" + str(x.get("reason", ""))) if isinstance(x, dict) else str(x) for x in REFRESH.get("failedSources", []))
 if REFRESH_FAILURES:
     failure_count = sum(x.get("state") == "failed" for x in REFRESH.get("sourceResults", []))

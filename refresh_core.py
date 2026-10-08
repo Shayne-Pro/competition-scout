@@ -6,6 +6,12 @@ import os
 BEIJING = dt.timezone(dt.timedelta(hours=8))
 
 
+def is_excluded(event):
+    """Keep stored identities while hiding confirmed student-only events."""
+    exclusion = event.get("exclusion") or {}
+    return isinstance(exclusion, dict) and exclusion.get("reason") == "student-only"
+
+
 def clock_now():
     raw = os.environ.get("BUILD_NOW")
     now = dt.datetime.fromisoformat(raw) if raw else dt.datetime.now(BEIJING)

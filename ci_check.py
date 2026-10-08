@@ -8,7 +8,7 @@ import pathlib
 import re
 import sys
 from urllib.parse import urlsplit
-from refresh_core import BEIJING, clock_now, build_today, derived_status
+from refresh_core import BEIJING, clock_now, build_today, derived_status, is_excluded
 
 BASE = pathlib.Path(os.environ.get("EVENTS_DIR", pathlib.Path(__file__).resolve().parent))
 NOW = clock_now()
@@ -38,6 +38,13 @@ def validate(events, status, page, docs, baseline=None):
         for source in sources or []:
             url = source.get("url", "") if isinstance(source, dict) else source
             check(isinstance(url, str) and urlsplit(url).scheme in {"https", "http"}, f"{eid}: invalid source URL")
+        if "exclusion" in e:
+            exclusion = e["exclusion"]
+            check(is_excluded(e), f"{eid}: only student-only exclusion is allowed")
+            evidence = exclusion.get("evidence", []) if isinstance(exclusion, dict) else []
+            check(isinstance(evidence, list) and bool(evidence), f"{eid}: exclusion lacks official evidence")
+            for item in evidence if isinstance(evidence, list) else []:
+                check(isinstance(item, dict) and bool(item.get("quote")) and item.get("url") in [s.get("url") if isinstance(s, dict) else s for s in sources or []], f"{eid}: invalid exclusion evidence")
         for field in ("entry", "submit"):
             node = e.get(field)
             check(isinstance(node, dict), f"{eid}: missing {field} node")
@@ -61,8 +68,9 @@ def validate(events, status, page, docs, baseline=None):
         except (ValueError, TypeError):
             errors.append(f"{eid}: invalid verification/deadline timestamp")
     check(len(ids) == len(set(ids)), "duplicate event IDs")
-    check(len(re.findall(r'<tr data-id=', page)) == len(events), "HTML row count differs from events")
-    check(set(re.findall(r'<tr data-id="([^"]+)"', page)) == set(ids), "HTML IDs differ from events")
+    visible_ids = {e["id"] for e in events if not is_excluded(e)}
+    check(len(re.findall(r'<tr data-id=', page)) == len(visible_ids), "HTML row count differs from visible events")
+    check(set(re.findall(r'<tr data-id="([^"]+)"', page)) == visible_ids, "HTML IDs differ from visible events")
     check(f"竞赛清单 · {TODAY.isoformat()}</title>" in page, "page build date differs")
     for tag in ("</table>", "</tbody>", "</script>", "</html>"):
         check(tag in page, f"missing {tag}")

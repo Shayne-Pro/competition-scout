@@ -38,7 +38,7 @@ python3 scrape_spa.py --output .scout/secondary_snapshot.json --sources devpost 
 ## 数据规则
 
 - 只用官网能印证的内容；日期拿不准标 `status=unclear` 并在 `warning` 写明卡在哪，禁止推测补全。
-- 唯一排除规则：仅限在校学生参加的赛事不收录。
+- 唯一排除规则：仅限在校学生参加的赛事不推荐。已存在的条目保留 ID，以 `exclusion.reason=student-only` 和官方 URL、短原文、读取时间记录依据；构建时隐藏，CI 验证证据并仍检查原 ID 不丢失。资格未知或学生与社会人士均可的赛事继续展示。
 - grand-challenge 的 `status` 与 `end_date` 不作为官网赛程证据。组合日期条件只用于优先核验，缺字段的候选保留并读子站；按 API `next` 全量分页，报告实际覆盖与失败。
 - `day` 是北京时间日期；`instant` 有官方明确时刻时区才写带 offset 的 ISO。日期和精确时刻必须一致，截止日期不得充当开始日期。
 - `verifiedBy` 记录核验来源；自动状态推导另存 `statusDerivation`，不覆盖已有核验者或核验时间。本轮 runner 为 `codex-agent`。
