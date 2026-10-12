@@ -94,7 +94,7 @@ def validate(events, status, page, docs, baseline=None):
     results = status.get("sourceResults", [])
     check(status.get("sourcesTotal") == len(results), "sourcesTotal differs from sourceResults")
     check(status.get("sourcesOk") == sum(r.get("state") == "ok" for r in results), "sourcesOk differs from sourceResults")
-    check(status.get("runner") == "codex-agent", "unexpected runner")
+    check(status.get("runner") in {"codex-agent", "workbuddy-agent"}, "unexpected runner")
     if status.get("state") == "ok":
         check(status.get("sourcesOk") == status.get("sourcesTotal") and not status.get("failedSources") and not status.get("pendingIds"), "ok state hides incomplete work")
     for eid in verified_ids:
