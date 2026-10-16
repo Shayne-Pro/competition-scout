@@ -4,3 +4,22 @@ __pycache__/
 *.log
 .scout/
 .venv/
+venv/
+.pytest_cache/
+
+# Local agent state, credentials and generated discovery artifacts.
+.workbuddy/
+.codex/
+.kaggle/
+.env
+.env.*
+!.env.example
+kaggle.json
+*.pem
+*.key
+*.p12
+*.pfx
+spa_snapshot*.json
+secondary_snapshot*.json
+notified.json
+runs-log.jsonl

@@ -1,0 +1,28 @@
+name: 赛事信息更正或补充
+description: 用官方依据更正或补充赛事条目
+body:
+  - type: input
+    id: event
+    attributes:
+      label: 赛事名称 / 现有 ID
+    validations:
+      required: true
+  - type: input
+    id: official_url
+    attributes:
+      label: 官方详情或公告 URL
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 需要更正的事实及官方短原文
+      description: 说明年度、赛道、具体阶段和时区；资格不明请明确写待确认。
+    validations:
+      required: true
+  - type: input
+    id: read_at
+    attributes:
+      label: 读取日期 / 时间
+    validations:
+      required: true

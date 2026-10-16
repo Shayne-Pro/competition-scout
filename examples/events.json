@@ -1,0 +1,40 @@
+[
+  {
+    "id": "sample-robotics-challenge",
+    "title": "示例机器人竞赛（虚构）",
+    "platform": "会议官网",
+    "tags": [
+      "CV",
+      "3D"
+    ],
+    "task": "演示赛事数据结构，不代表实际可报名赛事。",
+    "entry": {
+      "text": "示例：报名安排待确认",
+      "day": null,
+      "instant": null
+    },
+    "submit": {
+      "text": "示例：提交安排待确认",
+      "day": null,
+      "instant": null
+    },
+    "requirements": "示例：参赛资格尚未核验。",
+    "award": "",
+    "url": "https://example.org/robotics-challenge",
+    "status": "unclear",
+    "warning": "虚构示例，请勿用于报名或判断真实赛程。",
+    "note": "请用实际官方证据替换示例内容。",
+    "venue": "",
+    "old": [],
+    "priority": 1,
+    "sources": [
+      "https://example.org/robotics-challenge"
+    ],
+    "verifiedAt": null,
+    "verifiedBy": null,
+    "verification": {
+      "state": "unverified",
+      "evidence": []
+    }
+  }
+]

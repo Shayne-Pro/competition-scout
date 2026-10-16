@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """用 Playwright 无头浏览器抓 SPA 列表源（脚本直抓拿不到正文的源）。
 
-输出 spa_snapshot.json：{"snapshots": [{source, url, text}], "failed": [...]}。
+默认输出 .scout/spa_snapshot.json：{"snapshots": [{source, url, text}], "failed": [...]}。
 设计约束：
 - 本地运行（浏览器路径依赖 playwright + chromium）；
 - 单源失败不阻断（记入 failed）；
@@ -22,7 +22,7 @@ import os
 from refresh_core import atomic_json, BEIJING
 
 BASE = pathlib.Path(__file__).resolve().parent
-OUT = BASE / "spa_snapshot.json"
+OUT = BASE / ".scout" / "spa_snapshot.json"
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36")
 
@@ -190,7 +190,7 @@ def finish(result):
     times = {s["source"]: s.get("fetchedAt", result["fetchedAt"]) for s in result["snapshots"]}
     result["results"] = [{"source": name, "state": "partial" if name in successful else "failed", "fetchState": "ok" if name in successful else "failed", "coverageState": "partial" if name in successful else "none", "fetchedAt": times.get(name, result["finishedAt"]), "errors": [f for f in result["failed"] if f.startswith(name + ":")]} for name, _ in SOURCES]
     atomic_json(OUT, result)
-    print("spa_snapshot.json: %d 源抓到, %d 源失败（%d 次失败尝试）" % (len(successful), len(SOURCES) - len(successful), len(result["failed"])))
+    print("%s: %d 源抓到, %d 源失败（%d 次失败尝试）" % (OUT.name, len(successful), len(SOURCES) - len(successful), len(result["failed"])))
     return 0 if not result["failed"] else 2
 
 

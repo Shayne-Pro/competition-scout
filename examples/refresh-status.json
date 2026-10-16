@@ -1,0 +1,15 @@
+{
+  "state": "partial",
+  "finishedAt": "2026-01-01T00:00:00+08:00",
+  "verified": 0,
+  "verifiedIds": [],
+  "sourcesOk": 0,
+  "sourcesTotal": 0,
+  "sourceResults": [],
+  "failedSources": [],
+  "pendingIds": [
+    "sample-robotics-challenge"
+  ],
+  "runId": "example-unverified",
+  "runner": "codex-agent"
+}
