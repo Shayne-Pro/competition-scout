@@ -1,75 +1,69 @@
 {
  "state": "partial",
- "finishedAt": "2026-10-12T12:30:00+08:00",
- "verified": 14,
+ "finishedAt": "2026-10-16T10:52:00+08:00",
+ "verified": 16,
  "verifiedIds": [
-  "chip-code",
   "quantiphy",
-  "benchmark",
   "rsna",
   "lingbot",
-  "opencv",
-  "uniagent",
-  "cross-body",
-  "virtual-embryo",
   "agenthon-2026",
-  "fair-universe-wl2",
-  "learn2design-2026",
+  "aimo",
+  "gemma",
+  "uniagent",
+  "opencv",
   "fusion-equilibrium",
-  "owl-pathology"
+  "learn2design-2026",
+  "virtual-embryo",
+  "cross-body",
+  "arc-whitebox",
+  "3lc",
+  "steer",
+  "name-that-llm"
  ],
- "sourcesOk": 5,
- "sourcesTotal": 6,
+ "sourcesOk": 4,
+ "sourcesTotal": 5,
  "runner": "workbuddy-agent",
- "runId": "workbuddy-agent-2026-10-12",
+ "runId": "workbuddy-agent-2026-10-16",
  "sourceResults": [
   {
    "name": "天池列表 SPA",
    "url": "https://tianchi.aliyun.com/competition/algorithmList",
    "state": "ok",
    "fetchState": "ok",
-   "fetchedAt": "2026-10-12T12:30:00+08:00",
-   "notes": "快照含余震/CBCT/旧赛；CBCT 已结束不收。"
+   "fetchedAt": "2026-10-16T10:52:00+08:00",
+   "notes": "首页无新赛（余震/CBCT/旧赛）；余震报名结束已知。"
   },
   {
    "name": "讯飞列表 SPA",
    "url": "https://challenge.xfyun.cn/",
    "state": "ok",
    "fetchState": "ok",
-   "fetchedAt": "2026-10-12T12:30:00+08:00",
-   "notes": "Spark-X2.5 报名至 11/10，已在库。"
+   "fetchedAt": "2026-10-16T10:52:00+08:00",
+   "notes": "首页活动日历无新赛事。"
   },
   {
-   "name": "Kaggle 列表 SPA",
+   "name": "Kaggle 列表",
    "url": "https://www.kaggle.com/competitions",
    "state": "partial",
    "fetchState": "failed",
-   "fetchedAt": "2026-10-12T12:30:00+08:00",
-   "notes": "scrape_spa 抓空（连续第 3 天）；WebFetch 逛列表页未见新 Featured/Research 医学·3D·LLM 赛。"
+   "fetchedAt": "2026-10-16T10:52:00+08:00",
+   "notes": "scrape_spa 连续第 4 天抓空（无凭据）；WebFetch 兜底扫 Featured/Community：新增 Name That LLM（10/14 开赛），其余均已在库或已结束。"
   },
   {
    "name": "grand-challenge API",
    "url": "https://grand-challenge.org/api/v1/challenges/",
    "state": "ok",
    "fetchState": "ok",
-   "fetchedAt": "2026-10-12T12:30:00+08:00",
-   "notes": "264 条扫全；start/end 均空，按 modified 甄别；新增 OWL；autoPET V/RARE26/MAMA-SYNTH/HEADLINE 已结束不收。"
+   "fetchedAt": "2026-10-16T10:52:00+08:00",
+   "notes": "264 条 offset 分页扫全；SurgVU26 已完赛（Challenge Day 9/27 已过）不收；TopAneu/OWL/cobra2026 已在库；无新增。"
   },
   {
    "name": "NeurIPS 官博",
    "url": "https://blog.neurips.cc/",
    "state": "ok",
    "fetchState": "ok",
-   "fetchedAt": "2026-10-12T12:30:00+08:00",
-   "notes": "7/28 竞赛官宣后无新竞赛帖。"
-  },
-  {
-   "name": "Codabench API（fair-universe）",
-   "url": "https://www.codabench.org/api/competitions/10902/",
-   "state": "ok",
-   "fetchState": "ok",
-   "fetchedAt": "2026-10-12T12:30:00+08:00",
-   "notes": "Phase 2 end 2026-10-11T23:59Z 确认关闭。"
+   "fetchedAt": "2026-10-16T10:52:00+08:00",
+   "notes": "最新帖 10/12（科普写作倡议），7/28 竞赛官宣后无新竞赛帖。"
   }
  ],
  "failedSources": [
@@ -77,7 +71,7 @@
    "name": "Kaggle 活跃赛事列表",
    "url": "https://www.kaggle.com/competitions",
    "state": "partial",
-   "reason": "已推进Featured/Research/Community三个公开筛选分区各第1页（各20项）；页2及之后未扫，候选资格仍待详情。API401及无头空壳保留。"
+   "reason": "scrape_spa 无凭据抓空（连续第 4 天）；WebFetch 兜底扫过 Featured/Research/Community 第一页，发现 Name That LLM 并收录；分页深扫未做。"
   },
   {
    "name": "天池 算法大赛",
@@ -310,44 +304,30 @@
   "ai4s-lifescience"
  ],
  "addedIds": [
-  "roboworld-2026-safedrive-vla",
-  "soccernet-2027-streaming-vqa",
-  "soccernet-2027-group-activity",
-  "paypal-ai-hackathon-2026"
+  "name-that-llm"
  ],
  "newVerifiedIds": [
-  "paypal-ai-hackathon-2026"
+  "name-that-llm"
  ],
  "verificationTargetIds": [
-  "chip-code",
-  "lidar",
-  "benchmark",
   "quantiphy",
-  "tianchi-532440",
-  "paypal-ai-hackathon-2026",
-  "spark",
-  "fair-universe-wl2",
-  "sapc2",
+  "rsna",
+  "lingbot",
+  "agenthon-2026",
+  "aimo",
+  "gemma",
+  "uniagent",
   "opencv",
-  "robosyn-challenge",
-  "iwdd-2027",
-  "clear-ec",
-  "roboworld-2026-safedrive-vla",
-  "soccernet-2027-streaming-vqa",
-  "soccernet-2027-group-activity"
+  "fusion-equilibrium",
+  "learn2design-2026",
+  "virtual-embryo",
+  "cross-body",
+  "arc-whitebox",
+  "3lc",
+  "steer",
+  "name-that-llm"
  ],
- "unfinishedTargetIds": [
-  "spark",
-  "fair-universe-wl2",
-  "sapc2",
-  "opencv",
-  "robosyn-challenge",
-  "iwdd-2027",
-  "clear-ec",
-  "roboworld-2026-safedrive-vla",
-  "soccernet-2027-streaming-vqa",
-  "soccernet-2027-group-activity"
- ],
+ "unfinishedTargetIds": [],
  "excludedIds": [
   "tianchi-532440"
  ],
@@ -522,57 +502,28 @@
  },
  "statusChanges": [
   {
-   "id": "chip-code",
+   "id": "rsna",
    "before": "open",
    "after": "submission"
   },
   {
-   "id": "spark",
+   "id": "learn2design-2026",
    "before": "open",
-   "after": "unclear"
-  },
-  {
-   "id": "opencv",
-   "before": "open",
-   "after": "unclear"
-  },
-  {
-   "id": "robosyn-challenge",
-   "before": "open",
-   "after": "unclear"
-  },
-  {
-   "id": "iwdd-2027",
-   "before": "open",
-   "after": "unclear"
-  },
-  {
-   "id": "clear-ec",
-   "before": "submission",
-   "after": "unclear"
-  },
-  {
-   "id": "tianchi-532440",
-   "before": "unclear",
    "after": "closed"
+  },
+  {
+   "id": "agenthon-2026",
+   "before": "open",
+   "after": "submission"
   }
  ],
  "businessChangedIds": [
-  "chip-code",
-  "lidar",
   "quantiphy",
-  "benchmark",
-  "spark",
-  "opencv",
-  "robosyn-challenge",
-  "sapc2",
-  "iwdd-2027",
-  "clear-ec",
-  "fair-universe-wl2",
-  "tianchi-532440",
-  "roboworld-2026-safedrive-vla",
-  "soccernet-2027-streaming-vqa",
-  "soccernet-2027-group-activity",
-  "paypal-ai-hackathon-2026"
+  "rsna",
+  "lingbot",
+  "agenthon-2026",
+  "learn2design-2026",
+  "cross-body",
+  "name-that-llm"
  ]
 }

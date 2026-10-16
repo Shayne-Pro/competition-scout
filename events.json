@@ -320,7 +320,7 @@
     "requirements": "面向高校学生、企业等开放；个人须依托单位，团队1–5人，主办方相关人员不得参赛。提交Python NLP代码，以BASE64编码压缩后封装进HL7 FHIR R4 Bundle消息JSON上传天池，A榜每日最多3次。外部工具/数据须公开可获取。获奖队须提供可运行代码、方法与运行资源说明，TOP3按要求邮件交压缩包，复现失败取消资格。数据仅限本评测，其他用途须先获许可。",
     "award": "获奖证书及评测论文机会；本次官网正文未公告现金奖金。获奖须注册参加CHIP会议、作口头报告并提交技术论文，否则取消成绩。",
     "url": "https://tianchi.aliyun.com/competition/entrance/532480",
-    "status": "submission",
+    "status": "closed",
     "warning": "报名已过期，仅已报名队伍可参与 B 榜（至 10/13 24:00）。获奖须自费注册参加 CHIP 会议、口头汇报并撰写论文；须依托单位实名报名。B榜截止时刻未写时区，按北京时间 24:00 理解。",
     "note": "",
     "priority": 2,
@@ -366,7 +366,13 @@
         "fetchedAt": "2026-10-08T10:08:00+08:00",
         "quote": "高校学生、企业等"
       }
-    ]
+    ],
+    "statusDerivation": {
+      "at": "2026-10-16T10:24:40+08:00",
+      "from": "submission",
+      "to": "closed",
+      "basis": "known_deadlines"
+    }
   },
   {
     "id": "lidar",
@@ -478,14 +484,14 @@
       "kind": "deadline",
       "timezone": "AoE"
     },
-    "requirements": "面向研究与开发社区；每队最多5人，每人每赛道仅一队；主办方及合作者无获奖资格。按官方模板交CSV，每日最多3次。Track B仅公开权重/工具，不准专有模型推理API，全部参赛者须披露代码；各赛道TOP3须14天内公开可复现包。9/14更新了32道题的单位，须使用更正模板、必要时重交。",
+    "requirements": "面向研究与开发社区；每队最多5人，每人每赛道仅一队；主办方及合作者无获奖资格。按官方模板交CSV，每队每 UTC 日最多 5 次成功提交（两赛道共享额度），对隐藏测试集实时打分。Track B 仅公开权重/工具，不准专有模型推理 API；Top-3 须在通知后 14 天内公开复现包。",
     "award": "每赛道前三名分别1000/500/250美元；获奖以复现材料和规则合规为前提，并获邀请作workshop报告。",
     "url": "https://quantiphy.stanford.edu/competition/",
     "status": "submission",
-    "warning": "注册已于 10/9 23:59 AoE 关闭，新队伍无法加入；已注册队伍 10/23 前提交。Track B 全部参赛者须披露代码，TOP3 须在 14 天内公开复现包。",
+    "warning": "注册已于 10/9 23:59 AoE 关闭，新队伍无法加入；已注册队伍 10/23 AoE 前提交。Track B 全部参赛者代码可被核查，Top-3 须 14 天内公开复现包。测试集真值赛后不公开（长期基准）。",
     "note": "",
     "priority": 1,
-    "verifiedAt": "2026-10-12T12:30:00+08:00",
+    "verifiedAt": "2026-10-16T10:45:00+08:00",
     "sources": [
       "https://quantiphy.stanford.edu/competition/"
     ],
@@ -497,22 +503,21 @@
     "verifiedBy": "agent",
     "verification": {
       "state": "verified",
-      "attemptedAt": "2026-10-12T12:30:00+08:00",
-      "verifiedAt": "2026-10-12T12:30:00+08:00",
-      "runId": "workbuddy-agent-2026-10-12",
+      "attemptedAt": "2026-10-16T10:45:00+08:00",
+      "verifiedAt": "2026-10-16T10:45:00+08:00",
+      "runId": "workbuddy-agent-2026-10-16",
       "evidence": [
         {
           "url": "https://quantiphy.stanford.edu/competition/",
-          "summary": "2026-10-12 agent 复核：日期与阶段状态确认。",
+          "summary": "提交限额更新为每队每 UTC 日 5 次（两赛道共享），原记录 3 次已过时；终交 10/23 23:59 AoE 倒计时确认。",
           "fields": [
             "submit",
             "status"
           ],
-          "fetchedAt": "2026-10-12T12:30:00+08:00",
-          "quote": ""
+          "fetchedAt": "2026-10-16T10:45:00+08:00",
+          "quote": "提交限额更新为每队每 UTC 日 5 次（两赛道共享），原记录 3 次已过时；终交 10/23 23:59 AoE 倒计时确认。"
         }
-      ],
-      "pending": ""
+      ]
     },
     "eligibilityEvidence": [
       {
@@ -557,7 +562,7 @@
     "requirements": "18岁或居住地成年年龄以上，DEV有效账户；个人或最多4人团队，受一般规则地区及主办方关联限制，雇员须有雇主授权并遵守单位政策。竞赛期间新建原创Kaggle benchmark，在DEV按模板发布带#kagglechallenge的文章，含公开benchmark链接、任务、模型与发现。每人/队只接受首次投稿；非英语作品有完成徽章，但只有英语作品可获奖。不收报名费。",
     "award": "总奖金2500美元，5名获奖者各500美元及DEV++、徽章；可能须在通知后7个工作日内提供声明/释放文件，税费自理。",
     "url": "https://dev.to/challenges/kaggle-2026-09-23",
-    "status": "open",
+    "status": "closed",
     "warning": "只有英语作品可获奖；每人/团队只接受首次投稿，5 名获奖者各 $500。",
     "note": "",
     "priority": 2,
@@ -603,7 +608,13 @@
         ],
         "fetchedAt": "2026-10-08T10:08:00+08:00"
       }
-    ]
+    ],
+    "statusDerivation": {
+      "at": "2026-10-16T10:24:40+08:00",
+      "from": "open",
+      "to": "closed",
+      "basis": "known_deadlines"
+    }
   },
   {
     "id": "spark",
@@ -696,7 +707,7 @@
     ],
     "task": "膝关节 MRI 与放射报告多模态建模；预测 12 类临床异常，按宏平均 AUC 评分。",
     "entry": {
-      "text": "Entry and Team Merger Deadline: October 15, 2026, 11:59 PM UTC → 北京10月16日07:59",
+      "text": "Entry and Team Merger Deadline: October 15, 2026, 11:59 PM UTC → 北京10月16日07:59（已截止）",
       "instant": "2026-10-15T23:59:00+00:00",
       "day": "2026-10-16",
       "kind": "deadline",
@@ -713,11 +724,11 @@
     "requirements": "Kaggle账号；18岁或当地成年年龄，适用地域限制；最多5人，每日5次提交、终评最多2份。Notebook离线运行不超过9小时，输出submission.csv；外部数据/权重须公开可获得。获奖者须交训练/推理代码、权重、方法说明与短视频，11月5日23:59 UTC截止。",
     "award": "总奖$77,000：主榜前十名$9,000/$7,000/$6,500/$6,000/$5,500及第6–10名各$5,000；效率奖$7,000/$6,000/$5,000。RSNA表彰活动获邀者注册费可豁免。",
     "url": "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection",
-    "status": "open",
-    "warning": "Entry/team merger 截止 10/15 23:59 UTC；获奖者须交训练代码+视频+开源权重（11/5 前），并受邀参加 RSNA 年会 AI Challenge 活动（免注册费）。Rules 获奖许可 CC-BY-NC 4.0 与'OSI 认可不限商用'措辞冲突，获奖前需确认。",
+    "status": "submission",
+    "warning": "Entry/team merger 已于 10/15 23:59 UTC 截止，新报名/组队关闭；已入赛队伍 10/22 23:59 UTC 终交。获奖者须交训练代码+视频+开源权重（11/5 前），并受邀参加 RSNA 年会 AI Challenge 活动（免注册费）。Rules 获奖许可 CC-BY-NC 4.0 与'OSI 认可不限商用'措辞冲突，获奖前需确认。",
     "note": "",
     "priority": 1,
-    "verifiedAt": "2026-10-12T12:30:00+08:00",
+    "verifiedAt": "2026-10-16T10:45:00+08:00",
     "sources": [
       "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection",
       "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection/overview",
@@ -731,32 +742,27 @@
     "verifiedBy": "agent",
     "verification": {
       "state": "verified",
-      "attemptedAt": "2026-10-12T12:00:00+08:00",
-      "verifiedAt": "2026-10-12T12:30:00+08:00",
-      "previousVerifiedAt": "2026-10-07T10:26:54+08:00",
-      "runId": "workbuddy-agent-2026-10-12",
+      "attemptedAt": "2026-10-16T10:45:00+08:00",
+      "verifiedAt": "2026-10-16T10:45:00+08:00",
+      "runId": "workbuddy-agent-2026-10-16",
       "evidence": [
         {
           "url": "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection/overview",
-          "summary": "赛程明确报名/合并10月15日、终交10月22日，均23:59 UTC；Notebook限制与获奖材料见总览。",
+          "summary": "Entry/Team Merger 10/15 23:59 UTC 已过（页面显示 7 days to go、终交 10/22）；Timeline 无变化。",
           "fields": [
-            "entry",
             "submit",
-            "requirements",
-            "award"
+            "status"
           ],
-          "fetchedAt": "2026-10-07T12:11:44+08:00"
-        },
-        {
-          "url": "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection/rules",
-          "summary": "规则列明成年、地域、人数与单位授权要求；获奖许可段落有相互冲突的商业使用措辞。",
-          "fields": [
-            "eligibility",
-            "warning"
-          ],
-          "fetchedAt": "2026-10-07T12:11:44+08:00"
+          "fetchedAt": "2026-10-16T10:45:00+08:00",
+          "quote": "Entry/Team Merger 10/15 23:59 UTC 已过（页面显示 7 days to go、终交 10/22）；Timeline 无变化。"
         }
       ]
+    },
+    "statusDerivation": {
+      "at": "2026-10-16T10:24:40+08:00",
+      "from": "open",
+      "to": "submission",
+      "basis": "known_deadlines"
     }
   },
   {
@@ -773,14 +779,14 @@
       "day": "2026-10-26",
       "instant": null,
       "kind": "deadline",
-      "text": "报名与线上初赛：即日起 – 10 月 26 日；初赛提交截止 10 月 26 日 24:00（官网未注明时区）",
+      "text": "报名与线上初赛：即日起 – 10 月 26 日；初赛提交截止 10 月 26 日 24:00（官网未注明时区）；页面倒计时报名剩 11 日 19 时",
       "timezone": "unknown"
     },
     "submit": {
       "day": "2026-10-26",
       "instant": null,
       "kind": "deadline",
-      "text": "报名与初赛提交均至 10/26 24:00（报名剩 15 日）；11/6 公示决赛名单；11/13–15 上海线下真机决赛。",
+      "text": "报名与初赛提交均至 10/26 24:00（页面倒计时剩 11 日）；11/6 公示决赛名单；11/13–15 上海线下真机决赛。",
       "timezone": "unknown"
     },
     "requirements": "必须 2–5 人组队并指定队长，每人仅限一支队伍；面向全球企业、高校、个人开发者开放，无学历职业限制（赛题方内部员工可参赛排名但不参与评奖）；统一使用 lingbot-VLA-v2-6b 与 RoboTwin 2.0 clean 数据（禁 randomized）；不统一提供训练算力，可自备或申请 AMD Radeon Cloud。",
@@ -790,7 +796,7 @@
     "warning": "初赛提交截止后成员名单锁定；入围决赛须参加 11/13–15 上海线下真机赛（主办方提供交通住宿支持）；AMD 算力 9/15 14:00–10/26 20:00 开放（约 200 张 GPU）。",
     "note": "",
     "priority": 2,
-    "verifiedAt": "2026-10-12T12:30:00+08:00",
+    "verifiedAt": "2026-10-16T10:45:00+08:00",
     "sources": [
       "https://tianchi.aliyun.com/competition/entrance/532514",
       "https://tianchi.aliyun.com/competition/entrance/532514",
@@ -807,19 +813,21 @@
     "verifiedBy": "agent",
     "verification": {
       "state": "verified",
-      "attemptedAt": "2026-10-12T12:00:00+08:00",
+      "attemptedAt": "2026-10-16T10:45:00+08:00",
+      "verifiedAt": "2026-10-16T10:45:00+08:00",
+      "runId": "workbuddy-agent-2026-10-16",
       "evidence": [
         {
-          "quote": "即日起 - 10 月 26 日：选手报名 & 线上初赛 10 月 26 日 24:00：初赛作品提交截止",
-          "url": "https://tianchi.aliyun.com/competition/entrance/532514"
-        },
-        {
-          "quote": "面向全球企业、高校、个人开发者及技术爱好者开放，无学历和职业限制。",
-          "url": "https://tianchi.aliyun.com/competition/entrance/532514"
+          "url": "https://tianchi.aliyun.com/competition/entrance/532514",
+          "summary": "顶部卡片报名剩 11 日 19 时（与 10/26 截止一致）；赛程/规则/奖金无变化。",
+          "fields": [
+            "submit",
+            "status"
+          ],
+          "fetchedAt": "2026-10-16T10:45:00+08:00",
+          "quote": "顶部卡片报名剩 11 日 19 时（与 10/26 截止一致）；赛程/规则/奖金无变化。"
         }
-      ],
-      "runId": "workbuddy-agent-2026-10-12",
-      "verifiedAt": "2026-10-12T12:30:00+08:00"
+      ]
     }
   },
   {
@@ -853,7 +861,7 @@
     "warning": "截止头部23:45 PDT与正文23:59 Pacific相差14分钟，按较早14:45北京准备；年龄页面要求成年，Rules允许13岁以上未成年人取得监护许可，资格需澄清；grant数50/55口径不一。",
     "note": "",
     "priority": 3,
-    "verifiedAt": "2026-10-12T12:30:00+08:00",
+    "verifiedAt": "2026-10-16T10:45:00+08:00",
     "sources": [
       "https://opencv26.devpost.com/",
       "https://opencv26.devpost.com/rules",
@@ -867,22 +875,21 @@
     "verifiedBy": "agent",
     "verification": {
       "state": "verified",
-      "attemptedAt": "2026-10-12T12:30:00+08:00",
-      "verifiedAt": "2026-10-12T12:30:00+08:00",
-      "runId": "workbuddy-agent-2026-10-12",
+      "attemptedAt": "2026-10-16T10:45:00+08:00",
+      "verifiedAt": "2026-10-16T10:45:00+08:00",
+      "runId": "workbuddy-agent-2026-10-16",
       "evidence": [
         {
           "url": "https://opencv26.devpost.com/",
-          "summary": "头部 Deadline Oct 27, 2026 @ 1:45pm GMT+7；正文 Oct 26 11:59 p.m. Pacific，冲突仍在。",
+          "summary": "头部 Oct 27 2026 @ 2:45pm GMT+8；正文 10/26 11:59pm Pacific；两口径差 14 分钟仍存在。",
           "fields": [
             "submit",
             "status"
           ],
-          "fetchedAt": "2026-10-12T12:30:00+08:00",
-          "quote": "Final projects are due October 26, 2026, at 11:59 p.m. Pacific Time."
+          "fetchedAt": "2026-10-16T10:45:00+08:00",
+          "quote": "头部 Oct 27 2026 @ 2:45pm GMT+8；正文 10/26 11:59pm Pacific；两口径差 14 分钟仍存在。"
         }
-      ],
-      "pending": ""
+      ]
     },
     "eligibilityEvidence": [
       {
@@ -1004,7 +1011,7 @@
     "warning": "官网未注明截止时刻/时区。9/19 更新：已取消「不得使用额外标注数据」规则，但评测数据泄漏仍禁止。获奖须在 11/15 前提交技术报告与开源实现并参与互评（最多 3 篇）。",
     "note": "",
     "priority": 1,
-    "verifiedAt": "2026-10-07T10:26:54+08:00",
+    "verifiedAt": "2026-10-16T10:45:00+08:00",
     "sources": [
       "https://aimo-interp.github.io/",
       "https://aimo-interp.github.io/",
@@ -1021,19 +1028,21 @@
     "verifiedBy": "agent",
     "verification": {
       "state": "verified",
-      "attemptedAt": "2026-09-27T18:15:15+08:00",
+      "attemptedAt": "2026-10-16T10:45:00+08:00",
+      "verifiedAt": "2026-10-16T10:45:00+08:00",
+      "runId": "workbuddy-agent-2026-10-16",
       "evidence": [
         {
-          "quote": "Iterate on the leaderboard until the final deadline on November 1, 2026 — with $12,500 in prizes across the Main and Small Models tracks.",
-          "url": "https://aimo-interp.github.io/"
-        },
-        {
-          "quote": "The challenge is open to everyone — academic researchers, independent researchers, and industry practitioners alike. There are no restrictions on team size, affiliation, or career level.",
-          "url": "https://aimo-interp.github.io/"
+          "url": "https://aimo-interp.github.io/",
+          "summary": "终交 11/1、技术报告 11/15 确认无变化；9/19 澄清（取消额外标注数据禁令）已在库。",
+          "fields": [
+            "submit",
+            "status"
+          ],
+          "fetchedAt": "2026-10-16T10:45:00+08:00",
+          "quote": "终交 11/1、技术报告 11/15 确认无变化；9/19 澄清（取消额外标注数据禁令）已在库。"
         }
-      ],
-      "runId": "36311263414-1",
-      "verifiedAt": "2026-09-27T18:15:15+08:00"
+      ]
     }
   },
   {
@@ -1142,10 +1151,10 @@
     "warning": "不支持远程 GPU / 临时 Notebook 工作流；评奖表单及项目材料另需于 11/30 23:59 UTC 前提交。",
     "note": "",
     "priority": 2,
-    "verifiedAt": "2026-09-27",
+    "verifiedAt": "2026-10-16T10:45:00+08:00",
     "sources": [
       {
-        "label": "既有详情URL（本轮未重核）",
+        "label": "official",
         "url": "https://www.kaggle.com/competitions/the-3lc-low-light-detection-challenge"
       }
     ],
@@ -1154,11 +1163,24 @@
     ],
     "venue": "",
     "verification": {
-      "state": "legacy",
-      "verifiedAt": null,
-      "attemptedAt": "2026-09-27T18:15:15.778423+08:00",
-      "lastError": "Not verified within this run budget."
-    }
+      "state": "verified",
+      "attemptedAt": "2026-10-16T10:45:00+08:00",
+      "verifiedAt": "2026-10-16T10:45:00+08:00",
+      "runId": "workbuddy-agent-2026-10-16",
+      "evidence": [
+        {
+          "url": "https://www.kaggle.com/competitions/the-3lc-low-light-detection-challenge",
+          "summary": "Kaggle 列表页显示 a month to go（与 11/21 23:59 UTC 终交一致）。",
+          "fields": [
+            "submit",
+            "status"
+          ],
+          "fetchedAt": "2026-10-16T10:45:00+08:00",
+          "quote": "Kaggle 列表页显示 a month to go（与 11/21 23:59 UTC 终交一致）。"
+        }
+      ]
+    },
+    "verifiedBy": "agent"
   },
   {
     "id": "steer",
@@ -1185,10 +1207,10 @@
     "warning": "奖金另受所在地区等规则限制；并非所有 NeurIPS 比赛都在 10/31 截止。",
     "note": "",
     "priority": 2,
-    "verifiedAt": "2026-09-27",
+    "verifiedAt": "2026-10-16T10:45:00+08:00",
     "sources": [
       {
-        "label": "既有详情URL（本轮未重核）",
+        "label": "official",
         "url": "https://steerability.github.io/competition/"
       }
     ],
@@ -1197,11 +1219,24 @@
     ],
     "venue": "NeurIPS 2026",
     "verification": {
-      "state": "legacy",
-      "verifiedAt": null,
-      "attemptedAt": "2026-09-27T18:15:15.778423+08:00",
-      "lastError": "Not verified within this run budget."
-    }
+      "state": "verified",
+      "attemptedAt": "2026-10-16T10:45:00+08:00",
+      "verifiedAt": "2026-10-16T10:45:00+08:00",
+      "runId": "workbuddy-agent-2026-10-16",
+      "evidence": [
+        {
+          "url": "https://steerability.github.io/competition/",
+          "summary": "终交 11/21 AoE 确认无变化（banner + FAQ 一致）。",
+          "fields": [
+            "submit",
+            "status"
+          ],
+          "fetchedAt": "2026-10-16T10:45:00+08:00",
+          "quote": "终交 11/21 AoE 确认无变化（banner + FAQ 一致）。"
+        }
+      ]
+    },
+    "verifiedBy": "agent"
   },
   {
     "id": "gemma",
@@ -1233,10 +1268,11 @@
     "warning": "",
     "note": "",
     "priority": 1,
-    "verifiedAt": "2026-10-07T10:26:54+08:00",
+    "verifiedAt": "2026-10-16T10:45:00+08:00",
     "sources": [
       "https://www.kaggle.com/competitions/gemma-4-developer-agent",
       "https://www.kaggle.com/competitions/gemma-4-developer-agent",
+      "https://www.kaggle.com/competitions/gemma-4-developer-agent/overview",
       {
         "label": "official",
         "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent"
@@ -1250,19 +1286,21 @@
     "verifiedBy": "agent",
     "verification": {
       "state": "verified",
-      "attemptedAt": "2026-09-27T18:15:15+08:00",
+      "attemptedAt": "2026-10-16T10:45:00+08:00",
+      "verifiedAt": "2026-10-16T10:45:00+08:00",
+      "runId": "workbuddy-agent-2026-10-16",
       "evidence": [
         {
-          "quote": "November 25, 2026 - Entry Deadline. You must accept the competition rules before this date in order to compete.",
-          "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent"
-        },
-        {
-          "quote": "December 2, 2026 - Final Submission Deadline.",
-          "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent"
+          "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent/overview",
+          "summary": "Entry 11/25、终交 12/2 23:59 UTC 确认无变化；新增 L4x4 加速器配额 2 倍消耗说明。",
+          "fields": [
+            "submit",
+            "status"
+          ],
+          "fetchedAt": "2026-10-16T10:45:00+08:00",
+          "quote": "Entry 11/25、终交 12/2 23:59 UTC 确认无变化；新增 L4x4 加速器配额 2 倍消耗说明。"
         }
-      ],
-      "runId": "36311263414-1",
-      "verifiedAt": "2026-09-27T18:15:15+08:00"
+      ]
     }
   },
   {
@@ -1330,8 +1368,9 @@
     "warning": "报名 10/3 AoE 已截止（曾从 9/25 延期至 10/3），新队伍无法加入；已注册队伍 10/20 前提交系统。",
     "note": "",
     "priority": 5,
-    "verifiedAt": "2026-10-12T12:30:00+08:00",
+    "verifiedAt": "2026-10-16T10:45:00+08:00",
     "sources": [
+      "https://uniagent.webis.de/cikm26/uniagent26-web/index.html",
       {
         "label": "official",
         "url": "https://uniagent.webis.de/cikm26/uniagent26-web/index.html"
@@ -1344,9 +1383,9 @@
     "verifiedBy": "agent",
     "verification": {
       "state": "verified",
-      "attemptedAt": "2026-10-12T12:30:00+08:00",
-      "verifiedAt": "2026-10-12T12:30:00+08:00",
-      "runId": "workbuddy-agent-2026-10-12",
+      "attemptedAt": "2026-10-16T10:45:00+08:00",
+      "verifiedAt": "2026-10-16T10:45:00+08:00",
+      "runId": "workbuddy-agent-2026-10-16",
       "evidence": [
         {
           "url": "https://uniagent.webis.de/cikm26/uniagent26-web/index.html",
@@ -1355,11 +1394,10 @@
             "submit",
             "status"
           ],
-          "fetchedAt": "2026-10-12T12:30:00+08:00",
-          "quote": "Submission of the Systems 15 October 20 October 2026"
+          "fetchedAt": "2026-10-16T10:45:00+08:00",
+          "quote": "Submission 20 Oct AoE、Notification 11/3、AnalytiCup 11/8 罗马确认无变化。"
         }
-      ],
-      "pending": ""
+      ]
     }
   },
   {
@@ -1448,14 +1486,14 @@
     ],
     "task": "训练可迁移至不同机器人本体的统一策略。",
     "entry": {
-      "text": "报名与初赛 A 截止 10 月 21 日（页面顶部卡片：初赛A 7.30–10.21、报名剩 14 日 17 时、立即报名按钮开放；正文赛程未同步仍写 9/21）",
+      "text": "顶部卡片：报名剩 05 日 17 时（与 10/21 一致）；初赛A 7.30–10.21、后续赛程 9.22–11.15；正文报名节点仍写 7.30–9.21 未同步",
       "day": "2026-10-21",
       "instant": null,
       "kind": "deadline",
       "timezone": "Asia/Shanghai"
     },
     "submit": {
-      "text": "顶部卡片：初赛A 7.30–10.21，后续赛程 9.22–11.15，报名剩 09 日 16 时；正文口径：复赛A 9/28–10/16、复赛B 10/19–10/23、决赛 10–11 月，未随延期更新。",
+      "text": "顶部卡片：初赛A 至 10.21、后续赛程 9.22–11.15；正文赛程表：复赛A 9/28–10/16、复赛B 10/19–10/23、决赛 10–11 月，未随延期同步",
       "day": "2026-10-21",
       "instant": null,
       "kind": "deadline",
@@ -1468,8 +1506,9 @@
     "warning": "页面双口径：顶部卡片报名+初赛A至 10/21（倒计时进行中），正文仍写报名 9/21 截止、复赛 9/28–10/23；延期后复赛/决赛窗口未同步公告（卡片'后续赛程 9.22–11.15'含糊）。按顶部卡片收录，报名前建议与组委会确认。",
     "note": "",
     "priority": 5,
-    "verifiedAt": "2026-10-12T12:30:00+08:00",
+    "verifiedAt": "2026-10-16T10:45:00+08:00",
     "sources": [
+      "https://tianchi.aliyun.com/competition/entrance/532508",
       {
         "label": "official",
         "url": "https://tianchi.aliyun.com/competition/entrance/532508"
@@ -1482,22 +1521,21 @@
     "verifiedBy": "agent",
     "verification": {
       "state": "verified",
-      "attemptedAt": "2026-10-12T12:30:00+08:00",
-      "verifiedAt": "2026-10-12T12:30:00+08:00",
-      "runId": "workbuddy-agent-2026-10-12",
+      "attemptedAt": "2026-10-16T10:45:00+08:00",
+      "verifiedAt": "2026-10-16T10:45:00+08:00",
+      "runId": "workbuddy-agent-2026-10-16",
       "evidence": [
         {
           "url": "https://tianchi.aliyun.com/competition/entrance/532508",
-          "summary": "顶部卡片初赛A 7.30–10.21、后续赛程 9.22–11.15、报名剩 09 日 16 时；正文仍为旧口径。",
+          "summary": "报名剩 05 日 17 时；正文报名仍写 9/21 截止、复赛 9/28–10/23 未同步；双口径矛盾维持。",
           "fields": [
             "submit",
             "status"
           ],
-          "fetchedAt": "2026-10-12T12:30:00+08:00",
-          "quote": "报名剩 09 日 16 时"
+          "fetchedAt": "2026-10-16T10:45:00+08:00",
+          "quote": "报名剩 05 日 17 时；正文报名仍写 9/21 截止、复赛 9/28–10/23 未同步；双口径矛盾维持。"
         }
-      ],
-      "pending": ""
+      ]
     }
   },
   {
@@ -1882,7 +1920,7 @@
     "warning": "Agent 赛道要求提交可复现证据（轨迹、prompt、harness 代码），无法验证的方案不予评奖；社区贡献奖不参赛也能拿。",
     "note": "",
     "priority": 3,
-    "verifiedAt": "2026-10-12T12:30:00+08:00",
+    "verifiedAt": "2026-10-16T10:45:00+08:00",
     "sources": [
       "https://virtualembryo.ai/challenge",
       {
@@ -1894,22 +1932,21 @@
     "venue": "NeurIPS 2026",
     "verification": {
       "state": "verified",
-      "attemptedAt": "2026-10-12T12:30:00+08:00",
-      "verifiedAt": "2026-10-12T12:30:00+08:00",
-      "runId": "workbuddy-agent-2026-10-12",
+      "attemptedAt": "2026-10-16T10:45:00+08:00",
+      "verifiedAt": "2026-10-16T10:45:00+08:00",
+      "runId": "workbuddy-agent-2026-10-16",
       "evidence": [
         {
           "url": "https://virtualembryo.ai/challenge",
-          "summary": "P3 测试期 10/20 开始确认无变化。",
+          "summary": "P3 测试期 10/20 开始确认无变化；时间线其余节点一致。",
           "fields": [
             "submit",
             "status"
           ],
-          "fetchedAt": "2026-10-12T12:30:00+08:00",
-          "quote": "2026-10-20 P3 · Test phase starts, validation data released, test leaderboard opens"
+          "fetchedAt": "2026-10-16T10:45:00+08:00",
+          "quote": "P3 测试期 10/20 开始确认无变化；时间线其余节点一致。"
         }
-      ],
-      "pending": ""
+      ]
     },
     "verifiedBy": "agent"
   },
@@ -2484,20 +2521,28 @@
     "warning": "注册已于 10/2 冻结，新队伍无法加入；每阶段最多指定 2 份提交进入私有重评。",
     "note": "",
     "priority": 3,
-    "verifiedAt": "2026-10-07T10:26:54+08:00",
+    "verifiedAt": "2026-10-16T10:45:00+08:00",
     "sources": [
-      "https://www.aicrowd.com/challenges/arc-white-box-estimation-challenge-2026",
-      {
-        "label": "official",
-        "url": "https://www.aicrowd.com/challenges/arc-white-box-estimation-challenge-2026"
-      }
+      "https://www.aicrowd.com/challenges/arc-white-box-estimation-challenge-2026"
     ],
     "old": [],
     "verification": {
-      "state": "legacy",
-      "verifiedAt": null,
-      "attemptedAt": "2026-09-27T18:15:15.778423+08:00",
-      "lastError": "Not verified within this run budget."
+      "state": "verified",
+      "attemptedAt": "2026-10-16T10:45:00+08:00",
+      "verifiedAt": "2026-10-16T10:45:00+08:00",
+      "runId": "workbuddy-agent-2026-10-16",
+      "evidence": [
+        {
+          "url": "https://www.aicrowd.com/challenges/arc-white-box-estimation-challenge-2026",
+          "summary": "Phase 2 提交 10/17 23:59 UTC（明天）、write-up 10/24、11/15 公布获奖者确认无变化。",
+          "fields": [
+            "submit",
+            "status"
+          ],
+          "fetchedAt": "2026-10-16T10:45:00+08:00",
+          "quote": "Phase 2 提交 10/17 23:59 UTC（明天）、write-up 10/24、11/15 公布获奖者确认无变化。"
+        }
+      ]
     },
     "verifiedBy": "agent"
   },
@@ -2979,7 +3024,7 @@
     ],
     "task": "AI Agent 金融输出可验证竞赛，四条赛道：T1 Coding（金融代码）、T2 Forecasting（预测）、T3 Simulation（市场模拟）、T4 Explainability（可解释）。沙箱 Docker 运行、无公网；Coding/Forecasting/Explainability 可经受限连接调 House Nemotron。",
     "entry": {
-      "text": "Registration and Development end: 12 Oct 2026, 23:59 AoE → 北京10月13日19:59",
+      "text": "Registration and Development end: 12 Oct 2026, 23:59 AoE → 北京10月13日19:59（已截止）",
       "instant": "2026-10-12T23:59:00-12:00",
       "day": "2026-10-13",
       "kind": "deadline",
@@ -2987,7 +3032,7 @@
       "timezone": "AoE"
     },
     "submit": {
-      "text": "Registration + Development 截止 25 Oct 前的 12 Oct 23:59 AoE（北京 10/13 19:59）；Final + Verification 13–25 Oct，截止 10/25 23:59 AoE（北京 10/26 19:59）。",
+      "text": "Final + Verification 10/13–25 进行中；Final 上传截止 10/25 23:59 AoE（北京 10/26 19:59）；结果 11 月初公布；NeurIPS workshop 12/12。",
       "instant": "2026-10-25T23:59:00-12:00",
       "day": "2026-10-26",
       "kind": "deadline",
@@ -2996,11 +3041,11 @@
     "requirements": "每队1–3人，18岁或当地成年年龄，每人一队；单位代表须单位同意。容器沙箱运行，每队每赛道一份终交。最后开发运行须10月12日20:00 UTC前启动（北京10月13日04:00）。获奖者须14天内按OSI许可公开源码并配合身份核验。",
     "award": "总奖$12,000，四赛道各$1,500/$1,000/$500。",
     "url": "https://www.agenthon.net/",
-    "status": "open",
-    "warning": "报名+开发 10/12 AoE 截止（北京 10/13 19:59），逾期无法参赛；获奖队须参加 12 月亚特兰大 NeurIPS 现场环节，差旅注册费自付。9/17 规则修订：Final 与 Verification 合并为 13–25 Oct 单一阶段。",
+    "status": "submission",
+    "warning": "报名+开发已于 10/12 23:59 AoE 截止（北京 10/13 19:59），新队伍无法加入。Final 上传截止 10/25 23:59 AoE，之后仅剩组织方验证。获奖队须参加 12 月 NeurIPS 现场环节，差旅注册费自付。",
     "note": "",
     "priority": 2,
-    "verifiedAt": "2026-10-12T12:30:00+08:00",
+    "verifiedAt": "2026-10-16T10:45:00+08:00",
     "verifiedBy": "agent",
     "eligibility": "open",
     "sources": [
@@ -3010,31 +3055,19 @@
     ],
     "verification": {
       "state": "verified",
-      "attemptedAt": "2026-10-12T12:00:00+08:00",
-      "verifiedAt": "2026-10-12T12:30:00+08:00",
-      "previousVerifiedAt": "2026-10-06T15:00:00+08:00",
-      "runId": "workbuddy-agent-2026-10-12",
+      "attemptedAt": "2026-10-16T10:45:00+08:00",
+      "verifiedAt": "2026-10-16T10:45:00+08:00",
+      "runId": "workbuddy-agent-2026-10-16",
       "evidence": [
         {
           "url": "https://www.agenthon.net/",
-          "summary": "官网现用Agenthon名称及域名；首页开发阶段10月12日。",
+          "summary": "页面显示 Final + Verification is live（84% complete）；Registration 10/12 AoE 已截止；Final 上传 10/25 23:59 AoE 截止无延期。",
           "fields": [
-            "url",
-            "warning"
-          ],
-          "fetchedAt": "2026-10-07T12:11:44+08:00"
-        },
-        {
-          "url": "https://www.agenthon.net/rules/",
-          "summary": "报名/开发12日23:59 AoE，终评25日23:59 AoE；1–3人成年团队、12,000美元奖池、公开代码和获奖履约要求。",
-          "fields": [
-            "entry",
             "submit",
-            "eligibility",
-            "requirements",
-            "award"
+            "status"
           ],
-          "fetchedAt": "2026-10-07T12:11:44+08:00"
+          "fetchedAt": "2026-10-16T10:45:00+08:00",
+          "quote": "页面显示 Final + Verification is live（84% complete）；Registration 10/12 AoE 已截止；Final 上传 10/25 23:59 AoE 截止无延期。"
         }
       ]
     },
@@ -3145,20 +3178,21 @@
       "day": "2026-10-15",
       "instant": null,
       "kind": "deadline",
-      "text": "Final submission deadline: 15. October 2026",
+      "text": "Final submission deadline: 15. October 2026（已截止，页面仍显示 Submissions open 但 deadline 已过）",
       "timezone": "unknown"
     },
     "requirements": "提交单个 .py 文件（实现竞赛接口的算法类）+ 可选 requirements.txt；评分=10 个隐藏拓扑的平均最优 loss。",
     "award": "€25,000（SPRIN-D 赞助，面向隐藏拓扑上的最优方法）",
     "url": "https://www.learn2design2026.com/",
-    "status": "open",
-    "warning": "官网未写截止时刻与时区。",
+    "status": "closed",
+    "warning": "终交 10/15 已过；页面 Portal status 仍写 Submissions open，与已过截止日矛盾（旧状态未更新）。",
     "note": "",
     "priority": 3,
-    "verifiedAt": "2026-10-12T12:30:00+08:00",
+    "verifiedAt": "2026-10-16T10:45:00+08:00",
     "verifiedBy": "agent",
     "eligibility": "open",
     "sources": [
+      "https://www.learn2design2026.com/",
       {
         "label": "official",
         "url": "https://www.learn2design2026.com/"
@@ -3167,22 +3201,27 @@
     "old": [],
     "verification": {
       "state": "verified",
-      "attemptedAt": "2026-10-12T12:30:00+08:00",
-      "verifiedAt": "2026-10-12T12:30:00+08:00",
-      "runId": "workbuddy-agent-2026-10-12",
+      "attemptedAt": "2026-10-16T10:45:00+08:00",
+      "verifiedAt": "2026-10-16T10:45:00+08:00",
+      "runId": "workbuddy-agent-2026-10-16",
       "evidence": [
         {
           "url": "https://www.learn2design2026.com/",
-          "summary": "Final submission deadline: 15. October 2026 确认无变化。",
+          "summary": "Final submission deadline: 15. October 2026 已过（今天 10/16）；页面 Portal status 仍显示 Submissions open，未同步更新。",
           "fields": [
             "submit",
             "status"
           ],
-          "fetchedAt": "2026-10-12T12:30:00+08:00",
-          "quote": "Final submission deadline: 15. October 2026."
+          "fetchedAt": "2026-10-16T10:45:00+08:00",
+          "quote": "Final submission deadline: 15. October 2026 已过（今天 10/16）；页面 Portal status 仍显示 Submissions open，未同步更新。"
         }
-      ],
-      "pending": ""
+      ]
+    },
+    "statusDerivation": {
+      "at": "2026-10-16T10:24:40+08:00",
+      "from": "open",
+      "to": "closed",
+      "basis": "known_deadlines"
     }
   },
   {
@@ -3216,10 +3255,11 @@
     "warning": "两个入口缺一不可：只注册官网不进 Codabench 无法提交；Phase 1 10/18 截止、盲测 Phase 2 10/19–10/26（每日 5 提交、共 100 次；Phase 2 仅 3 次）。10/9 公告：最终测试输入随 10/19 Final 阶段发布。",
     "note": "",
     "priority": 3,
-    "verifiedAt": "2026-10-12T12:30:00+08:00",
+    "verifiedAt": "2026-10-16T10:45:00+08:00",
     "verifiedBy": "agent",
     "eligibility": "open",
     "sources": [
+      "https://fusion-equilibrium-challenge.sophelio.io/",
       {
         "label": "official",
         "url": "https://fusion-equilibrium-challenge.sophelio.io/"
@@ -3228,22 +3268,21 @@
     "old": [],
     "verification": {
       "state": "verified",
-      "attemptedAt": "2026-10-12T12:30:00+08:00",
-      "verifiedAt": "2026-10-12T12:30:00+08:00",
-      "runId": "workbuddy-agent-2026-10-12",
+      "attemptedAt": "2026-10-16T10:45:00+08:00",
+      "verifiedAt": "2026-10-16T10:45:00+08:00",
+      "runId": "workbuddy-agent-2026-10-16",
       "evidence": [
         {
           "url": "https://fusion-equilibrium-challenge.sophelio.io/",
-          "summary": "Phase 1 10/18 截止、Phase 2 10/19–10/26 确认无变化；10/9 公告最终测试输入随 Final 发布。",
+          "summary": "Phase 1 至 10/18、盲测 Phase 2 10/19–10/26、Dec NeurIPS session 确认无变化；10/9 公告已在库。",
           "fields": [
             "submit",
             "status"
           ],
-          "fetchedAt": "2026-10-12T12:30:00+08:00",
-          "quote": "Phase 2 (final) closes — last call for submissions"
+          "fetchedAt": "2026-10-16T10:45:00+08:00",
+          "quote": "Phase 1 至 10/18、盲测 Phase 2 10/19–10/26、Dec NeurIPS session 确认无变化；10/9 公告已在库。"
         }
-      ],
-      "pending": ""
+      ]
     }
   },
   {
@@ -6438,6 +6477,67 @@
         }
       ],
       "pending": "WACV 颁奖年份原文写 2026 系笔误；11/30 截止时刻/时区未公布。"
+    }
+  },
+  {
+    "id": "name-that-llm",
+    "title": "Name That LLM（LLM 指纹/作者归属）",
+    "platform": "Kaggle",
+    "tags": [
+      "大模型",
+      "NLP"
+    ],
+    "task": "从 40–250 词的短文本段落中识别出 18 个前沿模型（OpenAI/Google/Anthropic/Qwen/ZAI/Moonshot）中的哪一个生成；约 4000 段隐藏测试集，指标 balanced accuracy（各类召回宏平均）。Code Competition：Notebook 离线 9 小时内读 test.csv 输出 submission.parquet。",
+    "entry": {
+      "text": "Entry and Team Merger Deadline: January 6, 2027, 11:59 PM UTC → 北京 1/7 07:59",
+      "instant": "2027-01-06T23:59:00Z",
+      "day": "2027-01-07",
+      "kind": "deadline",
+      "mandatory": true,
+      "timezone": "UTC"
+    },
+    "submit": {
+      "text": "Final Submission Deadline: January 13, 2027, 11:59 PM UTC → 北京 1/14 07:59",
+      "instant": "2027-01-13T23:59:00Z",
+      "day": "2027-01-14",
+      "kind": "deadline",
+      "timezone": "UTC"
+    },
+    "requirements": "Kaggle 账号；Code Competition 提交：Notebook CPU/GPU ≤9 小时、禁网、输出 submission.parquet；外部数据/预训练权重须公开可获得。预测必须是 18 个合法模型名之一，id 唯一且无空值。",
+    "award": "$50,000：第 1–10 名各 $5,000。",
+    "url": "https://www.kaggle.com/competitions/name-that-llm",
+    "status": "open",
+    "warning": "",
+    "note": "",
+    "priority": 2,
+    "verifiedAt": "2026-10-16T10:45:00+08:00",
+    "verifiedBy": "agent",
+    "eligibility": "open",
+    "venue": "",
+    "old": [],
+    "sources": [
+      "https://www.kaggle.com/competitions/name-that-llm",
+      "https://www.kaggle.com/competitions/name-that-llm/overview"
+    ],
+    "verification": {
+      "state": "verified",
+      "attemptedAt": "2026-10-16T10:45:00+08:00",
+      "verifiedAt": "2026-10-16T10:45:00+08:00",
+      "runId": "workbuddy-agent-2026-10-16",
+      "evidence": [
+        {
+          "url": "https://www.kaggle.com/competitions/name-that-llm/overview",
+          "summary": "Timeline: Start 10/14/2026; Entry 1/6/2027; Final 1/13/2027 (11:59 PM UTC). Prize $50K (10×$5K). Balanced accuracy on 18 models.",
+          "fields": [
+            "entry",
+            "submit",
+            "award",
+            "requirements"
+          ],
+          "fetchedAt": "2026-10-16T10:45:00+08:00",
+          "quote": "January 13, 2027 - Final Submission Deadline."
+        }
+      ]
     }
   }
 ]
