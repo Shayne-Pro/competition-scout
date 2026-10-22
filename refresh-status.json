@@ -1,69 +1,86 @@
 {
  "state": "partial",
- "finishedAt": "2026-10-16T10:52:00+08:00",
- "verified": 16,
+ "finishedAt": "2026-10-22T15:10:10+08:00",
+ "verified": 33,
  "verifiedIds": [
   "quantiphy",
   "rsna",
+  "aimo",
   "lingbot",
   "agenthon-2026",
-  "aimo",
-  "gemma",
-  "uniagent",
-  "opencv",
-  "fusion-equilibrium",
-  "learn2design-2026",
-  "virtual-embryo",
   "cross-body",
-  "arc-whitebox",
-  "3lc",
-  "steer",
-  "name-that-llm"
+  "opencv",
+  "virtual-embryo",
+  "uniagent",
+  "fusion-equilibrium",
+  "owl-pathology",
+  "robosyn-challenge",
+  "sapc2",
+  "flagos-season2",
+  "gemma",
+  "gemma-paper",
+  "arc3",
+  "arc2",
+  "nfl-bdb-2027",
+  "paypal-ai-hackathon-2026",
+  "chi-bench",
+  "tianchi-aftershock",
+  "lightmycells2",
+  "beetle",
+  "dalphin",
+  "lunovo26",
+  "smart-buildings-2026",
+  "spark",
+  "squares-in-squares",
+  "embodied-sim-2026",
+  "embodied-safety-2026",
+  "dragon-clinical-nlp",
+  "learn2reg-2026"
  ],
  "sourcesOk": 4,
  "sourcesTotal": 5,
  "runner": "workbuddy-agent",
- "runId": "workbuddy-agent-2026-10-16",
+ "runId": "workbuddy-agent-2026-10-22",
  "sourceResults": [
   {
    "name": "天池列表 SPA",
    "url": "https://tianchi.aliyun.com/competition/algorithmList",
    "state": "ok",
    "fetchState": "ok",
-   "fetchedAt": "2026-10-16T10:52:00+08:00",
-   "notes": "首页无新赛（余震/CBCT/旧赛）；余震报名结束已知。"
+   "fetchedAt": "2026-10-22T15:10:10+08:00",
+   "notes": "首页列表无新赛；经具身极限挑战赛专题页新收 532506/532507 两赛道（cross-body 532508 赛程正文已同步延期）。"
   },
   {
    "name": "讯飞列表 SPA",
    "url": "https://challenge.xfyun.cn/",
    "state": "ok",
    "fetchState": "ok",
-   "fetchedAt": "2026-10-16T10:52:00+08:00",
-   "notes": "首页活动日历无新赛事。"
+   "fetchedAt": "2026-10-22T15:10:10+08:00",
+   "notes": "首页热门赛事 3 条均已读；Spark-X2.5 详情页确认报名 9/11–11/10 17:00、初赛材料 10/11 前。"
   },
   {
    "name": "Kaggle 列表",
    "url": "https://www.kaggle.com/competitions",
    "state": "partial",
    "fetchState": "failed",
-   "fetchedAt": "2026-10-16T10:52:00+08:00",
-   "notes": "scrape_spa 连续第 4 天抓空（无凭据）；WebFetch 兜底扫 Featured/Community：新增 Name That LLM（10/14 开赛），其余均已在库或已结束。"
+   "fetchedAt": "2026-10-22T15:10:10+08:00",
+   "notes": "scrape_spa 连续第 6 天抓空（无凭据）；WebFetch 兜底扫 Featured/Community：新增 Squares in Squares（10/21 开赛），Squares 外均已在库或已结束；RSNA/ARC/Gemma/CHI-Bench/Smart Buildings/FlagOS 等主赛页面逐条核验。"
   },
   {
    "name": "grand-challenge API",
    "url": "https://grand-challenge.org/api/v1/challenges/",
    "state": "ok",
    "fetchState": "ok",
-   "fetchedAt": "2026-10-16T10:52:00+08:00",
-   "notes": "264 条 offset 分页扫全；SurgVU26 已完赛（Challenge Day 9/27 已过）不收；TopAneu/OWL/cobra2026 已在库；无新增。"
+   "fetchedAt": "2026-10-22T15:10:10+08:00",
+   "notes": "264 条 offset 分页扫全，组合过滤得 25 候选：新收 DRAGON 与 Learn2Reg 2026；BEETLE/DALPHIN 确认为无截止长期基准（转 practice）、LUNOVO26 补 Phase 1 7/10 上线；HC18/MitoEM/TrackRAD/ISLES-24 等为旧赛或长期榜不收；TopBrain/COBRA/OWL/LightMyCells2 已在库。"
   },
   {
    "name": "NeurIPS 官博",
    "url": "https://blog.neurips.cc/",
    "state": "ok",
    "fetchState": "ok",
-   "fetchedAt": "2026-10-16T10:52:00+08:00",
-   "notes": "最新帖 10/12（科普写作倡议），7/28 竞赛官宣后无新竞赛帖。"
+   "fetchedAt": "2026-10-22T15:10:10+08:00",
+   "notes": "最新帖 10/15（Journal Track），7/28 竞赛官宣后无新竞赛帖。"
   }
  ],
  "failedSources": [
@@ -71,155 +88,16 @@
    "name": "Kaggle 活跃赛事列表",
    "url": "https://www.kaggle.com/competitions",
    "state": "partial",
-   "reason": "scrape_spa 无凭据抓空（连续第 4 天）；WebFetch 兜底扫过 Featured/Research/Community 第一页，发现 Name That LLM 并收录；分页深扫未做。"
-  },
-  {
-   "name": "天池 算法大赛",
-   "url": "https://tianchi.aliyun.com/competition/algorithmList",
-   "state": "partial",
-   "reason": "算法第2页10项已读取；AI大模型分区第1页15个唯一ID已读取；算法页3–21及大模型后续分页、学生限制与候选规则待核。"
-  },
-  {
-   "name": "讯飞 AI 开发者大赛",
-   "url": "https://challenge.xfyun.cn/",
-   "state": "partial",
-   "reason": "本轮抓到讯飞首页有效正文，并读Spark规则；完整算法赛题分页与其余赛题仍待核。"
-  },
-  {
-   "name": "grand-challenge.org",
-   "url": "https://grand-challenge.org/challenges/",
-   "state": "partial",
-   "reason": "GC官方API3页264唯一api_url、count一致、next=null；CLEAR正式Phase II已推进，全部API候选分类/资格尚未完成，API异常日期保留待核。"
+   "reason": "scrape_spa 无凭据抓空（连续第 6 天）；WebFetch 兜底已扫 Featured/Hackathon/Community 首屏，深分页未做。"
   },
   {
    "name": "Codabench",
    "url": "https://www.codabench.org/competitions/public/",
-   "state": "partial",
-   "reason": "Codabench16页1532唯一ID全部取得；新增SafeDrive-VLA与SoccerNet两赛道详情已读并保留unclear，其余教学/历史/赛事候选分类未完。"
-  },
-  {
-   "name": "AIcrowd",
-   "url": "https://www.aicrowd.com/challenges",
-   "state": "partial",
-   "reason": "已读AIcrowd当前challenge目录正文（ARC White-Box仍列进行中）；历史项目及详情未全部核验。"
-  },
-  {
-   "name": "视觉会议 workshop CFP（CVPR / ICCV / ECCV / WACV / BMVC / ACCV）",
-   "url": "https://conferences.visionbib.com/",
-   "state": "partial",
-   "reason": "Visionbib本轮Web超时，上轮证书失败保留；已读CVPR官方目录、ECCV官网，并推进WACV的IWDD子站；ICCV/BMVC/ACCV及其它子站待扫。"
-  },
-  {
-   "name": "机器学习会议 workshop / competition（ICLR / ICML / AAAI / IJCAI）",
-   "url": "https://openreview.net/",
-   "state": "partial",
-   "reason": "取得OpenReview场馆索引，ICLR/ICML/AAAI/IJCAI各会challenge分支仍待扫。"
-  },
-  {
-   "name": "医学影像会议（MICCAI / MIDL / IPMI / ISBI / SPIE Medical Imaging）",
-   "url": "https://miccai.org/sig/sig-challenges/",
-   "state": "partial",
-   "reason": "取得MICCAI SIG目录，医学3D/LLM子站待处理；MIDL/IPMI/ISBI/SPIE会议分支未完。"
-  },
-  {
-   "name": "IR / DM 会议（CIKM / WSDM / SIGIR / RecSys / KDD / TREC / FIRE）",
-   "url": "https://cikm2026.diag.uniroma1.it/",
-   "state": "partial",
-   "reason": "取得CIKM官网正文；WSDM/SIGIR/RecSys/KDD/TREC/FIRE及各赛题仍待扫。"
-  },
-  {
-   "name": "国内学术会议评测（CHIP / SMP / CCKS / NLPCC / CCIR / CSIG 系）",
-   "url": "https://www.cips-chip.org.cn/",
-   "state": "partial",
-   "reason": "CHIP旧入口本轮Web不可达，旧证书失败保留；官方天池CHIP规则已核；新增CCKS/NLPCC官方目录入口Web失败，SMP分支由天池AI目录推进但全家族未完成。"
-  },
-  {
-   "name": "EvalAI",
-   "url": "https://eval.ai/",
-   "state": "partial",
-   "reason": "EvalAI current19、future0、history482均完整分页取得；资格与候选分类未完成，API列表不作为开放/截止证据。"
-  },
-  {
-   "name": "DrivenData",
-   "url": "https://www.drivendata.org/competitions/",
-   "state": "partial",
-   "reason": "已读DrivenData现行/历史目录；GEMS奖金赛、SNOMED benchmark与练习赛候选身份/资格仍待核。"
-  },
-  {
-   "name": "Devpost",
-   "url": "https://devpost.com/hackathons",
-   "state": "partial",
-   "reason": "脚本失败与Web导航空壳后，现有浏览器恢复9张公开卡片；已核PayPal，另8张卡片及完整目录/分页待处理。"
-  },
-  {
-   "name": "Zindi",
-   "url": "https://zindi.world/competitions",
    "state": "failed",
-   "reason": "脚本超时、Web仅JS空壳、现有浏览器连接关闭；没有取得本轮有效列表，保留重试与待核队列。"
-  },
-  {
-   "name": "CodaLab",
-   "url": "https://codalab.lisn.upsaclay.fr/",
-   "state": "partial",
-   "reason": "CodaLab首页已取得说明/入口，但没有有效赛事卡片；官方competitions目录与分页待读。"
-  },
-  {
-   "name": "lablab.ai",
-   "url": "https://lablab.ai/event",
-   "state": "partial",
-   "reason": "lablab现行及历史列表正文已取得；AMD Academy/ACT III/Vultr均已有，资格和正式时区仍待逐条核。"
-  },
-  {
-   "name": "Hugging Face Spaces / Benchmarks",
-   "url": "https://huggingface.co/spaces",
-   "state": "partial",
-   "reason": "Hugging Face Spaces当前目录已读；Spaces/demo与正式challenge身份尚待分类，不能把演示当赛事。"
-  },
-  {
-   "name": "MLCommons / ChaLearn",
-   "url": "https://mlcommons.org/",
-   "state": "partial",
-   "reason": "MLCommons官方首页正文已取得；MLPerf/ChaLearn各正式challenge目录与子页待扫。"
-  },
-  {
-   "name": "昇腾 AI 创新大赛",
-   "url": "https://www.hiascend.com/developer/AAIC2026",
-   "state": "partial",
-   "reason": "默认虚拟环境Playwright取得昇腾有效正文；分区/赛道规则与当前资格待核。"
-  },
-  {
-   "name": "百度 AI Studio / 商业 AI 技术创新大赛",
-   "url": "https://aistudio.baidu.com/competition",
-   "state": "partial",
-   "reason": "默认虚拟环境Playwright取得百度现行competition列表；后续分页及详情待核。"
-  },
-  {
-   "name": "DataFountain",
-   "url": "https://www.datafountain.cn/",
-   "state": "partial",
-   "reason": "DataFountain官网正文已取得；6G/B6G及高校赛事资格和完整目录待核。"
-  },
-  {
-   "name": "腾讯 TAAC / KDD Cup",
-   "url": "https://algo.qq.com/",
-   "state": "partial",
-   "reason": "Playwright取得TAAC官方正文；完整规则/最新年度公告仍待读。"
-  },
-  {
-   "name": "RecSys / TREC / SIGIR / CCKS / NLPCC",
-   "url": "https://recsys.acm.org/",
-   "state": "partial",
-   "reason": "RecSys官网已读；CCKS/NLPCC官方目录追加但Web失败，TREC/SIGIR及其子赛待核。"
-  },
-  {
-   "name": "MICCAI challenge 目录",
-   "url": "https://miccai.org/sig/sig-challenges/",
-   "state": "partial",
-   "reason": "MICCAI SIG官方目录已读取，2026/2027条目与各GC子站规则待核；没有用主会结束日代替参赛截止。"
+   "reason": "本轮两个 Codabench 域名 curl/WebFetch 均 SSL/网络失败；Learn2Reg 15724/15955 两个任务页的截止日未取到，已在 learn2reg-2026 条目 warning 注明。"
   }
  ],
  "pendingIds": [
-  "sapc2",
   "fair-universe-wl2",
   "spider",
   "doserad2026",
@@ -256,9 +134,6 @@
   "amd-lablab-ai-academy-challenge",
   "amd-developer-hackathon-act-iii",
   "vultr-hackathon",
-  "spark",
-  "opencv",
-  "robosyn-challenge",
   "iwdd-2027",
   "clear-ec",
   "roboworld-2026-safedrive-vla",
@@ -304,28 +179,53 @@
   "ai4s-lifescience"
  ],
  "addedIds": [
-  "name-that-llm"
+  "squares-in-squares",
+  "embodied-sim-2026",
+  "embodied-safety-2026",
+  "dragon-clinical-nlp",
+  "learn2reg-2026"
  ],
  "newVerifiedIds": [
-  "name-that-llm"
+  "squares-in-squares",
+  "embodied-sim-2026",
+  "embodied-safety-2026",
+  "dragon-clinical-nlp",
+  "learn2reg-2026"
  ],
  "verificationTargetIds": [
   "quantiphy",
   "rsna",
+  "aimo",
   "lingbot",
   "agenthon-2026",
-  "aimo",
-  "gemma",
-  "uniagent",
-  "opencv",
-  "fusion-equilibrium",
-  "learn2design-2026",
-  "virtual-embryo",
   "cross-body",
-  "arc-whitebox",
-  "3lc",
-  "steer",
-  "name-that-llm"
+  "opencv",
+  "virtual-embryo",
+  "uniagent",
+  "fusion-equilibrium",
+  "owl-pathology",
+  "robosyn-challenge",
+  "sapc2",
+  "flagos-season2",
+  "gemma",
+  "gemma-paper",
+  "arc3",
+  "arc2",
+  "nfl-bdb-2027",
+  "paypal-ai-hackathon-2026",
+  "chi-bench",
+  "tianchi-aftershock",
+  "lightmycells2",
+  "beetle",
+  "dalphin",
+  "lunovo26",
+  "smart-buildings-2026",
+  "spark",
+  "squares-in-squares",
+  "embodied-sim-2026",
+  "embodied-safety-2026",
+  "dragon-clinical-nlp",
+  "learn2reg-2026"
  ],
  "unfinishedTargetIds": [],
  "excludedIds": [
@@ -502,28 +402,69 @@
  },
  "statusChanges": [
   {
-   "id": "rsna",
+   "id": "cross-body",
    "before": "open",
    "after": "submission"
   },
   {
-   "id": "learn2design-2026",
-   "before": "open",
+   "id": "arc-whitebox",
+   "before": "submission",
    "after": "closed"
   },
   {
-   "id": "agenthon-2026",
+   "id": "beetle",
    "before": "open",
-   "after": "submission"
+   "after": "practice"
+  },
+  {
+   "id": "dalphin",
+   "before": "open",
+   "after": "practice"
+  },
+  {
+   "id": "smart-buildings-2026",
+   "before": "unclear",
+   "after": "open"
+  },
+  {
+   "id": "flagos-season2",
+   "before": "unclear",
+   "after": "open"
+  },
+  {
+   "id": "spark",
+   "before": "unclear",
+   "after": "open"
   }
  ],
  "businessChangedIds": [
+  "aimo",
+  "lingbot",
+  "cross-body",
+  "virtual-embryo",
+  "uniagent",
+  "sapc2",
+  "flagos-season2",
+  "gemma",
+  "gemma-paper",
+  "arc3",
+  "arc2",
+  "smart-buildings-2026",
+  "spark",
+  "robosyn-challenge",
+  "beetle",
+  "dalphin",
+  "lunovo26",
+  "lightmycells2",
+  "chi-bench",
+  "nfl-bdb-2027",
+  "paypal-ai-hackathon-2026",
+  "tianchi-aftershock",
+  "opencv",
+  "fusion-equilibrium",
+  "owl-pathology",
   "quantiphy",
   "rsna",
-  "lingbot",
-  "agenthon-2026",
-  "learn2design-2026",
-  "cross-body",
-  "name-that-llm"
+  "agenthon-2026"
  ]
 }
