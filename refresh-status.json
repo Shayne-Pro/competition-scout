@@ -23,7 +23,7 @@
   "embodied-safety-2026",
   "google-quantum-circuit-compilation"
  ],
- "sourcesOk": 4,
+ "sourcesOk": 5,
  "sourcesTotal": 5,
  "runner": "workbuddy-agent",
  "runId": "workbuddy-agent-2026-10-28",
@@ -47,10 +47,10 @@
   {
    "name": "Kaggle 列表",
    "url": "https://www.kaggle.com/competitions",
-   "state": "partial",
-   "fetchState": "failed",
+   "state": "ok",
+   "fetchState": "browser",
    "fetchedAt": "2026-10-28T13:41:33+08:00",
-   "notes": "scrape_spa 连续第 7 天抓空（无凭据）；WebFetch 兜底扫全 featured/hackathon/community 首屏，仅 Google Quantum AI 可验证量子电路编译为新赛，余者均在库。"
+   "notes": "scrape_spa 无凭据抓空（连续第 7 天）；改用 Chrome 扩展直读 https://www.kaggle.com/competitions，逐屏读到 Featured Hackathons / Competitions / Community / Recently Ended 全部卡片 29 个，与库内 slug 逐一比对无新增（当日唯一新赛 Google 量子电路编译已用 WebFetch 收录）。api/v1/competitions/list 在登录浏览器中仍返回 401，未采用。"
   },
   {
    "name": "grand-challenge API",
@@ -69,14 +69,7 @@
    "notes": "最新帖 10/25（Invited Speaker Topics），7/28 竞赛官宣后无新竞赛帖。"
   }
  ],
- "failedSources": [
-  {
-   "name": "Kaggle 活跃赛事列表",
-   "url": "https://www.kaggle.com/competitions",
-   "state": "partial",
-   "reason": "scrape_spa 无凭据抓空（连续第 7 天）；WebFetch 兜底已扫 Featured/Hackathon/Community 首屏，深分页未做。"
-  }
- ],
+ "failedSources": [],
  "pendingIds": [
   "fair-universe-wl2",
   "spider",

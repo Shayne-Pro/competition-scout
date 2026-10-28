@@ -9,6 +9,17 @@
 - 整轮使用互斥锁，例如被忽略的 `.scout/daily.lock/owner.json`；记录运行 ID，清理时只释放自己持有的锁。若已有任务在运行则退出，避免并发改写。
 - 保留其他人的未提交工作，不覆盖、不顺手提交。同步失败则停止；正常 `git pull --rebase origin main` 后记录基线 HEAD、原 ID 集合和 `archive.backup.json` 的 SHA-256。
 
+## 抓取失败时的兜底顺序
+
+按序尝试，成功即止，并在 `refresh-status.json` 的 `sourceResults[].fetchState` 记下实际通道。
+
+1. `python scrape_spa.py`（Playwright）。
+2. 浏览器直读：用 WorkBuddy 浏览器扩展控制本机 Chrome（已装扩展且已登录目标站点），打开列表页后逐屏读取可见 DOM 里的卡片 `href` 与倒计时。滚动时把指针停在页面右侧空白区，压在轮播卡片上会超时；页面内 `PageDown` 无效，用滚动工具。读到即记 `fetchState: browser`。
+3. WebFetch 直接抓列表页正文。
+4. 三级都失败才写进 `failedSources`，并注明失败到第几级。
+
+Kaggle 的 `https://www.kaggle.com/api/v1/competitions/list` 即使在登录浏览器里也返回 `401 Unauthenticated`（要 API Key），不能当兜底。
+
 ## 可复制任务正文
 
 你负责更新本目录的竞赛清单，直接阅读官方网页、规则和赛程并记录事实。不得调用外部 LLM API 或历史 AI/API 更新程序。以下抓取产物和运行状态只保存在被忽略的本地目录。
