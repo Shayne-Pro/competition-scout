@@ -1,86 +1,72 @@
 {
  "state": "partial",
- "finishedAt": "2026-10-22T15:10:10+08:00",
- "verified": 33,
+ "finishedAt": "2026-10-28T13:41:33+08:00",
+ "verified": 19,
  "verifiedIds": [
   "quantiphy",
+  "spark",
   "rsna",
-  "aimo",
   "lingbot",
-  "agenthon-2026",
-  "cross-body",
   "opencv",
-  "virtual-embryo",
-  "uniagent",
-  "fusion-equilibrium",
-  "owl-pathology",
-  "robosyn-challenge",
-  "sapc2",
-  "flagos-season2",
-  "gemma",
-  "gemma-paper",
   "arc3",
   "arc2",
-  "nfl-bdb-2027",
-  "paypal-ai-hackathon-2026",
-  "chi-bench",
-  "tianchi-aftershock",
-  "lightmycells2",
-  "beetle",
-  "dalphin",
-  "lunovo26",
-  "smart-buildings-2026",
-  "spark",
-  "squares-in-squares",
+  "aimo",
+  "3lc",
+  "steer",
+  "paiec",
+  "agenthon-2026",
+  "fusion-equilibrium",
+  "simulacrabench",
+  "trafficflowbench",
+  "roboworld-2026-safedrive-vla",
   "embodied-sim-2026",
   "embodied-safety-2026",
-  "dragon-clinical-nlp",
-  "learn2reg-2026"
+  "google-quantum-circuit-compilation"
  ],
  "sourcesOk": 4,
  "sourcesTotal": 5,
  "runner": "workbuddy-agent",
- "runId": "workbuddy-agent-2026-10-22",
+ "runId": "workbuddy-agent-2026-10-28",
  "sourceResults": [
   {
    "name": "天池列表 SPA",
    "url": "https://tianchi.aliyun.com/competition/algorithmList",
    "state": "ok",
    "fetchState": "ok",
-   "fetchedAt": "2026-10-22T15:10:10+08:00",
-   "notes": "首页列表无新赛；经具身极限挑战赛专题页新收 532506/532507 两赛道（cross-body 532508 赛程正文已同步延期）。"
+   "fetchedAt": "2026-10-28T13:41:33+08:00",
+   "notes": "列表页首屏 10 条均为已结束或报名结束赛事，无新赛；逐条核验 532506/532507/532514 三条具身赛道赛程。"
   },
   {
    "name": "讯飞列表 SPA",
    "url": "https://challenge.xfyun.cn/",
    "state": "ok",
    "fetchState": "ok",
-   "fetchedAt": "2026-10-22T15:10:10+08:00",
-   "notes": "首页热门赛事 3 条均已读；Spark-X2.5 详情页确认报名 9/11–11/10 17:00、初赛材料 10/11 前。"
+   "fetchedAt": "2026-10-28T13:41:33+08:00",
+   "notes": "首页热门 3 条已读，仅 Spark-X2.5 在报名期（至 11/10）；详情页复核奖金与初赛材料 10/11 前置条件。"
   },
   {
    "name": "Kaggle 列表",
    "url": "https://www.kaggle.com/competitions",
    "state": "partial",
    "fetchState": "failed",
-   "fetchedAt": "2026-10-22T15:10:10+08:00",
-   "notes": "scrape_spa 连续第 6 天抓空（无凭据）；WebFetch 兜底扫 Featured/Community：新增 Squares in Squares（10/21 开赛），Squares 外均已在库或已结束；RSNA/ARC/Gemma/CHI-Bench/Smart Buildings/FlagOS 等主赛页面逐条核验。"
+   "fetchedAt": "2026-10-28T13:41:33+08:00",
+   "notes": "scrape_spa 连续第 7 天抓空（无凭据）；WebFetch 兜底扫全 featured/hackathon/community 首屏，仅 Google Quantum AI 可验证量子电路编译为新赛，余者均在库。"
   },
   {
    "name": "grand-challenge API",
    "url": "https://grand-challenge.org/api/v1/challenges/",
    "state": "ok",
    "fetchState": "ok",
-   "fetchedAt": "2026-10-22T15:10:10+08:00",
-   "notes": "264 条 offset 分页扫全，组合过滤得 25 候选：新收 DRAGON 与 Learn2Reg 2026；BEETLE/DALPHIN 确认为无截止长期基准（转 practice）、LUNOVO26 补 Phase 1 7/10 上线；HC18/MitoEM/TrackRAD/ISLES-24 等为旧赛或长期榜不收；TopBrain/COBRA/OWL/LightMyCells2 已在库。"
+   "fetchedAt": "2026-10-28T13:41:33+08:00",
+   "notes": "264 条 offset 分页扫全，组合过滤得 8 候选（CLEAR-EC/lightmycells2/TrackRad2025/LUNOVO26/ISLES-24/TopBrain2026/COBRA2026/PANTHER）全部已在库，无新赛。"
   },
   {
    "name": "NeurIPS 官博",
    "url": "https://blog.neurips.cc/",
    "state": "ok",
    "fetchState": "ok",
-   "fetchedAt": "2026-10-22T15:10:10+08:00",
-   "notes": "最新帖 10/15（Journal Track），7/28 竞赛官宣后无新竞赛帖。"
+   "fetchedAt": "2026-10-28T13:41:33+08:00",
+   "notes": "最新帖 10/25（Invited Speaker Topics），7/28 竞赛官宣后无新竞赛帖。"
   }
  ],
  "failedSources": [
@@ -88,13 +74,7 @@
    "name": "Kaggle 活跃赛事列表",
    "url": "https://www.kaggle.com/competitions",
    "state": "partial",
-   "reason": "scrape_spa 无凭据抓空（连续第 6 天）；WebFetch 兜底已扫 Featured/Hackathon/Community 首屏，深分页未做。"
-  },
-  {
-   "name": "Codabench",
-   "url": "https://www.codabench.org/competitions/public/",
-   "state": "failed",
-   "reason": "本轮两个 Codabench 域名 curl/WebFetch 均 SSL/网络失败；Learn2Reg 15724/15955 两个任务页的截止日未取到，已在 learn2reg-2026 条目 warning 注明。"
+   "reason": "scrape_spa 无凭据抓空（连续第 7 天）；WebFetch 兜底已扫 Featured/Hackathon/Community 首屏，深分页未做。"
   }
  ],
  "pendingIds": [
@@ -136,96 +116,74 @@
   "vultr-hackathon",
   "iwdd-2027",
   "clear-ec",
-  "roboworld-2026-safedrive-vla",
   "soccernet-2027-streaming-vqa",
   "soccernet-2027-group-activity"
  ],
  "backlogIds": [
-  "spark",
-  "opencv",
-  "gemma-paper",
-  "solar",
   "3lc",
-  "steer",
-  "uniagent",
-  "mast",
-  "roco",
-  "cross-body",
-  "industrial",
-  "wsdm",
-  "newsrec",
-  "umud",
-  "biohub",
-  "kaggriculture",
-  "llm-practice",
-  "lightmycells2",
-  "virtual-embryo",
-  "robosyn-challenge",
-  "iwdd-2027",
-  "climx",
+  "ai4s-lifescience",
   "arc-whitebox",
-  "clear-ec",
-  "topbrain-v2",
-  "cobra2026",
-  "dalphin",
   "beetle",
-  "lunovo26",
+  "biohub",
+  "clear-ec",
+  "climx",
+  "cobra2026",
+  "cross-body",
+  "dalphin",
   "event-6ad83c0101a326be",
+  "flagos-season2",
+  "gemma-paper",
+  "industrial",
+  "iwdd-2027",
+  "kaggriculture",
   "learn2design-2026",
+  "lightmycells2",
+  "llm-practice",
+  "lunovo26",
+  "mast",
+  "memecoins-pump-dump",
+  "newsrec",
+  "opencv",
+  "robosyn-challenge",
+  "roco",
+  "simulacrabench",
   "smart-buildings-2026",
   "soil-grain-size",
-  "flagos-season2",
-  "memecoins-pump-dump",
-  "ai4s-lifescience"
+  "solar",
+  "spark",
+  "steer",
+  "topbrain-v2",
+  "umud",
+  "uniagent",
+  "virtual-embryo",
+  "wsdm"
  ],
  "addedIds": [
-  "squares-in-squares",
-  "embodied-sim-2026",
-  "embodied-safety-2026",
-  "dragon-clinical-nlp",
-  "learn2reg-2026"
+  "google-quantum-circuit-compilation"
  ],
  "newVerifiedIds": [
-  "squares-in-squares",
-  "embodied-sim-2026",
-  "embodied-safety-2026",
-  "dragon-clinical-nlp",
-  "learn2reg-2026"
+  "google-quantum-circuit-compilation"
  ],
  "verificationTargetIds": [
   "quantiphy",
+  "spark",
   "rsna",
-  "aimo",
   "lingbot",
-  "agenthon-2026",
-  "cross-body",
   "opencv",
-  "virtual-embryo",
-  "uniagent",
-  "fusion-equilibrium",
-  "owl-pathology",
-  "robosyn-challenge",
-  "sapc2",
-  "flagos-season2",
-  "gemma",
-  "gemma-paper",
   "arc3",
   "arc2",
-  "nfl-bdb-2027",
-  "paypal-ai-hackathon-2026",
-  "chi-bench",
-  "tianchi-aftershock",
-  "lightmycells2",
-  "beetle",
-  "dalphin",
-  "lunovo26",
-  "smart-buildings-2026",
-  "spark",
-  "squares-in-squares",
+  "aimo",
+  "3lc",
+  "steer",
+  "paiec",
+  "agenthon-2026",
+  "fusion-equilibrium",
+  "simulacrabench",
+  "trafficflowbench",
+  "roboworld-2026-safedrive-vla",
   "embodied-sim-2026",
   "embodied-safety-2026",
-  "dragon-clinical-nlp",
-  "learn2reg-2026"
+  "google-quantum-circuit-compilation"
  ],
  "unfinishedTargetIds": [],
  "excludedIds": [
@@ -402,69 +360,63 @@
  },
  "statusChanges": [
   {
-   "id": "cross-body",
+   "id": "lingbot",
    "before": "open",
    "after": "submission"
   },
   {
-   "id": "arc-whitebox",
+   "id": "arc3",
+   "before": "open",
+   "after": "submission"
+  },
+  {
+   "id": "arc2",
+   "before": "open",
+   "after": "submission"
+  },
+  {
+   "id": "trafficflowbench",
+   "before": "open",
+   "after": "submission"
+  },
+  {
+   "id": "rsna",
    "before": "submission",
    "after": "closed"
   },
   {
-   "id": "beetle",
+   "id": "quantiphy",
+   "before": "submission",
+   "after": "closed"
+  },
+  {
+   "id": "opencv",
    "before": "open",
-   "after": "practice"
+   "after": "closed"
   },
   {
-   "id": "dalphin",
+   "id": "fusion-equilibrium",
    "before": "open",
-   "after": "practice"
-  },
-  {
-   "id": "smart-buildings-2026",
-   "before": "unclear",
-   "after": "open"
-  },
-  {
-   "id": "flagos-season2",
-   "before": "unclear",
-   "after": "open"
-  },
-  {
-   "id": "spark",
-   "before": "unclear",
-   "after": "open"
+   "after": "closed"
   }
  ],
  "businessChangedIds": [
+  "agenthon-2026",
+  "fusion-equilibrium",
+  "quantiphy",
+  "opencv",
+  "rsna",
   "aimo",
   "lingbot",
-  "cross-body",
-  "virtual-embryo",
-  "uniagent",
-  "sapc2",
-  "flagos-season2",
-  "gemma",
-  "gemma-paper",
   "arc3",
   "arc2",
-  "smart-buildings-2026",
-  "spark",
-  "robosyn-challenge",
-  "beetle",
-  "dalphin",
-  "lunovo26",
-  "lightmycells2",
-  "chi-bench",
-  "nfl-bdb-2027",
-  "paypal-ai-hackathon-2026",
-  "tianchi-aftershock",
-  "opencv",
-  "fusion-equilibrium",
-  "owl-pathology",
-  "quantiphy",
-  "rsna",
-  "agenthon-2026"
+  "trafficflowbench",
+  "3lc",
+  "steer",
+  "simulacrabench",
+  "roboworld-2026-safedrive-vla",
+  "embodied-sim-2026",
+  "embodied-safety-2026",
+  "google-quantum-circuit-compilation"
  ]
 }
