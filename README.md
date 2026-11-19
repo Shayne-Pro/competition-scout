@@ -125,7 +125,7 @@ GitHub Pages 发布源为 `main` 分支的 `/docs`。`docs/` 仅允许 `index.ht
 
 仓库可见性属于维护者的决定，构建脚本与发布流程不做变更。
 
-2026-11-19 做过一次公开前审查并清理：当前版本无凭据、无本机绝对路径、无个人信息；早期 `build_page.py` / `index.html` 内嵌的 WorkBuddy 云端 publishableKey 已随历史重写清除，全部提交与 blob 复查无残留。`.gitignore` 不清除历史，新增凭据仍须避免提交。
+2026-11-19 做过一次公开前审查并清理：当前版本无凭据、无本机绝对路径、无个人信息；早期 `build_page.py` / `index.html` 内嵌的 WorkBuddy 云端 publishableKey 已随历史重写从所有分支清除。历史 PR 的 head 引用仍由平台保留旧提交，需 GitHub Support 才能彻底清除，普通克隆与网页历史已不含该字符串。`.gitignore` 不清除历史，新增凭据仍须避免提交。
 
 若需要交付不包含 Git 历史的源码包，可在提交并验收后导出：
 
