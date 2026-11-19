@@ -128,6 +128,7 @@ n_all = len(events)
 n_open = sum(1 for e in events if e["status"] == "open")
 n_week = sum(1 for e in events if e["status"] in ("open", "submission") and 0 <= days_left(e) <= 7)
 n_pending = sum(1 for e in events if e["status"] in ("unclear", "upcoming"))
+n_paper = sum(1 for e in events if (e.get("paper") or "").strip())
 n_plat = len({e["platform"] for e in events})
 n_venue = len({e["venue"] for e in events if e["venue"]})
 
@@ -190,10 +191,12 @@ def row(e):
         elif e["id"] not in REFRESH.get("verifiedIds", []):
             vby_label = "历史记录"
     vby_pill = ('<span class="vb %s">%s</span>' % (vby, vby_label)) if vby_label and vby != "human" else ""
+    paper_txt = (e.get("paper") or "").strip()
+    paper_pill = ('<span class="pp" title="%s">论文</span>' % html.escape(paper_txt, quote=True)) if paper_txt else ""
     return """      <tr data-id="{eid}" data-status="{st}" data-plat="{plat}" data-venue="{venue}" data-tag="{tags_s}"
-          data-days="{days}" data-pri="{pri}" data-vby="{vby}">
+          data-days="{days}" data-pri="{pri}" data-vby="{vby}" data-paper="{paper_flag}">
         <td class="c-name"><a href="{url}" target="_blank" rel="noopener">{title}</a><span class="st {st}">{stlabel}</span>{vby_pill}
-          <div class="tagrow"><span class="cat {pcls}">{plat}</span>{venue_pill}<span class="pri">P{pri}</span></div>
+          <div class="tagrow"><span class="cat {pcls}">{plat}</span>{venue_pill}{paper_pill}<span class="pri">P{pri}</span></div>
           <div class="tagrow">{tags}</div></td>
         <td class="c-dir">{task}</td>
         <td class="c-time">{times}{warn}</td>
@@ -206,7 +209,8 @@ def row(e):
         tags_s=tag_slugs, days=days_left(e), pri=e.get("priority", 9),
         url=html.escape(e["url"], quote=True), title=html.escape(e["title"]), stlabel=st_label, tags=tags,
         task=html.escape(e["task"]), times="".join(times), warn=warn,
-        req=html.escape(e["requirements"]), award=html.escape(e["award"]))
+        req=html.escape(e["requirements"]), award=html.escape(e["award"]),
+        paper_flag="1" if paper_txt else "0", paper_pill=paper_pill)
 
 
 render_rows = []
@@ -310,6 +314,8 @@ CSS = """  :root{
   .empty{display:none;padding:40px;text-align:center;color:var(--t3);font-size:13px}
   .vb{display:inline-block;font-size:11px;padding:1px 7px;border-radius:999px;margin-left:4px;white-space:nowrap;vertical-align:1px}
   .vb.auto{background:#faeeda;color:#854f0b}
+  .pp{display:inline-block;font-size:11px;padding:1px 7px;border-radius:999px;margin-left:4px;white-space:nowrap;
+    vertical-align:1px;border:1px dashed #a081c8;color:#66419a;background:#f7f2fc;cursor:help}
 {cloud_css}
   .muted{color:var(--t3)}
   h2{font-size:16px;font-weight:500;margin:40px 0 12px}
@@ -383,6 +389,8 @@ HTML = """<!DOCTYPE html>
     </div>
     <div class="frow"><span class="chiplabel">其他</span>
     <button class="chip toggle" id="liveToggle">仅可新参加</button>
+    <span class="chipsep"></span>
+    <button class="chip toggle" id="paperToggle" title="只显示有论文产出通道的赛事：竞赛论文共同署名、workshop 论文、技术报告收录">有论文通道<span class="cnt">{n_paper}</span></button>
     <button class="btn" id="resetBtn">重置全部</button>
     </div>
     <div class="fbar">
@@ -426,11 +434,12 @@ HTML = """<!DOCTYPE html>
     function refreshRows() {{ rows = [].slice.call(document.querySelectorAll('tbody tr')); }}
     refreshRows();
     var tbody = document.querySelector('tbody');
-    var state = {{ venue: 'all', plat: 'all', tag: 'all', win: 'all', live: false, sort: 'default' }};
+    var state = {{ venue: 'all', plat: 'all', tag: 'all', win: 'all', live: false, paper: false, sort: 'default' }};
     var visCount = document.getElementById('visCount');
     var hiddenNote = document.getElementById('hiddenNote');
     var emptyMsg = document.getElementById('emptyMsg');
     var toggle = document.getElementById('liveToggle');
+    var paperToggle = document.getElementById('paperToggle');
     var cloud = null;
     var modelId = null;
     var DIMS = ['venue', 'plat', 'tag', 'win'];
@@ -470,6 +479,7 @@ HTML = """<!DOCTYPE html>
         if (!hit(tr, dim, sel)) return false;
       }}
       if (state.live && tr.getAttribute('data-status') !== 'open') return false;
+      if (state.paper && tr.getAttribute('data-paper') !== '1') return false;
       return true;
     }}
 
@@ -534,6 +544,12 @@ HTML = """<!DOCTYPE html>
       apply();
     }});
 
+    paperToggle.addEventListener('click', function () {{
+      state.paper = !state.paper;
+      paperToggle.classList.toggle('on', state.paper);
+      apply();
+    }});
+
     document.getElementById('sortSel').addEventListener('change', function (e) {{
       state.sort = e.target.value;
       apply();
@@ -546,6 +562,8 @@ HTML = """<!DOCTYPE html>
       }});
       state.live = false;
       toggle.classList.remove('on');
+      state.paper = false;
+      paperToggle.classList.remove('on');
       state.sort = 'default';
       document.getElementById('sortSel').value = 'default';
       apply();
@@ -567,7 +585,7 @@ out = HTML.format(
     today=TODAY.isoformat(), now_display=NOW_DISPLAY, refresh_state=html.escape(REFRESH_STATE), refresh_summary=html.escape(REFRESH_SUMMARY), refresh_details=REFRESH_DETAILS, css=CSS, rows=render_rows,
     cloud_css=CLOUD_CSS, cloud_srcbar=CLOUD_SRCBAR, cloud_aipanel=CLOUD_AIPANEL,
     cloud_sdk=CLOUD_SDK, cloud_js=CLOUD_JS,
-    n_all=n_all, n_open=n_open, n_week=n_week, n_pending=n_pending,
+    n_all=n_all, n_open=n_open, n_week=n_week, n_pending=n_pending, n_paper=n_paper,
     n_plat=n_plat, n_venue=n_venue,
     chips_plat=chips("plat", plat_count, plat_order),
     chips_venue=chips("venue", venue_count, venue_order, VENUE_LABEL),
