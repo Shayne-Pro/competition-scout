@@ -1,72 +1,73 @@
 {
  "state": "partial",
- "finishedAt": "2026-10-28T13:41:33+08:00",
- "verified": 19,
+ "finishedAt": "2026-11-19T15:52:00+08:00",
+ "verified": 20,
  "verifiedIds": [
-  "quantiphy",
-  "spark",
-  "rsna",
-  "lingbot",
-  "opencv",
-  "arc3",
-  "arc2",
-  "aimo",
-  "3lc",
-  "steer",
-  "paiec",
-  "agenthon-2026",
-  "fusion-equilibrium",
+  "paypal-ai-hackathon-2026",
+  "chi-bench",
+  "misconception-k12",
+  "ai-emulation-carbonglobe",
+  "climx",
+  "virtual-embryo",
   "simulacrabench",
-  "trafficflowbench",
-  "roboworld-2026-safedrive-vla",
+  "flagos-season2",
+  "paiec",
+  "realpde",
   "embodied-sim-2026",
   "embodied-safety-2026",
-  "google-quantum-circuit-compilation"
+  "trafficflowbench",
+  "owl-pathology",
+  "spark",
+  "google-agent-harness-pele",
+  "santa-2026-elf-calculator",
+  "aura-emg-gesture",
+  "soccer-feature-design-hackathon",
+  "rogii-wellbore-curve-tracing"
  ],
  "sourcesOk": 5,
  "sourcesTotal": 5,
  "runner": "workbuddy-agent",
- "runId": "workbuddy-agent-2026-10-28",
+ "runId": "workbuddy-agent-2026-11-19",
  "sourceResults": [
   {
-   "name": "天池列表 SPA",
+   "name": "天池列表",
    "url": "https://tianchi.aliyun.com/competition/algorithmList",
    "state": "ok",
-   "fetchState": "ok",
-   "fetchedAt": "2026-10-28T13:41:33+08:00",
-   "notes": "列表页首屏 10 条均为已结束或报名结束赛事，无新赛；逐条核验 532506/532507/532514 三条具身赛道赛程。"
+   "fetchState": "web",
+   "fetchedAt": "2026-11-19T15:52:00+08:00",
+   "notes": "scrape_spa 三源全空，改 WebFetch 读列表页：首屏 11 条中仅「余震预测技术国际大赛」(532460) 未在库，但页面标报名已结束、无新报名入口，不收；其余 532440/532344/532346/532277/532266/532195/532189/532190/532191 均已在库且已结束。另用详情页核验具身两赛道 532506/532507 赛程（均已结束）。"
   },
   {
-   "name": "讯飞列表 SPA",
+   "name": "讯飞列表",
    "url": "https://challenge.xfyun.cn/",
    "state": "ok",
-   "fetchState": "ok",
-   "fetchedAt": "2026-10-28T13:41:33+08:00",
-   "notes": "首页热门 3 条已读，仅 Spark-X2.5 在报名期（至 11/10）；详情页复核奖金与初赛材料 10/11 前置条件。"
+   "fetchState": "web",
+   "fetchedAt": "2026-11-19T15:52:00+08:00",
+   "notes": "首页热门 3 条均已报名结束（Spark-X2.5 11/10 截止、车道线 9/14、结果枝 9/28）；星火杯为高校学生赛、AI 应用赛为学生向，均按仅限在校学生排除。详情页复核 Spark-X2.5 奖金与 10/11 前置材料。"
   },
   {
    "name": "Kaggle 列表",
    "url": "https://www.kaggle.com/competitions",
    "state": "ok",
-   "fetchState": "browser",
-   "fetchedAt": "2026-10-28T13:41:33+08:00",
-   "notes": "scrape_spa 无凭据抓空（连续第 7 天）；改用 Chrome 扩展直读 https://www.kaggle.com/competitions，逐屏读到 Featured Hackathons / Competitions / Community / Recently Ended 全部卡片 29 个，与库内 slug 逐一比对无新增（当日唯一新赛 Google 量子电路编译已用 WebFetch 收录）。api/v1/competitions/list 在登录浏览器中仍返回 401，未采用。"
+   "fetchState": "web",
+   "fetchedAt": "2026-11-19T15:52:00+08:00",
+   "notes": "scrape_spa 无凭据抓空；浏览器扩展只读到首屏且滚动超时、页面为未登录态；改用 WebFetch 读 /competitions 首页与 ?listOption=active&sortOption=prize 两视图，覆盖 Featured / Hackathons / Competitions / Community / Recently Ended 共 30+ 卡片，新识别 5 条（physical-engineerings-last-exam、santa-2026、vr-calibration-free-emg、soccer-feature-design、rogii-2-wellbore-curve-tracing）。api/v1/competitions/list 仍 401，未采用。"
   },
   {
    "name": "grand-challenge API",
    "url": "https://grand-challenge.org/api/v1/challenges/",
    "state": "ok",
    "fetchState": "ok",
-   "fetchedAt": "2026-10-28T13:41:33+08:00",
-   "notes": "264 条 offset 分页扫全，组合过滤得 8 候选（CLEAR-EC/lightmycells2/TrackRad2025/LUNOVO26/ISLES-24/TopBrain2026/COBRA2026/PANTHER）全部已在库，无新赛。"
+   "fetchedAt": "2026-11-19T15:52:00+08:00",
+   "notes": "264 条分页扫全，组合过滤（start≥2025-01-01、今天≤end≤2027-12-31、modified≥2025-09-01）得 8 候选：lightmycells2 / OWL / TrackRad2025 / LUNOVO26 / ISLES-24 / TopBrain2026 / COBRA2026 / PANTHER，全部已在库，无新赛。"
   },
   {
    "name": "NeurIPS 官博",
    "url": "https://blog.neurips.cc/",
    "state": "ok",
    "fetchState": "ok",
-   "fetchedAt": "2026-10-28T13:41:33+08:00",
-   "notes": "最新帖 10/25（Invited Speaker Topics），7/28 竞赛官宣后无新竞赛帖。"
+   "fetchedAt": "2026-11-19T15:52:00+08:00",
+   "notes": "RSS 最新为 11/04「MLRC 2026: Announcing the Accepted Papers」，10/25 后无新竞赛类帖子。"
   }
  ],
  "failedSources": [],
@@ -112,304 +113,173 @@
   "soccernet-2027-streaming-vqa",
   "soccernet-2027-group-activity"
  ],
- "backlogIds": [
-  "3lc",
-  "ai4s-lifescience",
-  "arc-whitebox",
-  "beetle",
-  "biohub",
-  "clear-ec",
-  "climx",
-  "cobra2026",
-  "cross-body",
-  "dalphin",
-  "event-6ad83c0101a326be",
-  "flagos-season2",
-  "gemma-paper",
-  "industrial",
-  "iwdd-2027",
-  "kaggriculture",
-  "learn2design-2026",
-  "lightmycells2",
-  "llm-practice",
-  "lunovo26",
-  "mast",
-  "memecoins-pump-dump",
-  "newsrec",
-  "opencv",
-  "robosyn-challenge",
-  "roco",
-  "simulacrabench",
-  "smart-buildings-2026",
-  "soil-grain-size",
-  "solar",
-  "spark",
-  "steer",
-  "topbrain-v2",
-  "umud",
-  "uniagent",
-  "virtual-embryo",
-  "wsdm"
- ],
  "addedIds": [
-  "google-quantum-circuit-compilation"
+  "google-agent-harness-pele",
+  "santa-2026-elf-calculator",
+  "aura-emg-gesture",
+  "soccer-feature-design-hackathon",
+  "rogii-wellbore-curve-tracing"
  ],
  "newVerifiedIds": [
-  "google-quantum-circuit-compilation"
+  "google-agent-harness-pele",
+  "santa-2026-elf-calculator",
+  "aura-emg-gesture",
+  "soccer-feature-design-hackathon",
+  "rogii-wellbore-curve-tracing"
  ],
  "verificationTargetIds": [
-  "quantiphy",
-  "spark",
-  "rsna",
-  "lingbot",
-  "opencv",
-  "arc3",
-  "arc2",
-  "aimo",
-  "3lc",
-  "steer",
-  "paiec",
-  "agenthon-2026",
-  "fusion-equilibrium",
+  "paypal-ai-hackathon-2026",
+  "chi-bench",
+  "misconception-k12",
+  "ai-emulation-carbonglobe",
+  "climx",
+  "virtual-embryo",
   "simulacrabench",
-  "trafficflowbench",
-  "roboworld-2026-safedrive-vla",
+  "flagos-season2",
+  "paiec",
+  "realpde",
   "embodied-sim-2026",
   "embodied-safety-2026",
-  "google-quantum-circuit-compilation"
+  "trafficflowbench",
+  "owl-pathology",
+  "spark",
+  "google-agent-harness-pele",
+  "santa-2026-elf-calculator",
+  "aura-emg-gesture",
+  "soccer-feature-design-hackathon",
+  "rogii-wellbore-curve-tracing"
  ],
  "unfinishedTargetIds": [],
  "excludedIds": [
   "tianchi-532440"
  ],
- "scheduledCoverage": [
-  {
-   "name": "Kaggle 活跃赛事列表",
-   "url": "https://www.kaggle.com/competitions",
-   "cadence": "每轮"
-  },
-  {
-   "name": "天池 算法大赛",
-   "url": "https://tianchi.aliyun.com/competition/algorithmList",
-   "cadence": "每轮"
-  },
-  {
-   "name": "讯飞 AI 开发者大赛",
-   "url": "https://challenge.xfyun.cn/",
-   "cadence": "每轮"
-  },
-  {
-   "name": "NeurIPS Competition Track 官博 + Dates 页",
-   "url": "https://blog.neurips.cc/",
-   "cadence": "每轮"
-  },
-  {
-   "name": "grand-challenge.org",
-   "url": "https://grand-challenge.org/challenges/",
-   "cadence": "每轮"
-  },
-  {
-   "name": "Codabench",
-   "url": "https://www.codabench.org/competitions/public/",
-   "cadence": "每轮"
-  },
-  {
-   "name": "AIcrowd",
-   "url": "https://www.aicrowd.com/challenges",
-   "cadence": "每轮"
-  },
-  {
-   "name": "视觉会议 workshop CFP（CVPR / ICCV / ECCV / WACV / BMVC / ACCV）",
-   "url": "https://conferences.visionbib.com/",
-   "cadence": "每轮"
-  },
-  {
-   "name": "机器学习会议 workshop / competition（ICLR / ICML / AAAI / IJCAI）",
-   "url": "https://openreview.net/",
-   "cadence": "每轮"
-  },
-  {
-   "name": "医学影像会议（MICCAI / MIDL / IPMI / ISBI / SPIE Medical Imaging）",
-   "url": "https://miccai.org/sig/sig-challenges/",
-   "cadence": "每轮"
-  },
-  {
-   "name": "IR / DM 会议（CIKM / WSDM / SIGIR / RecSys / KDD / TREC / FIRE）",
-   "url": "https://cikm2026.diag.uniroma1.it/",
-   "cadence": "每轮"
-  },
-  {
-   "name": "国内学术会议评测（CHIP / SMP / CCKS / NLPCC / CCIR / CSIG 系）",
-   "url": "https://www.cips-chip.org.cn/",
-   "cadence": "每轮"
-  },
-  {
-   "name": "EvalAI",
-   "url": "https://eval.ai/",
-   "cadence": "每轮"
-  },
-  {
-   "name": "DrivenData",
-   "url": "https://www.drivendata.org/competitions/",
-   "cadence": "每轮"
-  },
-  {
-   "name": "Devpost",
-   "url": "https://devpost.com/hackathons",
-   "cadence": "每轮"
-  },
-  {
-   "name": "Zindi",
-   "url": "https://zindi.world/competitions",
-   "cadence": "每两周"
-  },
-  {
-   "name": "CodaLab",
-   "url": "https://codalab.lisn.upsaclay.fr/",
-   "cadence": "每两周"
-  },
-  {
-   "name": "lablab.ai",
-   "url": "https://lablab.ai/event",
-   "cadence": "每两周"
-  },
-  {
-   "name": "Hugging Face Spaces / Benchmarks",
-   "url": "https://huggingface.co/spaces",
-   "cadence": "每月"
-  },
-  {
-   "name": "MLCommons / ChaLearn",
-   "url": "https://mlcommons.org/",
-   "cadence": "每月"
-  },
-  {
-   "name": "昇腾 AI 创新大赛",
-   "url": "https://www.hiascend.com/developer/AAIC2026",
-   "cadence": "每轮重扫"
-  },
-  {
-   "name": "百度 AI Studio / 商业 AI 技术创新大赛",
-   "url": "https://aistudio.baidu.com/competition",
-   "cadence": "每轮重扫"
-  },
-  {
-   "name": "DataFountain",
-   "url": "https://www.datafountain.cn/",
-   "cadence": "每轮重扫"
-  },
-  {
-   "name": "腾讯 TAAC / KDD Cup",
-   "url": "https://algo.qq.com/",
-   "cadence": "每轮重扫"
-  },
-  {
-   "name": "RecSys / TREC / SIGIR / CCKS / NLPCC",
-   "url": "https://recsys.acm.org/",
-   "cadence": "按各会窗口期重扫"
-  },
-  {
-   "name": "MICCAI challenge 目录",
-   "url": "https://miccai.org/sig/sig-challenges/",
-   "cadence": "每轮重扫"
-  }
- ],
- "scanningCoverage": {
-  "inventories": {
-   "Codabench": {
-    "inventoryState": "complete",
-    "items": 1532,
-    "pages": 16,
-    "finishedAt": "2026-10-08T10:11:23+08:00"
-   },
-   "EvalAI current": {
-    "inventoryState": "complete",
-    "items": 19,
-    "pages": 1,
-    "finishedAt": "2026-10-08T10:11:29+08:00"
-   },
-   "EvalAI future": {
-    "inventoryState": "complete",
-    "items": 0,
-    "pages": 1,
-    "finishedAt": "2026-10-08T10:11:30+08:00"
-   },
-   "EvalAI history": {
-    "inventoryState": "complete",
-    "items": 482,
-    "pages": 4,
-    "finishedAt": "2026-10-08T10:12:33+08:00"
-   },
-   "GC": {
-    "inventoryState": "complete",
-    "items": 264,
-    "pages": 3,
-    "finishedAt": "2026-10-08T10:04:52+08:00"
-   }
-  },
-  "persistentCandidates": 2351,
-  "unprocessedCandidates": 2339,
-  "progressFile": ".scout/source-progress.json"
- },
  "statusChanges": [
   {
-   "id": "lingbot",
+   "id": "paypal-ai-hackathon-2026",
    "before": "open",
-   "after": "submission"
+   "after": "closed"
   },
   {
-   "id": "arc3",
+   "id": "chi-bench",
    "before": "open",
-   "after": "submission"
+   "after": "closed"
   },
   {
-   "id": "arc2",
+   "id": "misconception-k12",
    "before": "open",
-   "after": "submission"
+   "after": "closed"
+  },
+  {
+   "id": "ai-emulation-carbonglobe",
+   "before": "open",
+   "after": "closed"
+  },
+  {
+   "id": "paiec",
+   "before": "open",
+   "after": "closed"
+  },
+  {
+   "id": "realpde",
+   "before": "submission",
+   "after": "closed"
+  },
+  {
+   "id": "embodied-sim-2026",
+   "before": "submission",
+   "after": "closed"
+  },
+  {
+   "id": "embodied-safety-2026",
+   "before": "submission",
+   "after": "closed"
   },
   {
    "id": "trafficflowbench",
+   "before": "submission",
+   "after": "closed"
+  },
+  {
+   "id": "spark",
+   "before": "open",
+   "after": "closed"
+  },
+  {
+   "id": "flagos-season2",
    "before": "open",
    "after": "submission"
   },
   {
-   "id": "rsna",
+   "id": "simulacrabench",
+   "before": "open",
+   "after": "submission"
+  },
+  {
+   "id": "lingbot",
    "before": "submission",
    "after": "closed"
   },
   {
-   "id": "quantiphy",
+   "id": "arc3",
    "before": "submission",
    "after": "closed"
   },
   {
-   "id": "opencv",
+   "id": "arc2",
+   "before": "submission",
+   "after": "closed"
+  },
+  {
+   "id": "aimo",
    "before": "open",
    "after": "closed"
   },
   {
-   "id": "fusion-equilibrium",
+   "id": "gemma-paper",
    "before": "open",
+   "after": "closed"
+  },
+  {
+   "id": "solar",
+   "before": "open",
+   "after": "closed"
+  },
+  {
+   "id": "uniagent",
+   "before": "submission",
+   "after": "closed"
+  },
+  {
+   "id": "cross-body",
+   "before": "submission",
+   "after": "closed"
+  },
+  {
+   "id": "agenthon-2026",
+   "before": "submission",
    "after": "closed"
   }
  ],
  "businessChangedIds": [
-  "agenthon-2026",
-  "fusion-equilibrium",
-  "quantiphy",
-  "opencv",
-  "rsna",
-  "aimo",
-  "lingbot",
-  "arc3",
-  "arc2",
-  "trafficflowbench",
-  "3lc",
-  "steer",
+  "paypal-ai-hackathon-2026",
+  "chi-bench",
+  "misconception-k12",
+  "ai-emulation-carbonglobe",
+  "climx",
+  "virtual-embryo",
   "simulacrabench",
-  "roboworld-2026-safedrive-vla",
+  "flagos-season2",
+  "paiec",
+  "realpde",
   "embodied-sim-2026",
   "embodied-safety-2026",
-  "google-quantum-circuit-compilation"
+  "trafficflowbench",
+  "owl-pathology",
+  "spark",
+  "google-agent-harness-pele",
+  "santa-2026-elf-calculator",
+  "aura-emg-gesture",
+  "soccer-feature-design-hackathon",
+  "rogii-wellbore-curve-tracing"
  ]
 }
