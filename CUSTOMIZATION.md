@@ -24,6 +24,7 @@ python -m http.server 8001 --directory .scout/demo/docs
 | 维护哪些赛事 | `events.json`；先按现有完整 schema 填写，未知事实留空并标 `unclear` |
 | 从哪里发现赛事 | `sources.json`；保留官方 URL、扫描频率、失败与后续范围 |
 | 方向标签与排序 | 条目的 `tags` / `priority`；新方向同步调整 `build_page.py` 的 `TAGSLUG` / `TAGORDER` |
+| 论文通道标记 | 条目的 `paper`（一句话写清形式与门槛，留空表示没有）；驱动页面「有论文通道」筛选与行内徽标 |
 | 站名、文案与样式 | `build_page.py`；如改页面标题，须同步 `ci_check.py` 中的标题检查 |
 | 页面输入与输出 | `EVENTS_DIR`、`OUT_HTML`，可用于独立测试目录；CI 从 `EVENTS_DIR/docs` 读取页面 |
 | 核验偏好和更新频率 | [AUTOMATION.md](AUTOMATION.md) 中的任务模板，以及你自己的调度器配置 |
