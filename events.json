@@ -1258,9 +1258,9 @@
   "url": "https://www.kaggle.com/competitions/the-3lc-low-light-detection-challenge",
   "status": "open",
   "warning": "11/30 23:59 UTC 前须交评估表单 + 含 exdark-competition.zip 的私有 GitHub 仓库（加 Rishikesh-Jadhav 为协作者）才有评奖/证书资格；提交须带插件 provenance，非插件产出的 run 不能作为提交。",
-  "note": "",
+  "note": "时间线仅三个节点：9/21 开赛、11/21 23:59 UTC 终交、11/30 23:59 UTC 评估表与私有仓库截止；无报名/组队合并单独节点。",
   "priority": 2,
-  "verifiedAt": "2026-10-28T13:41:19+08:00",
+  "verifiedAt": "2026-11-20T10:07:00+08:00",
   "sources": [
    {
     "label": "official",
@@ -1273,22 +1273,23 @@
   "venue": "",
   "verification": {
    "state": "verified",
-   "attemptedAt": "2026-10-28T13:41:19+08:00",
-   "verifiedAt": "2026-10-28T13:41:19+08:00",
-   "runId": "workbuddy-agent-2026-10-28",
+   "attemptedAt": "2026-11-20T10:07:00+08:00",
    "evidence": [
     {
-     "url": "https://www.kaggle.com/competitions/the-3lc-low-light-detection-challenge",
-     "summary": "终交 11/21 23:59 UTC 不变；奖金拆为 1000/500/300/200；补充每天 3 次、至多 2 次终交与 11/30 交付物要求。",
-     "fields": [
-      "award",
-      "requirements",
-      "warning"
-     ],
-     "fetchedAt": "2026-10-28T13:41:19+08:00",
-     "quote": "Final submission deadline — Saturday 21 November 2026, 23:59 UTC"
+     "quote": "Saturday 21 November 2026, 23:59 UTC",
+     "url": "https://www.kaggle.com/competitions/the-3lc-low-light-detection-challenge"
+    },
+    {
+     "quote": "Monday 30 November 2026, 23:59 UTC",
+     "url": "https://www.kaggle.com/competitions/the-3lc-low-light-detection-challenge"
+    },
+    {
+     "quote": "Team size up to 4",
+     "url": "https://www.kaggle.com/competitions/the-3lc-low-light-detection-challenge"
     }
-   ]
+   ],
+   "runId": "workbuddy-agent-2026-11-20",
+   "verifiedAt": "2026-11-20T10:07:00+08:00"
   },
   "verifiedBy": "agent"
  },
@@ -1301,25 +1302,28 @@
   ],
   "task": "降低模型不诚实行为，同时保持任务能力；评测模型干预方案。",
   "entry": {
-   "text": "参赛入口开放；未单列提前截止",
-   "day": null,
-   "instant": null
+   "text": "报名 11 月 1 日 AoE 截止（FAQ：registration closes Nov 1 AoE）→ 北京 11/2 19:59（已截止）",
+   "day": "2026-11-02",
+   "instant": "2026-11-02T19:59:00+08:00",
+   "kind": "deadline",
+   "timezone": "AoE",
+   "mandatory": true
   },
   "submit": {
-   "text": "Nov 21, 2026 AoE → 北京 11/22 19:59；无报名截止，只有终交一个节点",
-   "day": "2026-11-22",
-   "instant": "2026-11-22T19:59:00+08:00",
+   "text": "终交 11 月 29 日 AoE（FAQ：final submission deadline is Nov 29 AoE）→ 北京 11/30 19:59；榜单 Next intake 为 11/22 AoE，属分批接收节点",
+   "day": "2026-11-30",
+   "instant": "2026-11-30T19:59:00+08:00",
    "kind": "deadline",
    "timezone": "AoE"
   },
   "requirements": "每队 2–5 人，每人仅一队；全球学生、研究者、产业团队与爱好者均可参加；提交 .spipe 标准化方案；外部数据与预训练工件须参与者自建或公开可取并披露来源；仅当并入核心 toolkit 才需 Apache 2.0 授权。",
   "award": "总奖池 $40k+（每赛道前三名现金奖）+ NeurIPS 2026 workshop 报告邀请；受 EU/US 制裁与付款可行性限制，无法付款时顺延给下一名。",
   "url": "https://steerability.github.io/competition/",
-  "status": "open",
-  "warning": "无报名截止，唯一节点是 11/21 AoE 终交；获奖者须能提供完整复现材料，且至少一名成员在 NeurIPS 2026（巴黎）现场或线上报告。",
+  "status": "submission",
+  "warning": "报名已于 11/1 AoE 关闭，只剩终交；页面顶部与 FAQ 写终交 11/29 AoE，Leaderboard 的 Next intake 写 11/22 AoE，两个日期并存（分批接收 + 最终截止）。获奖须能提供完整复现材料，且至少一名成员在 NeurIPS 2026 workshop 现场或线上报告；奖金受 EU/US 制裁与跨境付款限制。",
   "note": "",
   "priority": 2,
-  "verifiedAt": "2026-10-28T13:41:19+08:00",
+  "verifiedAt": "2026-11-20T10:07:00+08:00",
   "sources": [
    {
     "label": "official",
@@ -1332,23 +1336,27 @@
   "venue": "NeurIPS 2026",
   "verification": {
    "state": "verified",
-   "attemptedAt": "2026-10-28T13:41:19+08:00",
-   "verifiedAt": "2026-10-28T13:41:19+08:00",
-   "runId": "workbuddy-agent-2026-10-28",
+   "attemptedAt": "2026-11-20T10:07:00+08:00",
    "evidence": [
     {
-     "url": "https://steerability.github.io/competition/",
-     "summary": "终交 Nov 21 AoE 不变；补团队 2–5 人、奖金 $40k+、workshop 巴黎、.spipe 提交格式。",
-     "fields": [
-      "submit",
-      "award",
-      "requirements",
-      "warning"
-     ],
-     "fetchedAt": "2026-10-28T13:41:19+08:00",
-     "quote": "The only deadline is the final submission date of Nov 21 AoE."
+     "quote": "Yes, registration closes Nov 1 AoE. The final submission deadline is Nov 29 AoE.",
+     "url": "https://steerability.github.io/competition/"
+    },
+    {
+     "quote": "Next intake:",
+     "url": "https://steerability.github.io/competition/"
+    },
+    {
+     "quote": "Teams must consist of at least two people but no more than five people.",
+     "url": "https://steerability.github.io/competition/"
+    },
+    {
+     "quote": "at least one member of each winning team must be able to present (either in-person or virtually) at the competition workshop at NeurIPS 2026 in Paris.",
+     "url": "https://steerability.github.io/competition/"
     }
-   ]
+   ],
+   "runId": "workbuddy-agent-2026-11-20",
+   "verifiedAt": "2026-11-20T10:07:00+08:00"
   },
   "verifiedBy": "agent"
  },
@@ -1376,13 +1384,13 @@
    "timezone": "UTC"
   },
   "requirements": "指定 Gemma 4 基座（可选 31b-it / 12b-it / e4b-it / e2b-it 的 qat-w4a16-ct 版本），同一提交内所有 agent 与子 agent 必须用同一基座，可加 LoRA 适配器；提交以 agent.yaml 为根的 ADK Agent Config 压缩包（prompts / sub_agents / adapters / skills）；Agent 限时 12 小时提交补丁，按 SWE-Bench 式通过率评分；可选研究论文须在 11/12 前提交。",
-  "award": "总奖 $110,000：主赛 $65,000（$37,000/$18,000/$10,000）+ 论文赛道 $35,000（另在论文赛道提交）+ 小模型开发奖 $10,000（须以 Gemma E2B 或 E4B 为基座）",
+  "award": "总奖 $110,000：主赛 $65,000（$37,000/$18,000/$10,000）+ 论文赛道 $35,000（须在独立 paper track 提交）+ 小模型开发奖 $10,000（须以 Gemma E2B 或 E4B 为基座）",
   "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent",
   "status": "open",
   "warning": "论文赛与主赛分开提交，参与主赛不是论文投稿的前置；获奖资格与开源义务绑定，不开源会被取消资格。小模型开发奖须在两份终交中明确选定其一，论文须在 11/12 23:59 UTC 前提交。",
   "note": "",
   "priority": 1,
-  "verifiedAt": "2026-10-22T14:05:00+08:00",
+  "verifiedAt": "2026-11-20T10:07:00+08:00",
   "sources": [
    "https://www.kaggle.com/competitions/gemma-4-developer-agent",
    "https://www.kaggle.com/competitions/gemma-4-developer-agent",
@@ -1400,25 +1408,29 @@
   "verifiedBy": "agent",
   "verification": {
    "state": "verified",
-   "attemptedAt": "2026-10-22T14:05:00+08:00",
-   "verifiedAt": "2026-10-22T14:05:00+08:00",
-   "runId": "workbuddy-agent-2026-10-22",
+   "attemptedAt": "2026-11-20T10:07:00+08:00",
    "evidence": [
     {
-     "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent",
-     "summary": "总奖 $110,000（主赛 $65,000 明细 $37k/$18k/$10k + 论文 $35,000 + 小模型开发奖 $10,000）；基座开放 31b/12b/e4b/e2b 四款但同一提交须同模型；论文投稿可选截止 11/12。",
-     "fields": [
-      "entry",
-      "submit",
-      "requirements",
-      "award",
-      "warning"
-     ],
-     "fetchedAt": "2026-10-22T14:05:00+08:00",
-     "quote": "Total Prizes Available: $110,000"
+     "quote": "November 25, 2026 - Entry Deadline. You must accept the competition rules before this date in order to compete.",
+     "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent"
+    },
+    {
+     "quote": "December 2, 2026 - Final Submission Deadline.",
+     "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent"
+    },
+    {
+     "quote": "Paper Submission Award : $35,000",
+     "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent"
+    },
+    {
+     "quote": "Total Prizes Available: $110,000",
+     "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent"
     }
-   ]
-  }
+   ],
+   "runId": "workbuddy-agent-2026-11-20",
+   "verifiedAt": "2026-11-20T10:07:00+08:00"
+  },
+  "paper": "独立 paper track（gemma-4-developer-agent-paper，$35,000，11/12 23:59 UTC 截稿，须单独报名该赛）"
  },
  {
   "id": "zhihu-table",
@@ -2188,21 +2200,20 @@
    "mandatory": true
   },
   "submit": {
-   "text": "Competition submissions October 24, 2026 (AoE)；可选 workshop 论文（3–6 页 non-archival）截止 10/31 AoE；论文录用通知 11/7；出席确认 11/15；SAPC2 场次 NeurIPS 2026-12-11 15:30–17:45（Room MR C4.3）。官网只给日期未给时刻",
-   "day": null,
-   "instant": null,
-   "kind": "unknown",
-   "officialDay": "2026-10-24",
+   "text": "系统提交/榜单 2026-10-30 AoE 关闭（因 Codabench 故障由 10/24 延期）→ 北京 10/31 19:59；workshop 论文 10/31 AoE；录用 11/7；参会确认 11/15；workshop 12/11 15:30–17:45 Room MR C4.3（暂定）",
+   "day": "2026-10-31",
+   "instant": "2026-10-31T19:59:00+08:00",
+   "kind": "deadline",
    "timezone": "AoE"
   },
   "requirements": "不限学生，但数据 DUA 要求 Recipient Scientist 及接收机构授权负责人签署，许可人员包括教师、员工、学生、代理、承包商与合作人员，研究及商业模型开发均可。先交 DUA 与一页提案，审批 2–4 周；不可未经许可向第三方转交数据。Codabench 交模型权重与推理代码（Track 1 非流式 / Track 2 流式分别提交），CER 为主、WER 为辅；流式赛道还测 TTFT 稳定性与 TTLT。不强制代码开源；3–6 页 workshop 论文可选，与参赛/领奖无关。",
   "award": "$10,000 奖池在准确率与延迟 Pareto 前沿的获奖者之间均分：非流式恰好 1 名、流式 1 名或多名；test1 提交后 3 天内出分，test2 密封测试集结果在比赛关闭后公布。",
   "url": "https://xiuwenz2.github.io/SAPC2-website/",
-  "status": "unclear",
-  "warning": "10/24 AoE 只给日期未给时刻；DUA 审批 2–4 周且须机构授权签署，个人无单位能否获批尚需组织者确认——现在报名者实际已难在截止前拿到数据。",
+  "status": "closed",
+  "warning": "提交与论文通道均已关闭；获奖与展示须 12/11 参会（官网写 Sydney, Australia，会场暂定 Room MR C4.3）。",
   "note": "",
   "priority": 3,
-  "verifiedAt": "2026-10-22T14:05:00+08:00",
+  "verifiedAt": "2026-11-20T10:07:00+08:00",
   "sources": [
    "https://xiuwenz2.github.io/SAPC2-website/",
    "https://xiuwenz2.github.io/SAPC2-website/faqs/",
@@ -2210,26 +2221,22 @@
    "https://speechaccessibilityproject.beckman.illinois.edu/docs/librariesprovider8/default-document-library/data-transfer-and-use-agreement-speech-accessibility-project.pdf?sfvrsn=909bd90f_20"
   ],
   "old": [],
-  "venue": "NeurIPS 2026",
+  "venue": "NeurIPS 2026 · Sydney",
   "verification": {
    "state": "verified",
-   "attemptedAt": "2026-10-22T14:05:00+08:00",
-   "verifiedAt": "2026-10-22T14:05:00+08:00",
-   "runId": "workbuddy-agent-2026-10-22",
+   "attemptedAt": "2026-11-20T10:07:00+08:00",
    "evidence": [
     {
-     "url": "https://xiuwenz2.github.io/SAPC2-website/",
-     "summary": "首页确认提交 10/24 AoE、论文 10/31 AoE、通知 11/7、出席确认 11/15、NeurIPS workshop 12/11–12 及 DUA 审批 2–4 周；test1 三天出分、test2 赛后公布。",
-     "fields": [
-      "entry",
-      "submit",
-      "award",
-      "warning"
-     ],
-     "fetchedAt": "2026-10-22T14:05:00+08:00",
-     "quote": "Competition submissions October 24, 2026 (AoE)"
+     "quote": "Leaderboard closes for system submission and benchmarking (AoE). Extended from October 24 due to the Codabench outage",
+     "url": "https://xiuwenz2.github.io/SAPC2-website/timeline/"
+    },
+    {
+     "quote": "SAPC2 Workshop at NeurIPS 2026, Sydney, Australia. Tentatively scheduled for 15:30–17:45, Room MR C4.3",
+     "url": "https://xiuwenz2.github.io/SAPC2-website/timeline/"
     }
-   ]
+   ],
+   "runId": "workbuddy-agent-2026-11-20",
+   "verifiedAt": "2026-11-20T10:07:00+08:00"
   },
   "verifiedBy": "agent",
   "eligibility": "open",
@@ -2403,7 +2410,7 @@
   "warning": "",
   "note": "",
   "priority": 4,
-  "verifiedAt": "2026-10-07T10:26:54+08:00",
+  "verifiedAt": "2026-11-20T10:07:00+08:00",
   "sources": [
    "https://www.kaggle.com/competitions/enveda-CASMI26-molecule-id-mass-spectra",
    {
@@ -2413,7 +2420,27 @@
   ],
   "old": [],
   "venue": "CASMI 2026",
-  "verifiedBy": "agent"
+  "verifiedBy": "agent",
+  "verification": {
+   "state": "verified",
+   "attemptedAt": "2026-11-20T10:07:00+08:00",
+   "evidence": [
+    {
+     "quote": "December 7, 2026 - Entry Deadline.",
+     "url": "https://www.kaggle.com/competitions/enveda-CASMI26-molecule-id-mass-spectra"
+    },
+    {
+     "quote": "December 14, 2026 - Final Submission Deadline.",
+     "url": "https://www.kaggle.com/competitions/enveda-CASMI26-molecule-id-mass-spectra"
+    },
+    {
+     "quote": "Total: $50,000",
+     "url": "https://www.kaggle.com/competitions/enveda-CASMI26-molecule-id-mass-spectra"
+    }
+   ],
+   "runId": "workbuddy-agent-2026-11-20",
+   "verifiedAt": "2026-11-20T10:07:00+08:00"
+  }
  },
  {
   "id": "tianchi-aftershock",
@@ -2437,10 +2464,10 @@
   "award": "总奖金 $30,000：一等 1 名 $10,000、二等 2 名各 $5,000、三等 5 名各 $2,000，均发获奖证书。",
   "url": "https://tianchi.aliyun.com/competition/entrance/532460",
   "status": "submission",
-  "warning": "报名已截止，现在无法加入；详情页排名赛至 11/30（UTC），列表卡片显示 10.31 为显示口径差异；页面倒计时与按钮是残留数据，公告明确「页面如有显示冲突以通知为准」。已在队内的需按月提交，漏月无成绩。",
-  "note": "当前 865 队参赛。",
+  "warning": "报名已截止，无法加入；详情页阶段表写排名赛 6/1–11/30，列表页「比赛时间」写 2026.01.28–2026.12.20，以阶段表为准。页面残留的报名倒计时与「立即报名」按钮是旧数据，公告明确「页面如有显示冲突以通知为准」。已在队内的需按月提交，漏月无成绩。",
+  "note": "阶段表：报名与资格赛 1/28–5/31、排名赛 6/1–11/30；奖金 $30,000；当前 894 队。",
   "priority": 5,
-  "verifiedAt": "2026-10-22T14:05:00+08:00",
+  "verifiedAt": "2026-11-20T10:07:00+08:00",
   "sources": [
    "https://tianchi.aliyun.com/competition/entrance/532460",
    {
@@ -2458,22 +2485,23 @@
   "verifiedBy": "agent",
   "verification": {
    "state": "verified",
-   "attemptedAt": "2026-10-22T14:05:00+08:00",
-   "verifiedAt": "2026-10-22T14:05:00+08:00",
-   "runId": "workbuddy-agent-2026-10-22",
+   "attemptedAt": "2026-11-20T10:07:00+08:00",
    "evidence": [
     {
-     "url": "https://tianchi.aliyun.com/competition/entrance/532460",
-     "summary": "详情页赛段确认：资格赛 5/31 24:00 UTC 截止、排名赛 6/1–11/30 UTC、每月 10 日前公布上月成绩、赛后以 10 次地震累计总分排名；奖金 $30,000 分级核对一致。",
-     "fields": [
-      "submit",
-      "warning",
-      "note"
-     ],
-     "fetchedAt": "2026-10-22T14:05:00+08:00",
-     "quote": "第二赛段（排名赛）：2026年6月1日-11月30日（UTC时间）"
+     "quote": "报名与资格赛 1.28 5.31",
+     "url": "https://tianchi.aliyun.com/competition/entrance/532460/information"
+    },
+    {
+     "quote": "排名赛 6.1 11.30",
+     "url": "https://tianchi.aliyun.com/competition/entrance/532460/information"
+    },
+    {
+     "quote": "奖金$ 30000",
+     "url": "https://tianchi.aliyun.com/competition/entrance/532460/information"
     }
-   ]
+   ],
+   "runId": "workbuddy-agent-2026-11-20",
+   "verifiedAt": "2026-11-20T10:07:00+08:00"
   }
  },
  {
@@ -2818,22 +2846,52 @@
    "instant": null
   },
   "submit": {
-   "text": "FinalTest 提交通道 12/11 23:00 开启",
-   "day": "2026-12-11",
-   "instant": null
+   "text": "FinalTest 榜单 12/11 23:00 开启（GC 列表原文“Opening submissions for FinalTest-TopBrainV2-Seg on Dec 11 2026 at 23:00”，是开启不是截止）；官网称赛程为 10 月至 12 月底，GC 记录 end 2026-12-31 22:59 UTC（→ 北京 2027-01-01 06:59），提交截止时刻未公布",
+   "day": "2026-12-31",
+   "instant": null,
+   "kind": "unknown",
+   "timezone": "UTC"
   },
   "requirements": "grand-challenge 容器化算法提交；当前 154 名参与者、48 条 validation 结果。",
   "award": "榜单排名；已有配套论文（TopBrain Segmentation Challenge for Whole Brain Vessel Anatomy）。",
   "url": "https://topbrain2026.grand-challenge.org/",
   "status": "open",
-  "warning": "列表页显示的是「FinalTest 通道 12/11 开启」，不等于现在不能做 validation——建议先跑 validation 榜再等 FinalTest。",
+  "warning": "12/11 是 FinalTest 开启日，不是截止日（原记录误当截止）；官网无时间线页，实际截止只能依 GC 赛程 end 12/31 22:59 UTC。现在只能跑 validation，FinalTest 要等 12/11 开榜。",
   "note": "",
   "priority": 4,
-  "verifiedAt": "2026-09-27",
+  "verifiedAt": "2026-11-20T10:07:00+08:00",
   "sources": [
-   "https://grand-challenge.org/challenges/"
+   {
+    "label": "official",
+    "url": "https://topbrain2026.grand-challenge.org/"
+   },
+   {
+    "label": "official",
+    "url": "https://grand-challenge.org/challenges/"
+   },
+   {
+    "label": "api",
+    "url": "https://grand-challenge.org/api/v1/challenges/?format=json&page_size=100"
+   }
   ],
-  "old": []
+  "old": [],
+  "verifiedBy": "agent",
+  "verification": {
+   "state": "verified",
+   "attemptedAt": "2026-11-20T10:07:00+08:00",
+   "evidence": [
+    {
+     "quote": "Opening submissions for FinalTest-TopBrainV2-Seg on Dec 11 2026 at 23:00",
+     "url": "https://grand-challenge.org/challenges/"
+    },
+    {
+     "quote": "The tasks for veins and stenosis will take place from October through the end of December 2026.",
+     "url": "https://topbrain2026.grand-challenge.org/"
+    }
+   ],
+   "runId": "workbuddy-agent-2026-11-20",
+   "verifiedAt": "2026-11-20T10:07:00+08:00"
+  }
  },
  {
   "id": "cobra2026",
@@ -2847,28 +2905,68 @@
   ],
   "task": "放疗场景下的盆腔锥形束 CT（CBCT）重建。配套论文 COBRA2026 提供了一个大规模多中心盆腔 CBCT 投影数据集。",
   "entry": {
-   "text": "报名已开放（validation 阶段可提交）",
+   "text": "报名 2026-07-13 随训练数据开放（官网：Registration opens alongside the training data on 13/07/2026），无单独报名截止",
    "day": null,
-   "instant": null
+   "instant": null,
+   "kind": "unknown",
+   "timezone": "unknown"
   },
   "submit": {
-   "text": "Test 阶段提交 2027/1/15 23:01 开启",
-   "day": "2027-01-15",
-   "instant": null
+   "text": "训练期 7/13/2026–2/15/2027；validation 与 preliminary test 12/1 起、test（Docker，最多 2 次）1/29–2/15，全部至 2027-02-15 截止（GC 记录 end 2027-02-15 22:59 UTC → 北京 2/16 06:59）；结果 3/22 公布，MIDL 2027 展示",
+   "day": "2027-02-16",
+   "instant": "2027-02-16T06:59:00+08:00",
+   "kind": "deadline",
+   "timezone": "UTC"
   },
-  "requirements": "grand-challenge 容器化算法提交；当前 147 名参与者。数据集已在 arXiv 公开（arXiv:2607.20037）。",
-  "award": "榜单排名与论文署名机会。",
+  "requirements": "grand-challenge 实名账号并加入赛事；每队最多 5 人、一人一号；完全自动方法，单例推理 ≤20 分钟，须在 AWS g4dn.2xlarge（16 GB 显存）内跑通；只能用赛方数据与 2026-07-13 前公开的权重/数据；top 3 须赛后 14 天内开源代码、权重或 Docker。",
+  "award": "视经费情况可能发奖金（未承诺）；前三名受邀在 MIDL 2027 报告，须开源代码或 Docker；榜单排名公开",
   "url": "https://cobra2026.grand-challenge.org/",
   "status": "open",
-  "warning": "Test 阶段要到 2027/1/15 才开，时间跨度长；与口腔 CBCT 同属锥形束 CT 重建，方法层面可借鉴。",
+  "warning": "GC 列表写 Test phase 于 1/15 23:01 开启，官网时间线写 test 阶段 1/29–2/15，两者不一致（以时间线为准）；12/1 才开 validation 与 preliminary test，现在只能下载数据训练。前三名须赛后 14 天内开源，并须提交 LNCS 格式方法论文才具备获奖资格。",
   "note": "",
   "priority": 4,
-  "verifiedAt": "2026-09-27",
+  "verifiedAt": "2026-11-20T10:07:00+08:00",
   "sources": [
-   "https://grand-challenge.org/challenges/"
+   {
+    "label": "official",
+    "url": "https://cobra2026.grand-challenge.org/"
+   },
+   {
+    "label": "official",
+    "url": "https://cobra2026.grand-challenge.org/timetablerules/"
+   },
+   {
+    "label": "api",
+    "url": "https://grand-challenge.org/api/v1/challenges/?format=json&page_size=100"
+   }
   ],
   "old": [],
-  "paper": "榜单排名换论文署名机会"
+  "paper": "前三名受邀共同署名竞赛总结论文（投 Medical Image Analysis，须交 LNCS 格式方法摘要，主办方可把作者压到每队 2 人）",
+  "verifiedBy": "agent",
+  "verification": {
+   "state": "verified",
+   "attemptedAt": "2026-11-20T10:07:00+08:00",
+   "evidence": [
+    {
+     "quote": "Training phase (no submission limit) 13 Jul 2026 – 15 Feb 2027",
+     "url": "https://cobra2026.grand-challenge.org/timetablerules/"
+    },
+    {
+     "quote": "Test phase (dockerized algorithms, max 2 submissions) 29 Jan 2027 – 15 Feb 2027",
+     "url": "https://cobra2026.grand-challenge.org/timetablerules/"
+    },
+    {
+     "quote": "Registration opens alongside the training data on 13/07/2026.",
+     "url": "https://cobra2026.grand-challenge.org/"
+    },
+    {
+     "quote": "Each team ranked among the top three will be invited to participate in this publication",
+     "url": "https://cobra2026.grand-challenge.org/timetablerules/"
+    }
+   ],
+   "runId": "workbuddy-agent-2026-11-20",
+   "verifiedAt": "2026-11-20T10:07:00+08:00"
+  }
  },
  {
   "id": "dalphin",
@@ -3006,7 +3104,7 @@
    "instant": null
   },
   "submit": {
-   "text": "Debug 阶段 2026-04-07 起开放（数据集同步发布于 Zenodo）；Phase 1 自 2026-07-10 起进行中；正式阶段提交截止日官方未公布",
+   "text": "Debug 4/7 起、Phase 1 7/10 起、Phase 3 10/28 上线、Phase 4 2026 年 11 月下旬上线；正式阶段提交截止日官方未公布",
    "day": null,
    "instant": null,
    "kind": "unknown",
@@ -3017,9 +3115,9 @@
   "url": "https://lunovo26.grand-challenge.org/",
   "status": "open",
   "warning": "资格限制：只对持有 CE 认证产品的厂商开放，普通开发者无法报名——本条收录但保留资格说明，按「唯一排除规则是仅限学生」的口径不作排除。正式阶段截止日未公布。",
-  "note": "官方时间线：3/31 网站上线与公开基线、4/7 Debug 阶段与数据集、7/10 Phase 1 上线；由 EIBALL 与 QMIC 组织、Radboud UMC 承办，SOLACE 项目资助。",
+  "note": "官方时间线：3/31 网站上线与公开基线、4/7 Debug 阶段与数据集、7/10 Phase 1、10/28 Phase 3、11 月下旬 Phase 4；由 EIBALL 与 QMIC 组织、Radboud UMC 承办，SOLACE 项目资助。",
   "priority": 5,
-  "verifiedAt": "2026-10-22T14:05:00+08:00",
+  "verifiedAt": "2026-11-20T10:07:00+08:00",
   "sources": [
    "https://grand-challenge.org/challenges/",
    {
@@ -3035,31 +3133,19 @@
   "verifiedBy": "agent",
   "verification": {
    "state": "verified",
-   "attemptedAt": "2026-10-22T14:05:00+08:00",
-   "verifiedAt": "2026-10-22T14:05:00+08:00",
-   "runId": "workbuddy-agent-2026-10-22",
+   "attemptedAt": "2026-11-20T10:07:00+08:00",
    "evidence": [
     {
-     "url": "https://lunovo26.grand-challenge.org/timeline/",
-     "summary": "官方时间线确认 3/31 上线与公开基线、4/7 Debug 阶段与数据集发布、7/10 Phase 1 上线；未公布正式阶段截止日。",
-     "fields": [
-      "submit",
-      "warning",
-      "note"
-     ],
-     "fetchedAt": "2026-10-22T14:05:00+08:00",
-     "quote": "✅ 10 July 2026: LUNOVO26 Phase 1 live."
+     "quote": "Late November 2026: LUNOVO26 Phase 4 live.",
+     "url": "https://lunovo26.grand-challenge.org/timeline/"
     },
     {
-     "url": "https://lunovo26.grand-challenge.org/",
-     "summary": "官方说明 LUNOVO26 由 EIBALL、QMIC 与 Radboud UMC 组织、SOLACE 资助，目标是肺结节体积测量而非恶性概率。",
-     "fields": [
-      "note"
-     ],
-     "fetchedAt": "2026-10-22T14:05:00+08:00",
-     "quote": "LUNOVO26 is a public benchmarking challenge organized by EIBALL, QMIC and Radboud University Medical Center"
+     "quote": "28 October 2026: LUNOVO26 Phase 3 live.",
+     "url": "https://lunovo26.grand-challenge.org/timeline/"
     }
-   ]
+   ],
+   "runId": "workbuddy-agent-2026-11-20",
+   "verifiedAt": "2026-11-20T10:07:00+08:00"
   }
  },
  {
@@ -3199,10 +3285,10 @@
   "requirements": "个人或团队队长须为美国公民 / 永久居民（国籍限制而非学生限制，仍收录）；鼓励使用外部数据（需持有许可）；同一份提交在私有专家标签集与复核扩展标签集上分别评分。",
   "status": "open",
   "submit": {
+   "text": "Dec. 3, 2026, 10 p.m. UTC → 北京 12/4 06:00（官网写 10 p.m.，原记录按 11:59 p.m. 有误）",
    "day": "2026-12-04",
-   "instant": "2026-12-03T23:59:00Z",
+   "instant": "2026-12-03T22:00:00Z",
    "kind": "deadline",
-   "text": "Dec. 3, 2026, 11:59 p.m. UTC → 北京 12/4 07:59",
    "timezone": "UTC"
   },
   "tags": [
@@ -3212,7 +3298,7 @@
   "title": "The Geologic Enhanced Mapping System (GEMS) Prize Challenge",
   "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/",
   "venue": "",
-  "warning": "参赛资格限美国公民 / 永久居民（队长）；联邦实体与联邦雇员不可参加。本轮通过 DrivenData 源新发现。",
+  "warning": "参赛资格限美国公民 / 永久居民（队长）；联邦实体与联邦雇员不可参加。截止时刻为 12/3 22:00 UTC（非 23:59）；同一份提交在私有专家标签集与复核扩展标签集上分别评出初始轮与最终轮奖金。",
   "eligibility": "open",
   "sources": [
    "https://www.drivendata.org/competitions/306/competition-doe-gems/",
@@ -3221,21 +3307,21 @@
   "verifiedBy": "agent",
   "verification": {
    "state": "verified",
-   "attemptedAt": "2026-09-27T18:15:15+08:00",
+   "attemptedAt": "2026-11-20T10:07:00+08:00",
    "evidence": [
     {
-     "quote": "Competition End Date Dec. 3, 2026, 11:59 p.m. UTC",
+     "quote": "Dec. 3, 2026, 10 p.m. UTC",
      "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/"
     },
     {
-     "quote": "Individual competitors must be U.S. citizens or permanent residents. Teams must have a captain who is a U.S. citizen or permanent resident.",
+     "quote": "Total Prize Pool: $300,000",
      "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/"
     }
    ],
-   "runId": "36311263414-1",
-   "verifiedAt": "2026-09-27T18:15:15+08:00"
+   "runId": "workbuddy-agent-2026-11-20",
+   "verifiedAt": "2026-11-20T10:07:00+08:00"
   },
-  "verifiedAt": "2026-09-27T18:15:15+08:00",
+  "verifiedAt": "2026-11-20T10:07:00+08:00",
   "note": "",
   "old": []
  },
@@ -3589,7 +3675,7 @@
   "requirements": "不限团队人数（每人仅一队），学术/产业/独立研究者均可；提交 zip（main.py + requirements.txt，可选 models.txt），predict() 须纯函数；单 H100 / 16 GB，算力预算开发期 15 分钟、终评 60 分钟；须交 4 页 writeup 与允许非商业研究复现的源码（OpenReview）。",
   "award": "$16,500：Grand Prize $10,000（三技能均值排名）+ Roots of the Data Prize $2,000（团队全部隶属 14 个数据国之一）+ UNHCR / UNICEF / World Bank 三技能各 $1,500。",
   "url": "https://simulacrabench.org/",
-  "status": "submission",
+  "status": "closed",
   "warning": "终评窗口 11/15–19 仅 1 次提交且不嵌套开发期；微观数据不发放，试图访问/重建/重识别记录即取消资格；官方未公布结果公布日期。",
   "note": "",
   "priority": 3,
@@ -3621,6 +3707,12 @@
      "quote": "Attempting to access, reconstruct, or re-identify the underlying records"
     }
    ]
+  },
+  "statusDerivation": {
+   "at": "2026-11-20T10:08:29+08:00",
+   "from": "submission",
+   "to": "closed",
+   "basis": "known_deadlines"
   }
  },
  {
@@ -7220,7 +7312,7 @@
   "venue": "",
   "eligibility": "open",
   "priority": 4,
-  "verifiedAt": "2026-10-22T14:05:00+08:00",
+  "verifiedAt": "2026-11-20T10:07:00+08:00",
   "verifiedBy": "agent",
   "sources": [
    {
@@ -7235,34 +7327,23 @@
   "old": [],
   "verification": {
    "state": "verified",
-   "attemptedAt": "2026-10-22T14:05:00+08:00",
-   "verifiedAt": "2026-10-22T14:05:00+08:00",
-   "runId": "workbuddy-agent-2026-10-22",
+   "attemptedAt": "2026-11-20T10:07:00+08:00",
    "evidence": [
     {
-     "url": "https://dragon.grand-challenge.org/",
-     "summary": "临床 NLP 基准：28,824 份报告 / 28 任务 / 5 家荷兰医疗中心，公开预训练基线与 HuggingFace 权重；官网欢迎学生与研究者。",
-     "fields": [
-      "task",
-      "requirements",
-      "eligibility"
-     ],
-     "fetchedAt": "2026-10-22T14:05:00+08:00",
-     "quote": "spans 28 clinically relevant tasks with 28,824 annotated medical reports from five Dutch care centers"
+     "quote": "28 clinically relevant tasks with 28,824 annotated medical reports from five Dutch care centers",
+     "url": "https://dragon.grand-challenge.org/"
     },
     {
-     "url": "https://dragon.grand-challenge.org/submission/",
-     "summary": "提交需通过 Synthetic → Validation → Test 三阶段，Test 阶段要求开源许可与方法说明，否则不处理不计分。",
-     "fields": [
-      "entry",
-      "submit",
-      "requirements",
-      "warning"
-     ],
-     "fetchedAt": "2026-10-22T14:05:00+08:00",
-     "quote": "Without a valid open-source license and supporting document, the algorithm will not be processed"
+     "quote": "Whether you are a student or a seasoned researcher",
+     "url": "https://dragon.grand-challenge.org/"
+    },
+    {
+     "quote": "Register: Get started by registering on the Grand Challenge platform and joining the challenge",
+     "url": "https://dragon.grand-challenge.org/"
     }
-   ]
+   ],
+   "runId": "workbuddy-agent-2026-11-20",
+   "verifiedAt": "2026-11-20T10:07:00+08:00"
   }
  },
  {
@@ -7293,12 +7374,12 @@
   "award": "官网与 Grand Challenge 页面均未列现金奖金；以 MICCAI 论文与 workshop 展示为主要产出。",
   "url": "https://learn2reg.grand-challenge.org/",
   "status": "unclear",
-  "warning": "两个 CodaBench 任务页（15724 / 15955）本轮网络不可达（SSL 失败），提交截止日、评审方式与奖金均未核实；MICCAI 2026 会议为 2026-09-27 至 10-01，赛事活动日已过，是否仍开放最终提交需以 CodaBench 为准。",
+  "warning": "两个 CodaBench 任务页（15724 / 15955）本轮被站点 Anubis 反爬验证拦截（WebFetch 与 curl 均只返回 “Making sure you're not a bot!”），提交截止日仍未核实；GC 页面无时间线，MICCAI 2026（9/27–10/1）已结束，是否仍收最终提交只能以 CodaBench 为准。",
   "note": "主办方含 Johns Hopkins、Vanderbilt、Radboud UMC 等；Task 1 与 SNMMI 合作，Task 2 与 COPDGene 合作。",
   "venue": "MICCAI 2026 · Strasbourg",
   "eligibility": "open",
   "priority": 4,
-  "verifiedAt": "2026-10-22T14:05:00+08:00",
+  "verifiedAt": "2026-11-20T10:07:00+08:00",
   "verifiedBy": "agent",
   "sources": [
    {
@@ -7309,25 +7390,19 @@
   "old": [],
   "verification": {
    "state": "verified",
-   "attemptedAt": "2026-10-22T14:05:00+08:00",
-   "verifiedAt": "2026-10-22T14:05:00+08:00",
-   "runId": "workbuddy-agent-2026-10-22",
+   "attemptedAt": "2026-11-20T10:07:00+08:00",
    "evidence": [
     {
-     "url": "https://learn2reg.grand-challenge.org/",
-     "summary": "Learn2Reg 2026 两个任务（PSMAReg 15724、Learn2Breath 15955）数据规模、评测指标与 MICCAI 2026 举办信息确认；截止日需从 CodaBench 任务页读取，本轮不可达。",
-     "fields": [
-      "task",
-      "entry",
-      "submit",
-      "requirements",
-      "award",
-      "warning"
-     ],
-     "fetchedAt": "2026-10-22T14:05:00+08:00",
-     "quote": "Learn2Reg 2026 Challenge Tasks will be hosted on CodaBench"
+     "quote": "Learn2Reg 2026 will be held at MICCAI 2026 in Strasbourg.",
+     "url": "https://learn2reg.grand-challenge.org/"
+    },
+    {
+     "quote": "Learn2Reg 2026 Challenge Tasks will be hosted on CodaBench",
+     "url": "https://learn2reg.grand-challenge.org/"
     }
-   ]
+   ],
+   "runId": "workbuddy-agent-2026-11-20",
+   "verifiedAt": "2026-11-20T10:07:00+08:00"
   },
   "paper": "以 MICCAI 论文与 workshop 展示为主要产出"
  },
@@ -7671,6 +7746,63 @@
      "quote": "Total $10,001"
     }
    ]
+  }
+ },
+ {
+  "id": "kaggle-playground-series-s6e11",
+  "title": "Kaggle Playground S6E11 · 信用卡欺诈预测",
+  "platform": "Kaggle",
+  "tags": [
+   "数据挖掘"
+  ],
+  "task": "表格二分类：预测交易为信用卡欺诈的概率，合成数据，AUC 评测。",
+  "entry": {
+   "text": "Entry 与组队合并截止均与终交同日，无独立节点",
+   "day": null,
+   "instant": null,
+   "kind": "unknown",
+   "timezone": "unknown"
+  },
+  "submit": {
+   "text": "Final Submission Deadline 11 月 30 日 23:59 UTC → 北京 12/1 07:59；开始 11/1",
+   "day": "2026-12-01",
+   "instant": "2026-11-30T23:59:00Z",
+   "kind": "deadline",
+   "timezone": "UTC"
+  },
+  "requirements": "Playground 系列（每期一个轻量表格赛，合成数据）；每天提交次数按 Kaggle 常规限制；不评奖牌与积分（Does not award Points or Medals）。",
+  "award": "前三名各获 Kaggle 周边（同一系列每人只发一次，重复获奖顺延给下一队）",
+  "url": "https://www.kaggle.com/competitions/playground-series-s6e11",
+  "status": "open",
+  "warning": "",
+  "note": "第 6 季第 11 期；库内已有 S6E7–S6E10。",
+  "priority": 5,
+  "verifiedAt": "2026-11-20T10:07:00+08:00",
+  "sources": [
+   {
+    "label": "official",
+    "url": "https://www.kaggle.com/competitions/playground-series-s6e11"
+   }
+  ],
+  "old": [],
+  "venue": "",
+  "eligibility": "open",
+  "verifiedBy": "agent",
+  "verification": {
+   "state": "verified",
+   "attemptedAt": "2026-11-20T10:07:00+08:00",
+   "evidence": [
+    {
+     "quote": "Final Submission Deadline",
+     "url": "https://www.kaggle.com/competitions/playground-series-s6e11"
+    },
+    {
+     "quote": "Submissions are evaluated on area under the ROC curve",
+     "url": "https://www.kaggle.com/competitions/playground-series-s6e11"
+    }
+   ],
+   "runId": "workbuddy-agent-2026-11-20",
+   "verifiedAt": "2026-11-20T10:07:00+08:00"
   }
  }
 ]
