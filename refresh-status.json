@@ -1,70 +1,95 @@
 {
  "state": "partial",
- "finishedAt": "2026-11-20T10:08:51+08:00",
+ "finishedAt": "2026-11-23T10:29:23+08:00",
  "verified": 13,
  "verifiedIds": [
-  "3lc",
+  "virtual-embryo",
+  "flagos-season2",
+  "roboworld-2026-safedrive-vla",
   "steer",
+  "owl-pathology",
+  "lightmycells2",
   "gemma",
-  "tianchi-aftershock",
   "event-6ad83c0101a326be",
-  "topbrain-v2",
-  "enveda-casmi26",
-  "cobra2026",
-  "sapc2",
-  "lunovo26",
-  "learn2reg-2026",
-  "dragon-clinical-nlp",
-  "kaggle-playground-series-s6e11"
+  "kaggle-playground-series-s6e11",
+  "nfl-bdb-2027",
+  "name-that-llm",
+  "tianchi-aftershock",
+  "airway-tree-modeling-26"
  ],
  "sourcesOk": 5,
  "sourcesTotal": 5,
  "runner": "workbuddy-agent",
- "runId": "workbuddy-agent-2026-11-20",
+ "runId": "workbuddy-agent-2026-11-23",
  "sourceResults": [
+  {
+   "name": "Kaggle 列表",
+   "url": "https://www.kaggle.com/competitions",
+   "state": "ok",
+   "fetchState": "web",
+   "fetchedAt": "2026-11-23T10:29:23+08:00",
+   "notes": "scrape_spa 无凭据抓空（连续第 12 天）；WebFetch 读 /competitions?listOption=active&sortOption=prize 覆盖 Featured/Hackathons/Community/Playground 共 20 张卡片，全部已在库（physical-engineerings-last-exam、google-verifiable-quantum-circuit-compilation、nfl-big-data-bowl-2027、gemma-4-developer-agent、name-that-llm、enveda-CASMI26、santa-2026、squares-in-squares、playground-s6e11、PTCG Playground 等），无新赛。api/v1/competitions/list 仍 401，未采用。"
+  },
   {
    "name": "天池列表",
    "url": "https://tianchi.aliyun.com/competition/algorithmList",
    "state": "ok",
    "fetchState": "web",
-   "fetchedAt": "2026-11-20T10:08:51+08:00",
-   "notes": "scrape_spa 三源全空（连续第 9 天）；curl 只拿到 SPA 空壳，改 WebFetch 读列表页：11 条卡片全部在库，无新赛。532460 列表「比赛时间 2026.01.28~2026.12.20」与详情页阶段表「排名赛 6.1–11.30」不一致，已按阶段表记录并在 warning 注明。另用详情页 /information 复核余震预测阶段与奖金。"
+   "fetchedAt": "2026-11-23T10:29:23+08:00",
+   "notes": "算法赛列表在榜仅余震预测 532460（进行中，团队数 898），其余为 CBCT 金属伪影（532440，已结束）、睿创杯两赛道（已结束）、WWW2025/APTOS/Chinagraph/CCKS2024/ISCSLP2024（均已结束）。无新赛。"
   },
   {
    "name": "讯飞列表",
    "url": "https://challenge.xfyun.cn/",
    "state": "ok",
    "fetchState": "web",
-   "fetchedAt": "2026-11-20T10:08:51+08:00",
-   "notes": "首页热门 3 条均已报名结束（Spark-X2.5 11/10、车道线 9/14、结果枝 9/28）；星火杯与 AI 应用赛为学生向，按仅限在校学生排除；无新赛。"
-  },
-  {
-   "name": "Kaggle 列表",
-   "url": "https://www.kaggle.com/competitions",
-   "state": "ok",
-   "fetchState": "web",
-   "fetchedAt": "2026-11-20T10:08:51+08:00",
-   "notes": "scrape_spa 无凭据抓空；WebFetch 读 /competitions?listOption=active&sortOption=prize 覆盖 Featured/Hackathons/Community/Playground/Recently Ended 共 20+ 卡片。唯一未在库的赛事为 Playground S6E11（11/30 23:59 UTC 终交），已收录并核验；其余 7 张 Getting Started「Knowledge」常青赛为学习练习，不收录。api/v1/competitions/list 仍 401，未采用。"
+   "fetchedAt": "2026-11-23T10:29:23+08:00",
+   "notes": "首页热门仍是 Spark-X2.5（报名 11/10 截止）、车道线（9/14）、结果枝（9/28）三条，均已报名结束；星火杯与 AI 应用赛为学生向，按仅限在校学生排除。无新赛。"
   },
   {
    "name": "grand-challenge API",
    "url": "https://grand-challenge.org/api/v1/challenges/",
    "state": "ok",
    "fetchState": "ok",
-   "fetchedAt": "2026-11-20T10:08:51+08:00",
-   "notes": "264 条 offset 分页扫全，组合过滤（start≥2025-01-01、今天≤end≤2027-12-31、modified≥2025-09-01）得 9 候选：isles-24 / trackrad2025 / panther / lunovo26 / topbrain2026 / cobra2026 / selma3d2026 / lightmycells2 / owl，全部已在库，无新赛。另用 API 的 start/end 复核 cobra2026（start 2027-01-15 23:01Z、end 2027-02-15 22:59Z）与 topbrain-v2（end 2026-12-31 22:59Z）；并抓 /challenges/ 列表页卡片原文，确认 topbrain 的 12/11、cobra 的 1/15 都是“Opening submissions”而非截止。"
+   "fetchedAt": "2026-11-23T10:29:23+08:00",
+   "notes": "264 条 offset 分页（0/100/200）扫全。组合过滤后 9 候选：ISLES-24、ToothFairy2、PANTHER、SynthRAD2025、TrackRad2025、LUNOVO26、TopBrain2026、SELMA3D2026、COBRA2026 均在库。新发现两处动向：ATM26（modified 11/21）赛后长期榜重开 + 新增 Track-3，已在库条目更新为 practice；PRISMA24 处于「已提交算法在隐藏集上评测、发布结果」阶段，不再接收新参赛，不收。"
   },
   {
    "name": "NeurIPS 官博",
    "url": "https://blog.neurips.cc/",
    "state": "ok",
-   "fetchState": "ok",
-   "fetchedAt": "2026-11-20T10:08:51+08:00",
-   "notes": "RSS 最新为 11/08「NeurIPS Newsletter – October 2026」，其次 11/04 MLRC 录用论文通知，无新竞赛帖。"
+   "fetchState": "web",
+   "fetchedAt": "2026-11-23T10:29:23+08:00",
+   "notes": "最新为 11/08「NeurIPS Newsletter – October 2026」，其次 11/04 MLRC 2026 录用论文公布，均为会务/论文类，无新竞赛帖。"
   }
  ],
  "failedSources": [],
  "pendingIds": [
+  "xf-berry",
+  "xf-grape",
+  "xf-weed",
+  "xf-fpv",
+  "xf-corn",
+  "smp-graph",
+  "solar",
+  "zhihu-table",
+  "mast",
+  "roco",
+  "industrial",
+  "wsdm",
+  "newsrec",
+  "umud",
+  "llm-practice",
+  "iwdd-2027",
+  "selma3d-2026",
+  "clear-ec",
+  "auto-1790499747",
+  "auto-1790499749",
+  "panther-challenge",
+  "wear-hasca-2026",
+  "soil-grain-size",
+  "memecoins-pump-dump",
+  "ai4s-lifescience",
   "spider",
   "doserad2026",
   "pengwin2026",
@@ -103,26 +128,36 @@
   "soccernet-2027-streaming-vqa",
   "soccernet-2027-group-activity"
  ],
- "addedIds": [
-  "kaggle-playground-series-s6e11"
- ],
+ "addedIds": [],
  "newVerifiedIds": [
-  "kaggle-playground-series-s6e11"
+  "virtual-embryo",
+  "flagos-season2",
+  "roboworld-2026-safedrive-vla",
+  "steer",
+  "owl-pathology",
+  "lightmycells2",
+  "gemma",
+  "event-6ad83c0101a326be",
+  "kaggle-playground-series-s6e11",
+  "nfl-bdb-2027",
+  "name-that-llm",
+  "tianchi-aftershock",
+  "airway-tree-modeling-26"
  ],
  "verificationTargetIds": [
-  "3lc",
+  "virtual-embryo",
+  "flagos-season2",
+  "roboworld-2026-safedrive-vla",
   "steer",
+  "owl-pathology",
+  "lightmycells2",
   "gemma",
-  "tianchi-aftershock",
   "event-6ad83c0101a326be",
-  "topbrain-v2",
-  "enveda-casmi26",
-  "cobra2026",
-  "sapc2",
-  "lunovo26",
-  "learn2reg-2026",
-  "dragon-clinical-nlp",
-  "kaggle-playground-series-s6e11"
+  "kaggle-playground-series-s6e11",
+  "nfl-bdb-2027",
+  "name-that-llm",
+  "tianchi-aftershock",
+  "airway-tree-modeling-26"
  ],
  "unfinishedTargetIds": [],
  "excludedIds": [
@@ -130,34 +165,34 @@
  ],
  "statusChanges": [
   {
-   "id": "steer",
+   "id": "3lc",
    "before": "open",
+   "after": "closed"
+  },
+  {
+   "id": "roboworld-2026-safedrive-vla",
+   "before": "unclear",
    "after": "submission"
   },
   {
-   "id": "sapc2",
-   "before": "open",
-   "after": "closed"
-  },
-  {
-   "id": "simulacrabench",
-   "before": "submission",
-   "after": "closed"
+   "id": "airway-tree-modeling-26",
+   "before": "closed",
+   "after": "practice"
   }
  ],
  "businessChangedIds": [
-  "3lc",
+  "virtual-embryo",
+  "flagos-season2",
+  "roboworld-2026-safedrive-vla",
   "steer",
+  "owl-pathology",
+  "lightmycells2",
   "gemma",
-  "tianchi-aftershock",
   "event-6ad83c0101a326be",
-  "topbrain-v2",
-  "enveda-casmi26",
-  "cobra2026",
-  "sapc2",
-  "lunovo26",
-  "learn2reg-2026",
-  "dragon-clinical-nlp",
-  "kaggle-playground-series-s6e11"
+  "kaggle-playground-series-s6e11",
+  "nfl-bdb-2027",
+  "name-that-llm",
+  "tianchi-aftershock",
+  "airway-tree-modeling-26"
  ]
 }
