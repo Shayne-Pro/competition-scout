@@ -1326,10 +1326,10 @@
   "award": "总奖池 $40k+（每赛道前三名现金奖）+ NeurIPS 2026 workshop 报告邀请；受 EU/US 制裁与付款可行性限制，无法付款时顺延给下一名。",
   "url": "https://steerability.github.io/competition/",
   "status": "submission",
-  "warning": "报名已于 11/1 AoE 关闭，只剩终交（11/29 AoE）；榜单 Next intake 11/23 AoE 是分批接收节点，不是截止日。获奖须能提供完整复现材料，且至少一名成员在 NeurIPS 2026 workshop 现场或线上报告；奖金受 EU/US 制裁与跨境付款限制。",
+  "warning": "报名已于 11/1 AoE 关闭，只剩终交（11/29 AoE = 北京 11/30 19:59）；榜单 Next intake 11/23 AoE 已过，属分批接收节点，不是截止日。获奖须能提供完整复现材料，且至少一名成员在 NeurIPS 2026 workshop 现场或线上报告；奖金受 EU/US 制裁与跨境付款限制。",
   "note": "",
   "priority": 2,
-  "verifiedAt": "2026-11-23T10:40:00+08:00",
+  "verifiedAt": "2026-11-24T13:30:00+08:00",
   "sources": [
    {
     "label": "official",
@@ -1342,23 +1342,23 @@
   "venue": "NeurIPS 2026",
   "verification": {
    "state": "verified",
-   "attemptedAt": "2026-11-23T10:40:00+08:00",
-   "verifiedAt": "2026-11-23T10:40:00+08:00",
-   "runId": "workbuddy-agent-2026-11-23",
+   "attemptedAt": "2026-11-24T13:30:00+08:00",
    "evidence": [
     {
-     "url": "https://steerability.github.io/competition/",
-     "quote": "The final submission deadline is Nov 29 AoE."
+     "quote": "The final submission deadline is Nov 29 AoE.",
+     "url": "https://steerability.github.io/competition/"
     },
     {
-     "url": "https://steerability.github.io/competition/",
-     "quote": "Next intake: Nov 23, 2026 AoE"
+     "quote": "registration closes Nov 1 AoE",
+     "url": "https://steerability.github.io/competition/"
     },
     {
-     "url": "https://steerability.github.io/competition/",
-     "quote": "Teams must consist of at least two people but no more than five people."
+     "quote": "at least one member of each winning team must be able to present (either in-person or virtually) at the competition workshop at NeurIPS 2026 in Paris.",
+     "url": "https://steerability.github.io/competition/"
     }
-   ]
+   ],
+   "runId": "workbuddy-agent-2026-11-24",
+   "verifiedAt": "2026-11-24T13:30:00+08:00"
   },
   "verifiedBy": "agent"
  },
@@ -1389,10 +1389,10 @@
   "award": "总奖 $110,000：主赛 $65,000（$37,000/$18,000/$10,000）+ 论文赛道 $35,000（须在独立 paper track 提交）+ 小模型开发奖 $10,000（须以 Gemma E2B 或 E4B 为基座）。Kaggle 侧栏「Prizes & Awards」显示 $75,000（主赛 65k + 小模型 10k），不含论文赛道 35k。",
   "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent",
   "status": "open",
-  "warning": "Entry 与 Team Merger 均为 11/25 23:59 UTC（北京 11/26 07:59），仅剩 3 天；论文赛道 11/12 已截稿。获奖资格与开源义务绑定，不开源会被取消资格；小模型开发奖须在两份终交中明确选定其一。",
+  "warning": "Entry 与 Team Merger 均为 11/25 23:59 UTC（北京 11/26 07:59），仅剩 2 天，报名与组队合并都必须在截止前完成；论文赛道 11/12 已截稿。获奖资格与开源义务绑定，不开源会被取消资格；小模型开发奖须在两份终交中明确选定其一。",
   "note": "",
   "priority": 1,
-  "verifiedAt": "2026-11-23T10:40:00+08:00",
+  "verifiedAt": "2026-11-24T13:30:00+08:00",
   "sources": [
    "https://www.kaggle.com/competitions/gemma-4-developer-agent",
    "https://www.kaggle.com/competitions/gemma-4-developer-agent",
@@ -1410,23 +1410,23 @@
   "verifiedBy": "agent",
   "verification": {
    "state": "verified",
-   "attemptedAt": "2026-11-23T10:40:00+08:00",
-   "verifiedAt": "2026-11-23T10:40:00+08:00",
-   "runId": "workbuddy-agent-2026-11-23",
+   "attemptedAt": "2026-11-24T13:30:00+08:00",
    "evidence": [
     {
-     "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent",
-     "quote": "November 25, 2026 - Entry Deadline. You must accept the competition rules before this date in order to compete."
+     "quote": "November 25, 2026 - Entry Deadline. You must accept the competition rules before this date in order to compete.",
+     "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent"
     },
     {
-     "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent",
-     "quote": "December 2, 2026 - Final Submission Deadline."
+     "quote": "December 2, 2026 - Final Submission Deadline.",
+     "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent"
     },
     {
-     "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent",
-     "quote": "Total Prizes Available: $110,000"
+     "quote": "All deadlines are at 11:59 PM UTC on the corresponding day unless otherwise noted.",
+     "url": "https://www.kaggle.com/competitions/gemma-4-developer-agent"
     }
-   ]
+   ],
+   "runId": "workbuddy-agent-2026-11-24",
+   "verifiedAt": "2026-11-24T13:30:00+08:00"
   },
   "paper": "独立 paper track（gemma-4-developer-agent-paper，$35,000，11/12 23:59 UTC 截稿，须单独报名该赛）"
  },
@@ -2075,10 +2075,10 @@
   "award": "$112K 总奖池：名次奖 $54K（每赛道 $27K，各含 1 个 $8K 一等奖 / 2 个 $5K 二等奖 / 3 个 $3K 三等奖）+ 通用性奖 $8K（用同一架构解多个任务）+ 差旅奖 $30K（15–20 名早期研究者）+ 社区贡献奖 $20K（教程、notebook、工具等，单项最高 $200，不限参赛者）",
   "url": "https://virtualembryo.ai/challenge",
   "status": "open",
-  "warning": "截止仅剩 3 天（11/25 23:59 AoE，11/16 才宣布提前）；P3 期内每块榜最多 2 次正式提交，提交后锁定；Agent 赛道须随提交附轨迹、prompt 与 harness 代码，无法验证的不予评奖。",
+  "warning": "截止仅剩 2 天：11/25 23:59 AoE（= 12:00 UTC 11/26 = 北京 11/26 19:59），11/16 才宣布从 12/2 提前；P3 期内每块榜最多 2 次正式提交，提交后锁定；Agent 赛道须随提交附轨迹、prompt 与 harness 代码，无法验证的不予评奖。",
   "note": "时间线：7/28 官宣、8/10 P1、8/15 P2、10/27 P3 09:00 PDT 开测、11/25 23:59 AoE 终交、11/26 终评、12/01 通知获奖、12/12 workshop 公布。",
   "priority": 3,
-  "verifiedAt": "2026-11-23T10:40:00+08:00",
+  "verifiedAt": "2026-11-24T13:30:00+08:00",
   "sources": [
    {
     "label": "official",
@@ -2093,27 +2093,23 @@
   "venue": "NeurIPS 2026",
   "verification": {
    "state": "verified",
-   "attemptedAt": "2026-11-23T10:40:00+08:00",
-   "verifiedAt": "2026-11-23T10:40:00+08:00",
-   "runId": "workbuddy-agent-2026-11-23",
+   "attemptedAt": "2026-11-24T13:30:00+08:00",
    "evidence": [
     {
-     "url": "https://virtualembryo.ai/challenge/timeline",
-     "quote": "2026-11-25 Final submissions due at 23:59 AoE"
+     "quote": "2026-11-25 Final submissions due at 23:59 AoE",
+     "url": "https://virtualembryo.ai/challenge/timeline"
     },
     {
-     "url": "https://virtualembryo.ai/challenge/timeline",
-     "quote": "Due at 23:59 AoE (Anywhere on Earth), which is 12:00 UTC on 26 November."
+     "quote": "Due at 23:59 AoE (Anywhere on Earth), which is 12:00 UTC on 26 November.",
+     "url": "https://virtualembryo.ai/challenge/timeline"
     },
     {
-     "url": "https://virtualembryo.ai/challenge/timeline",
-     "quote": "Moved forward from 2 December, with notice given on 16 November."
-    },
-    {
-     "url": "https://virtualembryo.ai/challenge/timeline",
-     "quote": "Up to two final submissions per available board are allowed for the entire P3 phase."
+     "quote": "Up to two final submissions per available board are allowed for the entire P3 phase.",
+     "url": "https://virtualembryo.ai/challenge/timeline"
     }
-   ]
+   ],
+   "runId": "workbuddy-agent-2026-11-24",
+   "verifiedAt": "2026-11-24T13:30:00+08:00"
   },
   "verifiedBy": "agent"
  },
@@ -2455,7 +2451,7 @@
    "instant": "2026-06-01T08:00:00+08:00"
   },
   "submit": {
-   "text": "排名赛 6/1–11/30 进行中（UTC），按月提交预测；每月 10 日前专家组公布上月成绩；排名赛结束后从有效序列中最终遴选 10 次地震计算累计总分",
+   "text": "排名赛 6/1–11/30（UTC，即北京 12/1 08:00 止）进行中，按月提交预测；每月 10 日前专家组公布上月成绩；排名赛结束后从有效序列中最终遴选 10 次地震计算累计总分",
    "day": "2026-11-30",
    "instant": null
   },
@@ -2463,10 +2459,10 @@
   "award": "总奖金 $30,000：一等 1 名 $10,000、二等 2 名各 $5,000、三等 5 名各 $2,000，均发获奖证书。",
   "url": "https://tianchi.aliyun.com/competition/entrance/532460",
   "status": "submission",
-  "warning": "报名已截止，无法加入；详情页阶段表写排名赛 6/1–11/30，列表页「比赛时间」写 2026.01.28–2026.12.20，以阶段表为准。页面仍残留「报名剩 08 日 22 时」倒计时与「立即报名」按钮，属旧数据，公告明确「页面如有显示冲突以通知为准」。已在队内的需按月提交，漏月无成绩。",
+  "warning": "报名已截止，无法加入；详情页阶段表写排名赛 6/1–11/30，列表页「比赛时间」写 2026.01.28–2026.12.20，以阶段表为准。页面仍残留「报名剩 07 日 10 时」倒计时、「立即报名」按钮与「当前为报名阶段」字样，均属旧数据，公告明确「页面如有显示冲突以通知为准」。已在队内的需按月提交，漏月无成绩。",
   "note": "阶段表：报名与资格赛 1/28–5/31、排名赛 6/1–11/30；奖金 $30,000；当前 894 队。",
   "priority": 5,
-  "verifiedAt": "2026-11-23T10:40:00+08:00",
+  "verifiedAt": "2026-11-24T13:30:00+08:00",
   "sources": [
    "https://tianchi.aliyun.com/competition/entrance/532460",
    {
@@ -2484,23 +2480,23 @@
   "verifiedBy": "agent",
   "verification": {
    "state": "verified",
-   "attemptedAt": "2026-11-23T10:40:00+08:00",
-   "verifiedAt": "2026-11-23T10:40:00+08:00",
-   "runId": "workbuddy-agent-2026-11-23",
+   "attemptedAt": "2026-11-24T13:30:00+08:00",
    "evidence": [
     {
-     "url": "https://tianchi.aliyun.com/competition/entrance/532460/information",
-     "quote": "排名赛 6.1 11.30"
+     "quote": "第二赛段（排名赛）： 2026年6月1日-11月30日（UTC时间）",
+     "url": "https://tianchi.aliyun.com/competition/entrance/532460"
     },
     {
-     "url": "https://tianchi.aliyun.com/competition/entrance/532460/information",
-     "quote": "报名与资格赛 1.28 5.31"
+     "quote": "注意：报名截止时间为UTC 5月31日24时，即北京时间6月1日8时。页面如有显示冲突，以本通知为准。",
+     "url": "https://tianchi.aliyun.com/competition/entrance/532460"
     },
     {
-     "url": "https://tianchi.aliyun.com/competition/entrance/532460/information",
-     "quote": "奖金$ 30000"
+     "quote": "本次大赛面向全球公众开放。个人或团队均可参加（最多5人）。",
+     "url": "https://tianchi.aliyun.com/competition/entrance/532460"
     }
-   ]
+   ],
+   "runId": "workbuddy-agent-2026-11-24",
+   "verifiedAt": "2026-11-24T13:30:00+08:00"
   }
  },
  {
@@ -2530,7 +2526,7 @@
   "warning": "奖金以开源与复现为前提；UQ 赛道（climx-uq-track）为独立赛页，本库只跟踪主赛道。",
   "note": "",
   "priority": 4,
-  "verifiedAt": "2026-11-19T15:40:00+08:00",
+  "verifiedAt": "2026-11-24T13:30:00+08:00",
   "sources": [
    {
     "label": "official",
@@ -2541,22 +2537,19 @@
   "venue": "",
   "verification": {
    "state": "verified",
-   "verifiedAt": "2026-11-19T15:40:00+08:00",
-   "runId": "workbuddy-agent-2026-11-19",
+   "attemptedAt": "2026-11-24T13:30:00+08:00",
    "evidence": [
     {
-     "url": "https://www.kaggle.com/competitions/climx-main-track",
-     "quote": "December 15, 2026: submissions close, the leaderboard freezes"
+     "quote": "December 15, 2026: submissions close, the leaderboard freezes, and finalist reproducibility checks begin",
+     "url": "https://www.kaggle.com/competitions/climx-main-track"
     },
     {
-     "url": "https://www.kaggle.com/competitions/climx-main-track",
-     "quote": "Prizes totalling €3,300 are provided by ESA Φ-lab"
-    },
-    {
-     "url": "https://www.kaggle.com/competitions/climx-main-track",
-     "quote": "direct prediction of the leaderboard indices is not allowed"
+     "quote": "The top three teams will be invited to contribute as co-authors",
+     "url": "https://www.kaggle.com/competitions/climx-main-track"
     }
-   ]
+   ],
+   "runId": "workbuddy-agent-2026-11-24",
+   "verifiedAt": "2026-11-24T13:30:00+08:00"
   },
   "verifiedBy": "agent",
   "paper": "前三名受邀共同署名竞赛论文（投期刊）"
@@ -3331,21 +3324,25 @@
   "verifiedBy": "agent",
   "verification": {
    "state": "verified",
-   "attemptedAt": "2026-11-23T10:40:00+08:00",
-   "verifiedAt": "2026-11-23T10:40:00+08:00",
-   "runId": "workbuddy-agent-2026-11-23",
+   "attemptedAt": "2026-11-24T13:30:00+08:00",
    "evidence": [
     {
-     "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/",
-     "quote": "Dec. 3, 2026, 10 p.m. UTC"
+     "quote": "Dec. 3, 2026, 10 p.m. UTC",
+     "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/"
     },
     {
-     "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/",
-     "quote": "Total Prize Pool: $300,000"
+     "quote": "Total Prize Pool: $300,000",
+     "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/"
+    },
+    {
+     "quote": "Each person may make one scored submission per UTC day, using their one account.",
+     "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/"
     }
-   ]
+   ],
+   "runId": "workbuddy-agent-2026-11-24",
+   "verifiedAt": "2026-11-24T13:30:00+08:00"
   },
-  "verifiedAt": "2026-11-23T10:40:00+08:00",
+  "verifiedAt": "2026-11-24T13:30:00+08:00",
   "note": "",
   "old": []
  },
@@ -3903,7 +3900,7 @@
   "warning": "两轮论文截止不同：Round One 论文 11/13、终轮论文与终交同为 1/15；论文奖按质量与新颖性评，与主榜指标脱钩；首轮获奖若终轮获更高奖只补差额，差额回到奖池。",
   "note": "主办方：NSF AI Institute in Dynamic Systems、哈佛、哥伦比亚、华盛顿大学与 Kajima；优胜方案有机会在三栋真实建筑上测试。",
   "priority": 3,
-  "verifiedAt": "2026-10-22T14:05:00+08:00",
+  "verifiedAt": "2026-11-24T13:30:00+08:00",
   "verifiedBy": "agent",
   "eligibility": "open",
   "sources": [
@@ -3919,25 +3916,23 @@
   "old": [],
   "verification": {
    "state": "verified",
-   "attemptedAt": "2026-10-22T14:05:00+08:00",
-   "verifiedAt": "2026-10-22T14:05:00+08:00",
-   "runId": "workbuddy-agent-2026-10-22",
+   "attemptedAt": "2026-11-24T13:30:00+08:00",
    "evidence": [
     {
-     "url": "https://www.kaggle.com/competitions/neurips-2026-smart-buildings",
-     "summary": "补齐全部日程：10/13 开赛、11/13 首轮论文、12/13 Paris workshop、Entry/TM 1/3、终交 1/15；奖金 $25,000 主榜 + $15,000 论文赛道；评测为 6 建筑 × 5 气象站 30 场景 MAE。",
-     "fields": [
-      "entry",
-      "submit",
-      "requirements",
-      "award",
-      "warning",
-      "note"
-     ],
-     "fetchedAt": "2026-10-22T14:05:00+08:00",
-     "quote": "January 15, 2027 - Final Submission Deadline."
+     "quote": "January 15, 2027 - Final Submission Deadline.",
+     "url": "https://www.kaggle.com/competitions/neurips-2026-smart-buildings"
+    },
+    {
+     "quote": "January 3, 2027 - Entry Deadline. You must accept the competition rules before this date in order to compete.",
+     "url": "https://www.kaggle.com/competitions/neurips-2026-smart-buildings"
+    },
+    {
+     "quote": "November 13, 2026 - Round One Paper Submission Date.",
+     "url": "https://www.kaggle.com/competitions/neurips-2026-smart-buildings"
     }
-   ]
+   ],
+   "runId": "workbuddy-agent-2026-11-24",
+   "verifiedAt": "2026-11-24T13:30:00+08:00"
   },
   "paper": "独立论文赛道，OpenReview 提交，论文奖 $15K"
  },
@@ -4364,7 +4359,7 @@
   "status": "submission",
   "warning": "两赛道截止不同：T2 已随 11/20 截止关闭；T1 仅剩第 13 批 PR 窗口（11/21–11/27）。T1 资格原文以「企业/高校/科研机构等组织」为主体，未明示个人可否报名；评奖必须先在 flagos.io 官网注册。",
   "priority": 4,
-  "verifiedAt": "2026-11-23T10:40:00+08:00",
+  "verifiedAt": "2026-11-24T13:30:00+08:00",
   "verifiedBy": "agent",
   "note": "",
   "old": [],
@@ -4385,23 +4380,23 @@
   ],
   "verification": {
    "state": "verified",
-   "attemptedAt": "2026-11-23T10:40:00+08:00",
-   "verifiedAt": "2026-11-23T10:40:00+08:00",
-   "runId": "workbuddy-agent-2026-11-23",
+   "attemptedAt": "2026-11-24T13:30:00+08:00",
    "evidence": [
     {
-     "url": "https://www.kaggle.com/competitions/flag-os-open-computing-global-challenge-track-1",
-     "quote": "Participants must complete registration through the official FlagOS website between July 17, 2026 (UTC+8) and November 13, 2026 (UTC+8)"
+     "quote": "The Development Phase of this Track runs from August 17, 2026 (UTC+8) to November 13, 2026 (UTC+8).",
+     "url": "https://www.kaggle.com/competitions/flag-os-open-computing-global-challenge-track-1"
     },
     {
-     "url": "https://www.kaggle.com/competitions/flag-os-open-computing-global-challenge-track-1",
-     "quote": "13 2026.11.05, 11.06, 11.07 20:00:00 2026.11.05 20:00:00 — 2026.11.13 19:59:59 2026.11.14 — 2026.11.20 2026.11.21 — 2026.11.27"
+     "quote": "2026.11.21 — 2026.11.27",
+     "url": "https://www.kaggle.com/competitions/flag-os-open-computing-global-challenge-track-1"
     },
     {
-     "url": "https://www.kaggle.com/competitions/flag-os-open-computing-global-challenge-track-1",
-     "quote": "with no restrictions on educational background, age, or nationality."
+     "quote": "Participants must complete registration through the official FlagOS website between July 17, 2026 (UTC+8) and November 13, 2026 (UTC+8)",
+     "url": "https://www.kaggle.com/competitions/flag-os-open-computing-global-challenge-track-1"
     }
-   ]
+   ],
+   "runId": "workbuddy-agent-2026-11-24",
+   "verifiedAt": "2026-11-24T13:30:00+08:00"
   }
  },
  {
@@ -6723,7 +6718,7 @@
     "url": "https://github.com/roboworld2026/track3"
    }
   ],
-  "verifiedAt": "2026-11-23T10:40:00+08:00",
+  "verifiedAt": "2026-11-24T13:30:00+08:00",
   "verifiedBy": "agent",
   "eligibility": "unknown",
   "identity": {
@@ -6734,27 +6729,23 @@
   },
   "verification": {
    "state": "verified",
-   "attemptedAt": "2026-11-23T10:40:00+08:00",
-   "verifiedAt": "2026-11-23T10:40:00+08:00",
-   "runId": "workbuddy-agent-2026-11-23",
+   "attemptedAt": "2026-11-24T13:30:00+08:00",
    "evidence": [
     {
-     "url": "https://github.com/roboworld2026/track3",
-     "quote": "Final submission deadline November 30, 2026"
+     "quote": "Final submission deadline November 30, 2026",
+     "url": "https://github.com/roboworld2026/track3"
     },
     {
-     "url": "https://github.com/roboworld2026/track3",
-     "quote": "Phase boundaries on CodaBench follow UTC+8."
+     "quote": "Awards announcement December 12, 2026 (RoboPAD Workshop @ NeurIPS 2026)",
+     "url": "https://github.com/roboworld2026/track3"
     },
     {
-     "url": "https://github.com/roboworld2026/track3",
-     "quote": "Awards announcement December 12, 2026 (RoboPAD Workshop @ NeurIPS 2026)"
-    },
-    {
-     "url": "https://roboworld2026.github.io/",
-     "quote": "Challenge participation is separate from RoboPAD paper submission."
+     "quote": "Phase boundaries on CodaBench follow UTC+8.",
+     "url": "https://github.com/roboworld2026/track3"
     }
-   ]
+   ],
+   "runId": "workbuddy-agent-2026-11-24",
+   "verifiedAt": "2026-11-24T13:30:00+08:00"
   }
  },
  {
@@ -7022,7 +7013,7 @@
   "status": "open",
   "warning": "11/30 截止未写时刻与时区；grand-challenge 平台记录的 end_date 为 2026-12-07T10:19Z，与 11/30 不一致（平台字段不可单独采信）；结果发表受 embargo 约束（CVPath 短文除外）。",
   "priority": 3,
-  "verifiedAt": "2026-11-23T10:40:00+08:00",
+  "verifiedAt": "2026-11-24T13:30:00+08:00",
   "sources": [
    {
     "label": "official",
@@ -7060,23 +7051,23 @@
   ],
   "verification": {
    "state": "verified",
-   "attemptedAt": "2026-11-23T10:40:00+08:00",
-   "verifiedAt": "2026-11-23T10:40:00+08:00",
-   "runId": "workbuddy-agent-2026-11-23",
+   "attemptedAt": "2026-11-24T13:30:00+08:00",
    "evidence": [
     {
-     "url": "https://owl.grand-challenge.org/timeline/",
-     "quote": "30 November 2026: Deadline for submission to the testing leaderboard"
+     "quote": "30 November 2026: Deadline for submission to the testing leaderboard",
+     "url": "https://owl.grand-challenge.org/timeline/"
     },
     {
-     "url": "https://owl.grand-challenge.org/timeline/",
-     "quote": "30 October 2026: 5 November 2026: Testing leaderboard opens"
+     "quote": "30 October 2026: 5 November 2026: Testing leaderboard opens",
+     "url": "https://owl.grand-challenge.org/timeline/"
     },
     {
-     "url": "https://owl.grand-challenge.org/timeline/",
-     "quote": "6 November 2026: Deadline for submission of the manuscript to the CVPath workshop at WACV 2027"
+     "quote": "15 December 2026: Invitation to finalists and speakers sent",
+     "url": "https://owl.grand-challenge.org/timeline/"
     }
-   ]
+   ],
+   "runId": "workbuddy-agent-2026-11-24",
+   "verifiedAt": "2026-11-24T13:30:00+08:00"
   },
   "paper": "解释阶段交 4 页 WACV 2027 模板方法稿（CVPath workshop）"
  },
@@ -7485,7 +7476,7 @@
   "warning": "团队人数上限与地域限制赛页未列，须查 Competition Rules；终交是电路压缩包而非预测文件，评分一次约 45 分钟，且 dfthcsos 任何 ANGLE 电路宽于 128 qubit 会被拒。",
   "note": "10/22 开赛；Kaggle featured 列表发现，与已有赛事无重复入口。",
   "priority": 3,
-  "verifiedAt": "2026-10-28T13:41:19+08:00",
+  "verifiedAt": "2026-11-24T13:30:00+08:00",
   "sources": [
    {
     "label": "official",
@@ -7498,24 +7489,23 @@
   "verifiedBy": "agent",
   "verification": {
    "state": "verified",
-   "attemptedAt": "2026-10-28T13:41:19+08:00",
-   "verifiedAt": "2026-10-28T13:41:19+08:00",
-   "runId": "workbuddy-agent-2026-10-28",
+   "attemptedAt": "2026-11-24T13:30:00+08:00",
    "evidence": [
     {
-     "url": "https://www.kaggle.com/competitions/google-verifiable-quantum-circuit-compilation",
-     "summary": "Start 10/22；Entry/TM 2027/1/13；终交 2027/1/20；$150,000 = 榜奖 $100,000 + 里程碑 $10,000 + Longest Leader $10,000 + 三任务各 $10,000。",
-     "fields": [
-      "task",
-      "entry",
-      "submit",
-      "award",
-      "requirements"
-     ],
-     "fetchedAt": "2026-10-28T13:41:19+08:00",
-     "quote": "Final Submission Deadline. January 20, 2027"
+     "quote": "January 20, 2027 - Final Submission Deadline.",
+     "url": "https://www.kaggle.com/competitions/google-verifiable-quantum-circuit-compilation"
+    },
+    {
+     "quote": "January 13, 2027 - Entry Deadline. You must accept the competition rules before this date in order to compete.",
+     "url": "https://www.kaggle.com/competitions/google-verifiable-quantum-circuit-compilation"
+    },
+    {
+     "quote": "November 20, 2026 - Mid-Competition Milestone Prize.",
+     "url": "https://www.kaggle.com/competitions/google-verifiable-quantum-circuit-compilation"
     }
-   ]
+   ],
+   "runId": "workbuddy-agent-2026-11-24",
+   "verifiedAt": "2026-11-24T13:30:00+08:00"
   }
  },
  {
@@ -7824,7 +7814,7 @@
   "warning": "",
   "note": "第 6 季第 11 期；库内已有 S6E7–S6E10。",
   "priority": 5,
-  "verifiedAt": "2026-11-23T10:40:00+08:00",
+  "verifiedAt": "2026-11-24T13:30:00+08:00",
   "sources": [
    {
     "label": "official",
@@ -7837,19 +7827,23 @@
   "verifiedBy": "agent",
   "verification": {
    "state": "verified",
-   "attemptedAt": "2026-11-23T10:40:00+08:00",
-   "verifiedAt": "2026-11-23T10:40:00+08:00",
-   "runId": "workbuddy-agent-2026-11-23",
+   "attemptedAt": "2026-11-24T13:30:00+08:00",
    "evidence": [
     {
-     "url": "https://www.kaggle.com/competitions/playground-series-s6e11",
-     "quote": "Final Submission Deadline - November 30, 2026"
+     "quote": "Final Submission Deadline - November 30, 2026",
+     "url": "https://www.kaggle.com/competitions/playground-series-s6e11"
     },
     {
-     "url": "https://www.kaggle.com/competitions/playground-series-s6e11",
-     "quote": "Does not award Points or Medals"
+     "quote": "Entry Deadline - Same as the Final Submission Deadline",
+     "url": "https://www.kaggle.com/competitions/playground-series-s6e11"
+    },
+    {
+     "quote": "All deadlines are at 11:59 PM UTC on the corresponding day unless otherwise noted.",
+     "url": "https://www.kaggle.com/competitions/playground-series-s6e11"
     }
-   ]
+   ],
+   "runId": "workbuddy-agent-2026-11-24",
+   "verifiedAt": "2026-11-24T13:30:00+08:00"
   }
  }
 ]
